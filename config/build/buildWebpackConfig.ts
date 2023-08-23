@@ -7,7 +7,7 @@ import { buildDevServer } from './buildDevServer'
 
 export function buildWebpackConfig(options: IBuildOptions): webpack.Configuration {
     const { paths, isDev } = options
-    const { build, entry } = paths
+    const { build, entry, src } = paths
 
     return {
         mode: 'production',
@@ -17,7 +17,7 @@ export function buildWebpackConfig(options: IBuildOptions): webpack.Configuratio
             path: build,
             clean: true,
         },
-        resolve: buildResolvers(),
+        resolve: buildResolvers(src),
         module: {
             rules: buildLoaders(options),
         },

@@ -13,8 +13,11 @@
             {
                 "name": "typescript-plugin-css-modules"
             }
-        ]
-        // "baseUrl": "."
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "*": ["./src/*"]
+        }
     },
     "ts-node": {
         "compilerOptions": {

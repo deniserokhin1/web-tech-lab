@@ -1,9 +1,9 @@
 import { Link, Route, Routes } from 'react-router-dom'
-import { AboutAsync } from './pages/About.async'
-import { MainAsync } from './pages/Main.async'
 import { Suspense } from 'react'
 import './styles/index.scss'
-import { useTheme } from './theme/useTheme'
+import { useTheme } from '1_app/providers/ThemeProvider'
+import { Main } from '2_pages/Main'
+import { About } from '2_pages/About'
 
 export const App = () => {
     const { theme, toggleTheme } = useTheme()
@@ -16,14 +16,12 @@ export const App = () => {
 
             <Suspense fallback={<Loading />}>
                 <Routes>
-                    <Route path="/" element={<MainAsync />} />
-                    <Route path="/about" element={<AboutAsync />} />
+                    <Route path="/" element={<Main />} />
+                    <Route path="/about" element={<About />} />
                 </Routes>
             </Suspense>
         </div>
     )
 }
 
-function Loading() {
-    return <h2>🌀 Loading...</h2>
-}
+const Loading = () => <h2>🌀 Loading...</h2>

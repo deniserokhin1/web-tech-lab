@@ -11,11 +11,17 @@ body {
 
 .main {
     font: var(--font-m);
-
     background: var(--bg-color);
     color: var(--primary-color);
-
     min-height: 100vh;
-
     transition: all var(--theme-transition);
+}
+
+.content {
+    display: flex;
+}
+
+.pageWrapper {
+    flex-grow: 1;
+    padding: 20px;
 }

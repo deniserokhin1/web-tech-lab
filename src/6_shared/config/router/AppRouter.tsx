@@ -23,9 +23,9 @@ export const AppRouter: FC<AppRouterProps> = () => {
     const routes = useRoutes(routeConfigArray)
 
     return (
-        <div>
-            <Suspense fallback={<Loading />}>{routes}</Suspense>
-        </div>
+        <Suspense fallback={<Loading />}>
+            {<div className="pageWrapper">{routes}</div>}
+        </Suspense>
     )
 }
 

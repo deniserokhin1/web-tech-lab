@@ -1,0 +1,28 @@
+.container {
+    height: calc(100vh - var(--navbar-height));
+    width: var(--sidebar-width-closed);
+    background: var(--i-bg-color);
+    position: relative;
+    will-change: auto;
+    transition: width var(--animation-transition);
+}
+
+.open {
+    width: var(--sidebar-width);
+}
+
+.switchers {
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.toggle {
+    position: absolute;
+    top: calc((var(--navbar-height) / 2 + 7.5px) * -1);
+    left: calc(var(--sidebar-width-closed) / 2 - 10.5px);
+}

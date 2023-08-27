@@ -11,9 +11,9 @@ body {
 
 .main {
     min-height: 100vh;
-    background: var(--bg-color);
     font: var(--font-m);
     color: var(--primary-color);
+    background: var(--bg-color);
     transition: all var(--theme-transition);
 }
 
@@ -22,13 +22,13 @@ body {
 }
 
 .pageWrapper {
-    padding: 20px;
     flex-grow: 1;
+    padding: 20px;
 }
 
 .loader {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-grow: 1;
+    align-items: center;
+    justify-content: center;
 }

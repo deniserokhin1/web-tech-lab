@@ -1,9 +1,7 @@
-import type { FC } from 'react'
-import { Route, Routes, useRoutes } from 'react-router-dom'
+import { useRoutes } from 'react-router-dom'
 import { Suspense } from 'react'
 import { routeConfigArray } from '1_app/providers/Router/config/routeConfig'
-
-interface AppRouterProps {}
+import { Loading } from '6_shared/ui/Loader'
 
 // export const AppRouter: FC<AppRouterProps> = () => {
 //     return (
@@ -19,7 +17,7 @@ interface AppRouterProps {}
 //     )
 // }
 
-export const AppRouter: FC<AppRouterProps> = () => {
+export const AppRouter = (): JSX.Element => {
     const routes = useRoutes(routeConfigArray)
 
     return (
@@ -29,4 +27,4 @@ export const AppRouter: FC<AppRouterProps> = () => {
     )
 }
 
-const Loading = () => <h2>🌀 Loading...</h2>
+

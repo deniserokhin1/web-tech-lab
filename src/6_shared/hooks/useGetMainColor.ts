@@ -1,4 +1,4 @@
-import { Theme } from '1_app/providers/ThemeProvider'
+import { type Theme } from '1_app/providers/ThemeProvider'
 import { useEffect, useState } from 'react'
 
 export const useGetMainColor = (node: React.MutableRefObject<HTMLElement>, theme: Theme): string => {

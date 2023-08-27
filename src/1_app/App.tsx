@@ -7,7 +7,7 @@ import { Suspense, useRef } from 'react'
 import { useGetMainColor } from '6_shared/hooks/useGetMainColor'
 import { Sidebar } from '3_widgets/Sidebar'
 
-export const App = () => {
+export const App = (): JSX.Element => {
     const { theme } = useTheme()
     const mods = {}
 

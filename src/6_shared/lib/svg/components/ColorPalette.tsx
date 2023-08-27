@@ -1,5 +1,5 @@
-import { FC } from 'react'
-import { ISvgOptions } from '../types'
+import { type FC } from 'react'
+import { type ISvgOptions } from '../types'
 
 export const ColorPalette: FC<ISvgOptions> = (props) => {
     const { pathFill } = props

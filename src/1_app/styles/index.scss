@@ -4,16 +4,16 @@
 @import 'themes/dark';
 
 body {
-    & > iframe {
+    &>iframe {
         display: none;
     }
 }
 
 .main {
-    font: var(--font-m);
-    background: var(--bg-color);
-    color: var(--primary-color);
     min-height: 100vh;
+    background: var(--bg-color);
+    font: var(--font-m);
+    color: var(--primary-color);
     transition: all var(--theme-transition);
 }
 
@@ -22,6 +22,13 @@ body {
 }
 
 .pageWrapper {
-    flex-grow: 1;
     padding: 20px;
+    flex-grow: 1;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
 }

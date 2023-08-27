@@ -1,10 +1,10 @@
 .container {
-    height: calc(100vh - var(--navbar-height));
-    width: var(--sidebar-width-closed);
-    background: var(--i-bg-color);
     position: relative;
-    will-change: auto;
+    width: var(--sidebar-width-closed);
+    height: calc(100vh - var(--navbar-height));
+    background: var(--i-bg-color);
     transition: width var(--animation-transition);
+    will-change: auto;
 }
 
 .open {
@@ -15,10 +15,10 @@
     position: absolute;
     bottom: 30px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    width: 100%;
+    justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .toggle {

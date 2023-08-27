@@ -17,7 +17,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
         [cls.open]: isOpen,
     }
 
-    const toggle = () => setIsOpen((prev) => !prev)
+    const toggle = (): void => setIsOpen((prev) => !prev)
 
     return (
         <div className={classNames(cls.container, mods, [className])}>

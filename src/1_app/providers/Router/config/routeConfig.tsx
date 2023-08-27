@@ -1,4 +1,4 @@
-import { RouteObject, RouteProps } from 'react-router-dom'
+import { type RouteObject, type RouteProps } from 'react-router-dom'
 import { About } from '2_pages/About'
 import { Main } from '2_pages/Main'
 
@@ -23,7 +23,7 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
     },
 }
 
-export const routeConfigArray: Array<RouteObject> = [
+export const routeConfigArray: RouteObject[] = [
     {
         path: RoutePath[AppRoutes.MAIN],
         element: <Main />,

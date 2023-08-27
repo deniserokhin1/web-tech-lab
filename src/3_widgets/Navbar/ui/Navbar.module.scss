@@ -1,9 +1,8 @@
 .container {
-    width: 100%;
-    height: var(--navbar-height);
     display: flex;
     align-items: center;
-
+    width: 100%;
+    height: var(--navbar-height);
     background: var(--i-bg-color);
 }
 

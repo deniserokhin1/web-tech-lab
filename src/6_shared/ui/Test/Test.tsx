@@ -14,5 +14,5 @@ export const Test: FC<TestProps> = (props) => {
 
     const { t } = useTranslation(namespace)
 
-    return <div className={classNames('', mods, [className])}>{t('sadfsdf')}</div>
+    return <div className={classNames('', mods, [className])}>{t('Test')}</div>
 }

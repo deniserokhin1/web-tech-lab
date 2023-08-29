@@ -13,7 +13,7 @@ export default ({ config }: { config: webpack.Configuration }): webpack.Configur
 
     config.resolve?.modules?.push(paths.src)
     config.resolve?.extensions?.push('.ts', '.tsx')
-    config.module.rules.push(buildCSSLoaders(true))
+    config.module?.rules?.push(buildCSSLoaders(true))
 
     return config
 }

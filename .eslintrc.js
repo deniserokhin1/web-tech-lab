@@ -32,6 +32,7 @@ module.exports = {
         '@typescript-eslint/naming-convention': 0,
         'linebreak-style': ['error', 'unix'],
         indent: [2, 4],
+        'react/display-name': 0,
         'i18next/no-literal-string': [
             'error',
             { markupOnly: true, ignoreAttribute: ['data-testid'] },

@@ -12,8 +12,8 @@
         "stylelint": "stylelint \"**/*.scss\"",
         "stylelint:fix": "stylelint \"**/*.scss\" --fix",
         "test:unit": "jest --config ./config/jest/jest.config.ts",
-        "storybook": "start-storybook -p 6006 -c ./config/storybook",
-        "build-storybook": "build-storybook -c ./config/storybook"
+        "storybook": "sb dev -c ./config/storybook",
+        "storybook:build": "sb build -c ./config/storybook"
     },
     "keywords": [],
     "author": "",

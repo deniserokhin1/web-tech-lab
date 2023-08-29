@@ -27,7 +27,7 @@ export const PageError: FC<PageErrorProps> = (props) => {
             <Button
                 children={t('Обновить страницу')}
                 onClick={reloadPage}
-                theme={ButtonTheme.BORDER}
+                theme={ButtonTheme.OUTLINE}
                 className={cls.offset}
             />
         </div>

@@ -3,13 +3,20 @@
 @import 'themes/light';
 @import 'themes/dark';
 
-// body {
-//     &>iframe {
-//         display: none;
-//     }
-// }
-
 .main {
+    min-width: 100vw;
+    min-height: 100vh;
+    font: var(--font-m);
+    color: var(--primary-color);
+    background: var(--bg-color);
+    transition: all var(--theme-transition);
+}
+
+.storybook {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100vw;
     min-height: 100vh;
     font: var(--font-m);
     color: var(--primary-color);

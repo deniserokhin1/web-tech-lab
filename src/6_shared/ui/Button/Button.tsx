@@ -4,7 +4,7 @@ import { classNames } from '6_shared/lib'
 
 export enum ButtonTheme {
     CLEAR = 'clear',
-    BORDER = 'border',
+    OUTLINE = 'outline',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

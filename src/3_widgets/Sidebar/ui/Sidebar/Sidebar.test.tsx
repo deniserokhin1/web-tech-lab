@@ -19,3 +19,4 @@ describe('Sidebar', () => {
         screen.debug()
     })
 })
+

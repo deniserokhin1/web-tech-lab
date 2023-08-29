@@ -1,18 +1,19 @@
-import type { FC } from 'react'
-import { classNames } from '6_shared/lib'
-import { useTranslation } from 'react-i18next'
+/* eslint-disable i18next/no-literal-string */
+import { type FC, useEffect, useState } from 'react'
+import { Button } from '../Button'
 
-interface TestProps {
+interface bugButtonProps {
     className?: string
 }
 
-export const Test: FC<TestProps> = (props) => {
-    const { className } = props
-    const mods = {}
+export const BugButton: FC<bugButtonProps> = () => {
+    const [error, setError] = useState<boolean>(false)
 
-    const namespace = __IS_DEV__ ? '' : 'main'
+    const throwError = (): void => setError(true)
 
-    const { t } = useTranslation(namespace)
+    useEffect(() => {
+        if (error) throw new Error()
+    }, [error])
 
-    return <div className={classNames('', mods, [className])}>{t('Test')}</div>
+    return <Button onClick={throwError}>Выбросить ошибку</Button>
 }

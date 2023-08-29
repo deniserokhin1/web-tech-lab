@@ -18,3 +18,15 @@
     background-color: transparent;
     border: none;
 }
+
+.border {
+    padding: 5px 10px;
+    font-weight: inherit;
+    line-height: inherit;
+    text-align: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid var(--color);
+    border-radius: 6px;
+}

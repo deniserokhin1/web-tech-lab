@@ -3,11 +3,11 @@
 @import 'themes/light';
 @import 'themes/dark';
 
-body {
-    &>iframe {
-        display: none;
-    }
-}
+// body {
+//     &>iframe {
+//         display: none;
+//     }
+// }
 
 .main {
     min-height: 100vh;

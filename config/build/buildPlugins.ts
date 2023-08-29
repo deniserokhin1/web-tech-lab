@@ -24,9 +24,7 @@ export function buildPlugins(options: IBuildOptions): webpack.WebpackPluginInsta
     if (isDev) {
         plugins.push(
             new webpack.HotModuleReplacementPlugin(),
-            new ReactRefreshWebpackPlugin({
-                overlay: false,
-            })
+            new ReactRefreshWebpackPlugin(),
         )
     }
 

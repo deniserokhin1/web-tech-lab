@@ -7,7 +7,7 @@ import { LangSwitcher } from '3_widgets/LangSwitcher/ui/LangSwitcher'
 
 interface SidebarProps {
     className?: string
-    color: string
+    color?: string
 }
 
 export const Sidebar: FC<SidebarProps> = (props) => {
@@ -20,8 +20,11 @@ export const Sidebar: FC<SidebarProps> = (props) => {
     const toggle = (): void => setIsOpen((prev) => !prev)
 
     return (
-        <div className={classNames(cls.container, mods, [className])}>
-            <Button className={cls.toggle} onClick={toggle}>
+        <div
+            className={classNames(cls.container, mods, [className])}
+            data-testid="sidebar"
+        >
+            <Button className={cls.toggle} onClick={toggle} data-testid="sidebar-toggle">
                 <IconComponent name="burger" pathFill={color} />
             </Button>
 

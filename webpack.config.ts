@@ -8,7 +8,7 @@ export default (env: IBuildEnv): webpack.Configuration => {
         build: path.resolve('build'),
         entry: path.resolve('src', 'index.tsx'),
         html: path.resolve('public', 'index.html'),
-        src: path.resolve('src')
+        src: path.resolve('src'),
     }
 
     const mode = env.mode || 'development'

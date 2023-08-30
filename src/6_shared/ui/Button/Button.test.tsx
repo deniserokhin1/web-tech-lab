@@ -9,7 +9,7 @@ describe('Button', () => {
 
     test('render component with theme', () => {
         render(<Button children="Test" theme={ButtonTheme.OUTLINE} />)
-        expect(screen.getByText('Test')).toHaveClass('border')
+        expect(screen.getByText('Test')).toHaveClass('outline')
         screen.debug()
     })
 })

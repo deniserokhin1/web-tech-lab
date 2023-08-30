@@ -1,6 +1,7 @@
 /* eslint-disable i18next/no-literal-string */
 import { type FC, useEffect, useState } from 'react'
 import { Button } from '../Button'
+import { ButtonTheme } from '../Button/Button'
 
 interface bugButtonProps {
     className?: string
@@ -15,5 +16,9 @@ export const BugButton: FC<bugButtonProps> = () => {
         if (error) throw new Error()
     }, [error])
 
-    return <Button onClick={throwError}>Выбросить ошибку</Button>
+    return (
+        <Button onClick={throwError} theme={ButtonTheme.OUTLINE}>
+            Выбросить ошибку
+        </Button>
+    )
 }

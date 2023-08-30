@@ -4,6 +4,7 @@ import { buildCSSLoaders } from './loaders/buildCSSLoaders'
 
 export function buildLoaders(options: IBuildOptions): webpack.RuleSetRule[] {
     const { isDev } = options
+    
     const fileLoader = {
         test: /\.(png|jpe?g|gif)$/i,
         use: [

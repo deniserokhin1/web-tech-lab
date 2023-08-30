@@ -5,7 +5,7 @@ import { Button } from '6_shared/ui/Button'
 import { ThemeSwitcher } from '3_widgets/ThemeSwitcher'
 import { LangSwitcher } from '3_widgets/LangSwitcher/ui/LangSwitcher'
 
-interface SidebarProps {
+export interface SidebarProps {
     className?: string
     color?: string
 }

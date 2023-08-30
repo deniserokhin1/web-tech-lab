@@ -1,9 +1,9 @@
-import type { FC } from 'react'
 import { IconComponent, classNames } from '6_shared/lib'
 import { useTheme } from '1_app/providers/ThemeProvider'
 import { Button } from '6_shared/ui/Button'
+import { type FC } from 'react'
 
-interface ThemeSwitcherProps {
+export interface ThemeSwitcherProps {
     className?: string
     mainColor: string
 }

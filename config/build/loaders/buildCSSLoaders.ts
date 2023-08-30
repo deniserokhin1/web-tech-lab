@@ -1,6 +1,7 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import type webpack from 'webpack'
 
-export const buildCSSLoaders = (isDev: boolean) => {
+export const buildCSSLoaders = (isDev: boolean): webpack.RuleSetRule => {
     return {
         test: /\.s[ac]ss$/i,
         use: [

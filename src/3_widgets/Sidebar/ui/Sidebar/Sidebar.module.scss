@@ -23,6 +23,8 @@
 
 .toggle {
     position: absolute;
-    top: calc((var(--navbar-height) / 2 + 7.5px) * -1);
+    top: 2px;
+
+    // top: calc((var(--navbar-height) / 2 + 7.5px) * -1);
     left: calc(var(--sidebar-width-closed) / 2 - 10.5px);
 }

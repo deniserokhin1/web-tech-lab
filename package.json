@@ -12,8 +12,10 @@
         "stylelint": "stylelint \"**/*.scss\"",
         "stylelint:fix": "stylelint \"**/*.scss\" --fix",
         "test:unit": "jest --config ./config/jest/jest.config.ts",
-        "storybook": "sb dev -c ./config/storybook",
-        "storybook:build": "sb build -c ./config/storybook"
+        "test:ui": "loki test",
+        "test:ui:ok": "loki approve",
+        "storybook": "storybook dev -p 6006 -c ./config/storybook",
+        "storybook:build": "storybook build -c ./config/storybook"
     },
     "keywords": [],
     "author": "",
@@ -61,6 +63,7 @@
         "identity-obj-proxy": "^3.0.0",
         "jest": "^29.6.4",
         "jest-environment-jsdom": "^29.6.4",
+        "loki": "^0.32.0",
         "mini-css-extract-plugin": "^2.7.6",
         "regenerator-runtime": "^0.14.0",
         "sass": "^1.66.1",
@@ -88,5 +91,20 @@
         "react-dom": "^18.2.0",
         "react-i18next": "^13.2.0",
         "react-router-dom": "^6.15.0"
+    },
+    "loki": {
+        "configurations": {
+            "chrome.laptop": {
+                "target": "chrome.app",
+                "width": 1366,
+                "height": 768,
+                "deviceScaleFactor": 1,
+                "mobile": false
+            },
+            "chrome.iphone7": {
+                "target": "chrome.app",
+                "preset": "iPhone 7"
+            }
+        }
     }
 }

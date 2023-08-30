@@ -29,7 +29,7 @@ export const PageError: FC<PageErrorProps> = (props) => {
 
     return (
         <div className={classNames(cls.container, mods, [className, theme])}>
-            <h1>{t('Произошла непредвиденная ошибка')}</h1>
+            <h1 className={cls.title}>{t('Произошла непредвиденная ошибка')}</h1>
 
             <Button
                 children={t('Обновить страницу')}

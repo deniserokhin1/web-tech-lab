@@ -20,4 +20,12 @@
     // Переходы
     --theme-transition: 0.2s;
     --animation-transition: 0.3s;
+
+    // z-индексы
+    --modal-z-index: 100;
+
+    // Цвета
+    --overlay-background: rgb(30 56 92 / 80%);
+    --modal-background: #ebebef;
+    --modal-font-color: #1e325c
 }

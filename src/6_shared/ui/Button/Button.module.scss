@@ -1,4 +1,5 @@
 @mixin backgroundMixin {
+    width: fit-content;
     padding: 5px 10px;
     color: var(--i-primary-color);
     text-decoration: none;

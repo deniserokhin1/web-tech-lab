@@ -26,7 +26,7 @@ module.exports = {
         sourceType: 'module',
         project: './tsconfig.json',
     },
-    plugins: ['react', 'i18next'],
+    plugins: ['react', 'i18next', 'react-hooks'],
     rules: {
         '@typescript-eslint/prefer-nullish-coalescing': 0,
         '@typescript-eslint/strict-boolean-expressions': 0,
@@ -44,6 +44,8 @@ module.exports = {
             { markupOnly: true, ignoreAttribute: ['data-testid'] },
         ],
         'no-duplicate-case': 0,
-        'indent': 0
+        indent: 0,
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error',
     },
 }

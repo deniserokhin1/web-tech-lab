@@ -10,6 +10,7 @@ import { Sidebar } from '3_widgets/Sidebar'
 export const App = (): JSX.Element => {
     const { theme } = useTheme()
     const mods = {}
+    
 
     const mainRef = useRef(null)
     const color = useGetMainColor(mainRef, theme)

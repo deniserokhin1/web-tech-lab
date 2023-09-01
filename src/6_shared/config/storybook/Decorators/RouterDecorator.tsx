@@ -1,7 +1,7 @@
-import { type ReactElement } from 'react'
+import { type Decorator } from '@storybook/react'
 import { BrowserRouter } from 'react-router-dom'
 
-export const RouterDecorator = (StoryComponent: () => ReactElement): ReactElement => (
+export const RouterDecorator: Decorator = (StoryComponent) => (
     <BrowserRouter>
         <StoryComponent />
     </BrowserRouter>

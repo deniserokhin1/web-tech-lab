@@ -1,21 +1,22 @@
 .container {
-    position: relative;
+    position: absolute;
+    top: var(--wrapper-padding);
+    bottom: var(--wrapper-padding);
     width: var(--sidebar-width-closed);
-    height: calc(100vh - var(--navbar-height));
     background: var(--i-bg-color);
+    border-radius: 8px;
     transition: width var(--animation-transition);
-    will-change: auto;
+    will-change: auto
 }
 
-.open {
-    width: var(--sidebar-width);
-}
+
 
 .switchers {
     position: absolute;
-    bottom: 30px;
+    bottom: 20px;
     display: flex;
     flex-direction: column;
+    row-gap: 5px;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -23,8 +24,47 @@
 
 .toggle {
     position: absolute;
-    top: 2px;
-
-    // top: calc((var(--navbar-height) / 2 + 7.5px) * -1);
+    top: 25px;
     left: calc(var(--sidebar-width-closed) / 2 - 10.5px);
+}
+
+.links {
+    position: absolute;
+    inset: 50px calc(var(--sidebar-width-closed) / 2 - 15px) 150px calc(var(--sidebar-width-closed) / 2 - 15px);
+    display: flex;
+    flex-direction: column;
+
+}
+
+.link {
+    display: flex;
+    align-items: center;
+
+    &:not(:first-child) {
+        margin-top: 5px;
+    }
+}
+
+.text {
+    max-width: 0;
+    margin-left: 0;
+
+    // margin-left: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all var(--animation-transition);
+}
+
+.open {
+    width: var(--sidebar-width);
+
+    .text {
+        width: fit-content;
+        max-width: 80%;
+        margin-left: 10px;
+        opacity: 1;
+        transition: all var(--animation-transition);
+    }
+
 }

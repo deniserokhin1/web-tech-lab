@@ -8,21 +8,3 @@ export const ThemeDecorator =
                 <StoryComponent />
             </div>
         )
-
-export const ClearButtonDecorator: Decorator = (StoryComponent) => (
-    <div className={`dark`}>
-        <StoryComponent />
-    </div>
-)
-
-export const AppLinkLightDecorator: Decorator = (StoryComponent) => (
-    <div className={`light`}>
-        <StoryComponent />
-    </div>
-)
-
-export const AppLinkDarkDecorator: Decorator = (StoryComponent) => (
-    <div className={`dark`}>
-        <StoryComponent />
-    </div>
-)

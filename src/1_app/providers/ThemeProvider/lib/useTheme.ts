@@ -1,13 +1,21 @@
 import { useContext } from 'react'
-import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from './ThemeContext'
+import {
+    LOCAL_STORAGE_STATE_SIDEBAR,
+    LOCAL_STORAGE_THEME_KEY,
+    Sidebar,
+    Theme,
+    ThemeContext,
+} from './ThemeContext'
 
 export interface UseThemeResult {
     toggleTheme: VoidFunction
     theme: Theme
+    stateSidebar: Sidebar
+    toggleSidebar: VoidFunction
 }
 
 export function useTheme(): UseThemeResult {
-    const { theme, setTheme } = useContext(ThemeContext)
+    const { theme, setTheme, setStateSideBar, stateSidebar } = useContext(ThemeContext)
 
     const toggleTheme = (): void => {
         const newTheme = theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT
@@ -15,5 +23,11 @@ export function useTheme(): UseThemeResult {
         localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme)
     }
 
-    return { theme, toggleTheme }
+    const toggleSidebar = (): void => {
+        const newState = stateSidebar === Sidebar.OPEN ? Sidebar.CLOSE : Sidebar.OPEN
+        setStateSideBar(newState)
+        localStorage.setItem(LOCAL_STORAGE_STATE_SIDEBAR, newState)
+    }
+
+    return { theme, toggleTheme, stateSidebar, toggleSidebar }
 }

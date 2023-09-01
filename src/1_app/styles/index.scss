@@ -4,12 +4,14 @@
 @import 'themes/dark';
 
 .main {
+    display: flex;
+    flex-direction: column;
     min-width: 100vw;
     min-height: 100vh;
     font: var(--font-m);
     color: var(--primary-color);
     background: var(--bg-color);
-    transition: all var(--theme-transition);
+    transition: background var(--theme-transition);
 }
 
 .storybook {
@@ -21,16 +23,26 @@
     font: var(--font-m);
     color: var(--primary-color);
     background: var(--bg-color);
-    transition: all var(--theme-transition);
 }
 
 .content {
+    position: relative;
     display: flex;
+    flex-grow: 1;
+    padding: var(--wrapper-padding);
 }
 
 .pageWrapper {
     flex-grow: 1;
-    padding: 20px;
+    max-width: calc(100vw - var(--sidebar-width-closed) - (var(--wrapper-padding) * 2 + 20px));
+    margin-left: auto;
+    transition-duration: 0.3s;
+    transition-property: max-width, margin-left;
+
+
+    &.open {
+        max-width: calc(100vw - var(--sidebar-width) - (var(--wrapper-padding) * 2 + 20px));
+    }
 }
 
 .loader {

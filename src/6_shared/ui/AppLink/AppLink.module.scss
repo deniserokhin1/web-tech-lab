@@ -1,7 +1,25 @@
+.container {
+    transition: transform var(--theme-transition);
+    transform-origin: center;
+
+    &:active {
+        transform: translateY(2px);
+    }
+
+}
+
 .primary {
-    color: var(--i-primary-color);
+    color: var(--primary-color);
 }
 
 .secondary {
+    color: var(--secondary-color);
+}
+
+.primary_invert {
+    color: var(--i-primary-color);
+}
+
+.secondary_invert {
     color: var(--i-secondary-color);
 }

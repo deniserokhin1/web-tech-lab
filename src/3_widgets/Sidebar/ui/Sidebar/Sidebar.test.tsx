@@ -1,22 +1,21 @@
 import { fireEvent, screen } from '@testing-library/react'
 import { Sidebar } from './Sidebar'
-import { renderWithTranslation } from '6_shared/lib/tests/renderWithTranslation'
+import { componentRender } from '6_shared/lib/tests/componentRender'
 
 describe('Sidebar', () => {
     test('render component', () => {
-        renderWithTranslation(<Sidebar />)
+        componentRender(<Sidebar />)
         expect(screen.getByTestId('sidebar')).toBeInTheDocument()
     })
 
     test('toggle sidebar', () => {
-        renderWithTranslation(<Sidebar />)
+        componentRender(<Sidebar />)
         const toggleButton = screen.getByTestId('sidebar-toggle')
         expect(screen.getByTestId('sidebar')).toBeInTheDocument()
         fireEvent.click(toggleButton)
-        expect(screen.getByTestId('sidebar').classList.contains('open')).toBe(false)
-        fireEvent.click(toggleButton)
         expect(screen.getByTestId('sidebar').classList.contains('open')).toBe(true)
+        fireEvent.click(toggleButton)
+        expect(screen.getByTestId('sidebar').classList.contains('open')).toBe(false)
         screen.debug()
     })
 })
-

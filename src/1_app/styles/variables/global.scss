@@ -7,17 +7,17 @@
     --font-size-l: 24px;
     --font-line-l: 32px;
     --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+    --font-size-xl: 32px;
+    --font-line-xl: 40px;
+    --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
 
     // Размеры
     --navbar-height: 50px;
-    --sidebar-width: 300px;
+    --sidebar-width: 250px;
     --sidebar-width-closed: 80px;
+    --wrapper-padding: 40px;
 
     // Переходы
     --theme-transition: 0.2s;
-    --animation-transition: 0.3s ease-in-out;
-
-    // Для страницы с ошибкой
-    --bg: #1e325c;
-    --color: #eee;
+    --animation-transition: 0.3s;
 }

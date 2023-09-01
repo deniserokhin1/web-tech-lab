@@ -16,7 +16,11 @@
         "test:ui:ok": "loki approve",
         "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
         "storybook": "storybook dev -p 6006 -c ./config/storybook",
-        "storybook:build": "storybook build -c ./config/storybook"
+        "storybook:build": "storybook build -c ./config/storybook",
+        "test:reg-cli": "reg-cli ./.loki/current ./.loki/reference ./.loki/difference -R ./.loki/report.html",
+        "test:ui:json": "node scripts/generateVisualReport.js",
+        "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
+        "test:ui:report": "npm run test:ui:json && npm run test:ui:html"
     },
     "keywords": [],
     "author": "",
@@ -66,6 +70,7 @@
         "jest-environment-jsdom": "^29.6.4",
         "loki": "^0.32.0",
         "mini-css-extract-plugin": "^2.7.6",
+        "reg-cli": "^0.17.7",
         "regenerator-runtime": "^0.14.0",
         "sass": "^1.66.1",
         "sass-loader": "^13.3.2",

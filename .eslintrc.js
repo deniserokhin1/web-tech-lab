@@ -3,7 +3,13 @@ module.exports = {
         browser: true,
         es2021: true,
     },
-    extends: ['standard-with-typescript', 'plugin:react/recommended', 'prettier', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
+    extends: [
+        'standard-with-typescript',
+        'plugin:react/recommended',
+        'prettier',
+        'plugin:i18next/recommended',
+        'plugin:storybook/recommended',
+    ],
     overrides: [
         {
             env: {
@@ -37,5 +43,7 @@ module.exports = {
             'error',
             { markupOnly: true, ignoreAttribute: ['data-testid'] },
         ],
+        'no-duplicate-case': 0,
+        'indent': 0
     },
 }

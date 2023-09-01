@@ -6,8 +6,8 @@ export const ColorPalette: FC<ISvgOptions> = (props) => {
 
     return (
         <svg
-            height="40px"
-            width="40px"
+            height="30px"
+            width="30px"
             version="1.1"
             id="Layer_1"
             viewBox="0 0 506.4 506.4"

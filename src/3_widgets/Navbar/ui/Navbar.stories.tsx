@@ -4,7 +4,7 @@ import { Theme } from '1_app/providers/ThemeProvider'
 import { ThemeDecorator } from '6_shared/config/storybook/Decorators/ThemeDecorator'
 
 const meta = {
-    title: '3_widgets/NavBar',
+    title: '3_widgets/Navbar',
     component: Navbar,
     parameters: {
         layout: 'fullscreen',

@@ -1,5 +1,12 @@
 import cls from './Modal.module.scss'
-import { type FC, type ReactNode, useState, useRef, useCallback, useEffect } from 'react'
+import {
+    type FC,
+    type ReactNode,
+    useState,
+    useCallback,
+    useEffect,
+    type TransitionEvent,
+} from 'react'
 import { classNames } from '6_shared/lib'
 import { Portal } from '../Portal'
 
@@ -10,24 +17,17 @@ interface ModalProps {
     onClose?: () => void
 }
 
-const ANIMATION_DELAY = 300
-
 export const Modal: FC<ModalProps> = (props) => {
     const { className, children, isOpen, onClose } = props
-    const [isClosing, setIsClosing] = useState(false)
-    const timerRef = useRef<ReturnType<typeof setTimeout>>()
+    const [showModal, setShowModal] = useState(isOpen)
 
-    // const { theme } = useTheme()
+    useEffect(() => {
+        setShowModal(isOpen)
+    }, [isOpen])
 
     const closeHandler = useCallback(() => {
-        if (onClose) {
-            setIsClosing(true)
-            timerRef.current = setTimeout(() => {
-                onClose()
-                setIsClosing(false)
-            }, ANIMATION_DELAY)
-        }
-    }, [onClose])
+        setShowModal(false)
+    }, [])
 
     const onContentClick = (e: React.MouseEvent): void => {
         e.stopPropagation()
@@ -35,24 +35,27 @@ export const Modal: FC<ModalProps> = (props) => {
 
     const onKeyDown = useCallback(
         (e: KeyboardEvent) => {
+            console.log(e.key)
             if (e.key === 'Escape') closeHandler()
         },
         [closeHandler],
     )
 
     useEffect(() => {
-        if (isOpen) {
-            window.addEventListener('keydown', onKeyDown)
-        }
-        return () => {
-            clearTimeout(timerRef.current)
-            window.removeEventListener('keydown', onKeyDown)
-        }
+        isOpen
+            ? window.addEventListener('keydown', onKeyDown)
+            : window.removeEventListener('keydown', onKeyDown)
     }, [isOpen, onKeyDown])
 
     const mods: Record<string, boolean> = {
-        [cls.opened]: isOpen,
-        [cls.isClosing]: isClosing,
+        [cls.opened]: showModal,
+    }
+
+    const onTransitionEnd = (e: TransitionEvent<HTMLDivElement>): void => {
+        const target = e.target as HTMLElement
+
+        if (target.className !== cls.overlay) return
+        if (isOpen && !showModal) onClose?.()
     }
 
     return (
@@ -61,7 +64,10 @@ export const Modal: FC<ModalProps> = (props) => {
                 className={classNames(cls.container, mods, [className])}
                 onClick={closeHandler}
             >
-                <div className={classNames(cls.overlay)}>
+                <div
+                    className={classNames(cls.overlay)}
+                    onTransitionEnd={onTransitionEnd}
+                >
                     <div className={classNames(cls.content)} onClick={onContentClick}>
                         {children}
                     </div>

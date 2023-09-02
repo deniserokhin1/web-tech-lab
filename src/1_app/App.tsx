@@ -17,7 +17,7 @@ export const App = (): JSX.Element => {
         <div className={classNames('main', mods, [theme])} ref={mainRef}>
             <Suspense>
                 <Navbar />
-                
+
                 <div className="content">
                     <Sidebar color={color} />
                     <AppRouter />

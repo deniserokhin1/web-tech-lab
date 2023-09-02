@@ -22,9 +22,9 @@ export const Navbar: FC<NavbarProps> = (props) => {
     return (
         <div className={classNames(cls.container)}>
             <div className={cls.links}>
-                <Button theme={ButtonTheme.CLEAR_INVERT} onClick={onToggleModal}>
+                {/* <Button theme={ButtonTheme.CLEAR_INVERT} onClick={onToggleModal}>
                     {t('Войти')}
-                </Button>
+                </Button> */}
                 <Modal isOpen={isAuthModal} onClose={onToggleModal}>
                     {t('Авторизация')}
                 </Modal>

@@ -20,7 +20,8 @@
         "test:reg-cli": "reg-cli ./.loki/current ./.loki/reference ./.loki/difference -R ./.loki/report.html",
         "test:ui:json": "node scripts/generateVisualReport.js",
         "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
-        "test:ui:report": "npm run test:ui:json && npm run test:ui:html"
+        "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
+        "json:server": "node ./json-server/index.js"
     },
     "keywords": [],
     "author": "",
@@ -69,6 +70,7 @@
         "identity-obj-proxy": "^3.0.0",
         "jest": "^29.6.4",
         "jest-environment-jsdom": "^29.6.4",
+        "json-server": "^0.17.3",
         "loki": "^0.32.0",
         "mini-css-extract-plugin": "^2.7.6",
         "reg-cli": "^0.17.7",

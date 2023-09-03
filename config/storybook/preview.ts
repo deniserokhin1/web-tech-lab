@@ -4,7 +4,6 @@ import { ThemeDecorator } from '6_shared/config/storybook/Decorators/ThemeDecora
 import { RouterDecorator } from '6_shared/config/storybook/Decorators/RouterDecorator'
 import { I18nDecorator } from '6_shared/config/storybook/Decorators/i18nextDecorator'
 import { Theme } from '1_app/providers/ThemeProvider'
-import { ContextDecorator } from '6_shared/config/storybook/Decorators/ContextDecorator'
 
 const preview: Preview = {
     parameters: {
@@ -21,7 +20,6 @@ const preview: Preview = {
         ThemeDecorator(Theme.LIGHT),
         RouterDecorator,
         I18nDecorator,
-        ContextDecorator
     ],
 }
 

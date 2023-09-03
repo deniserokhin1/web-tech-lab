@@ -9,6 +9,7 @@ import {
 } from 'react'
 import { classNames } from '6_shared/lib'
 import { Portal } from '../Portal'
+import { useTheme } from '6_shared/hooks/useTheme'
 
 interface ModalProps {
     className?: string
@@ -20,6 +21,7 @@ interface ModalProps {
 export const Modal: FC<ModalProps> = (props) => {
     const { className, children, isOpen, onClose } = props
     const [showModal, setShowModal] = useState(isOpen)
+    const { theme } = useTheme()
 
     useEffect(() => {
         setShowModal(isOpen)
@@ -61,7 +63,7 @@ export const Modal: FC<ModalProps> = (props) => {
     return (
         <Portal>
             <div
-                className={classNames(cls.container, mods, [className])}
+                className={classNames(cls.container, mods, [className, theme])}
                 onClick={closeHandler}
             >
                 <div

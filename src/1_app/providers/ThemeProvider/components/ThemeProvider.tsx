@@ -9,16 +9,18 @@ import {
 
 export interface ThemeProviderProps {
     children: ReactNode
+    initialTheme?: Theme
 }
 
 const defaultTheme =
     (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT
-    
+
 const defaultStateSidebar =
     (localStorage.getItem(LOCAL_STORAGE_STATE_SIDEBAR) as Sidebar) || Sidebar.CLOSE
 
-export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
-    const [theme, setTheme] = useState<Theme>(defaultTheme)
+export const ThemeProvider: FC<ThemeProviderProps> = (props) => {
+    const { children, initialTheme } = props
+    const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme)
     const [stateSidebar, setStateSideBar] = useState<Sidebar>(defaultStateSidebar)
 
     const defaultProps = useMemo(
@@ -26,7 +28,7 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
             theme,
             setTheme,
             stateSidebar,
-            setStateSideBar
+            setStateSideBar,
         }),
         [theme, stateSidebar],
     )

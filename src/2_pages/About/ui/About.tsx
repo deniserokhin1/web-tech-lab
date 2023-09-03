@@ -1,4 +1,3 @@
-import { Counter } from '5_entities/Counter'
 import { useTranslation } from 'react-i18next'
 
 const About = (): JSX.Element => {
@@ -7,7 +6,6 @@ const About = (): JSX.Element => {
     return (
         <>
             <div>{t('О проекте')}</div>
-        <Counter />
         </>
     )
 }

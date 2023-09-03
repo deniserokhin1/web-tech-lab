@@ -2,7 +2,7 @@
     position: fixed;
     inset: 0;
     z-index: -1;
-    color: var(--modal-font-color);
+    color: var(--i-primary-color);
     pointer-events: none;
     transition: z-index 0.5s;
 }
@@ -21,7 +21,7 @@
 .content {
     max-width: 60%;
     padding: 20px;
-    background: var(--modal-background);
+    background: var(--i-bg-color);
     border-radius: 6px;
     transition: transform 0.3s;
     transform: translateY(-20px);

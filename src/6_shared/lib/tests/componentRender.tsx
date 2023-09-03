@@ -4,22 +4,27 @@ import i18nForTests from '6_shared/config/i18n/i18nForTests'
 import { MemoryRouter } from 'react-router-dom'
 import { type RenderResult, render } from '@testing-library/react'
 import { ThemeProvider } from '1_app/providers/ThemeProvider'
+import { type StateSchema, StoreProvider } from '1_app/providers/StoreProvider'
+import { type DeepPartial } from '@reduxjs/toolkit'
 
-export interface renderWithRouterOPtions {
+export interface renderWithRouterOptions {
     route?: string
+    initialState?: DeepPartial<StateSchema>
 }
 
 export const componentRender = (
     component: ReactNode,
-    options: renderWithRouterOPtions = {},
+    options: renderWithRouterOptions = {},
 ): RenderResult => {
-    const { route = '/' } = options
+    const { initialState, route = '/' } = options
 
     return render(
-        <MemoryRouter initialEntries={[route]}>
-            <ThemeProvider>
-                <I18nextProvider i18n={i18nForTests}>{component}</I18nextProvider>
-            </ThemeProvider>
-        </MemoryRouter>,
+        <StoreProvider initialState={initialState}>
+            <MemoryRouter initialEntries={[route]}>
+                <ThemeProvider>
+                    <I18nextProvider i18n={i18nForTests}>{component}</I18nextProvider>
+                </ThemeProvider>
+            </MemoryRouter>
+        </StoreProvider>,
     )
 }

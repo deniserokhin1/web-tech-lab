@@ -11,5 +11,7 @@
   "Обновить страницу": "Refresh the page",
   "О проекте": "About project",
   "Войти": "Login",
-  "Авторизация": "Authorization"
+  "Авторизация": "Authorization",
+  "Имя пользователя": "Username",
+  "Пароль": "Password"
 }

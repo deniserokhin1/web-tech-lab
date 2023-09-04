@@ -16,10 +16,11 @@ interface ModalProps {
     children?: ReactNode
     isOpen?: boolean
     onClose?: () => void
+    lazy?: boolean
 }
 
 export const Modal: FC<ModalProps> = (props) => {
-    const { className, children, isOpen, onClose } = props
+    const { className, children, isOpen, onClose, lazy } = props
     const [showModal, setShowModal] = useState(isOpen)
     const { theme } = useTheme()
 
@@ -37,7 +38,6 @@ export const Modal: FC<ModalProps> = (props) => {
 
     const onKeyDown = useCallback(
         (e: KeyboardEvent) => {
-            console.log(e.key)
             if (e.key === 'Escape') closeHandler()
         },
         [closeHandler],
@@ -58,6 +58,10 @@ export const Modal: FC<ModalProps> = (props) => {
 
         if (target.className !== cls.overlay) return
         if (isOpen && !showModal) onClose?.()
+    }
+
+    if (lazy && !isOpen) {
+        return null
     }
 
     return (

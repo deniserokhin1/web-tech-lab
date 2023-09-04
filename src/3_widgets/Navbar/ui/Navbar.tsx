@@ -2,9 +2,9 @@ import cls from './Navbar.module.scss'
 import { useState, type FC, useCallback } from 'react'
 import { classNames } from '6_shared/lib'
 import { Button } from '6_shared/ui/Button'
-import { Modal } from '6_shared/ui/Modal/Modal'
 import { useTranslation } from 'react-i18next'
 import { ButtonTheme } from '6_shared/ui/Button/Button'
+import { LoginModal } from '4_features/AuthByUserName'
 
 interface NavbarProps {
     className?: string
@@ -13,7 +13,11 @@ interface NavbarProps {
 export const Navbar: FC<NavbarProps> = (props) => {
     const [isAuthModal, setIsAuthModal] = useState(false)
 
-    const onToggleModal = useCallback(() => {
+    const onCloseModal = useCallback(() => {
+        setIsAuthModal((prev) => !prev)
+    }, [])
+
+    const onShowModal = useCallback(() => {
         setIsAuthModal((prev) => !prev)
     }, [])
 
@@ -22,12 +26,11 @@ export const Navbar: FC<NavbarProps> = (props) => {
     return (
         <div className={classNames(cls.container)}>
             <div className={cls.links}>
-                <Button theme={ButtonTheme.CLEAR_INVERT} onClick={onToggleModal}>
+                <Button theme={ButtonTheme.CLEAR_INVERT} onClick={onShowModal}>
                     {t('Войти')}
                 </Button>
-                <Modal isOpen={isAuthModal} onClose={onToggleModal}>
-                    {t('Авторизация')}
-                </Modal>
+                
+                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
             </div>
         </div>
     )

@@ -65,4 +65,11 @@ export const BackgroundDark: Story = {
         children: 'Button',
     },
 }
-BackgroundDark.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const Disabled: Story = {
+    args: {
+        theme: ButtonTheme.BACKGROUND,
+        children: 'Button',
+        disabled: true,
+    },
+}

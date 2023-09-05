@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.default {
+    .title {
+        font: var(--font-l);
+        color: var(--primary-color);
+    }
+
+    .text {
+        font: var(--font-m);
+        color: var(--secondary-color)
+    }
+}
+
+.default_invert {
+    .title {
+        font: var(--font-l);
+        color: var(--i-primary-color);
+    }
+
+    .text {
+        font: var(--font-m);
+        color: var(--i-secondary-color)
+    }
+}
+
+.error {
+    .title {
+        font: var(--font-l);
+        color: var(--red-primary);
+    }
+
+    .text {
+        font: var(--font-m);
+        color: var(--red-secondary)
+    }
+}

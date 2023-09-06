@@ -39,7 +39,6 @@ export function createReducerManager(
         },
 
         remove: (key: StateSchemaKey) => {
-            console.log('remove')
             if (!key || !reducers[key]) {
                 return
             }

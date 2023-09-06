@@ -35,7 +35,7 @@ export const createReduxStore = (
 
 export type AppStore = ReturnType<typeof createReduxStore>
 
-type TypedDispatch<T> = ThunkDispatch<T, any, AnyAction>
+export type TypedDispatch<T> = ThunkDispatch<T, any, AnyAction>
 
 export const useAppDispatch = (): TypedDispatch<ToolkitStore<StateSchema>> =>
     useDispatch<TypedDispatch<AppStore>>()

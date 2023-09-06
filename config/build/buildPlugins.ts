@@ -20,15 +20,15 @@ export function buildPlugins(options: IBuildOptions): webpack.WebpackPluginInsta
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
         }),
+        new BundleAnalyzerPlugin({
+            openAnalyzer: true,
+        }),
     ]
 
     if (isDev) {
         plugins.push(
             new webpack.HotModuleReplacementPlugin(),
             new ReactRefreshWebpackPlugin(),
-            new BundleAnalyzerPlugin({
-                openAnalyzer: false,
-            }),
         )
     }
 

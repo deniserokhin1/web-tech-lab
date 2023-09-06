@@ -32,19 +32,13 @@ const LoginForm: FC<LoginFrormProps> = memo(() => {
     const dispatch = useAppDispatch()
     const { setPassword, setUsername } = loginActions
 
-    const username = useAppSelector(getLoginUsername)
+    const username = useAppSelector((state) => getLoginUsername(state))
     const password = useAppSelector(getLoginPassword)
     const isLoading = useAppSelector(getLoginIsLoading)
     const error = useAppSelector(getLoginError)
 
     const isEmptyInput = !username || !password
     const tabIndex = isEmptyInput ? -1 : 0
-
-    // useEffect(() => {
-    //     return () => {
-    //         dispatch(clearStateAfterCloseModal())
-    //     }
-    // }, [dispatch, clearStateAfterCloseModal])
 
     const onChangeUsername = useCallback(
         (value: string) => {

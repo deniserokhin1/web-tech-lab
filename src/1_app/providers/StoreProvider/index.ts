@@ -1,3 +1,3 @@
 export { StoreProvider } from './components/StoreProvider'
-export { createReduxStore } from './config/store'
-export type { StateSchema } from './config/StateSchema'
+export { createReduxStore, useAppDispatch, useAppSelector } from './config/store'
+export type { StateSchema, ReduxStoreWidthManager, StateSchemaKey } from './config/StateSchema'

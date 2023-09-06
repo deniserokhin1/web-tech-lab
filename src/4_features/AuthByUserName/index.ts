@@ -1,5 +1,5 @@
 export { LoginModal } from './ui/LoginModal/LoginModal'
 export type { LoginSchema } from './model/types/loginSchema'
-export { loginActions, loginReducer } from './model/slice/loginSlice'
+export { loginActions } from './model/slice/loginSlice'
 export { getLoginState } from './model/selectros/getLoginState'
 export { loginByUsername } from './model/services/loginByUsername/loginByUsername'

@@ -10,6 +10,9 @@ const meta = {
     parameters: {
         layout: 'fullscreen',
     },
+    args: {
+        storybook: true,
+    },
 } satisfies Meta<typeof LoginModal>
 
 export default meta

@@ -47,5 +47,8 @@ module.exports = {
         indent: 0,
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
+        '@typescript-eslint/no-dynamic-delete': 0,
+        '@typescript-eslint/ban-ts-comment': 0,
+        '@typescript-eslint/prefer-ts-expect-error': 0
     },
 }

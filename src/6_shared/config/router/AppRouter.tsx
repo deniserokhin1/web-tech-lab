@@ -28,7 +28,7 @@ export const AppRouter = (): JSX.Element => {
     }
 
     return (
-        <Suspense fallback={<PageLoader />}>
+        <Suspense fallback={<PageLoader stateSideBar={!!stateSidebar} />}>
             {<div className={classNames("pageWrapper", mods)}>{routes}</div>}
         </Suspense>
     )

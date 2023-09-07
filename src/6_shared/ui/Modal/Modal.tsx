@@ -9,7 +9,7 @@ import {
 } from 'react'
 import { classNames } from '6_shared/lib'
 import { Portal } from '../Portal'
-import { useTheme } from '6_shared/hooks/useTheme'
+import { useTheme } from '1_app/providers/ThemeProvider'
 
 interface ModalProps {
     className?: string

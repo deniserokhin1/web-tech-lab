@@ -1,4 +1,5 @@
 import { type LoginSchema } from '4_features/AuthByUserName'
+import { type ProfileSchema } from '5_entities/Profile'
 import { type UserSchema } from '5_entities/User'
 import {
     type Reducer,
@@ -11,6 +12,7 @@ import {
 export interface StateSchema {
     user: UserSchema
     login?: LoginSchema
+    profile?: ProfileSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

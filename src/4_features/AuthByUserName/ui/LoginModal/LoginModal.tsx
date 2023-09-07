@@ -12,10 +12,16 @@ interface LoginModalProps {
     storybook?: boolean
 }
 
-export const LoginModal: FC<LoginModalProps> = ({ isOpen, onClose, storybook = false }) => {
+export const LoginModal: FC<LoginModalProps> = ({
+    isOpen,
+    onClose,
+    storybook = false,
+}) => {
     return (
         <Modal isOpen={isOpen} onClose={onClose} lazy={true}>
-            <Suspense fallback={<PageLoader theme={SpinerDotsTheme.INVERT} />}>
+            <Suspense
+                fallback={<PageLoader theme={SpinerDotsTheme.INVERT} big={false} />}
+            >
                 {storybook ? <LoginForm /> : <LoginFormAsync />}
             </Suspense>
         </Modal>

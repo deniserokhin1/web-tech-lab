@@ -4,9 +4,6 @@
   "О нас": "About us",
   "Язык": "EN",
   "Страница не найдена": "Not found page",
-  "main": {
-    "Test": "Ex 1"
-  },
   "Произошла непредвиденная ошибка": "An unexpected error has occurred...",
   "Обновить страницу": "Refresh the page",
   "О проекте": "About project",
@@ -16,5 +13,9 @@
   "Пароль": "Password",
   "Форма авторизации": "Authorization form",
   "Неверный логин и/или пароль": "Invalid username and/or password.",
-  "Выйти": "Logout"
+  "Выйти": "Logout",
+  "Профиль": "Profile",
+  "profile": {
+    "Профиль": "Profile"
+  }
 }

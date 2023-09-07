@@ -1,14 +1,14 @@
 import { IconComponent, classNames } from '6_shared/lib'
 import { useTheme } from '1_app/providers/ThemeProvider'
 import { Button } from '6_shared/ui/Button'
-import { type FC } from 'react'
+import { memo } from 'react'
 
 export interface ThemeSwitcherProps {
     className?: string
     mainColor: string
 }
 
-export const ThemeSwitcher: FC<ThemeSwitcherProps> = (props) => {
+export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {
     const { className, mainColor } = props
     const mods = {}
 
@@ -19,4 +19,4 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = (props) => {
             <IconComponent name="palette" pathFill={mainColor} />
         </Button>
     )
-}
+})

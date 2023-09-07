@@ -36,35 +36,6 @@
 
 }
 
-.link {
-    display: flex;
-    align-items: center;
-
-    &:not(:first-child) {
-        margin-top: 5px;
-    }
-}
-
-.text {
-    max-width: 0;
-    margin-left: 0;
-
-    // margin-left: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    opacity: 0;
-    transition: all var(--animation-transition);
-}
-
 .open {
     width: var(--sidebar-width);
-
-    .text {
-        width: fit-content;
-        max-width: 80%;
-        margin-left: 10px;
-        opacity: 1;
-        transition: all var(--animation-transition);
-    }
-
 }

@@ -1,3 +1,4 @@
+import { classNames } from '6_shared/lib'
 import cls from './Input.module.scss'
 import { type InputHTMLAttributes, memo, type ChangeEvent } from 'react'
 
@@ -26,7 +27,7 @@ export const Input = memo((props: InputProps) => {
 
     return (
         <input
-            className={cls.input}
+            className={classNames(cls.input, {}, [className])}
             type={type}
             value={value}
             autoFocus={autoFocus}

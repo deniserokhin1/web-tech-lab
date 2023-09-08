@@ -51,5 +51,7 @@ module.exports = {
         '@typescript-eslint/ban-ts-comment': 0,
         '@typescript-eslint/prefer-ts-expect-error': 0,
         '@typescript-eslint/no-unused-vars': 1,
+        '@typescript-eslint/no-unnecessary-type-assertion': 0,
+        '@typescript-eslint/no-invalid-void-type': 0,
     },
 }

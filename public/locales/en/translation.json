@@ -16,6 +16,9 @@
   "Выйти": "Logout",
   "Профиль": "Profile",
   "profile": {
-    "Профиль": "Profile"
+    "Профиль": "Profile",
+    "Редактировать": " Edit",
+    "Ваше имя": "Your name",
+    "Ваша фамилия": "Your last name"
   }
 }

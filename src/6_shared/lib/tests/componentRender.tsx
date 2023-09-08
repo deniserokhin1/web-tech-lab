@@ -19,12 +19,12 @@ export const componentRender = (
     const { initialState, route = '/' } = options
 
     return render(
-        <StoreProvider initialState={initialState as StateSchema}>
-            <MemoryRouter initialEntries={[route]}>
+        <MemoryRouter initialEntries={[route]}>
+            <StoreProvider initialState={initialState as StateSchema}>
                 <ThemeProvider>
                     <I18nextProvider i18n={i18nForTests}>{component}</I18nextProvider>
                 </ThemeProvider>
-            </MemoryRouter>
-        </StoreProvider>,
+            </StoreProvider>
+        </MemoryRouter>,
     )
 }

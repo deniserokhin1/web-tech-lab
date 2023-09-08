@@ -16,8 +16,9 @@ export default ({ config }: { config: webpack.Configuration }): webpack.Configur
     config.resolve?.extensions?.push('.ts', '.tsx')
     config.module?.rules?.push(buildCSSLoaders(true))
 
-    if (config.module.rules) {
-        config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
+    if (config?.module?.rules) {
+        const rules = config.module.rules as RuleSetRule[]
+        rules.map((rule) => {
             // eslint-disable-next-line @typescript-eslint/prefer-includes
             if (/svg/.test(rule.test as string)) {
                 return { ...rule, exclude: /\.svg$/i }
@@ -33,7 +34,8 @@ export default ({ config }: { config: webpack.Configuration }): webpack.Configur
         config.plugins?.push(
             new DefinePlugin({
                 __IS_DEV__: true,
-            })
+                __API__: JSON.stringify(''),
+            }),
         )
 
         return config

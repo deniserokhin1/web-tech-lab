@@ -12,7 +12,7 @@ export const App = (): JSX.Element => {
     const { theme } = useTheme()
     const mods = {}
 
-    const mainRef = useRef(null)
+    const mainRef = useRef<HTMLDivElement>(null)
     const color = useGetMainColor(mainRef, theme)
 
     const dispatch = useAppDispatch()

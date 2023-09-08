@@ -55,6 +55,7 @@ const LoginForm: FC<LoginFrormProps> = memo(() => {
     )
 
     const onLoginClick = useCallback(() => {
+        if (!password || !username) return
         dispatch(loginByUsername({ password, username }))
     }, [dispatch, password, username])
 

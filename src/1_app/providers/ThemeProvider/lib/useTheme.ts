@@ -19,15 +19,20 @@ export function useTheme(): UseThemeResult {
 
     const toggleTheme = (): void => {
         const newTheme = theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT
-        setTheme(newTheme)
+        setTheme?.(newTheme)
         localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme)
     }
 
     const toggleSidebar = (): void => {
         const newState = stateSidebar === Sidebar.OPEN ? Sidebar.CLOSE : Sidebar.OPEN
-        setStateSideBar(newState)
+        setStateSideBar?.(newState)
         localStorage.setItem(LOCAL_STORAGE_STATE_SIDEBAR, newState)
     }
 
-    return { theme, toggleTheme, stateSidebar, toggleSidebar }
+    return {
+        theme: theme || Theme.LIGHT,
+        toggleTheme,
+        stateSidebar: stateSidebar || Sidebar.CLOSE,
+        toggleSidebar,
+    }
 }

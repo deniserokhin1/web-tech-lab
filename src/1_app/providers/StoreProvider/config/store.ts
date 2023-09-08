@@ -3,16 +3,21 @@ import {
     configureStore,
     type AnyAction,
     type ThunkDispatch,
+    type CombinedState,
+    type Reducer,
 } from '@reduxjs/toolkit'
 import { type ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
-import { type StateSchema } from './StateSchema'
+import { type ThunkExtraArg, type StateSchema } from './StateSchema'
 import { userReducer } from '5_entities/User'
 import { type TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import { createReducerManager } from './ReducerManager'
+import { $api } from '6_shared/api/api'
+import { type NavigateOptions, type To } from 'react-router-dom'
 
 export const createReduxStore = (
     initialState?: StateSchema,
     asyncReducers?: ReducersMapObject<StateSchema>,
+    navigate?: (to: To, options?: NavigateOptions) => void,
 ): ToolkitStore<StateSchema> => {
     const rootReducer: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
@@ -21,10 +26,21 @@ export const createReduxStore = (
 
     const reducerManager = createReducerManager(rootReducer)
 
-    const store = configureStore<StateSchema>({
-        reducer: reducerManager.reduce,
+    const extraArg: ThunkExtraArg = {
+        api: $api,
+        navigate,
+    }
+
+    const store = configureStore({
+        reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
         devTools: __IS_DEV__,
         preloadedState: initialState,
+        middleware: (getDefaultMiddleware) =>
+            getDefaultMiddleware({
+                thunk: {
+                    extraArgument: extraArg,
+                },
+            }),
     })
 
     // @ts-ignore

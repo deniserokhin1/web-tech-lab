@@ -5,7 +5,7 @@ import { memo } from 'react'
 
 export interface ThemeSwitcherProps {
     className?: string
-    mainColor: string
+    mainColor: string | undefined
 }
 
 export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {

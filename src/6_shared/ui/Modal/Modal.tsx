@@ -10,6 +10,7 @@ import {
 import { classNames } from '6_shared/lib'
 import { Portal } from '../Portal'
 import { useTheme } from '1_app/providers/ThemeProvider'
+import { type Mods } from '6_shared/lib/classNames/classNames'
 
 interface ModalProps {
     className?: string
@@ -49,7 +50,7 @@ export const Modal: FC<ModalProps> = (props) => {
             : window.removeEventListener('keydown', onKeyDown)
     }, [isOpen, onKeyDown])
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cls.opened]: showModal,
     }
 

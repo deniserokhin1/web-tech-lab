@@ -1,0 +1,15 @@
+.container {
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.buttons {
+    display: flex;
+    column-gap: 15px;
+}

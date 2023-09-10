@@ -1,50 +1,142 @@
 import cls from './ProfileCard.module.scss'
 import type { FC } from 'react'
-import { classNames } from '6_shared/lib'
 import { useTranslation } from 'react-i18next'
-import { useAppSelector } from '1_app/providers/StoreProvider'
-import { getProfileData } from '5_entities/Profile/model/selectors/getProfileData'
-// import { getProfileError } from '5_entities/Profile/model/selectors/getProfileError'
-// import { getProfileIsLoading } from '5_entities/Profile/model/selectors/getProfileIsLoading'
-import { Text } from '6_shared/ui/Text/Text'
-import { Button } from '6_shared/ui/Button'
-import { ButtonTheme } from '6_shared/ui/Button/Button'
+import { Text, TextAlign, TextTheme } from '6_shared/ui/Text/Text'
 import { Input } from '6_shared/ui/Input'
+import { type IProfile } from '../../model/types/profile'
+import { SpinerDots } from '6_shared/ui/SpinerDots/SpinerDots'
+import { Avatar } from '6_shared/ui/Avatar/Avatar'
+import { type Currency, CurrencySelect } from '5_entities/Currency'
+import { type Country, CountrySelect } from '5_entities/Country'
 
 interface ProfileCardProps {
     className?: string
+    data?: IProfile
+    isLoading?: boolean
+    error?: string
+    readonly?: boolean
+    onChangeLasttName?: (value: string) => void
+    onChangeFirstName?: (value: string) => void
+    onChangeAge?: (value: string) => void
+    onChangeCity?: (value: string) => void
+    onChangeUsername?: (value: string) => void
+    onChangeAvatar?: (value: string) => void
+    onChangeCurrency?: (value: Currency) => void
+    onChangeCountry?: (value: Country) => void
 }
 
 export const ProfileCard: FC<ProfileCardProps> = (props) => {
-    const { className } = props
-    const data = useAppSelector(getProfileData)
-    // const error = useAppSelector(getProfileError)
-    // const isLoading = useAppSelector(getProfileIsLoading)
+    const {
+        data,
+        isLoading,
+        error,
+        readonly,
+        onChangeFirstName,
+        onChangeLasttName,
+        onChangeAge,
+        onChangeCity,
+        onChangeAvatar,
+        onChangeUsername,
+        onChangeCurrency,
+        onChangeCountry
+    } = props
 
     const namespace = __IS_DEV__ ? 'translation' : 'profile'
     const { t } = useTranslation(namespace)
 
-    const mods = {}
+    if (isLoading) {
+        return <SpinerDots />
+    }
+
+    if (error) {
+        return (
+            <Text
+                theme={TextTheme.ERROR}
+                title={t('profile.Ошибка при загрузке профиля')}
+                text={t('profile.Перезагрузите страницу')}
+            />
+        )
+    }
 
     return (
-        <div className={classNames(cls.container, mods, [className])}>
-            <div className={cls.header}>
-                <Text title={t('profile.Профиль')} />
-                <Button
-                    theme={ButtonTheme.OUTLINE}
-                    children={t('profile.Редактировать')}
-                />
-            </div>
-            <div className={cls.content}>
+        <div className={cls.content}>
+            {data?.avatar && (
+                <div className={cls.avatarWrapper}>{<Avatar src={data.avatar} />}</div>
+            )}
+
+            <div className={cls.container}>
+                <Text text={t('profile.Ваше имя')} align={TextAlign.LEFT} />
                 <Input
                     value={data?.first}
-                    className={cls.input}
-                    placeholder={t('profile.Ваше имя')}
+                    onChange={onChangeFirstName}
+                    readOnly={readonly}
+                    noBorder={true}
                 />
+            </div>
+
+            <div className={cls.container}>
+                <Text text={t('profile.Ваша фамилия')} align={TextAlign.LEFT} />
                 <Input
                     value={data?.lastname}
-                    className={cls.input}
-                    placeholder={t('profile.Ваша фамилия')}
+                    onChange={onChangeLasttName}
+                    readOnly={readonly}
+                    noBorder={true}
+                />
+            </div>
+
+            <div className={cls.container}>
+                <Text text={t('profile.Возраст')} align={TextAlign.LEFT} />
+                <Input
+                    value={data?.age}
+                    onChange={onChangeAge}
+                    readOnly={readonly}
+                    noBorder={true}
+                />
+            </div>
+
+            <div className={cls.container}>
+                <Text text={t('profile.Город')} align={TextAlign.LEFT} />
+                <Input
+                    value={data?.city}
+                    onChange={onChangeCity}
+                    readOnly={readonly}
+                    noBorder={true}
+                />
+            </div>
+
+            <div className={cls.container}>
+                <Text text={t('profile.Имя пользователя')} align={TextAlign.LEFT} />
+                <Input
+                    value={data?.username}
+                    onChange={onChangeUsername}
+                    readOnly={readonly}
+                    noBorder={true}
+                />
+            </div>
+
+            <div className={cls.container}>
+                <Text text={t('profile.Ссылка на аватар')} align={TextAlign.LEFT} />
+                <Input
+                    value={data?.avatar}
+                    onChange={onChangeAvatar}
+                    readOnly={readonly}
+                    noBorder={true}
+                />
+            </div>
+
+            <div className={cls.container}>
+                <CurrencySelect
+                    value={data?.currency}
+                    onChange={onChangeCurrency}
+                    readonly={readonly}
+                />
+            </div>
+
+            <div className={cls.container}>
+                <CountrySelect
+                    value={data?.country}
+                    onChange={onChangeCountry}
+                    readonly={readonly}
                 />
             </div>
         </div>

@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+}
+
+.label {
+    min-width: 150px;
+    margin-right: 10px;
+    color: var(--secondary-color);
+}
+
+.select {
+    color: var(--primary-color);
+    background: none;
+    border: 1px solid var(--i-bg-color);
+    border-radius: 4px;
+    outline: none;
+}
+
+.option {
+    color: var(--i-primary-color);
+    background: var(--i-bg-color);
+}
+
+.disabled {
+    opacity: 0.7;
+}

@@ -5,6 +5,7 @@ export interface ISidebarItems {
     path: string
     text: string
     icon: IconComponentName
+    authOnly?: boolean
 }
 
 export const SidebarItemList: ISidebarItems[] = [
@@ -19,8 +20,9 @@ export const SidebarItemList: ISidebarItems[] = [
         text: 'О проекте',
     },
     {
-        icon: 'profile',    
+        icon: 'profile',
         path: RoutePath.profile,
         text: 'Профиль',
+        authOnly: true,
     },
 ]

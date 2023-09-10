@@ -6,6 +6,8 @@ import { AppLink } from '6_shared/ui/AppLink'
 import { AppLinkTheme } from '6_shared/ui/AppLink/AppLink'
 import { type ISidebarItems } from '../../model/items'
 import { useTheme } from '1_app/providers/ThemeProvider'
+import { useAppSelector } from '1_app/providers/StoreProvider'
+import { getUserAuthData } from '5_entities/User'
 
 interface SidebarItemProps {
     className?: string
@@ -25,6 +27,10 @@ export const SidebarItem = memo((props: SidebarItemProps) => {
     const mods = {
         [cls.open]: stateSidebar,
     }
+
+    const isAuth = useAppSelector(getUserAuthData)
+
+    if (item.authOnly && !isAuth) return null
 
     return (
         <AppLink

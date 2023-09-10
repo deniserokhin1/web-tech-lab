@@ -40,6 +40,7 @@ server.post('/login', (req, res) => {
 })
 
 server.use((req, res, next) => {
+    console.log('req:', req)
     if (!req.headers.authorization) {
         return res.status(403).json({ message: 'AUTH ERROR' })
     }

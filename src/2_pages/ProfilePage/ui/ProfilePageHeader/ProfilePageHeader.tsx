@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { Button } from '6_shared/ui/Button'
 import { ButtonTheme } from '6_shared/ui/Button/Button'
 import {
+    getProfileError,
     getProfileIsLoading,
     getProfileReadOnly,
     profileActions,
@@ -19,6 +20,7 @@ interface ProfilePageHeaderProps {
 export const ProfilePageHeader = memo((props: ProfilePageHeaderProps) => {
     const readonly = useAppSelector(getProfileReadOnly)
     const isLoading = useAppSelector(getProfileIsLoading)
+    const error = useAppSelector(getProfileError)
 
     const namespace = __IS_DEV__ ? 'translation' : 'namespace'
     const { t } = useTranslation(namespace)
@@ -55,7 +57,7 @@ export const ProfilePageHeader = memo((props: ProfilePageHeaderProps) => {
                     theme={ButtonTheme.OUTLINE}
                     children={t('profile.Редактировать')}
                     onClick={onEdit}
-                    disabled={isLoading}
+                    disabled={isLoading || !!error}
                 />
             ) : (
                 <div className={cls.buttons}>

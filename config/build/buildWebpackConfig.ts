@@ -6,11 +6,11 @@ import { buildPlugins } from './buildPlugins'
 import { buildDevServer } from './buildDevServer'
 
 export function buildWebpackConfig(options: IBuildOptions): webpack.Configuration {
-    const { paths, isDev } = options
+    const { paths, isDev, mode } = options
     const { build, entry, src } = paths
 
     return {
-        mode: 'production',
+        mode,
         entry,
         output: {
             filename: '[name].[contenthash].js',

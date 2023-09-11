@@ -4,7 +4,7 @@ import { buildCSSLoaders } from './loaders/buildCSSLoaders'
 
 export function buildLoaders(options: IBuildOptions): webpack.RuleSetRule[] {
     const { isDev } = options
-    
+
     const fileLoader = {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
@@ -34,6 +34,9 @@ export function buildLoaders(options: IBuildOptions): webpack.RuleSetRule[] {
             loader: 'babel-loader',
             options: {
                 presets: ['@babel/preset-env'],
+                plugins: [isDev && require.resolve('react-refresh/babel')].filter(
+                    Boolean,
+                ),
             },
         },
     }

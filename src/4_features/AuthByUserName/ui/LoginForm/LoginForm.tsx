@@ -32,7 +32,7 @@ const LoginForm: FC<LoginFrormProps> = memo(() => {
     const dispatch = useAppDispatch()
     const { setPassword, setUsername } = loginActions
 
-    const username = useAppSelector((state) => getLoginUsername(state))
+    const username = useAppSelector(getLoginUsername)
     const password = useAppSelector(getLoginPassword)
     const isLoading = useAppSelector(getLoginIsLoading)
     const error = useAppSelector(getLoginError)

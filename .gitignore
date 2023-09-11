@@ -4,3 +4,4 @@ node_modules
 ._*
 /storybook-static
 reg.json
+.fttemplates

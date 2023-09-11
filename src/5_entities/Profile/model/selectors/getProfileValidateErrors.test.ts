@@ -1,5 +1,4 @@
 import { type StateSchema } from '1_app/providers/StoreProvider'
-import { getProfileIsLoading } from './getProfileIsLoading'
 import { ValidateProfileErrors } from '../types/profile'
 import { getProfileValidateErrors } from './getProfileValidateErrors'
 

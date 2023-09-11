@@ -29,6 +29,11 @@
     "Имя пользователя": "Username",
     "Ссылка на аватар": "Link to your avatar",
     "Валюта": "Currency",
-    "Страна": "Country"
+    "Страна": "Country",
+    "Ошибка сервера": "Server error",
+    "Некорректный возраст": "Incorrect age",
+    "Некорректная страна": "Incorrect country",
+    "Некорректные данные": "Incorrect data",
+    "Нет данных": "No data"
   }
 }

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Avatar } from './Avatar'
 import { ThemeDecorator } from '../../config/storybook/Decorators/ThemeDecorator'
 import { Theme } from '1_app/providers/ThemeProvider'
-import AvatarImg from './user.png'
+import AvatarImg from '../../assets/tests/avatar.png'
 
 const meta = {
     title: '6_shared/Avatar',
@@ -12,7 +12,7 @@ const meta = {
     },
     args: {
         size: 100,
-        src: AvatarImg
+        src: 'https://img.freepik.com/free-vector/creative-hacker-logo-template_23-2149199402.jpg?w=2000'
     },
 } satisfies Meta<typeof Avatar>
 

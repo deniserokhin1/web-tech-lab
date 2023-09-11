@@ -3,6 +3,9 @@ import ProfilePage from './ProfilePage'
 import { ThemeDecorator } from '6_shared/config/storybook/Decorators/ThemeDecorator'
 import { Theme } from '1_app/providers/ThemeProvider'
 import { StoreDecorator } from '6_shared/config/storybook/Decorators/StoreDecorator'
+import avatar from '6_shared/assets/tests/avatar.png'
+import { Currency } from '5_entities/Currency'
+import { Country } from '5_entities/Country'
 
 const meta = {
     title: '2_pages/ProfilePage',
@@ -18,17 +21,44 @@ type Story = StoryObj<typeof meta>
 export const Light: Story = {
     args: {},
 }
-Light.decorators = [StoreDecorator({
-    profile: {
-        error: undefined,
-        data: {
-            first: 'Денис'
+Light.decorators = [
+    StoreDecorator({
+        profile: {
+            error: undefined,
+            form: {
+                first: 'Денис',
+                lastname: 'Ерохин',
+                age: 31,
+                currency: Currency.USD,
+                country: Country.RU,
+                city: 'Орел',
+                username: 'admin',
+                avatar: 'https://img.freepik.com/free-vector/creative-hacker-logo-template_23-2149199402.jpg?w=2000',
+            },
+            readonly: true,
         },
-        readonly: true
-    }
-})]
+    }),
+]
 
 export const Dark: Story = {
     args: {},
 }
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})]
+Dark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        profile: {
+            error: undefined,
+            form: {
+                first: 'Денис',
+                lastname: 'Ерохин',
+                age: 31,
+                currency: Currency.USD,
+                country: Country.RU,
+                city: 'Орел',
+                username: 'admin',
+                avatar: 'https://img.freepik.com/free-vector/creative-hacker-logo-template_23-2149199402.jpg?w=2000',
+            },
+            readonly: true,
+        },
+    }),
+]

@@ -22,6 +22,7 @@ export default (env: IBuildEnv): webpack.Configuration => {
         mode,
         port,
         apiUrl,
+        project: 'frontend',
     })
     return config
 }

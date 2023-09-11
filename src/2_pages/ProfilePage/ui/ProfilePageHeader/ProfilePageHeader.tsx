@@ -31,12 +31,20 @@ export const ProfilePageHeader = memo((props: ProfilePageHeaderProps) => {
     }, [dispatch, setReadOnly])
 
     const onCancelEdit = useCallback(() => {
+        if (__PROJECT__ === 'storybook') {
+            dispatch(setReadOnly(true))
+            return
+        }
         dispatch(cancelEdit())
-    }, [dispatch, cancelEdit])
+    }, [dispatch, cancelEdit, setReadOnly])
 
     const onSave = useCallback(() => {
+        if (__PROJECT__ === 'storybook') {
+            dispatch(setReadOnly(true))
+            return
+        }
         dispatch(updateProfileData())
-    }, [dispatch])
+    }, [dispatch, setReadOnly])
 
     return (
         <div className={cls.header}>

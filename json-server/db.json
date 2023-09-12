@@ -30,5 +30,6 @@
       "name": "user",
       "password": "123"
     }
-  ]
+  ],
+  "articles": []
 }

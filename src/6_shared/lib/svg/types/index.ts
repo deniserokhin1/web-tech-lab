@@ -1,4 +1,10 @@
-export type IconComponentName = 'palette' | 'burger' | 'home' | 'info' | 'profile'
+export type IconComponentName =
+    | 'palette'
+    | 'burger'
+    | 'home'
+    | 'info'
+    | 'profile'
+    | 'articles'
 
 export interface ISvgOptions {
     onHover?: (event: any) => void

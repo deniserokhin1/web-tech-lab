@@ -25,4 +25,10 @@ export const SidebarItemList: ISidebarItems[] = [
         text: 'Профиль',
         authOnly: true,
     },
+    {
+        icon: 'articles',
+        path: RoutePath.articles,
+        text: 'Статьи',
+        authOnly: true,
+    },
 ]

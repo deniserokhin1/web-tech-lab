@@ -5,8 +5,8 @@ import { classNames } from '6_shared/lib'
 import { Suspense, useEffect, useRef } from 'react'
 import { useGetMainColor } from '6_shared/hooks/useGetMainColor'
 import { Sidebar } from '3_widgets/Sidebar'
-import { useAppDispatch } from './providers/StoreProvider/config/store'
-import { userActions } from '5_entities/User'
+import { useAppDispatch, useAppSelector } from './providers/StoreProvider/config/store'
+import { getUserInited, userActions } from '5_entities/User'
 
 export const App = (): JSX.Element => {
     const { theme } = useTheme()
@@ -17,6 +17,7 @@ export const App = (): JSX.Element => {
 
     const dispatch = useAppDispatch()
     const { initAuthData } = userActions
+    const inited = useAppSelector(getUserInited)
 
     useEffect(() => {
         dispatch(initAuthData())
@@ -29,7 +30,7 @@ export const App = (): JSX.Element => {
 
                 <div className="content">
                     <Sidebar color={color} />
-                    <AppRouter />
+                    {inited && <AppRouter />}
                 </div>
             </Suspense>
         </div>

@@ -5,6 +5,7 @@ import { BurgerMenu } from './components/BurgerMenu'
 import { Home } from './components/Home'
 import { Info } from './components/Info'
 import { Profile } from './components/Profile'
+import { Articles } from './components/Articles'
 
 export interface IconComponentProps extends ISvgOptions {
     name: IconComponentName
@@ -28,6 +29,9 @@ export const IconComponent: FC<IconComponentProps> = (props) => {
 
         case 'profile':
             return <Profile pathFill={pathFill} />
+
+        case 'articles':
+            return <Articles pathFill={pathFill} />
 
         default:
             break

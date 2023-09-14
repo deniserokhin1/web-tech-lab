@@ -1,7 +1,8 @@
 .container {
     width: 100px;
     height: 100px;
-    border: 1px solid var(--i-bg-color);
+
+    // border: 1px solid var(--i-secondary-color);
     border-radius: 50%;
     object-fit: cover;
 }

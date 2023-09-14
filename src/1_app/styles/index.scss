@@ -39,6 +39,7 @@ body {
 }
 
 .pageWrapper {
+    position: relative;
     flex-grow: 1;
     max-width: calc(100vw - var(--sidebar-width-closed) - (var(--wrapper-padding) * 2 + 20px));
     margin-left: auto;

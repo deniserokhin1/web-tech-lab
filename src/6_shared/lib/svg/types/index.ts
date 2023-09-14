@@ -5,6 +5,8 @@ export type IconComponentName =
     | 'info'
     | 'profile'
     | 'articles'
+    | 'eye'
+    | 'calendar'
 
 export interface ISvgOptions {
     onHover?: (event: any) => void

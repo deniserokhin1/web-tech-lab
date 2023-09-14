@@ -1,0 +1,50 @@
+.container {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--skeleton-border);
+    transition: all var(--animation-transition);
+
+    &::before {
+        position: absolute;
+        top: 0;
+        display: block;
+        width: 80%;
+        height: 100%;
+        content: "";
+        background: linear-gradient(to right, transparent 0%, var(--skeleton-color) 50%, transparent 100%);
+    }
+}
+
+.container.long {
+    &::before {
+        left: -1000px;
+        animation: load 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+}
+
+.container.short {
+    &::before {
+        left: -150px;
+        animation: loadShort 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+}
+
+@keyframes load {
+    from {
+        left: -1000px;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes loadShort {
+    from {
+        left: -150px;
+    }
+
+    to {
+        left: 100%;
+    }
+}

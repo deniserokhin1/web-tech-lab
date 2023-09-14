@@ -36,5 +36,8 @@
     "Некорректная страна": "Incorrect country",
     "Некорректные данные": "Incorrect data",
     "Нет данных": "No data"
+  },
+  "articles-details": {
+    "Статья не найдена": "Article not found"
   }
 }

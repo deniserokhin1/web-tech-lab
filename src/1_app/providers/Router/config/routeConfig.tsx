@@ -3,8 +3,8 @@ import { About } from '2_pages/About'
 import { Main } from '2_pages/Main'
 import { NotFoundPage } from '2_pages/NotFoundPage'
 import { ProfilePage } from '2_pages/ProfilePage'
-import { Article } from '2_pages/Articles'
-import { ArticleDeatils } from '2_pages/ArticleDetails'
+import { ArticleDetailsPage } from '2_pages/ArticleDetailsPage'
+import { ArticlesPage } from '2_pages/ArticlesPage'
 
 export type AppRoutesProps = RouteProps &
     RouteObject & {
@@ -45,12 +45,12 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     },
     [AppRoutes.ARTICLES]: {
         path: RoutePath.articles,
-        element: <Article />,
+        element: <ArticlesPage />,
         authOnly: true,
     },
     [AppRoutes.ARTICLE_DETAILS]: {
         path: `${RoutePath.article_details}:id`,
-        element: <ArticleDeatils />,
+        element: <ArticleDetailsPage />,
         authOnly: true,
     },
     [AppRoutes.NOT_FOUND]: {

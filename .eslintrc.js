@@ -53,5 +53,6 @@ module.exports = {
         '@typescript-eslint/no-unused-vars': 1,
         '@typescript-eslint/no-unnecessary-type-assertion': 0,
         '@typescript-eslint/no-invalid-void-type': 0,
+        '@typescript-eslint/prefer-includes': 0,
     },
 }

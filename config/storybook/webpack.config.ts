@@ -18,15 +18,11 @@ export default ({ config }: { config: webpack.Configuration }): webpack.Configur
 
     if (config?.module?.rules) {
         const rules = config.module.rules as RuleSetRule[]
-        rules.map((rule) => {
-            // eslint-disable-next-line @typescript-eslint/prefer-includes
-            if (/svg/.test(rule.test as string)) {
-                return { ...rule, exclude: /\.svg$/i }
-            }
-            return rule
-        })
+        config.module.rules = rules.map((rule) =>
+            /svg/.test(rule.test as string) ? { ...rule, exclude: /\.svg$/i } : rule,
+        )
 
-        config.module.rules?.push({
+        config.module.rules.push({
             test: /\.svg$/,
             use: ['@svgr/webpack'],
         })

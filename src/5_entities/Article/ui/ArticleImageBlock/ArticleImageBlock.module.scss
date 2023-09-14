@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    align-items: center;
+
+    img {
+        width: 50%;
+        margin: 0 auto;
+        border-radius: 6px;
+    }
+}

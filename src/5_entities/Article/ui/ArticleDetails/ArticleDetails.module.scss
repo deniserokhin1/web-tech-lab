@@ -1,0 +1,30 @@
+.container {
+    width: 100%;
+    height: 100%
+}
+
+.avatar {
+    margin: 0 auto;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+
+    // svg {
+    //     fill: var(--i-bg-color);
+    //     transition: all 0.2s;
+    // }
+}
+
+.info {
+    display: flex;
+    column-gap: 20px;
+}
+
+.infoArticle {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+}

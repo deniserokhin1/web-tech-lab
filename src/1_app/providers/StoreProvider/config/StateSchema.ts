@@ -1,4 +1,5 @@
 import { type LoginSchema } from '4_features/AuthByUserName'
+import { type ArticleDetailsSchema } from '5_entities/Article'
 import { type ProfileSchema } from '5_entities/Profile'
 import { type UserSchema } from '5_entities/User'
 import {
@@ -15,6 +16,7 @@ export interface StateSchema {
     user: UserSchema
     login?: LoginSchema
     profile?: ProfileSchema
+    articleDetails?: ArticleDetailsSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

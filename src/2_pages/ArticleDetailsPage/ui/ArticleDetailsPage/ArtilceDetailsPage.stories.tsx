@@ -5,8 +5,8 @@ import { ThemeDecorator } from '6_shared/config/storybook/Decorators/ThemeDecora
 import { type IArticle } from '5_entities/Article'
 import { ArticleDataType, ArticleType } from '5_entities/Article/model/types/article'
 import { StoreDecorator } from '6_shared/config/storybook/Decorators/StoreDecorator'
-import img1 from '../../../../6_shared/assets/img/technical-progress-1.jpg'
-import img2 from '../../../../6_shared/assets/img/technical-progress-2.jpg'
+import img1 from '6_shared/assets/img/technical-progress-1.jpg'
+import img2 from '6_shared/assets/img/technical-progress-2.jpg'
 
 const article: IArticle = {
     id: '1',

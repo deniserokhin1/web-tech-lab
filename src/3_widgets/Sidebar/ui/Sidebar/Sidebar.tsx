@@ -5,9 +5,9 @@ import { Button } from '6_shared/ui/Button'
 import { ThemeSwitcher } from '3_widgets/ThemeSwitcher'
 import { LangSwitcher } from '3_widgets/LangSwitcher/ui/LangSwitcher'
 import { useTheme } from '1_app/providers/ThemeProvider'
-import { SidebarItemList } from '../../model/items'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
-import { useParams } from 'react-router-dom'
+import { useAppSelector } from '1_app/providers/StoreProvider'
+import { getSidebarItems } from '3_widgets/Sidebar/model/selectors/getSidebarItems'
 
 export interface SidebarProps {
     className?: string
@@ -17,6 +17,7 @@ export interface SidebarProps {
 export const Sidebar = memo((props: SidebarProps) => {
     const { className, color } = props
     const { stateSidebar, toggleSidebar } = useTheme()
+    const sideBarItemsList = useAppSelector(getSidebarItems)
 
     const mods = {
         [cls.open]: stateSidebar,
@@ -29,7 +30,7 @@ export const Sidebar = memo((props: SidebarProps) => {
             </Button>
 
             <div className={classNames(cls.links)}>
-                {SidebarItemList.map((i, index) => (
+                {sideBarItemsList.map((i, index) => (
                     <SidebarItem item={i} key={i.text + index} color={color} />
                 ))}
             </div>

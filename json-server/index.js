@@ -25,10 +25,12 @@ server.post('/login', (req, res) => {
         const { users = [] } = db
 
         const userFromBd = users.find(
-            (user) => user.name === username && user.password === password,
+            (user) => user.username === username && user.password === password,
         )
 
+
         if (userFromBd) {
+            delete userFromBd.password
             return res.json(userFromBd)
         }
 

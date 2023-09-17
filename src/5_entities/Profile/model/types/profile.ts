@@ -2,7 +2,7 @@ import { type Country } from '5_entities/Country'
 import { type Currency } from '5_entities/Currency'
 
 export interface IProfile {
-    id?: string | number
+    id?: string
     first?: string
     lastname?: string
     age?: number

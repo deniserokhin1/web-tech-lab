@@ -1,14 +1,19 @@
-.code {
+.container {
     position: relative;
+}
+
+.code {
     padding: 20px;
     overflow: auto;
     color: var(--secondary-color);
     background: var(--code-bg);
     border: 1px solid var(--primary-color);
     border-radius: 6px;
+    transition: all var(--theme-transition);
 }
 
 .copyButton {
     position: absolute;
+    top: 20px;
     right: 20px;
 }

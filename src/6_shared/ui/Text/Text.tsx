@@ -15,6 +15,7 @@ export enum TextAlign {
 }
 
 export enum TextSize {
+    S = 'size_s',
     M = 'size_m',
     L = 'size_l',
 }
@@ -43,20 +44,9 @@ export const Text = memo((props: TextProps) => {
     const mods = { [cls.fitContent]: minWidth }
 
     return (
-        <div
-            className={classNames(cls.container, mods, [
-                className,
-                cls[theme],
-                cls[size],
-            ])}
-        >
+        <div className={classNames(cls.container, mods, [className, cls[theme], cls[size]])}>
             {title && <p className={classNames(cls.title, {}, [cls[align]])}>{title}</p>}
-            {text && (
-                <p
-                    dangerouslySetInnerHTML={{ __html: text }}
-                    className={classNames(cls.text, {}, [cls[align]])}
-                />
-            )}
+            {text && <p className={classNames(cls.text, {}, [cls[align]])}>{text}</p>}
         </div>
     )
 })

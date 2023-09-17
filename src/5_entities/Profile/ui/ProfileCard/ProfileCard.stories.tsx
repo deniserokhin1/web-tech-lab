@@ -15,7 +15,7 @@ const meta = {
         data: {
             first: 'Денис',
             lastname: 'Ерохин',
-            age: 31,
+            age: 32,
             currency: Currency.USD,
             country: Country.RU,
             city: 'Орел',

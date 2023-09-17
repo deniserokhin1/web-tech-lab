@@ -18,6 +18,7 @@ const data: IProfile = {
     city: 'Орел',
     username: 'admin',
     avatar: 'avatar',
+    id: '1'
 }
 
 describe('fetchProfileData.test', () => {

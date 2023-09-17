@@ -4,7 +4,7 @@ import { Theme } from '1_app/providers/ThemeProvider'
 import { ThemeDecorator } from '6_shared/config/storybook/Decorators/ThemeDecorator'
 
 const meta = {
-    title: '/ArticlesPage',
+    title: '2_pages/ArticlesPage',
     component: ArticlesPage,
     parameters: {
         layout: 'fullscreen',

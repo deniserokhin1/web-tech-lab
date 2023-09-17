@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { Button } from '6_shared/ui/Button'
 import { ButtonTheme } from '6_shared/ui/Button/Button'
 import {
+    getProfileData,
     getProfileError,
     getProfileIsLoading,
     getProfileReadOnly,
@@ -12,6 +13,7 @@ import {
     updateProfileData,
 } from '5_entities/Profile'
 import { useAppDispatch, useAppSelector } from '1_app/providers/StoreProvider'
+import { getUserAuthData } from '5_entities/User'
 
 interface ProfilePageHeaderProps {
     className?: string
@@ -21,8 +23,12 @@ export const ProfilePageHeader = memo((props: ProfilePageHeaderProps) => {
     const readonly = useAppSelector(getProfileReadOnly)
     const isLoading = useAppSelector(getProfileIsLoading)
     const error = useAppSelector(getProfileError)
+    const authData = useAppSelector(getUserAuthData)
+    const profileData = useAppSelector(getProfileData)
 
-    const namespace = __IS_DEV__ ? 'translation' : 'namespace'
+    const canEdit = authData?.id === profileData?.id
+
+    const namespace = __IS_DEV__ ? 'translation' : 'profile'
     const { t } = useTranslation(namespace)
 
     const dispatch = useAppDispatch()
@@ -48,29 +54,35 @@ export const ProfilePageHeader = memo((props: ProfilePageHeaderProps) => {
         dispatch(updateProfileData())
     }, [dispatch, setReadOnly])
 
+    console.log('canEdit:', canEdit)
+
     return (
         <div className={cls.header}>
             <Text title={t('profile.Профиль')} />
 
-            {readonly ? (
-                <Button
-                    theme={ButtonTheme.OUTLINE}
-                    children={t('profile.Редактировать')}
-                    onClick={onEdit}
-                    disabled={isLoading || !!error}
-                />
-            ) : (
-                <div className={cls.buttons}>
-                    <Button
-                        theme={ButtonTheme.BACKGROUND}
-                        children={t('profile.Сохранить')}
-                        onClick={onSave}
-                    />
-                    <Button
-                        theme={ButtonTheme.OUTLINE}
-                        children={t('profile.Отменить')}
-                        onClick={onCancelEdit}
-                    />
+            {canEdit && (
+                <div>
+                    {readonly ? (
+                        <Button
+                            theme={ButtonTheme.OUTLINE}
+                            children={t('profile.Редактировать')}
+                            onClick={onEdit}
+                            disabled={isLoading || !!error}
+                        />
+                    ) : (
+                        <div className={cls.buttons}>
+                            <Button
+                                theme={ButtonTheme.BACKGROUND}
+                                children={t('profile.Сохранить')}
+                                onClick={onSave}
+                            />
+                            <Button
+                                theme={ButtonTheme.OUTLINE}
+                                children={t('profile.Отменить')}
+                                onClick={onCancelEdit}
+                            />
+                        </div>
+                    )}
                 </div>
             )}
         </div>

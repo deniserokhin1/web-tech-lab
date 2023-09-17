@@ -3,12 +3,13 @@ import { type ThunkConfig } from '1_app/providers/StoreProvider/config/StateSche
 import { type IProfile } from '../types/profile'
 import { USER_LOCALSTORAGE_KEY } from '6_shared/const/localStorage'
 
-export const fetchProfileData = createAsyncThunk<IProfile, void, ThunkConfig<string>>(
+export const fetchProfileData = createAsyncThunk<IProfile, string, ThunkConfig<string>>(
     'profile/fetchProfileData',
-    async (_, thunkApi) => {
+    async (profileId, thunkApi) => {
         const { extra, rejectWithValue } = thunkApi
+
         try {
-            const response = await extra.api.get<IProfile>('/profile', {
+            const response = await extra.api.get<IProfile>(`/profile/${profileId}`, {
                 headers: {
                     authorization: localStorage.getItem(USER_LOCALSTORAGE_KEY) || '',
                 },

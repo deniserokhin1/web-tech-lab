@@ -1,4 +1,4 @@
-import { memo, useEffect } from 'react'
+import { memo } from 'react'
 import { IconComponent } from '6_shared/lib'
 import { useTranslation } from 'react-i18next'
 import cls from './ArticleDetails.module.scss'
@@ -10,10 +10,7 @@ import {
     getArticleDetailsError,
     getArticleDetailsIsLoading,
 } from '../../model/selectors/getArticleDetails'
-import {
-    DynamicModuleLoader,
-    type ReducersList,
-} from '6_shared/lib/components/DynamicModuleLoader'
+import { DynamicModuleLoader, type ReducersList } from '6_shared/lib/components/DynamicModuleLoader'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import { Skeleton } from '6_shared/ui/Skeleton/Skeleton'
 import { Avatar } from '6_shared/ui/Avatar/Avatar'
@@ -21,6 +18,7 @@ import { ArticleDataType, type ArticleData } from '../../model/types/article'
 import { ArticleCodeBlock } from '../ArticleCodeBlock/ArticleCodeBlock'
 import { ArticleImageBlock } from '../ArticleImageBlock/ArticleImageBlock'
 import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock'
+import { useInitialEffect } from '6_shared/hooks/useInitialEffect'
 
 const reducers: ReducersList = {
     articleDetails: articleDetailsReducer,
@@ -30,8 +28,6 @@ interface ArticleDetailsProps {
     className?: string
     id: string
 }
-
-const avatarSize = 200
 
 const renderBlock = (block: ArticleData): JSX.Element | null => {
     const { type, id } = block
@@ -57,12 +53,11 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const error = useAppSelector(getArticleDetailsError)
     const article = useAppSelector(getArticleDetailsData)
 
-    useEffect(() => {
-        if (__PROJECT__ === 'storybook') return
+    useInitialEffect(() => {
         dispatch(fetchArticleById(id))
-    }, [dispatch, id])
+    })
 
-    const namespace = __IS_DEV__ ? 'translation' : 'articles-details'
+    const namespace = __IS_DEV__ ? 'translation' : 'article-details'
     const { t } = useTranslation(namespace)
 
     let content = null
@@ -70,12 +65,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     if (isLoading) {
         content = (
             <div className={cls.content}>
-                <Skeleton
-                    width={avatarSize * 2}
-                    height={avatarSize}
-                    borderRadius="8px"
-                    type="short"
-                />
+                <Skeleton height={300} width="100%" borderRadius={'8px'} type="short" />
                 <Skeleton width={300} height={40} borderRadius="4px" type="short" />
                 <Skeleton width={300} height={32} borderRadius="4px" type="short" />
                 <Skeleton width={300} height={30} borderRadius="4px" type="short" />
@@ -85,16 +75,11 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
             </div>
         )
     } else if (error) {
-        content = <Text title={t('articles-details.Статья не найдена')} />
+        content = <Text title={t('article-details.Статья не найдена')} />
     } else {
         content = (
             <div className={cls.content}>
-                <Avatar
-                    height={avatarSize}
-                    width={avatarSize * 2}
-                    src={article?.img}
-                    borderRadius={'8px'}
-                />
+                <Avatar height={300} width="100%" src={article?.img} borderRadius={'8px'} />
                 <Text title={article?.title} align={TextAlign.LEFT} size={TextSize.L} />
                 <Text text={article?.subtitle} align={TextAlign.LEFT} size={TextSize.L} />
 

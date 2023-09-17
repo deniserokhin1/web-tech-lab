@@ -3,6 +3,7 @@ import { classNames } from '6_shared/lib'
 import cls from './ArticleImageBlock.module.scss'
 import { type ArticleImage } from '5_entities/Article/model/types/article'
 import { Text } from '6_shared/ui/Text/Text'
+import { Avatar } from '6_shared/ui/Avatar/Avatar'
 
 interface ArticleImageBlockProps {
     className?: string
@@ -20,7 +21,7 @@ export const ArticleImageBlock = memo((props: ArticleImageBlockProps) => {
 
     return (
         <div className={classNames(cls.container, mods, [className])}>
-            <img src={src} />
+            <Avatar height={300} width="100%" src={src} borderRadius={'8px'} />
             <Text text={title} />
         </div>
     )

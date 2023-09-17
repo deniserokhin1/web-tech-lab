@@ -5,23 +5,24 @@ import { type CSSProperties, memo, useMemo } from 'react'
 interface AvatarProps {
     className?: string
     src?: string
-    width?: number
+    width?: number | string
     height?: number
+    size?: number
     alt?: string
     borderRadius?: string
 }
 
 export const Avatar = memo(
-    ({ className, src, height, width, alt, borderRadius }: AvatarProps) => {
+    ({ className, src, height, width, alt, borderRadius, size }: AvatarProps) => {
         const mods = {}
 
         const styles = useMemo<CSSProperties>(() => {
             return {
-                width,
-                height,
+                width: size || width,
+                height: size || height,
                 borderRadius,
             }
-        }, [width, height, borderRadius])
+        }, [width, height, borderRadius, size])
 
         return (
             <img

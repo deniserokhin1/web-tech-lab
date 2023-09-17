@@ -1,9 +1,6 @@
 // import cls from './ProfilePage.module.scss'
-import { memo, useCallback, useEffect } from 'react'
-import {
-    DynamicModuleLoader,
-    type ReducersList,
-} from '6_shared/lib/components/DynamicModuleLoader'
+import { memo, useCallback } from 'react'
+import { DynamicModuleLoader, type ReducersList } from '6_shared/lib/components/DynamicModuleLoader'
 import {
     ProfileCard,
     ValidateProfileErrors,
@@ -22,6 +19,8 @@ import { type Currency } from '5_entities/Currency'
 import { type Country } from '5_entities/Country'
 import { useTranslation } from 'react-i18next'
 import { Text, TextTheme } from '6_shared/ui/Text/Text'
+import { useInitialEffect } from '6_shared/hooks/useInitialEffect'
+import { useParams } from 'react-router-dom'
 
 interface ProfilePageProps {
     className?: string
@@ -53,10 +52,12 @@ const ProfilePage = memo((props: ProfilePageProps) => {
         [ValidateProfileErrors.NO_DATA]: t('profile.Нет данных'),
     }
 
-    useEffect(() => {
-        if (__PROJECT__ === 'storybook') return
-        dispatch(fetchProfileData())
-    }, [dispatch])
+    const { id } = useParams<{ id: string }>()
+
+    useInitialEffect(() => {
+        if (!id) return
+        dispatch(fetchProfileData(id))
+    })
 
     const onChangeFirstName = useCallback(
         (value?: string) => {

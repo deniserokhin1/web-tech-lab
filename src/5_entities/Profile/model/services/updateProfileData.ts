@@ -27,7 +27,7 @@ export const updateProfileData = createAsyncThunk<
     try {
         dispatch(profileActions.saveEdit())
 
-        const response = await extra.api.put<IProfile>('/profile', formData, {
+        const response = await extra.api.put<IProfile>(`/profile/${formData?.id}`, formData, {
             headers: {
                 authorization: localStorage.getItem(USER_LOCALSTORAGE_KEY) || '',
             },

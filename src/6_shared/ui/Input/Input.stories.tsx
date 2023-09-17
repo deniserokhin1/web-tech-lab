@@ -9,22 +9,17 @@ const meta = {
     parameters: {
         layout: 'fullscreen',
     },
+    args: {
+        autoFocus: true,
+        placeholder: 'Text',
+        noBorder: true,
+    },
 } satisfies Meta<typeof Input>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Light: Story = {
-    args: {
-        autoFocus: true,
-        placeholder: 'Text',
-    },
-}
+export const Light: Story = {}
 
-export const Dark: Story = {
-    args: {
-        autoFocus: true,
-        placeholder: 'Text',
-    },
-}
+export const Dark: Story = {}
 Dark.decorators = [ThemeDecorator(Theme.DARK)]

@@ -12,6 +12,7 @@ import { RequireAuth } from './RequireAuth'
 export const AppRouter = memo((): JSX.Element => {
     const renderWithWrapper = (route: AppRoutesProps): JSX.Element => {
         const element = <>{route.element}</>
+        
         return (
             <Route
                 element={

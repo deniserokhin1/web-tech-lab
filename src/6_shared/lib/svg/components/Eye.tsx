@@ -4,8 +4,6 @@ import { type ISvgOptions } from '../types'
 export const Eye: FC<ISvgOptions> = (props) => {
     const { pathFill } = props
 
-    console.log('eye:', pathFill)
-
     return (
         <svg
             width="30px"

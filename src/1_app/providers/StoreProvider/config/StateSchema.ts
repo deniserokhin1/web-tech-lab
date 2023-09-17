@@ -1,3 +1,5 @@
+import { type ArticleDetailsCommentsSchema } from '2_pages/ArticleDetailsPage'
+import { type AddCommentFormSchema } from '4_features/AddNewComment'
 import { type LoginSchema } from '4_features/AuthByUserName'
 import { type ArticleDetailsSchema } from '5_entities/Article'
 import { type ProfileSchema } from '5_entities/Profile'
@@ -17,6 +19,8 @@ export interface StateSchema {
     login?: LoginSchema
     profile?: ProfileSchema
     articleDetails?: ArticleDetailsSchema
+    articleDetailsComments?: ArticleDetailsCommentsSchema
+    addCommentForm?: AddCommentFormSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

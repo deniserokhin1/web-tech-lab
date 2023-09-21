@@ -14,6 +14,10 @@ const data: IArticle = {
     views: 1500,
     dataCreate: '2023-09-01',
     type: [ArticleType.IT, ArticleType.ECONOMICS],
+    user: {
+        id: '1',
+        username: 'Den',
+    },
     data: [
         {
             id: '1',

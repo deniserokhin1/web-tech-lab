@@ -7,10 +7,11 @@ import { Text, TextAlign } from '6_shared/ui/Text/Text'
 interface ArticleTextBlockProps {
     className?: string
     block?: ArticleText
+    short?: boolean
 }
 
 export const ArticleTextBlock = memo((props: ArticleTextBlockProps) => {
-    const { className, block } = props
+    const { className, block, short = false } = props
 
     if (!block) return null
     const { paragraphs, title } = block
@@ -21,9 +22,13 @@ export const ArticleTextBlock = memo((props: ArticleTextBlockProps) => {
         <div className={classNames(cls.container, mods, [className])}>
             {title && <Text title={title} align={TextAlign.LEFT} />}
 
-            {paragraphs?.map((i, index) => (
-                <Text text={i} key={index} align={TextAlign.LEFT} />
-            ))}
+            {short ? (
+                <Text text={paragraphs[0]} align={TextAlign.LEFT} />
+            ) : (
+                paragraphs?.map((i, index) => (
+                    <Text text={i} key={index} align={TextAlign.LEFT} />
+                ))
+            )}
         </div>
     )
 })

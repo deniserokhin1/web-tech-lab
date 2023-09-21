@@ -1,3 +1,5 @@
+import { type IUser } from '5_entities/User'
+
 export enum ArticleSortField {
     VIEWS = 'views',
     TITLE = 'title',
@@ -48,6 +50,7 @@ export enum ArticleView {
 
 export interface IArticle {
     id: string
+    user: IUser
     title: string
     subtitle: string
     img: string

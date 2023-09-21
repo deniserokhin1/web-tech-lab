@@ -23,7 +23,8 @@
         max-width: 80%;
         margin-left: 10px;
         opacity: 1;
-        transition: all var(--animation-transition);
+        transition-duration: var(--animation-transition);
+        transition-property: max-width, margin-left;
     }
 
 }

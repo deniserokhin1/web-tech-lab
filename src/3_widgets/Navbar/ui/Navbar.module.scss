@@ -4,6 +4,7 @@
     width: 100%;
     height: var(--navbar-height);
     background: var(--i-bg-color);
+    transition: background-color var(--theme-transition);
 }
 
 .links {

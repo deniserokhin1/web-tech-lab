@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { memo, useRef } from 'react'
 import { IconComponent } from '6_shared/lib'
 import { useTranslation } from 'react-i18next'
 import cls from './ArticleDetails.module.scss'
@@ -10,7 +10,10 @@ import {
     getArticleDetailsError,
     getArticleDetailsIsLoading,
 } from '../../model/selectors/getArticleDetails'
-import { DynamicModuleLoader, type ReducersList } from '6_shared/lib/components/DynamicModuleLoader'
+import {
+    DynamicModuleLoader,
+    type ReducersList,
+} from '6_shared/lib/components/DynamicModuleLoader'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import { Skeleton } from '6_shared/ui/Skeleton/Skeleton'
 import { Avatar } from '6_shared/ui/Avatar/Avatar'
@@ -19,6 +22,7 @@ import { ArticleCodeBlock } from '../ArticleCodeBlock/ArticleCodeBlock'
 import { ArticleImageBlock } from '../ArticleImageBlock/ArticleImageBlock'
 import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock'
 import { useInitialEffect } from '6_shared/hooks/useInitialEffect'
+import { useGetMainColor } from '6_shared/hooks/useGetMainColor'
 
 const reducers: ReducersList = {
     articleDetails: articleDetailsReducer,
@@ -52,6 +56,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     // const isLoading = true
     const error = useAppSelector(getArticleDetailsError)
     const article = useAppSelector(getArticleDetailsData)
+    const ref = useRef<HTMLDivElement>(null)
 
     useInitialEffect(() => {
         dispatch(fetchArticleById(id))
@@ -60,12 +65,14 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const namespace = __IS_DEV__ ? 'translation' : 'article-details'
     const { t } = useTranslation(namespace)
 
+    const color = useGetMainColor(ref, '--secondary-color')
+
     let content = null
 
     if (isLoading) {
         content = (
             <div className={cls.content}>
-                <Skeleton height={300} width="100%" borderRadius={'8px'} type="short" />
+                <Skeleton height={300} width="100%" borderRadius={'8px'} />
                 <Skeleton width={300} height={40} borderRadius="4px" type="short" />
                 <Skeleton width={300} height={32} borderRadius="4px" type="short" />
                 <Skeleton width={300} height={30} borderRadius="4px" type="short" />
@@ -78,19 +85,24 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         content = <Text title={t('article-details.Статья не найдена')} />
     } else {
         content = (
-            <div className={cls.content}>
-                <Avatar height={300} width="100%" src={article?.img} borderRadius={'8px'} />
+            <div className={cls.content} ref={ref}>
+                <Avatar
+                    height={300}
+                    width="100%"
+                    src={article?.img}
+                    borderRadius={'8px'}
+                />
                 <Text title={article?.title} align={TextAlign.LEFT} size={TextSize.L} />
                 <Text text={article?.subtitle} align={TextAlign.LEFT} size={TextSize.L} />
 
                 <div className={cls.info}>
                     <div className={cls.infoArticle}>
-                        <IconComponent name="calendar" />
+                        <IconComponent name="calendar" pathFill={color} />
                         <Text text={article?.dataCreate} minWidth={true} />
                     </div>
 
                     <div className={cls.infoArticle}>
-                        <IconComponent name="eye" />
+                        <IconComponent name="eye" pathFill={color} />
                         <Text text={article?.views.toString()} minWidth={true} />
                     </div>
                 </div>

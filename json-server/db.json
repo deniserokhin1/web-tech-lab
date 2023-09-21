@@ -90,6 +90,12 @@
       "userId": "2",
       "text": "1",
       "id": "PQIPlap"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Привет, Мир!",
+      "id": "MaVehNP"
     }
   ],
   "profile": [
@@ -98,10 +104,10 @@
       "first": "Денис",
       "lastname": "Ерохин",
       "age": 32,
-      "currency": "RUB",
-      "country": "Russia",
+      "currency": "USD",
+      "country": "Britain",
       "city": "Москва",
-      "username": "yocommon",
+      "username": "Den",
       "avatar": "https://img.freepik.com/free-vector/creative-hacker-logo-template_23-2149199402.jpg?w=2000"
     },
     {
@@ -146,6 +152,7 @@
       "img": "https://3.downloader.disk.yandex.ru/preview/a59174e1005f68e2bbc6d43468e264c97531e00bdad96030ee0d6a52ca91052a/inf/fk-E4z_2u3z4uJ_-YcoEw-vT7v6BQRAiZuhlPSQtNFNvsxSnW3GZF0uxjB7DKC21rtlKBde_JXSJsLKr8IJyNw%3D%3D?uid=233854961&filename=business-4241792_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
       "views": "1500",
       "dataCreate": "2023-09-01",
+      "userId": "1",
       "type": [
         "IT",
         "ECONOMICS"

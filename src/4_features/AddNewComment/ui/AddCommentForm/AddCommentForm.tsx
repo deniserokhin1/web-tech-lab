@@ -47,6 +47,8 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
     const mods = {}
 
+    console.log('commentText:', commentText)
+
     return (
         <DynamicModuleLoader reducers={reducers}>
             <div className={classNames(cls.container, mods, [className])}>
@@ -54,12 +56,13 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
                     value={commentText}
                     onChange={onCommentTextChange}
                     placeholder={t('article-details.Введите текст комментария')}
-                    noBorder={true}
+                    className={cls.borderInput}
                 />
                 <Button
                     children={t('article-details.Отправить')}
                     theme={ButtonTheme.BACKGROUND}
                     onClick={onSendHandler}
+                    disabled={commentText === ''}
                 />
             </div>
         </DynamicModuleLoader>

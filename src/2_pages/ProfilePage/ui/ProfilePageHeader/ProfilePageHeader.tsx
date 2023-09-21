@@ -54,8 +54,6 @@ export const ProfilePageHeader = memo((props: ProfilePageHeaderProps) => {
         dispatch(updateProfileData())
     }, [dispatch, setReadOnly])
 
-    console.log('canEdit:', canEdit)
-
     return (
         <div className={cls.header}>
             <Text title={t('profile.Профиль')} />

@@ -1,0 +1,38 @@
+.tile {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    width: 100%;
+
+    @media screen and (width>1920px) {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    @media screen and (width<=1920px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media screen and (width<=1680px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (width<=1000px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 1000px;
+    margin: 0 auto;
+
+    // @media screen and (width>=1920px) {
+    //     width: 1500px;
+    // }
+
+    @media screen and (width<=1000px) {
+        width: 550px;
+    }
+}

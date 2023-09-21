@@ -38,7 +38,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         onChangeAvatar,
         onChangeUsername,
         onChangeCurrency,
-        onChangeCountry
+        onChangeCountry,
     } = props
 
     const namespace = __IS_DEV__ ? 'translation' : 'profile'
@@ -70,7 +70,6 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     value={data?.first}
                     onChange={onChangeFirstName}
                     readOnly={readonly}
-                    noBorder={true}
                 />
             </div>
 
@@ -80,28 +79,17 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     value={data?.lastname}
                     onChange={onChangeLasttName}
                     readOnly={readonly}
-                    noBorder={true}
                 />
             </div>
 
             <div className={cls.container}>
                 <Text text={t('profile.Возраст')} align={TextAlign.LEFT} />
-                <Input
-                    value={data?.age}
-                    onChange={onChangeAge}
-                    readOnly={readonly}
-                    noBorder={true}
-                />
+                <Input value={data?.age} onChange={onChangeAge} readOnly={readonly} />
             </div>
 
             <div className={cls.container}>
                 <Text text={t('profile.Город')} align={TextAlign.LEFT} />
-                <Input
-                    value={data?.city}
-                    onChange={onChangeCity}
-                    readOnly={readonly}
-                    noBorder={true}
-                />
+                <Input value={data?.city} onChange={onChangeCity} readOnly={readonly} />
             </div>
 
             <div className={cls.container}>
@@ -110,7 +98,6 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     value={data?.username}
                     onChange={onChangeUsername}
                     readOnly={readonly}
-                    noBorder={true}
                 />
             </div>
 
@@ -120,7 +107,6 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     value={data?.avatar}
                     onChange={onChangeAvatar}
                     readOnly={readonly}
-                    noBorder={true}
                 />
             </div>
 

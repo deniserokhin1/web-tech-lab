@@ -2,7 +2,7 @@
     position: relative;
     overflow: hidden;
     border: 1px solid var(--skeleton-border);
-    transition: all var(--animation-transition);
+    transition: background-color var(--theme-transition);
 
     &::before {
         position: absolute;

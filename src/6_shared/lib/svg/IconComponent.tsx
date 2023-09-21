@@ -8,13 +8,14 @@ import { Profile } from './components/Profile'
 import { Articles } from './components/Articles'
 import { Calendar } from './components/Calendar'
 import { Eye } from './components/Eye'
+import { Back } from './components/Back'
 
 export interface IconComponentProps extends ISvgOptions {
     name: IconComponentName
 }
 
 export const IconComponent: FC<IconComponentProps> = (props) => {
-    const { name, pathFill } = props
+    const { name, pathFill, opacity } = props
 
     switch (name) {
         case 'palette':
@@ -39,7 +40,10 @@ export const IconComponent: FC<IconComponentProps> = (props) => {
             return <Calendar pathFill={pathFill} />
 
         case 'eye':
-            return <Eye pathFill={pathFill} />
+            return <Eye pathFill={pathFill} opacity={opacity} />
+
+        case 'back':
+            return <Back pathFill={pathFill} opacity={opacity} />
 
         default:
             break

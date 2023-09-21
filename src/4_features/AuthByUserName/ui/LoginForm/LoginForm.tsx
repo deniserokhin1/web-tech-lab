@@ -72,12 +72,14 @@ const LoginForm: FC<LoginFrormProps> = memo(() => {
                     placeholder={t('Имя пользователя')}
                     value={username}
                     onChange={onChangeUsername}
+                    className={cls.border}
                 />
                 <Input
                     type="text"
                     placeholder={t('Пароль')}
                     value={password}
                     onChange={onChangePassword}
+                    className={cls.border}
                 />
                 <Button
                     theme={ButtonTheme.BACKGROUND_INVERT}

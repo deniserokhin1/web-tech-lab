@@ -47,6 +47,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
         <div className={classNames(cls.container, mods, [className])}>
             <AppLink to={`${RoutePath.profile}${user.id}`} className={cls.header}>
                 {user?.avatar && <Avatar size={30} src={user.avatar} />}
+                
                 <Text title={user?.username} className={cls.username} size={TextSize.S} />
             </AppLink>
 

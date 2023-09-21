@@ -1,0 +1,8 @@
+.container {
+    position: relative;
+    height: 100%;
+    padding: 20px;
+    background: var(--card-bg);
+    border-radius: 6px;
+    transition: background-color var(--theme-transition);
+}

@@ -13,14 +13,14 @@ describe('getAddCommentForm', () => {
 
     test('get value with empty state', () => {
         const state: DeepPartial<StateSchema> = {}
-        expect(getAddCommentText(state as StateSchema)).toEqual(undefined)
+        expect(getAddCommentText(state as StateSchema)).toEqual('')
     })
 
     test('get error', () => {
         const state: DeepPartial<StateSchema> = {
             addCommentForm: {
-                error: 'Error'
-            }
+                error: 'Error',
+            },
         }
         expect(getAddCommentError(state as StateSchema)).toEqual('Error')
     })

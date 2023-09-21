@@ -13,7 +13,7 @@ export const App = (): JSX.Element => {
     const mods = {}
 
     const mainRef = useRef<HTMLDivElement>(null)
-    const color = useGetMainColor(mainRef, theme)
+    const color = useGetMainColor(mainRef)
 
     const dispatch = useAppDispatch()
     const { initAuthData } = userActions

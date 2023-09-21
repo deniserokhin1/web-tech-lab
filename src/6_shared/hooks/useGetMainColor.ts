@@ -1,12 +1,13 @@
-import { type Theme } from '1_app/providers/ThemeProvider'
+import { useTheme } from '1_app/providers/ThemeProvider'
 import { type RefObject, useEffect, useState } from 'react'
 
 export const useGetMainColor = (
     node: RefObject<HTMLDivElement>,
-    theme: Theme,
     variable: string = '--bg-color',
 ): string => {
     const [color, setColor] = useState<string>('')
+
+    const { theme } = useTheme()
 
     useEffect(() => {
         if (!node.current) return

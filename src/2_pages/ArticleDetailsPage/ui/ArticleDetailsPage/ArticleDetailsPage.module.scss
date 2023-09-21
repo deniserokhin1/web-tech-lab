@@ -1,10 +1,11 @@
 .container {
     position: absolute;
     inset: 0;
-    padding-right: 15px;
-    margin-right: -20px;
+    padding-right: 5px;
+    margin-right: -10px;
     overflow: auto;
     transition: all var(--theme-transition);
+    mask-image: linear-gradient(rgb(0 0 0 / 100%), transparent);
 
     &::-webkit-scrollbar-track {
         width: 5px;
@@ -26,8 +27,36 @@
 }
 
 .content {
-    width: 780px;
+    width: 1000px;
     margin: 0 auto;
+
+    // @media screen and (width>=1920px) {
+    //     width: 1500px;
+    // }
+
+    @media screen and (width<=1280px) {
+        width: 800px;
+    }
+
+    @media screen and (width<=1150px) {
+        width: 670px;
+    }
+
+    @media screen and (width<=1000px) {
+        width: 620px;
+    }
+
+    @media screen and (width<=910px) {
+        width: 570px;
+    }
+
+    @media screen and (width<=850px) {
+        width: 500px;
+    }
+
+    @media screen and (width<=780px) {
+        width: 470px;
+    }
 }
 
 .commentTitle {
@@ -36,4 +65,8 @@
 
 .marginAddComment {
     margin-top: 15px;
+}
+
+.backButton {
+    position: fixed;
 }

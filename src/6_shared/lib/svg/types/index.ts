@@ -8,6 +8,8 @@ export type IconComponentName =
     | 'eye'
     | 'calendar'
     | 'back'
+    | 'grid'
+    | 'list'
 
 export interface ISvgOptions {
     onHover?: (event: any) => void
@@ -19,7 +21,7 @@ export interface ISvgOptions {
     opacity?: string
     children?: any
     viewBox?: string
-    stroke?: string
+    strokeColor?: string
     strokeOpacity?: string | number
     strokeWidth?: string | number
 }

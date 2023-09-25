@@ -1,26 +1,56 @@
-import { memo } from 'react'
-import { classNames } from '6_shared/lib'
+import { memo, useCallback } from 'react'
 import cls from './ArticlesPage.module.scss'
 import { ArticleList } from '5_entities/Article/ui/ArticleList/ArticleList'
-import { article } from '5_entities/Article/mocks/data'
+import { DynamicModuleLoader, type ReducersList } from '6_shared/lib/components/DynamicModuleLoader'
+import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slice/articlesPageSlice'
+import { useAppDispatch, useAppSelector } from '1_app/providers/StoreProvider'
+import { useInitialEffect } from '6_shared/hooks/useInitialEffect'
+import { fetchArticlesList } from '../../model/services/fetchArticlesList'
+import { getArticlesPageIsLoading, getArticlesPageView } from '../../model/selectors/getArticlesPage'
+import { ArticleViewSelector } from '4_features/ArticleViewSelector'
+import { type ArticleView } from '5_entities/Article'
+import { PageWrapper } from '6_shared/ui/PageWrapper/PageWrapper'
+import { fetchNextArticlesPage } from '2_pages/ArticlesPage/model/services/fecthNextArticlePage'
 
 interface ArticlesPageProps {
     className?: string
 }
 
-const ArticlesPage = memo((props: ArticlesPageProps) => {
-    const { className } = props
+const reducers: ReducersList = {
+    articlesPage: articlesPageReducer,
+}
 
-    const mods = {}
+const ArticlesPage = memo((props: ArticlesPageProps) => {
+    const dispatch = useAppDispatch()
+    const { setView, initView } = articlesPageActions
+    const articles = useAppSelector(getArticles.selectAll)
+
+    const isLoading = useAppSelector(getArticlesPageIsLoading)
+    const view = useAppSelector(getArticlesPageView)
+
+    const onLoadNextPart = useCallback(() => {
+        if (__PROJECT__ === 'storybook') return
+        dispatch(fetchNextArticlesPage())
+    }, [dispatch])
+
+    useInitialEffect(() => {
+        dispatch(initView())
+        dispatch(fetchArticlesList({ page: 1 }))
+    })
+
+    const onChangeArticleView = (view: ArticleView): void => {
+        dispatch(setView(view))
+    }
 
     return (
-        <div className={classNames(cls.container, mods, [className])}>
-            <ArticleList
-                articles={new Array(16)
-                    .fill(0)
-                    .map((i, index) => ({ ...article, id: index.toString() }))}
-            />
-        </div>
+        <DynamicModuleLoader reducers={reducers}>
+            <div className={cls.controls}>
+                <ArticleViewSelector view={view} onViewClick={onChangeArticleView} />
+            </div>
+            <PageWrapper onScrollEnd={onLoadNextPart} offsetTop={true}>
+                <ArticleList articles={articles} view={view} isLoading={isLoading} />
+            </PageWrapper>
+        </DynamicModuleLoader>
     )
 })
 

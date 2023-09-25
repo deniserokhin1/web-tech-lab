@@ -9,13 +9,13 @@ interface ArticleListProps {
     className?: string
     articles?: IArticle[]
     isLoading?: boolean
-    view?: ArticleView
+    view: ArticleView
 }
 
 const skeletons = (view: ArticleView): JSX.Element[] => {
-    return new Array(view === ArticleView.ROW ? 3 : 9).fill(1).map((_, index) => (
-        <ArticleListItemSkeleton key={index} view={view} />
-    ))
+    return new Array(view === ArticleView.ROW ? 3 : 9)
+        .fill(1)
+        .map((_, index) => <ArticleListItemSkeleton key={index} view={view} />)
 }
 
 const renderArticle = (article: IArticle, view: ArticleView): JSX.Element => (
@@ -23,21 +23,18 @@ const renderArticle = (article: IArticle, view: ArticleView): JSX.Element => (
 )
 
 export const ArticleList = memo((props: ArticleListProps) => {
-    const { className, articles = [], isLoading, view = ArticleView.TILE } = props
+    const { className, articles = [], isLoading, view } = props
 
     const mods = {}
 
-    if (isLoading) {
-        return (
-            <div className={classNames(cls[view])}>
-                {skeletons(view)}
-            </div>
-        )
-    }
+    // if (isLoading) {
+    //     return <div className={classNames(cls[view])}>{skeletons(view)}</div>
+    // }
 
     return (
         <div className={classNames(cls[view], mods, [className])}>
             {articles?.map((i) => renderArticle(i, view))}
+            {isLoading && skeletons(view)}
         </div>
     )
 })

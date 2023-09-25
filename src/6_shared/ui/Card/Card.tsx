@@ -1,6 +1,5 @@
-import { type ReactNode, memo, type HTMLAttributes } from 'react'
+import { type ReactNode, type HTMLAttributes } from 'react'
 import { classNames } from '6_shared/lib'
-import { useTranslation } from 'react-i18next'
 import cls from './Card.module.scss'
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
@@ -8,11 +7,8 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
     children?: ReactNode
 }
 
-export const Card = memo((props: CardProps) => {
+export const Card = (props: CardProps): JSX.Element => {
     const { className, children, ...otherProps } = props
-
-    const namespace = __IS_DEV__ ? 'translation' : 'namespace'
-    const { t } = useTranslation(namespace)
 
     const mods = {}
 
@@ -21,4 +17,4 @@ export const Card = memo((props: CardProps) => {
             {children}
         </div>
     )
-})
+}

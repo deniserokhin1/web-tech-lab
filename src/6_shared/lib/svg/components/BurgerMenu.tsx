@@ -1,17 +1,11 @@
-import { type FC } from 'react'
+import { memo } from 'react'
 import { type ISvgOptions } from '../types'
 
-export const BurgerMenu: FC<ISvgOptions> = (props) => {
+export const BurgerMenu = memo((props: ISvgOptions) => {
     const { pathFill } = props
 
     return (
-        <svg
-            width="21"
-            height="13"
-            viewBox="0 0 21 13"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg width="21" height="13" viewBox="0 0 21 13" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
                 fillRule="evenodd"
                 clipRule="evenodd"
@@ -20,4 +14,4 @@ export const BurgerMenu: FC<ISvgOptions> = (props) => {
             />
         </svg>
     )
-}
+})

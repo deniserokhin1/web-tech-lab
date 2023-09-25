@@ -1,4 +1,4 @@
-import type { FC } from 'react'
+import { memo } from 'react'
 import { ColorPalette } from './components/ColorPalette'
 import { type ISvgOptions, type IconComponentName } from './types'
 import { BurgerMenu } from './components/BurgerMenu'
@@ -9,12 +9,14 @@ import { Articles } from './components/Articles'
 import { Calendar } from './components/Calendar'
 import { Eye } from './components/Eye'
 import { Back } from './components/Back'
+import { Grid } from './components/Grid'
+import { List } from './components/List'
 
 export interface IconComponentProps extends ISvgOptions {
     name: IconComponentName
 }
 
-export const IconComponent: FC<IconComponentProps> = (props) => {
+export const IconComponent = memo((props: IconComponentProps) => {
     const { name, pathFill, opacity } = props
 
     switch (name) {
@@ -45,7 +47,13 @@ export const IconComponent: FC<IconComponentProps> = (props) => {
         case 'back':
             return <Back pathFill={pathFill} opacity={opacity} />
 
+        case 'grid':
+            return <Grid pathFill={pathFill} opacity={opacity} />
+
+        case 'list':
+            return <List pathFill={pathFill} opacity={opacity} />
+
         default:
             break
     }
-}
+})

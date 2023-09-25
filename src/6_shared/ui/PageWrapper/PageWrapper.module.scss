@@ -1,7 +1,6 @@
 .container {
     position: absolute;
     inset: 0;
-    top: 50px;
     padding-right: 5px;
     margin-right: -10px;
     overflow-x: hidden;
@@ -26,6 +25,10 @@
     }
 }
 
-.controls {
-    margin-bottom: 20px;
+.offsetTop {
+    top: 50px;
+}
+
+.trigger {
+    height: 20px;
 }

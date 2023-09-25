@@ -12,9 +12,7 @@ const meta = {
         layout: 'fullscreen',
     },
     args: {
-        articles: new Array(16)
-            .fill(0)
-            .map((i, index) => ({ ...article, id: index.toString() })),
+        articles: new Array(16).fill(0).map((i, index) => ({ ...article, id: index.toString() })),
     },
 } satisfies Meta<typeof ArticleList>
 
@@ -22,12 +20,15 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Light_Tile: Story = {
-    args: {},
+    args: {
+        view: ArticleView.TILE,
+    },
 }
 
 export const Light_Tile_Loading: Story = {
     args: {
         isLoading: true,
+        view: ArticleView.TILE,
     },
 }
 
@@ -45,13 +46,16 @@ export const Light_Row_Loading: Story = {
 }
 
 export const Dark_Tile: Story = {
-    args: {},
+    args: {
+        view: ArticleView.TILE,
+    },
 }
 Dark_Tile.decorators = [ThemeDecorator(Theme.DARK)]
 
 export const Dark_Tile_Loading: Story = {
     args: {
         isLoading: true,
+        view: ArticleView.TILE,
     },
 }
 Dark_Tile_Loading.decorators = [ThemeDecorator(Theme.DARK)]

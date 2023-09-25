@@ -1,9 +1,6 @@
 // import cls from './ProfilePage.module.scss'
 import { memo, useCallback } from 'react'
-import {
-    DynamicModuleLoader,
-    type ReducersList,
-} from '6_shared/lib/components/DynamicModuleLoader'
+import { DynamicModuleLoader, type ReducersList } from '6_shared/lib/components/DynamicModuleLoader'
 import {
     ProfileCard,
     ValidateProfileErrors,
@@ -25,6 +22,7 @@ import { Text, TextTheme } from '6_shared/ui/Text/Text'
 import { useInitialEffect } from '6_shared/hooks/useInitialEffect'
 import { useParams } from 'react-router-dom'
 import { Card } from '6_shared/ui/Card/Card'
+import { PageWrapper } from '6_shared/ui/PageWrapper/PageWrapper'
 
 interface ProfilePageProps {
     className?: string
@@ -121,33 +119,31 @@ const ProfilePage = memo((props: ProfilePageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
-            <Card>
-                <ProfilePageHeader />
+            <PageWrapper>
+                <Card>
+                    <ProfilePageHeader />
 
-                {!!validateErrors?.length &&
-                    validateErrors.map((error) => (
-                        <Text
-                            theme={TextTheme.ERROR}
-                            text={validateErrorTranslate[error]}
-                            key={error}
-                        />
-                    ))}
+                    {!!validateErrors?.length &&
+                        validateErrors.map((error) => (
+                            <Text theme={TextTheme.ERROR} text={validateErrorTranslate[error]} key={error} />
+                        ))}
 
-                <ProfileCard
-                    data={formData}
-                    isLoading={isLoading}
-                    error={error}
-                    readonly={readOnly}
-                    onChangeFirstName={onChangeFirstName}
-                    onChangeLasttName={onChangeLasttName}
-                    onChangeAge={onChangeAge}
-                    onChangeCity={onChangeCity}
-                    onChangeAvatar={onChangeAvatar}
-                    onChangeUsername={onChangeUsername}
-                    onChangeCurrency={onChangeCurrency}
-                    onChangeCountry={onChangeCountry}
-                />
-            </Card>
+                    <ProfileCard
+                        data={formData}
+                        isLoading={isLoading}
+                        error={error}
+                        readonly={readOnly}
+                        onChangeFirstName={onChangeFirstName}
+                        onChangeLasttName={onChangeLasttName}
+                        onChangeAge={onChangeAge}
+                        onChangeCity={onChangeCity}
+                        onChangeAvatar={onChangeAvatar}
+                        onChangeUsername={onChangeUsername}
+                        onChangeCurrency={onChangeCurrency}
+                        onChangeCountry={onChangeCountry}
+                    />
+                </Card>
+            </PageWrapper>
         </DynamicModuleLoader>
     )
 })

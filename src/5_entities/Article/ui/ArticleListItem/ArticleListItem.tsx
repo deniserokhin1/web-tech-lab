@@ -93,7 +93,6 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
                     <Text
                         title={article?.title}
-                        className={cls.title}
                         minWidth={true}
                         align={TextAlign.LEFT}
                     />
@@ -105,7 +104,6 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     {textBlock && (
                         <ArticleTextBlock
                             block={textBlock}
-                            className={cls.textBlock}
                             short={true}
                         />
                     )}
@@ -138,7 +136,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     {views}
                 </div>
 
-                <Text text={article?.title} align={TextAlign.LEFT} />
+                <Text text={article?.title} align={TextAlign.LEFT} className={cls.title} />
             </Card>
         </div>
     )

@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.noSelected {
+    opacity: 0.5;
+}
+
+.selected {
+    opacity: 1;
+}

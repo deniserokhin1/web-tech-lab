@@ -47,8 +47,6 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
     const mods = {}
 
-    console.log('commentText:', commentText)
-
     return (
         <DynamicModuleLoader reducers={reducers}>
             <div className={classNames(cls.container, mods, [className])}>

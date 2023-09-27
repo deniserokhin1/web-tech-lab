@@ -5,12 +5,12 @@ import { DynamicModuleLoader, type ReducersList } from '6_shared/lib/components/
 import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slice/articlesPageSlice'
 import { useAppDispatch, useAppSelector } from '1_app/providers/StoreProvider'
 import { useInitialEffect } from '6_shared/hooks/useInitialEffect'
-import { fetchArticlesList } from '../../model/services/fetchArticlesList'
 import { getArticlesPageIsLoading, getArticlesPageView } from '../../model/selectors/getArticlesPage'
 import { ArticleViewSelector } from '4_features/ArticleViewSelector'
 import { type ArticleView } from '5_entities/Article'
-import { PageWrapper } from '6_shared/ui/PageWrapper/PageWrapper'
-import { fetchNextArticlesPage } from '2_pages/ArticlesPage/model/services/fecthNextArticlePage'
+import { PageWrapper } from '3_widgets/PageWrapper/PageWrapper'
+import { fetchNextArticlesPage } from '../../model/services/fecthNextArticlePage'
+import { initArticlesPage } from '../../model/services/initArticlesPage'
 
 interface ArticlesPageProps {
     className?: string
@@ -22,7 +22,7 @@ const reducers: ReducersList = {
 
 const ArticlesPage = memo((props: ArticlesPageProps) => {
     const dispatch = useAppDispatch()
-    const { setView, initView } = articlesPageActions
+    const { setView } = articlesPageActions
     const articles = useAppSelector(getArticles.selectAll)
 
     const isLoading = useAppSelector(getArticlesPageIsLoading)
@@ -34,8 +34,7 @@ const ArticlesPage = memo((props: ArticlesPageProps) => {
     }, [dispatch])
 
     useInitialEffect(() => {
-        dispatch(initView())
-        dispatch(fetchArticlesList({ page: 1 }))
+        dispatch(initArticlesPage())
     })
 
     const onChangeArticleView = (view: ArticleView): void => {
@@ -43,7 +42,7 @@ const ArticlesPage = memo((props: ArticlesPageProps) => {
     }
 
     return (
-        <DynamicModuleLoader reducers={reducers}>
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <div className={cls.controls}>
                 <ArticleViewSelector view={view} onViewClick={onChangeArticleView} />
             </div>

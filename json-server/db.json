@@ -1,396 +1,410 @@
 {
-    "posts": [
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "some comment",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "text": "some comment 2",
+      "articleId": "1",
+      "userId": "2"
+    },
+    {
+      "id": "3",
+      "text": "some comment 3",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "4",
+      "text": "some comment for other article",
+      "articleId": "2",
+      "userId": "1"
+    },
+    {
+      "id": "5",
+      "text": "some comment by dude",
+      "articleId": "1",
+      "userId": "3"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Yo common",
+      "id": "iHxtqUJ"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Common",
+      "id": "f0hGVxw"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Камон эвери бади",
+      "id": "sgl4fzi"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Йоу бэйба",
+      "id": "s9iI7vy"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Чики-брики",
+      "id": "GuZehuI"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "В тулюсю тебя",
+      "id": "ofN2VP6"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Йоу",
+      "id": "A-4G7gC"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Камон",
+      "id": "SShwVxv"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "1",
+      "id": "PQIPlap"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Привет, Мир!",
+      "id": "MaVehNP"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "Клева!",
+      "id": "_Gfvnd6"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "Yo!",
+      "id": "mYysLCt"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": " ",
+      "id": "mUwHw2U"
+    }
+  ],
+  "profile": [
+    {
+      "id": "1",
+      "first": "Ден",
+      "lastname": "Ерохин",
+      "age": 32,
+      "currency": "USD",
+      "country": "USA",
+      "city": "Москва",
+      "username": "Den",
+      "avatar": "https://img.freepik.com/free-vector/creative-hacker-logo-template_23-2149199402.jpg?w=2000"
+    },
+    {
+      "id": "2",
+      "first": "Вадим",
+      "lastname": "Захаров",
+      "age": 32,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Орел",
+      "username": "shashlyk",
+      "avatar": "https://www.ourmigrationstory.org.uk/uploads/_CGSmartImage/img-a2beae8392617b8c02b85d8b9197fb96"
+    }
+  ],
+  "users": [
+    {
+      "id": "2",
+      "username": "Shashlyk",
+      "password": "123",
+      "role": "USER",
+      "avatar": "https://www.ourmigrationstory.org.uk/uploads/_CGSmartImage/img-a2beae8392617b8c02b85d8b9197fb96"
+    },
+    {
+      "id": "1",
+      "username": "Den",
+      "password": "123",
+      "role": "ADMIN",
+      "avatar": "https://img.freepik.com/free-vector/creative-hacker-logo-template_23-2149199402.jpg?w=2000"
+    },
+    {
+      "id": "3",
+      "username": "Dude",
+      "password": "123",
+      "role": "USER"
+    }
+  ],
+  "articles": [
+    {
+      "id": "1",
+      "title": "Технологический прогресс",
+      "subtitle": "Революция в индустрии",
+      "img": "https://3.downloader.disk.yandex.ru/preview/a59174e1005f68e2bbc6d43468e264c97531e00bdad96030ee0d6a52ca91052a/inf/fk-E4z_2u3z4uJ_-YcoEw-vT7v6BQRAiZuhlPSQtNFNvsxSnW3GZF0uxjB7DKC21rtlKBde_JXSJsLKr8IJyNw%3D%3D?uid=233854961&filename=business-4241792_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
+      "views": "1500",
+      "dataCreate": "2023-09-01",
+      "userId": "1",
+      "type": [
+        "IT",
+        "ECONOMICS"
+      ],
+      "data": [
         {
-            "id": 1,
-            "title": "json-server",
-            "author": "typicode"
+          "id": "1",
+          "type": "TEXT",
+          "title": "Введение в технологический прогресс",
+          "paragraphs": [
+            "В наши дни технологический прогресс является неотъемлемой частью повседневной жизни. Это явление, характеризующееся неуклонным развитием науки и технологий, оказывает глубокое влияние на экономику, социокультурные аспекты, а также на природное окружение.",
+            "В начале, технологический прогресс проявлялся в простых формах, включая создание первых инструментов и машин. С развитием промышленной революции, технологическое развитие ускорилось, давая толчок для массового производства и урбанизации. В последние десятилетия, эра информационных технологий и интернета дала начало новой волне технологической инновации, изменяя способы коммуникации и доступ к информации.",
+            "Сегодня технологический прогресс характеризуется непрерывной эволюцией искусственного интеллекта, биотехнологий, космических исследований, а также зелёных технологий. Эти инновации способствуют решению множества глобальных проблем, включая изменение климата, болезни и доступ к образованию.",
+            "Технологический прогресс несёт в себе как позитивные, так и негативные последствия. С одной стороны, он предоставляет новые возможности для улучшения качества жизни и экономического роста. С другой стороны, он может способствовать увеличению социального неравенства, потере рабочих мест и экологическим кризисам.",
+            "Технологический прогресс это движущая сила, способствующая развитию человечества на различных уровнях. Несмотря на свои вызовы, он продолжает открывать новые горизонты и возможности для инноваций и улучшений в различных сферах жизни. Стремление к непрерывному усовершенствованию и адаптации к изменяющемуся миру остаётся центральной осью технологического прогресса, подталкивая нас к более процветающему и устойчивому будущему."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"progress\"></p>\n\n    <script>\n      document.getElementById(\"progress\").innerHTML = \"Welcome to the Tech Revolution\";\n    </script>\n  </body>\n</html>"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://2.downloader.disk.yandex.ru/preview/54b2f49514d37c2e621aab613aaf61a2106acb593d072457f1e28d6e193fe297/inf/AktTdPH7nahFOyz10H11_VMdhFTDRxEmQVtR_DC03sFmYsPw4-Cau66YJkmI4ttzX-3JBxamw9dwYOLi9-QcZw%3D%3D?uid=233854961&filename=success-2081168_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
+          "title": "Иллюстрация 1 - Технологический прогресс"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Ключевые моменты развития",
+          "paragraphs": [
+            "Технологическое развитие это один из самых значимых факторов, влияющих на динамику прогресса современного общества. В ходе истории человечества мы сталкивались с рядом ключевых моментов, которые значительно трансформировали наш мир. Давайте рассмотрим некоторые из них.",
+            "С момента первой промышленной революции в XVIII веке, технологический прогресс демонстрировал свою способность кардинально изменять общество. Каждая последующая революция (вторая, третья и четвертая или цифровая) привносила новые технологии и методы производства, открывая новые горизонты возможностей.",
+            "В конце XX века мир озадачил появлением интернета, который радикально изменил способы общения, доступ к информации и бизнес-модели. Это привело к глобализации и созданию мировой сети, связывающей людей и организации как никогда раньше.",
+            "Сегодня мы стоим на пороге новой эры, где искусственный интеллект и машинное обучение начинают играть решающую роль в многих аспектах нашей жизни. Эти технологии обещают революционизировать всё от производства до медицины и транспорта."
+          ]
+        },
+        {
+          "id": "5",
+          "type": "CODE",
+          "code": "const techProgress = require('tech-progress');\n\nconst revolution = techProgress.create();\n\nrevolution.start();"
         }
-    ],
-    "comments": [
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Искусственный интеллект",
+      "subtitle": "Будущее здесь",
+      "img": "https://3.downloader.disk.yandex.ru/preview/94d79ec020411303b665ca75bbd314cfb6271fbeb7c929c4c758d6c87173b968/inf/YSOTl5msKvJDyDEraJigpbxlF23NslFFtMc8JsOtmCnNo5YGj_t2E7sr7D2GN5Wp98Ll9l1LmwwqO17PnpQEnA%3D%3D?uid=233854961&filename=artificial-intelligence-4736369_1280.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
+      "views": "2000",
+      "dataCreate": "2023-08-28",
+      "userId": "2",
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
+      "data": [
         {
-            "id": "1",
-            "text": "some comment",
-            "articleId": "1",
-            "userId": "1"
+          "id": "1",
+          "type": "TEXT",
+          "title": "Эпоха инноваций",
+          "paragraphs": [
+            "Искусственный интеллект (ИИ) является одним из самых прорывных и обсуждаемых технологических достижений современности. Этот термин обозначает системы, способные имитировать человеческий интеллект, обучаться и адаптироваться к изменяющимся условиям без прямого человеческого вмешательства. Давайте вкратце рассмотрим основные аспекты этого феномена.",
+            "Искусственный интеллект включает в себя машинное обучение, глубокое обучение и нейронные сети. Цель ИИ создавать системы, которые могут автономно решать задачи, традиционно требующие человеческого интеллекта, такие как распознавание речи, визуальное восприятие и принятие решений."
+          ]
         },
         {
-            "id": "2",
-            "text": "some comment 2",
-            "articleId": "1",
-            "userId": "2"
+          "id": "2",
+          "type": "CODE",
+          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"ai\"></p>\n\n    <script>\n      document.getElementById(\"ai\").innerHTML = \"AI: The Future is Here\";\n    </script>\n  </body>\n</html>"
         },
         {
-            "id": "3",
-            "text": "some comment 3",
-            "articleId": "1",
-            "userId": "1"
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://4.downloader.disk.yandex.ru/preview/53509038fc1eda1f0205b9284ad9ede1f444e006d76ce9b207d5309c049a469f/inf/LpfE46B9lgZNLxEX9LDHk7K5_-l_2-9AAI-xr-XlfgMQ8EoOoLVSQ6Cc-bg-K_TZaoXyZwGyK5QEcYtXjU9FYA%3D%3D?uid=233854961&filename=anatomy-1751201_1280.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
+          "title": "Иллюстрация 2 - Искусственный интеллект"
         },
         {
-            "id": "4",
-            "text": "some comment for other article",
-            "articleId": "2",
-            "userId": "1"
+          "id": "4",
+          "type": "TEXT",
+          "title": "Возможности ИИ",
+          "paragraphs": [
+            "Искусственный интеллект нашёл применение во множестве сфер, включая медицину (диагностика заболеваний, анализ медицинских изображений), автомобильную промышленность (автономные транспортные средства), финансовый сектор (алгоритмическая торговля) и многие другие. Он помогает автоматизировать рутинные задачи и обеспечивает более высокую точность и эффективность в многих процессах.",
+            "Вместе с технологическими преимуществами, искусственный интеллект вызывает ряд этических вопросов. Повышение уровня автоматизации может привести к потере рабочих мест, а вопросы приватности и безопасности данных становятся всё более актуальными. Более того, существует потенциальная опасность создания ИИ с высокой степенью автономии, который может действовать вне контроля человека."
+          ]
         },
         {
-            "id": "5",
-            "text": "some comment by dude",
-            "articleId": "1",
-            "userId": "3"
-        },
-        {
-            "articleId": "1",
-            "userId": "1",
-            "text": "Yo common",
-            "id": "iHxtqUJ"
-        },
-        {
-            "articleId": "1",
-            "userId": "2",
-            "text": "Common",
-            "id": "f0hGVxw"
-        },
-        {
-            "articleId": "1",
-            "userId": "2",
-            "text": "Камон эвери бади",
-            "id": "sgl4fzi"
-        },
-        {
-            "articleId": "1",
-            "userId": "2",
-            "text": "Йоу бэйба",
-            "id": "s9iI7vy"
-        },
-        {
-            "articleId": "1",
-            "userId": "2",
-            "text": "Чики-брики",
-            "id": "GuZehuI"
-        },
-        {
-            "articleId": "1",
-            "userId": "1",
-            "text": "В тулюсю тебя",
-            "id": "ofN2VP6"
-        },
-        {
-            "articleId": "1",
-            "userId": "2",
-            "text": "Йоу",
-            "id": "A-4G7gC"
-        },
-        {
-            "articleId": "1",
-            "userId": "2",
-            "text": "Камон",
-            "id": "SShwVxv"
-        },
-        {
-            "articleId": "1",
-            "userId": "2",
-            "text": "1",
-            "id": "PQIPlap"
-        },
-        {
-            "articleId": "1",
-            "userId": "1",
-            "text": "Привет, Мир!",
-            "id": "MaVehNP"
-        },
-        {
-            "articleId": "2",
-            "userId": "1",
-            "text": "Клева!",
-            "id": "_Gfvnd6"
-        },
-        {
-            "articleId": "2",
-            "userId": "1",
-            "text": "Yo!",
-            "id": "mYysLCt"
-        },
-        {
-            "articleId": "1",
-            "userId": "1",
-            "text": " ",
-            "id": "mUwHw2U"
+          "id": "5",
+          "type": "CODE",
+          "code": "const ai = require('ai');\n\nconst future = ai.create();\n\nfuture.begin();"
         }
-    ],
-    "profile": [
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Кибербезопасность",
+      "subtitle": "Защитите свои данные",
+      "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
+      "views": "2350",
+      "dataCreate": "2023-07-15",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "data": [
         {
-            "id": "1",
-            "first": "Ден",
-            "lastname": "Ерохин",
-            "age": 32,
-            "currency": "USD",
-            "country": "Russia",
-            "city": "Москва",
-            "username": "Den",
-            "avatar": "https://img.freepik.com/free-vector/creative-hacker-logo-template_23-2149199402.jpg?w=2000"
+          "id": "1",
+          "type": "TEXT",
+          "title": "Основы кибербезопасности",
+          "paragraphs": [
+            "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
+            "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
+            "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
+          ]
         },
         {
-            "id": "2",
-            "first": "Вадим",
-            "lastname": "Захаров",
-            "age": 32,
-            "currency": "RUB",
-            "country": "Russia",
-            "city": "Орел",
-            "username": "shashlyk",
-            "avatar": "https://www.ourmigrationstory.org.uk/uploads/_CGSmartImage/img-a2beae8392617b8c02b85d8b9197fb96"
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
+          "title": "Рисунок 1 - Кибербезопасность"
+        },
+        {
+          "id": "3",
+          "type": "CODE",
+          "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
         }
-    ],
-    "users": [
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Кибербезопасность",
+      "subtitle": "Защитите свои данные",
+      "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
+      "views": "2350",
+      "dataCreate": "2023-07-15",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "data": [
         {
-            "id": "2",
-            "username": "Shashlyk",
-            "password": "123",
-            "role": "USER",
-            "avatar": "https://www.ourmigrationstory.org.uk/uploads/_CGSmartImage/img-a2beae8392617b8c02b85d8b9197fb96"
+          "id": "1",
+          "type": "TEXT",
+          "title": "Основы кибербезопасности",
+          "paragraphs": [
+            "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
+            "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
+            "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
+          ]
         },
         {
-            "id": "1",
-            "username": "Den",
-            "password": "123",
-            "role": "ADMIN",
-            "avatar": "https://img.freepik.com/free-vector/creative-hacker-logo-template_23-2149199402.jpg?w=2000"
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
+          "title": "Рисунок 1 - Кибербезопасность"
         },
         {
-            "id": "3",
-            "username": "Dude",
-            "password": "123",
-            "role": "USER"
+          "id": "3",
+          "type": "CODE",
+          "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
         }
-    ],
-    "articles": [
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Кибербезопасность",
+      "subtitle": "Защитите свои данные",
+      "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
+      "views": "2350",
+      "dataCreate": "2023-07-15",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "data": [
         {
-            "id": "1",
-            "title": "Технологический прогресс",
-            "subtitle": "Революция в индустрии",
-            "img": "https://3.downloader.disk.yandex.ru/preview/a59174e1005f68e2bbc6d43468e264c97531e00bdad96030ee0d6a52ca91052a/inf/fk-E4z_2u3z4uJ_-YcoEw-vT7v6BQRAiZuhlPSQtNFNvsxSnW3GZF0uxjB7DKC21rtlKBde_JXSJsLKr8IJyNw%3D%3D?uid=233854961&filename=business-4241792_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-            "views": "1500",
-            "dataCreate": "2023-09-01",
-            "userId": "1",
-            "type": ["IT", "ECONOMICS"],
-            "data": [
-                {
-                    "id": "1",
-                    "type": "TEXT",
-                    "title": "Введение в технологический прогресс",
-                    "paragraphs": [
-                        "В наши дни технологический прогресс является неотъемлемой частью повседневной жизни. Это явление, характеризующееся неуклонным развитием науки и технологий, оказывает глубокое влияние на экономику, социокультурные аспекты, а также на природное окружение.",
-                        "В начале, технологический прогресс проявлялся в простых формах, включая создание первых инструментов и машин. С развитием промышленной революции, технологическое развитие ускорилось, давая толчок для массового производства и урбанизации. В последние десятилетия, эра информационных технологий и интернета дала начало новой волне технологической инновации, изменяя способы коммуникации и доступ к информации.",
-                        "Сегодня технологический прогресс характеризуется непрерывной эволюцией искусственного интеллекта, биотехнологий, космических исследований, а также зелёных технологий. Эти инновации способствуют решению множества глобальных проблем, включая изменение климата, болезни и доступ к образованию.",
-                        "Технологический прогресс несёт в себе как позитивные, так и негативные последствия. С одной стороны, он предоставляет новые возможности для улучшения качества жизни и экономического роста. С другой стороны, он может способствовать увеличению социального неравенства, потере рабочих мест и экологическим кризисам.",
-                        "Технологический прогресс это движущая сила, способствующая развитию человечества на различных уровнях. Несмотря на свои вызовы, он продолжает открывать новые горизонты и возможности для инноваций и улучшений в различных сферах жизни. Стремление к непрерывному усовершенствованию и адаптации к изменяющемуся миру остаётся центральной осью технологического прогресса, подталкивая нас к более процветающему и устойчивому будущему."
-                    ]
-                },
-                {
-                    "id": "2",
-                    "type": "CODE",
-                    "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"progress\"></p>\n\n    <script>\n      document.getElementById(\"progress\").innerHTML = \"Welcome to the Tech Revolution\";\n    </script>\n  </body>\n</html>"
-                },
-                {
-                    "id": "3",
-                    "type": "IMAGE",
-                    "src": "https://2.downloader.disk.yandex.ru/preview/54b2f49514d37c2e621aab613aaf61a2106acb593d072457f1e28d6e193fe297/inf/AktTdPH7nahFOyz10H11_VMdhFTDRxEmQVtR_DC03sFmYsPw4-Cau66YJkmI4ttzX-3JBxamw9dwYOLi9-QcZw%3D%3D?uid=233854961&filename=success-2081168_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-                    "title": "Иллюстрация 1 - Технологический прогресс"
-                },
-                {
-                    "id": "4",
-                    "type": "TEXT",
-                    "title": "Ключевые моменты развития",
-                    "paragraphs": [
-                        "Технологическое развитие это один из самых значимых факторов, влияющих на динамику прогресса современного общества. В ходе истории человечества мы сталкивались с рядом ключевых моментов, которые значительно трансформировали наш мир. Давайте рассмотрим некоторые из них.",
-                        "С момента первой промышленной революции в XVIII веке, технологический прогресс демонстрировал свою способность кардинально изменять общество. Каждая последующая революция (вторая, третья и четвертая или цифровая) привносила новые технологии и методы производства, открывая новые горизонты возможностей.",
-                        "В конце XX века мир озадачил появлением интернета, который радикально изменил способы общения, доступ к информации и бизнес-модели. Это привело к глобализации и созданию мировой сети, связывающей людей и организации как никогда раньше.",
-                        "Сегодня мы стоим на пороге новой эры, где искусственный интеллект и машинное обучение начинают играть решающую роль в многих аспектах нашей жизни. Эти технологии обещают революционизировать всё от производства до медицины и транспорта."
-                    ]
-                },
-                {
-                    "id": "5",
-                    "type": "CODE",
-                    "code": "const techProgress = require('tech-progress');\n\nconst revolution = techProgress.create();\n\nrevolution.start();"
-                }
-            ]
+          "id": "1",
+          "type": "TEXT",
+          "title": "Основы кибербезопасности",
+          "paragraphs": [
+            "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
+            "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
+            "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
+          ]
         },
         {
-            "id": "2",
-            "title": "Искусственный интеллект",
-            "subtitle": "Будущее здесь",
-            "img": "https://3.downloader.disk.yandex.ru/preview/94d79ec020411303b665ca75bbd314cfb6271fbeb7c929c4c758d6c87173b968/inf/YSOTl5msKvJDyDEraJigpbxlF23NslFFtMc8JsOtmCnNo5YGj_t2E7sr7D2GN5Wp98Ll9l1LmwwqO17PnpQEnA%3D%3D?uid=233854961&filename=artificial-intelligence-4736369_1280.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-            "views": "2000",
-            "dataCreate": "2023-08-28",
-            "userId": "2",
-            "type": ["IT", "SCIENCE"],
-            "data": [
-                {
-                    "id": "1",
-                    "type": "TEXT",
-                    "title": "Эпоха инноваций",
-                    "paragraphs": [
-                        "Искусственный интеллект (ИИ) является одним из самых прорывных и обсуждаемых технологических достижений современности. Этот термин обозначает системы, способные имитировать человеческий интеллект, обучаться и адаптироваться к изменяющимся условиям без прямого человеческого вмешательства. Давайте вкратце рассмотрим основные аспекты этого феномена.",
-                        "Искусственный интеллект включает в себя машинное обучение, глубокое обучение и нейронные сети. Цель ИИ создавать системы, которые могут автономно решать задачи, традиционно требующие человеческого интеллекта, такие как распознавание речи, визуальное восприятие и принятие решений."
-                    ]
-                },
-                {
-                    "id": "2",
-                    "type": "CODE",
-                    "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"ai\"></p>\n\n    <script>\n      document.getElementById(\"ai\").innerHTML = \"AI: The Future is Here\";\n    </script>\n  </body>\n</html>"
-                },
-                {
-                    "id": "3",
-                    "type": "IMAGE",
-                    "src": "https://4.downloader.disk.yandex.ru/preview/53509038fc1eda1f0205b9284ad9ede1f444e006d76ce9b207d5309c049a469f/inf/LpfE46B9lgZNLxEX9LDHk7K5_-l_2-9AAI-xr-XlfgMQ8EoOoLVSQ6Cc-bg-K_TZaoXyZwGyK5QEcYtXjU9FYA%3D%3D?uid=233854961&filename=anatomy-1751201_1280.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
-                    "title": "Иллюстрация 2 - Искусственный интеллект"
-                },
-                {
-                    "id": "4",
-                    "type": "TEXT",
-                    "title": "Возможности ИИ",
-                    "paragraphs": [
-                        "Искусственный интеллект нашёл применение во множестве сфер, включая медицину (диагностика заболеваний, анализ медицинских изображений), автомобильную промышленность (автономные транспортные средства), финансовый сектор (алгоритмическая торговля) и многие другие. Он помогает автоматизировать рутинные задачи и обеспечивает более высокую точность и эффективность в многих процессах.",
-                        "Вместе с технологическими преимуществами, искусственный интеллект вызывает ряд этических вопросов. Повышение уровня автоматизации может привести к потере рабочих мест, а вопросы приватности и безопасности данных становятся всё более актуальными. Более того, существует потенциальная опасность создания ИИ с высокой степенью автономии, который может действовать вне контроля человека."
-                    ]
-                },
-                {
-                    "id": "5",
-                    "type": "CODE",
-                    "code": "const ai = require('ai');\n\nconst future = ai.create();\n\nfuture.begin();"
-                }
-            ]
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
+          "title": "Рисунок 1 - Кибербезопасность"
         },
         {
-            "id": "3",
-            "title": "Кибербезопасность",
-            "subtitle": "Защитите свои данные",
-            "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-            "views": "2350",
-            "dataCreate": "2023-07-15",
-            "userId": "1",
-            "type": ["IT"],
-            "data": [
-                {
-                    "id": "1",
-                    "type": "TEXT",
-                    "title": "Основы кибербезопасности",
-                    "paragraphs": [
-                        "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
-                        "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
-                        "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
-                    ]
-                },
-                {
-                    "id": "2",
-                    "type": "IMAGE",
-                    "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
-                    "title": "Рисунок 1 - Кибербезопасность"
-                },
-                {
-                    "id": "3",
-                    "type": "CODE",
-                    "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
-                }
-            ]
-        },
-        {
-            "id": "4",
-            "title": "Кибербезопасность",
-            "subtitle": "Защитите свои данные",
-            "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-            "views": "2350",
-            "dataCreate": "2023-07-15",
-            "userId": "1",
-            "type": ["IT"],
-            "data": [
-                {
-                    "id": "1",
-                    "type": "TEXT",
-                    "title": "Основы кибербезопасности",
-                    "paragraphs": [
-                        "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
-                        "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
-                        "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
-                    ]
-                },
-                {
-                    "id": "2",
-                    "type": "IMAGE",
-                    "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
-                    "title": "Рисунок 1 - Кибербезопасность"
-                },
-                {
-                    "id": "3",
-                    "type": "CODE",
-                    "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
-                }
-            ]
-        },
-        {
-            "id": "5",
-            "title": "Кибербезопасность",
-            "subtitle": "Защитите свои данные",
-            "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-            "views": "2350",
-            "dataCreate": "2023-07-15",
-            "userId": "1",
-            "type": ["IT"],
-            "data": [
-                {
-                    "id": "1",
-                    "type": "TEXT",
-                    "title": "Основы кибербезопасности",
-                    "paragraphs": [
-                        "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
-                        "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
-                        "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
-                    ]
-                },
-                {
-                    "id": "2",
-                    "type": "IMAGE",
-                    "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
-                    "title": "Рисунок 1 - Кибербезопасность"
-                },
-                {
-                    "id": "3",
-                    "type": "CODE",
-                    "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
-                }
-            ]
-        },
-        {
-            "id": "6",
-            "title": "Кибербезопасность",
-            "subtitle": "Защитите свои данные",
-            "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-            "views": "2350",
-            "dataCreate": "2023-07-15",
-            "userId": "1",
-            "type": ["IT"],
-            "data": [
-                {
-                    "id": "1",
-                    "type": "TEXT",
-                    "title": "Основы кибербезопасности",
-                    "paragraphs": [
-                        "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
-                        "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
-                        "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
-                    ]
-                },
-                {
-                    "id": "2",
-                    "type": "IMAGE",
-                    "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
-                    "title": "Рисунок 1 - Кибербезопасность"
-                },
-                {
-                    "id": "3",
-                    "type": "CODE",
-                    "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
-                }
-            ]
+          "id": "3",
+          "type": "CODE",
+          "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
         }
-    ]
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Кибербезопасность",
+      "subtitle": "Защитите свои данные",
+      "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
+      "views": "2350",
+      "dataCreate": "2023-07-15",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "data": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Основы кибербезопасности",
+          "paragraphs": [
+            "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
+            "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
+            "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
+          "title": "Рисунок 1 - Кибербезопасность"
+        },
+        {
+          "id": "3",
+          "type": "CODE",
+          "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
+        }
+      ]
+    }
+  ]
 }

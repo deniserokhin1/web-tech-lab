@@ -1,9 +1,6 @@
 import { type FC, type ReactNode, useEffect } from 'react'
 import { useStore } from 'react-redux'
-import {
-    type ReduxStoreWidthManager,
-    type StateSchemaKey,
-} from '1_app/providers/StoreProvider'
+import { type ReduxStoreWidthManager, type StateSchemaKey } from '1_app/providers/StoreProvider'
 import { type Reducer } from '@reduxjs/toolkit'
 import { useAppDispatch } from '1_app/providers/StoreProvider'
 
@@ -20,19 +17,25 @@ interface DynamicModuleLoaderProps {
 export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
     const { children, reducers, removeAfterUnmount = true } = props
 
-    const { reducerManager } = useStore() as ReduxStoreWidthManager
+    const store = useStore() as ReduxStoreWidthManager
     const dispatch = useAppDispatch()
 
     useEffect(() => {
+        const mountedReducers = store.reducerManager.getMountedReducer()
+        
         Object.entries(reducers).forEach(([name, reducer]) => {
-            reducerManager.add(name as StateSchemaKey, reducer)
-            dispatch({ type: `@INIT ${name} reducer` })
+            const mounted = mountedReducers[name as StateSchemaKey]
+
+            if (!mounted) {
+                store.reducerManager.add(name as StateSchemaKey, reducer)
+                dispatch({ type: `@INIT ${name} reducer` })
+            }
         })
 
         return () => {
             if (removeAfterUnmount) {
                 Object.entries(reducers).forEach(([name]) => {
-                    reducerManager.remove(name as StateSchemaKey)
+                    store.reducerManager.remove(name as StateSchemaKey)
                     dispatch({ type: `@DESTROY ${name} reducer` })
                 })
             }

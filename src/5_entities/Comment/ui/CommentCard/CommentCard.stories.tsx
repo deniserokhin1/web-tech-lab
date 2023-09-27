@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { CommentCard } from './CommentCard'
 import { Theme } from '1_app/providers/ThemeProvider'
 import { ThemeDecorator } from '6_shared/config/storybook/Decorators/ThemeDecorator'
-import avatar from '6_shared/assets/img/hacker-logo.jpg'
 
 const meta = {
     title: '5_entities/CommentCard',

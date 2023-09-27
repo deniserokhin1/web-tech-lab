@@ -12,24 +12,20 @@ interface ArticleListProps {
     view: ArticleView
 }
 
-const skeletons = (view: ArticleView): JSX.Element[] => {
-    return new Array(view === ArticleView.ROW ? 3 : 9)
-        .fill(1)
-        .map((_, index) => <ArticleListItemSkeleton key={index} view={view} />)
-}
-
-const renderArticle = (article: IArticle, view: ArticleView): JSX.Element => (
-    <ArticleListItem article={article} view={view} key={article.id} />
-)
-
 export const ArticleList = memo((props: ArticleListProps) => {
     const { className, articles = [], isLoading, view } = props
 
-    const mods = {}
+    const skeletons = (view: ArticleView): JSX.Element[] => {
+        return new Array(view === ArticleView.ROW ? 3 : 9)
+            .fill(1)
+            .map((_, index) => <ArticleListItemSkeleton key={index} view={view} />)
+    }
+    
+    const renderArticle = (article: IArticle, view: ArticleView): JSX.Element => (
+        <ArticleListItem article={article} view={view} key={article.id} />
+    )
 
-    // if (isLoading) {
-    //     return <div className={classNames(cls[view])}>{skeletons(view)}</div>
-    // }
+    const mods = {}
 
     return (
         <div className={classNames(cls[view], mods, [className])}>

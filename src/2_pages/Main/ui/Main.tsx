@@ -1,4 +1,4 @@
-import { PageWrapper } from '6_shared/ui/PageWrapper/PageWrapper'
+import { PageWrapper } from '3_widgets/PageWrapper/PageWrapper'
 import { Text, TextAlign } from '6_shared/ui/Text/Text'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'

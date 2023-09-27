@@ -12,23 +12,22 @@ import { userReducer } from '5_entities/User'
 import { type TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import { createReducerManager } from './ReducerManager'
 import { $api } from '6_shared/api/api'
-import { type NavigateOptions, type To } from 'react-router-dom'
+import { uiReducer } from '4_features/UI'
 
 export const createReduxStore = (
     initialState?: StateSchema,
     asyncReducers?: ReducersMapObject<StateSchema>,
-    navigate?: (to: To, options?: NavigateOptions) => void,
 ): ToolkitStore<StateSchema> => {
     const rootReducer: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
         user: userReducer,
+        ui: uiReducer,
     }
 
     const reducerManager = createReducerManager(rootReducer)
 
     const extraArg: ThunkExtraArg = {
         api: $api,
-        // navigate,
     }
 
     const store = configureStore({

@@ -54,5 +54,7 @@ module.exports = {
         '@typescript-eslint/no-unnecessary-type-assertion': 0,
         '@typescript-eslint/no-invalid-void-type': 0,
         '@typescript-eslint/prefer-includes': 0,
+        'n/no-callback-literal': 0,
+        '@typescript-eslint/ban-types': 0
     },
 }

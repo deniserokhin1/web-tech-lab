@@ -22,7 +22,7 @@ import { Text, TextTheme } from '6_shared/ui/Text/Text'
 import { useInitialEffect } from '6_shared/hooks/useInitialEffect'
 import { useParams } from 'react-router-dom'
 import { Card } from '6_shared/ui/Card/Card'
-import { PageWrapper } from '6_shared/ui/PageWrapper/PageWrapper'
+import { PageWrapper } from '3_widgets/PageWrapper/PageWrapper'
 
 interface ProfilePageProps {
     className?: string

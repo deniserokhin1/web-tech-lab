@@ -7,11 +7,12 @@ import { fetchCommentsByArticleId } from './fetchCommentsByArticleId'
 
 export const addCommentForArticle = createAsyncThunk<IComment, string, ThunkConfig<string>>(
     'articleDetails/sendComment',
-    async (text, thunkApi) => {
+    async (textParam, thunkApi) => {
         const { dispatch, extra, rejectWithValue, getState } = thunkApi
 
         const userData = getUserAuthData(getState() as StateSchema)
         const article = getArticleDetailsData(getState() as StateSchema)
+        const text = textParam.trim()
 
         if (!userData || !text || !article) return rejectWithValue('no data')
 

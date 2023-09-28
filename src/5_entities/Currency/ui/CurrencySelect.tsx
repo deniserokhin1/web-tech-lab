@@ -15,10 +15,11 @@ interface CurrencySelectProps {
     value?: Currency
     readonly?: boolean
     onChange?: (value: Currency) => void
+    widthFitContent?: boolean
 }
 
 export const CurrencySelect = memo((props: CurrencySelectProps) => {
-    const { onChange, value, readonly } = props
+    const { onChange, value, readonly, widthFitContent } = props
 
     const namespace = __IS_DEV__ ? 'translation' : 'profile'
     const { t } = useTranslation(namespace)
@@ -38,6 +39,7 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
             label={t('profile.Валюта')}
             options={options}
             readonly={readonly}
+            labelFitContent={widthFitContent}
         />
     )
 })

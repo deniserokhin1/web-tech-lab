@@ -32,12 +32,12 @@ describe('articlesPageSlice', () => {
         expect(
             articlesPageReducer(
                 state as ArticlesPageSchema,
-                fetchArticlesList.fulfilled(articles, '', { page: 1 }),
+                fetchArticlesList.fulfilled(articles, '', {}),
             ),
         ).toEqual({
             isLoading: false,
             ids: ['1'],
-            hasMore: true,
+            hasMore: false,
             entities: {
                 1: articles[0],
             },

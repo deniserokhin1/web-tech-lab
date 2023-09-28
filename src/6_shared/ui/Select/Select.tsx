@@ -1,26 +1,27 @@
 import { classNames } from '6_shared/lib'
 import cls from './Select.module.scss'
-import { type ChangeEvent, useMemo, memo } from 'react'
+import { type ChangeEvent, useMemo } from 'react'
 
-export interface SelectOption {
-    value: string
+export interface SelectOption<T extends string> {
+    value: T
     content: string
 }
 
-interface SelectProps {
+interface SelectProps<T extends string> {
     className?: string
     label?: string
-    options?: SelectOption[]
-    value?: string
+    options?: Array<SelectOption<T>>
+    value?: T
     readonly?: boolean
-    onChange?: (value: string) => void
+    labelFitContent?: boolean
+    onChange?: (value: T) => void
 }
 
-export const Select = memo((props: SelectProps) => {
-    const { label, options, onChange, value, readonly } = props
+export const Select = <T extends string>(props: SelectProps<T>): JSX.Element => {
+    const { label, options, onChange, value, readonly, labelFitContent } = props
 
     const optionList = useMemo(() => {
-        return options?.map((item: SelectOption) => (
+        return options?.map((item: SelectOption<T>) => (
             <option className={cls.option} value={item.value} key={item.value}>
                 {item.content}
             </option>
@@ -28,16 +29,19 @@ export const Select = memo((props: SelectProps) => {
     }, [options])
 
     const changeHandler = (e: ChangeEvent<HTMLSelectElement>): void => {
-        onChange?.(e.target.value)
+        onChange?.(e.target.value as T)
     }
 
     const mods = {
         [cls.disabled]: readonly,
     }
+    const labelMods = {
+        [cls.fitContent]: labelFitContent,
+    }
 
     return (
-        <div className={classNames(cls.container)}>
-            {label && <span className={cls.label}>{label}</span>}
+        <div className={classNames(cls.container, labelMods)}>
+            {label && <span className={classNames(cls.label)}>{label}</span>}
             <select
                 className={classNames(cls.select, mods)}
                 value={value}
@@ -48,4 +52,4 @@ export const Select = memo((props: SelectProps) => {
             </select>
         </div>
     )
-})
+}

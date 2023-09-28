@@ -3,7 +3,7 @@ import { Select, type SelectOption } from './Select'
 import { ThemeDecorator } from '6_shared/config/storybook/Decorators/ThemeDecorator'
 import { Theme } from '1_app/providers/ThemeProvider'
 
-const options: SelectOption[] = [
+const options: Array<SelectOption<string>> = [
     {
         content: 'Первый пункт',
         value: 'Первый пункт',
@@ -26,8 +26,8 @@ const meta = {
     },
     args: {
         options,
-        label: 'Укажите значение'
-    }
+        label: 'Укажите значение',
+    },
 } satisfies Meta<typeof Select>
 
 export default meta

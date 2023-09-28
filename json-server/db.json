@@ -114,16 +114,28 @@
       "userId": "1",
       "text": " ",
       "id": "mUwHw2U"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": " ",
+      "id": "kiJoDQl"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "1 2",
+      "id": "SNgQDed"
     }
   ],
   "profile": [
     {
       "id": "1",
-      "first": "Ден",
+      "first": "Денис",
       "lastname": "Ерохин",
       "age": 32,
       "currency": "USD",
-      "country": "USA",
+      "country": "Britain",
       "city": "Москва",
       "username": "Den",
       "avatar": "https://img.freepik.com/free-vector/creative-hacker-logo-template_23-2149199402.jpg?w=2000"
@@ -172,7 +184,6 @@
       "dataCreate": "2023-09-01",
       "userId": "1",
       "type": [
-        "IT",
         "ECONOMICS"
       ],
       "data": [

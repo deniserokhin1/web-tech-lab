@@ -3,6 +3,7 @@
     grid-template-columns: repeat(6, 1fr);
     gap: 10px;
     width: 100%;
+    padding: 2px;
 
     @media screen and (width>1920px) {
         grid-template-columns: repeat(6, 1fr);
@@ -26,6 +27,7 @@
     flex-direction: column;
     row-gap: 10px;
     width: 1000px;
+    padding-bottom: 2px;
     margin: 0 auto;
 
     // @media screen and (width>=1920px) {

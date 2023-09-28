@@ -1,18 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { CurrencySelect } from './CurrencySelect'
-import { ThemeDecorator } from '6_shared/config/storybook/Decorators/ThemeDecorator'
+import { ArticleTypeTabs } from './ArticleTypeTabs'
 import { Theme } from '1_app/providers/ThemeProvider'
+import { ThemeDecorator } from '6_shared/config/storybook/Decorators/ThemeDecorator'
+import { ArticleType } from '5_entities/Article/model/types/article'
 
 const meta = {
-    title: '5_entities/CurrencySelect',
-    component: CurrencySelect,
+    title: '5_entities/ArticleTypeTabs',
+    component: ArticleTypeTabs,
     parameters: {
         layout: 'fullscreen',
     },
     args: {
-        widthFitContent: true,
+        value: ArticleType.ALL,
     },
-} satisfies Meta<typeof CurrencySelect>
+} satisfies Meta<typeof ArticleTypeTabs>
 
 export default meta
 type Story = StoryObj<typeof meta>

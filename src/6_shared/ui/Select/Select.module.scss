@@ -1,5 +1,6 @@
 .container {
     display: flex;
+    align-items: center;
 }
 
 .label {
@@ -8,11 +9,18 @@
     color: var(--secondary-color);
 }
 
+.fitContent {
+    .label {
+        min-width: fit-content;
+    }
+}
+
 .select {
+    padding: 5px;
     color: var(--primary-color);
     background: none;
     border: 1px solid var(--i-bg-color);
-    border-radius: 2px;
+    border-radius: 4px;
     outline: none;
 }
 

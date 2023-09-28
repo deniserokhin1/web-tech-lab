@@ -1,9 +1,9 @@
 import { type IUser } from '5_entities/User'
 
-export enum ArticleSortField {
+export enum ArticleSortFeild {
     VIEWS = 'views',
     TITLE = 'title',
-    CREATED = 'createdAt',
+    CREATED = 'created',
 }
 
 export enum ArticleDataType {

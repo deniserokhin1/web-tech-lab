@@ -24,18 +24,20 @@ Light.decorators = [
         articleDetails: {
             data: article,
         },
-        articleDetailsComments: {
-            ids: ['1', '2'],
-            entities: {
-                1: {
-                    id: '1',
-                    text: 'Comment 1',
-                    user: { id: '1', username: 'Den' },
-                },
-                2: {
-                    id: '2',
-                    text: 'Comment 2',
-                    user: { id: '1', username: 'Leon' },
+        articleDeatailsPage: {
+            comments: {
+                ids: ['1', '2'],
+                entities: {
+                    1: {
+                        id: '1',
+                        text: 'Comment 1',
+                        user: { id: '1', username: 'Den' },
+                    },
+                    2: {
+                        id: '2',
+                        text: 'Comment 2',
+                        user: { id: '1', username: 'Leon' },
+                    },
                 },
             },
         },
@@ -50,9 +52,11 @@ Light_No_Comments.decorators = [
         articleDetails: {
             data: article,
         },
-        articleDetailsComments: {
-            ids: [],
-            entities: {},
+        articleDeatailsPage: {
+            comments: {
+                ids: [],
+                entities: {},
+            },
         },
     }),
 ]
@@ -66,8 +70,9 @@ Dark.decorators = [
         articleDetails: {
             data: article,
         },
-        articleDetailsComments: {
-            ids: ['1', '2'],
+        articleDeatailsPage: {
+            comments: {
+                ids: ['1', '2'],
             entities: {
                 1: {
                     id: '1',
@@ -80,7 +85,8 @@ Dark.decorators = [
                     user: { id: '1', username: 'Leon' },
                 },
             },
-        },
+            }
+        }
     }),
 ]
 
@@ -93,9 +99,11 @@ Dark_No_Comments.decorators = [
         articleDetails: {
             data: article,
         },
-        articleDetailsComments: {
-            ids: [],
-            entities: {},
+        articleDeatailsPage: {
+            comments: {
+                ids: [],
+                entities: {},
+            },
         },
     }),
 ]

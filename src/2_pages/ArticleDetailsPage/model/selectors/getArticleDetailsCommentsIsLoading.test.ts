@@ -3,8 +3,10 @@ import { getArticleDetailsCommentsIsLoading } from './getArticleDetailsCommentsI
 
 describe('getArticleDetailsComments', () => {
     const state: DeepPartial<StateSchema> = {
-        articleDetailsComments: {
-            isLoading: true,
+        articleDeatailsPage: {
+            comments: {
+                isLoading: true,
+            },
         },
     }
     test('getArticleDetailsCommentsIsLoading', () => {

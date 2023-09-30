@@ -1,8 +1,4 @@
 /* eslint-disable @typescript-eslint/prefer-ts-expect-error */
 import { lazy } from 'react'
 
-export const AboutAsync = lazy(
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment, spaced-comment
-    //@ts-ignore
-    () => new Promise((resolve) => setTimeout(() => resolve(import('./About')), 1000)),
-)
+export const AboutAsync = lazy(() => import('./About'))

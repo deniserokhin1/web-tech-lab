@@ -1,5 +1,5 @@
 import { memo, useCallback } from 'react'
-import { classNames } from '6_shared/lib'
+import { IconComponent, classNames } from '6_shared/lib'
 import cls from './ArticlesPageFilter.module.scss'
 import { ArticleViewSelector } from '4_features/ArticleViewSelector'
 import {
@@ -23,6 +23,9 @@ import { type SortOrder } from '6_shared/types'
 import { useTranslation } from 'react-i18next'
 import { fetchArticlesList } from '../../model/services/fetchArticlesList'
 import { useDebouce } from '6_shared/hooks/useDebounce'
+import { getUIMainColor } from '4_features/UI/model/selectors/getUI'
+import { AppLink } from '6_shared/ui/AppLink'
+import { RoutePath } from '1_app/providers/Router/config/routeConfig'
 
 interface ArticlesPageFilterProps {
     className?: string
@@ -37,6 +40,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFilterProps) => {
     const filter = useAppSelector(getArticlesPageFilter)
     const search = useAppSelector(getArticlesPageSearch)
     const type = useAppSelector(getArticlesPageType)
+    const primaryColor = useAppSelector(getUIMainColor)
 
     const namespace = __IS_DEV__ ? 'translation' : 'articles-list'
     const { t } = useTranslation(namespace)
@@ -96,12 +100,20 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFilterProps) => {
     return (
         <div className={classNames(cls.container, mods, [className])}>
             <div className={cls.wrapper}>
-                <ArticleSortSelector
-                    order={order}
-                    sort={filter}
-                    onChangeOrder={onChangeSort}
-                    onChangeSort={onChangeFilter}
-                />
+                <div className={cls.leftSide}>
+                    <AppLink to={RoutePath.article_create}>
+                        <IconComponent name="add" pathFill={primaryColor} />
+                    </AppLink>
+
+                    <ArticleTypeTabs onChangeType={onChangeType} value={type} />
+
+                    <ArticleSortSelector
+                        order={order}
+                        sort={filter}
+                        onChangeOrder={onChangeSort}
+                        onChangeSort={onChangeFilter}
+                    />
+                </div>
                 <ArticleViewSelector view={view} onViewClick={onChangeArticleView} />
             </div>
             <Input
@@ -109,7 +121,6 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFilterProps) => {
                 onChange={onChangeSearch}
                 value={search}
             />
-            <ArticleTypeTabs onChangeType={onChangeType} value={type} />
         </div>
     )
 })

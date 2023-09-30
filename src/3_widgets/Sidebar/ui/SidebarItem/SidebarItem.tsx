@@ -37,6 +37,7 @@ export const SidebarItem = memo((props: SidebarItemProps) => {
             theme={AppLinkTheme.PRIMARY_INVERT}
             className={classNames(cls.link, mods)}
             to={path}
+            animation={true}
         >
             <IconComponent name={icon} pathFill={color} />
             <p className={classNames(cls.text)}>{t(text)}</p>

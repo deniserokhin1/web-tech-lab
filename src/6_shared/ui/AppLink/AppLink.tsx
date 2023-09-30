@@ -14,11 +14,12 @@ interface AppLinkProps extends LinkProps {
     children: ReactNode
     className?: string
     theme?: AppLinkTheme
+    animation?: boolean
 }
 
 export const AppLink = memo((props: AppLinkProps) => {
-    const { className, children, to, theme = AppLinkTheme.PRIMARY, ...otherProps } = props
-    const mods = {}
+    const { className, children, to, theme = AppLinkTheme.PRIMARY, animation = false, ...otherProps } = props
+    const mods = { [cls.animation]: animation }
 
     return (
         <Link

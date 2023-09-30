@@ -7,24 +7,6 @@
     overflow: auto;
     transition: all var(--theme-transition);
     mask-image: linear-gradient(rgb(0 0 0 / 100%), transparent);
-
-    &::-webkit-scrollbar-track {
-        width: 5px;
-        background-color: transparent;
-        border-radius: 10px;
-    }
-
-    &::-webkit-scrollbar {
-        width: 5px;
-        border-radius: 10px;
-        opacity: 0.7;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background: var(--scrollbar);
-        background-clip: border-box;
-        border-radius: 10px;
-    }
 }
 
 .content {
@@ -68,6 +50,13 @@
     margin-top: 15px;
 }
 
-.backButton {
-    position: fixed;
+.recommendationsTitle {
+    margin: 25px 0 10px;
+}
+
+.recommendations {
+    display: flex !important;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
 }

@@ -7,21 +7,25 @@ import { useGetMainColor } from '6_shared/hooks/useGetMainColor'
 import { Sidebar } from '3_widgets/Sidebar'
 import { useAppDispatch, useAppSelector } from './providers/StoreProvider/config/store'
 import { getUserInited, userActions } from '5_entities/User'
+import { uiActions } from '4_features/UI'
 
 export const App = (): JSX.Element => {
     const { theme } = useTheme()
     const mods = {}
 
-    const mainRef = useRef<HTMLDivElement>(null)
-    const color = useGetMainColor(mainRef)
-
     const dispatch = useAppDispatch()
+    const { setMainColor } = uiActions
     const { initAuthData } = userActions
     const inited = useAppSelector(getUserInited)
 
+    const mainRef = useRef<HTMLDivElement>(null)
+    const color = useGetMainColor(mainRef)
+    const primaryColor = useGetMainColor(mainRef, '--primary-color')
+
     useEffect(() => {
         dispatch(initAuthData())
-    }, [dispatch, initAuthData])
+        dispatch(setMainColor(primaryColor))
+    }, [color, dispatch, initAuthData, primaryColor, setMainColor])
 
     return (
         <div className={classNames('main', mods, [theme])} ref={mainRef}>

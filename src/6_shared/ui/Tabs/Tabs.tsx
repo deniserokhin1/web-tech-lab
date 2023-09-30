@@ -33,7 +33,6 @@ export const Tabs = <T extends string>(props: TabsProps<T>): JSX.Element => {
                     theme={tab.value === value ? CardTheme.OUTLINED : CardTheme.DEFAULT}
                     onClick={clickHandler(tab)}
                     smallPadding={true}
-                    hover={true}
                 >
                     {tab.content}
                 </Card>

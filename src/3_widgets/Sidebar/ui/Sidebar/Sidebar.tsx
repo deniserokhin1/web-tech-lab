@@ -8,7 +8,6 @@ import { useTheme } from '1_app/providers/ThemeProvider'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
 import { useAppSelector } from '1_app/providers/StoreProvider'
 import { getSidebarItems } from '3_widgets/Sidebar/model/selectors/getSidebarItems'
-import { useGetMainColor } from '6_shared/hooks/useGetMainColor'
 
 export interface SidebarProps {
     className?: string

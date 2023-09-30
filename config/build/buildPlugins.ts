@@ -4,6 +4,7 @@ import { type IBuildOptions } from './types/config'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+import CopyPlugin from 'copy-webpack-plugin'
 
 export function buildPlugins(options: IBuildOptions): webpack.WebpackPluginInstance[] {
     const { paths, isDev, apiUrl, project } = options
@@ -21,6 +22,9 @@ export function buildPlugins(options: IBuildOptions): webpack.WebpackPluginInsta
             __IS_DEV__: JSON.stringify(isDev),
             __API__: JSON.stringify(apiUrl),
             __PROJECT__: JSON.stringify(project),
+        }),
+        new CopyPlugin({
+            patterns: [{ from: paths.locales, to: paths.buildLocales }],
         }),
     ]
 

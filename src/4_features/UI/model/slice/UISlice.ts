@@ -12,6 +12,9 @@ export const uiSlice = createSlice({
         setScrollPosition: (state, { payload }: PayloadAction<{ path: string; position: number }>) => {
             state.scroll[payload.path] = payload.position
         },
+        setMainColor: (state, action: PayloadAction<string>) => {
+            state.mainColor = action.payload
+        },
     },
 })
 

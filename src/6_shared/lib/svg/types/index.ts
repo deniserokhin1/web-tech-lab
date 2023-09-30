@@ -10,10 +10,10 @@ export type IconComponentName =
     | 'back'
     | 'grid'
     | 'list'
+    | 'edit'
+    | 'add'
 
 export interface ISvgOptions {
-    onHover?: (event: any) => void
-    onUnHover?: (event: any) => void
     pathFill?: string
     svgFill?: string
     width?: number

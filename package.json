@@ -6,7 +6,7 @@
     "scripts": {
         "start:dev": "concurrently \"npm start\" \"npm run json:server\"",
         "start": "webpack serve --env port=3000",
-        "build:prod": "webpack --env mode=production",
+        "build:prod": "webpack --env mode=production apiUrl=https://web-tech-lab-server-deniserokhin1.vercel.app/",
         "build:dev": "webpack --env mode=development",
         "lint": "eslint \"**/*.{ts,tsx}\"",
         "lint:fix": "eslint \"**/*.{ts,tsx}\" --fix",
@@ -56,6 +56,7 @@
         "babel-loader": "^9.1.3",
         "babel-plugin-i18next-extract": "^0.9.0",
         "concurrently": "^8.2.1",
+        "copy-webpack-plugin": "^11.0.0",
         "css-loader": "^6.8.1",
         "eslint": "^8.48.0",
         "eslint-config-prettier": "^8.7.0",

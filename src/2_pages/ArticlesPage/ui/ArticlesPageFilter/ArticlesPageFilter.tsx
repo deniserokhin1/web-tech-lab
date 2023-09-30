@@ -42,7 +42,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFilterProps) => {
     const type = useAppSelector(getArticlesPageType)
     const primaryColor = useAppSelector(getUIMainColor)
 
-    const namespace = __IS_DEV__ ? 'translation' : 'articles-list'
+    const namespace = !__IS_DEV__ ? 'translation' : 'articles-list'
     const { t } = useTranslation(namespace)
 
     const fetchData = useCallback(() => {

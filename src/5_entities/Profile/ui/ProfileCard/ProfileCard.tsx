@@ -41,7 +41,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         onChangeCountry,
     } = props
 
-    const namespace = __IS_DEV__ ? 'translation' : 'profile'
+    const namespace = !__IS_DEV__ ? 'translation' : 'profile'
     const { t } = useTranslation(namespace)
 
     if (isLoading) {
@@ -60,26 +60,16 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
 
     return (
         <div className={cls.content}>
-            {data?.avatar && (
-                <div className={cls.avatarWrapper}>{<Avatar src={data.avatar} />}</div>
-            )}
+            {data?.avatar && <div className={cls.avatarWrapper}>{<Avatar src={data.avatar} />}</div>}
 
             <div className={cls.container}>
                 <Text text={t('profile.Ваше имя')} align={TextAlign.LEFT} />
-                <Input
-                    value={data?.first}
-                    onChange={onChangeFirstName}
-                    readOnly={readonly}
-                />
+                <Input value={data?.first} onChange={onChangeFirstName} readOnly={readonly} />
             </div>
 
             <div className={cls.container}>
                 <Text text={t('profile.Ваша фамилия')} align={TextAlign.LEFT} />
-                <Input
-                    value={data?.lastname}
-                    onChange={onChangeLasttName}
-                    readOnly={readonly}
-                />
+                <Input value={data?.lastname} onChange={onChangeLasttName} readOnly={readonly} />
             </div>
 
             <div className={cls.container}>
@@ -94,36 +84,20 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
 
             <div className={cls.container}>
                 <Text text={t('profile.Имя пользователя')} align={TextAlign.LEFT} />
-                <Input
-                    value={data?.username}
-                    onChange={onChangeUsername}
-                    readOnly={readonly}
-                />
+                <Input value={data?.username} onChange={onChangeUsername} readOnly={readonly} />
             </div>
 
             <div className={cls.container}>
                 <Text text={t('profile.Ссылка на аватар')} align={TextAlign.LEFT} />
-                <Input
-                    value={data?.avatar}
-                    onChange={onChangeAvatar}
-                    readOnly={readonly}
-                />
+                <Input value={data?.avatar} onChange={onChangeAvatar} readOnly={readonly} />
             </div>
 
             <div className={cls.container}>
-                <CurrencySelect
-                    value={data?.currency}
-                    onChange={onChangeCurrency}
-                    readonly={readonly}
-                />
+                <CurrencySelect value={data?.currency} onChange={onChangeCurrency} readonly={readonly} />
             </div>
 
             <div className={cls.container}>
-                <CountrySelect
-                    value={data?.country}
-                    onChange={onChangeCountry}
-                    readonly={readonly}
-                />
+                <CountrySelect value={data?.country} onChange={onChangeCountry} readonly={readonly} />
             </div>
         </div>
     )

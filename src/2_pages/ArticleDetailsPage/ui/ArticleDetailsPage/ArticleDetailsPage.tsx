@@ -47,7 +47,7 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
         dispatch(fetchArticleRecommendations())
     })
 
-    const namespace = __IS_DEV__ ? 'translation' : 'article-details'
+    const namespace = !__IS_DEV__ ? 'translation' : 'article-details'
     const { t } = useTranslation(namespace)
 
     const onSendComment = useCallback(

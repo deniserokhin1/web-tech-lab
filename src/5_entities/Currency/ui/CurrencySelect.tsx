@@ -21,7 +21,7 @@ interface CurrencySelectProps {
 export const CurrencySelect = memo((props: CurrencySelectProps) => {
     const { onChange, value, readonly, widthFitContent } = props
 
-    const namespace = __IS_DEV__ ? 'translation' : 'profile'
+    const namespace = !__IS_DEV__ ? 'translation' : 'profile'
     const { t } = useTranslation(namespace)
 
     const onChangeHandler = useCallback(

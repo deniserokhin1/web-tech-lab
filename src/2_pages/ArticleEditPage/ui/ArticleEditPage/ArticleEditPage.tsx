@@ -16,7 +16,7 @@ const ArticleEditPage = memo((props: ArticleEditPageProps) => {
     const { id } = useParams<{ id: string }>()
     const isEdit = Boolean(id)
 
-    const namespace = __IS_DEV__ ? 'translation' : 'article-details'
+    const namespace = !__IS_DEV__ ? 'translation' : 'article-details'
     const { t } = useTranslation(namespace)
 
     const title = isEdit

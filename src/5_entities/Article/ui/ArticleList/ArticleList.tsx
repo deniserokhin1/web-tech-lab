@@ -18,7 +18,7 @@ interface ArticleListProps {
 export const ArticleList = memo((props: ArticleListProps) => {
     const { className, articles = [], isLoading, view = ArticleView.TILE, target } = props
 
-    const namespace = __IS_DEV__ ? 'translation' : 'articles-list'
+    const namespace = !__IS_DEV__ ? 'translation' : 'articles-list'
     const { t } = useTranslation(namespace)
 
     const skeletons = (view: ArticleView): JSX.Element[] => {

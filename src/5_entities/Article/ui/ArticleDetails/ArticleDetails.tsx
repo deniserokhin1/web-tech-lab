@@ -10,10 +10,7 @@ import {
     getArticleDetailsError,
     getArticleDetailsIsLoading,
 } from '../../model/selectors/getArticleDetails'
-import {
-    DynamicModuleLoader,
-    type ReducersList,
-} from '6_shared/lib/components/DynamicModuleLoader'
+import { DynamicModuleLoader, type ReducersList } from '6_shared/lib/components/DynamicModuleLoader'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import { Skeleton } from '6_shared/ui/Skeleton/Skeleton'
 import { Avatar } from '6_shared/ui/Avatar/Avatar'
@@ -62,7 +59,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         dispatch(fetchArticleById(id))
     })
 
-    const namespace = __IS_DEV__ ? 'translation' : 'article-details'
+    const namespace = !__IS_DEV__ ? 'translation' : 'article-details'
     const { t } = useTranslation(namespace)
 
     const color = useGetMainColor(ref, '--secondary-color')
@@ -86,12 +83,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     } else {
         content = (
             <div className={cls.content} ref={ref}>
-                <Avatar
-                    height={300}
-                    width="100%"
-                    src={article?.img}
-                    borderRadius={'8px'}
-                />
+                <Avatar height={300} width="100%" src={article?.img} borderRadius={'8px'} />
                 <Text title={article?.title} align={TextAlign.LEFT} size={TextSize.L} />
                 <Text text={article?.subtitle} align={TextAlign.LEFT} size={TextSize.L} />
 

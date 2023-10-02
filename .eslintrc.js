@@ -26,7 +26,7 @@ module.exports = {
         sourceType: 'module',
         project: './tsconfig.json',
     },
-    plugins: ['react', 'i18next', 'react-hooks'],
+    plugins: ['react', 'i18next', 'react-hooks', 'yo-common'],
     rules: {
         '@typescript-eslint/prefer-nullish-coalescing': 0,
         '@typescript-eslint/strict-boolean-expressions': 0,
@@ -37,12 +37,8 @@ module.exports = {
         '@typescript-eslint/promise-function-async': 0,
         '@typescript-eslint/naming-convention': 0,
         'linebreak-style': ['error', 'unix'],
-        indent: [2, 4],
         'react/display-name': 0,
-        'i18next/no-literal-string': [
-            'error',
-            { markupOnly: true, ignoreAttribute: ['data-testid'] },
-        ],
+        'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid'] }],
         'no-duplicate-case': 0,
         indent: 0,
         'react-hooks/rules-of-hooks': 'error',
@@ -55,6 +51,7 @@ module.exports = {
         '@typescript-eslint/no-invalid-void-type': 0,
         '@typescript-eslint/prefer-includes': 0,
         'n/no-callback-literal': 0,
-        '@typescript-eslint/ban-types': 0
+        '@typescript-eslint/ban-types': 0,
+        // 'yo-common/path-checker': 'error',
     },
 }

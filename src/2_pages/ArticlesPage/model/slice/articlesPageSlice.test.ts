@@ -1,7 +1,7 @@
 import { fetchArticlesList } from '../services/fetchArticlesList'
 import { articlesPageActions, articlesPageReducer } from './articlesPageSlice'
 import { type ArticlesPageSchema } from '../types/articlesPageSchema'
-import { articles } from '2_pages/ArticlesPage/mock/data'
+import { articles } from '../../mock/data'
 
 describe('articlesPageSlice', () => {
     const { setPage } = articlesPageActions

@@ -41,7 +41,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         onChangeCountry,
     } = props
 
-    const namespace = !__IS_DEV__ ? 'translation' : 'profile'
+    const namespace = __IS_DEV__ ? 'translation' : 'profile'
     const { t } = useTranslation(namespace)
 
     if (isLoading) {

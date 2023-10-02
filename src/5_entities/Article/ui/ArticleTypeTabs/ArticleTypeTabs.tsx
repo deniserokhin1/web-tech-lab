@@ -12,7 +12,7 @@ interface ArticleTypeTabsProps {
 export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
     const { value, onChangeType } = props
 
-    const namespace = !__IS_DEV__ ? 'translation' : 'articles-list'
+    const namespace = __IS_DEV__ ? 'translation' : 'articles-list'
     const { t } = useTranslation(namespace)
 
     const typeTabs = useMemo<Array<TabItem<ArticleType>>>(

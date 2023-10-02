@@ -43,7 +43,7 @@ const ProfilePage = memo((props: ProfilePageProps) => {
 
     const validateErrors = useAppSelector(getProfileValidateErrors)
 
-    const namespace = !__IS_DEV__ ? 'translation' : 'profile'
+    const namespace = __IS_DEV__ ? 'translation' : 'profile'
     const { t } = useTranslation(namespace)
 
     const validateErrorTranslate = {

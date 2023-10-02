@@ -24,7 +24,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
     const commentText = useAppSelector(getAddCommentText)
     const dispatch = useAppDispatch()
 
-    const namespace = !__IS_DEV__ ? 'translation' : 'article-details'
+    const namespace = __IS_DEV__ ? 'translation' : 'article-details'
     const { t } = useTranslation(namespace)
 
     const onCommentTextChange = useCallback(

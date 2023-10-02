@@ -11,7 +11,7 @@ export const User: FC<UserProps> = (props) => {
     const { className } = props
     const mods = {}
 
-    // const namespace = !__IS_DEV__ ? 'translation' : 'namespace'
+    // const namespace = __IS_DEV__ ? 'translation' : 'namespace'
     // const { t } = useTranslation(namespace)
 
     return <div className={classNames('', mods, [className])}></div>

@@ -15,7 +15,7 @@ interface CommentListProps {
 export const CommentList = memo((props: CommentListProps) => {
     const { className, comments, isLoading } = props
 
-    const namespace = !__IS_DEV__ ? 'translation' : 'article-details'
+    const namespace = __IS_DEV__ ? 'translation' : 'article-details'
     const { t } = useTranslation(namespace)
 
     const mods = {}

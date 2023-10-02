@@ -26,7 +26,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     const ref = useRef<HTMLDivElement>(null)
     // const navigate = useNavigate()
 
-    const namespace = !__IS_DEV__ ? 'translation' : 'articles-list'
+    const namespace = __IS_DEV__ ? 'translation' : 'articles-list'
     const { t } = useTranslation(namespace)
 
     const mods = {}

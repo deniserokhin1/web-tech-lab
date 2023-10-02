@@ -19,7 +19,7 @@ export const SidebarItem = memo((props: SidebarItemProps) => {
     const { color, item } = props
     const { icon, path, text } = item
 
-    const namespace = !__IS_DEV__ ? 'translation' : ''
+    const namespace = __IS_DEV__ ? 'translation' : ''
     const { t } = useTranslation(namespace)
 
     const { stateSidebar } = useTheme()

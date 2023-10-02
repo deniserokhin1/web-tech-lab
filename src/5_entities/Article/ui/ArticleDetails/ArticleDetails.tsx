@@ -59,7 +59,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         dispatch(fetchArticleById(id))
     })
 
-    const namespace = !__IS_DEV__ ? 'translation' : 'article-details'
+    const namespace = __IS_DEV__ ? 'translation' : 'article-details'
     const { t } = useTranslation(namespace)
 
     const color = useGetMainColor(ref, '--secondary-color')

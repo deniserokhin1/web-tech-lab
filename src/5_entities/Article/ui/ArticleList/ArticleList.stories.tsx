@@ -3,7 +3,7 @@ import { ArticleList } from './ArticleList'
 import { Theme } from '1_app/providers/ThemeProvider'
 import { ThemeDecorator } from '6_shared/config/storybook/Decorators/ThemeDecorator'
 import { article } from '../../mocks/data'
-import { ArticleView } from '5_entities/Article/model/types/article'
+import { ArticleView } from '../../model/types/article'
 
 const meta = {
     title: '5_entities/ArticleList',

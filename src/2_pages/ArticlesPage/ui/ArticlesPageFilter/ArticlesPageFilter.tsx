@@ -1,16 +1,21 @@
-import { memo, useCallback } from 'react'
-import { IconComponent, classNames } from '6_shared/lib'
-import cls from './ArticlesPageFilter.module.scss'
+import { RoutePath } from '1_app/providers/Router/config/routeConfig'
+import { useAppDispatch, useAppSelector } from '1_app/providers/StoreProvider'
 import { ArticleViewSelector } from '4_features/ArticleViewSelector'
+import { getUIMainColor } from '4_features/UI/model/selectors/getUI'
 import {
-    type ArticleSortFeild,
     ArticleSortSelector,
     ArticleTypeTabs,
-    type ArticleView,
+    type ArticleSortFeild,
     type ArticleType,
+    type ArticleView,
 } from '5_entities/Article'
-import { useAppDispatch, useAppSelector } from '1_app/providers/StoreProvider'
-import { articlesPageActions } from '../../model/slice/articlesPageSlice'
+import { useDebouce } from '6_shared/hooks/useDebounce'
+import { IconComponent, classNames } from '6_shared/lib'
+import { type SortOrder } from '6_shared/types'
+import { AppLink } from '6_shared/ui/AppLink'
+import { Input } from '6_shared/ui/Input'
+import { memo, useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
 import {
     getArticlesPageFilter,
     getArticlesPageSearch,
@@ -18,14 +23,9 @@ import {
     getArticlesPageType,
     getArticlesPageView,
 } from '../../model/selectors/getArticlesPage'
-import { Input } from '6_shared/ui/Input'
-import { type SortOrder } from '6_shared/types'
-import { useTranslation } from 'react-i18next'
 import { fetchArticlesList } from '../../model/services/fetchArticlesList'
-import { useDebouce } from '6_shared/hooks/useDebounce'
-import { getUIMainColor } from '4_features/UI/model/selectors/getUI'
-import { AppLink } from '6_shared/ui/AppLink'
-import { RoutePath } from '1_app/providers/Router/config/routeConfig'
+import { articlesPageActions } from '../../model/slice/articlesPageSlice'
+import cls from './ArticlesPageFilter.module.scss'
 
 interface ArticlesPageFilterProps {
     className?: string
@@ -42,7 +42,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFilterProps) => {
     const type = useAppSelector(getArticlesPageType)
     const primaryColor = useAppSelector(getUIMainColor)
 
-    const namespace = !__IS_DEV__ ? 'translation' : 'articles-list'
+    const namespace = __IS_DEV__ ? 'translation' : 'articles-list'
     const { t } = useTranslation(namespace)
 
     const fetchData = useCallback(() => {

@@ -7,7 +7,7 @@ import { LangSwitcher } from '3_widgets/LangSwitcher/ui/LangSwitcher'
 import { useTheme } from '1_app/providers/ThemeProvider'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
 import { useAppSelector } from '1_app/providers/StoreProvider'
-import { getSidebarItems } from '3_widgets/Sidebar/model/selectors/getSidebarItems'
+import { getSidebarItems } from '../../model/selectors/getSidebarItems'
 
 export interface SidebarProps {
     className?: string

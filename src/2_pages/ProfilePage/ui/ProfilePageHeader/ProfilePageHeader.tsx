@@ -28,7 +28,7 @@ export const ProfilePageHeader = memo((props: ProfilePageHeaderProps) => {
 
     const canEdit = authData?.id === profileData?.id
 
-    const namespace = !__IS_DEV__ ? 'translation' : 'profile'
+    const namespace = __IS_DEV__ ? 'translation' : 'profile'
     const { t } = useTranslation(namespace)
 
     const dispatch = useAppDispatch()

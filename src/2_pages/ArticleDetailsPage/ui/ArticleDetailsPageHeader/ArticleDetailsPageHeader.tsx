@@ -5,7 +5,7 @@ import { Button } from '6_shared/ui/Button'
 import { RoutePath } from '1_app/providers/Router/config/routeConfig'
 import { useNavigate } from 'react-router-dom'
 import { useAppSelector } from '1_app/providers/StoreProvider'
-import { getCanArticleEdit } from '2_pages/ArticleDetailsPage/model/selectors/article'
+import { getCanArticleEdit } from '../../model/selectors/article'
 import { getArticleDetailsData } from '5_entities/Article'
 import { getUIMainColor } from '4_features/UI/model/selectors/getUI'
 

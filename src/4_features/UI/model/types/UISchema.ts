@@ -4,4 +4,5 @@ export interface UISchema {
     scroll: ScrollSchema
     mainColor?: string
     secondaryColor?: string
+    isScrolling?: boolean
 }

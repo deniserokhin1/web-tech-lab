@@ -1,10 +1,10 @@
 import { useAppDispatch, useAppSelector } from '1_app/providers/StoreProvider'
+import { PageWrapper } from '3_widgets/PageWrapper/PageWrapper'
 import { AddCommentForm } from '4_features/AddNewComment'
 import { ArticleDetails } from '5_entities/Article'
 import { ArticleList } from '5_entities/Article/ui/ArticleList/ArticleList'
 import { CommentList } from '5_entities/Comment'
 import { useInitialEffect } from '6_shared/hooks/useInitialEffect'
-import { classNames } from '6_shared/lib'
 import { DynamicModuleLoader, type ReducersList } from '6_shared/lib/components/DynamicModuleLoader'
 import { Card } from '6_shared/ui/Card/Card'
 import { VStack } from '6_shared/ui/Stack'
@@ -32,7 +32,6 @@ const reducers: ReducersList = {
 }
 
 const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
-    const { className } = props
 
     const comments = useAppSelector(getArticleComments.selectAll)
     const recommendations = useAppSelector(getArticleRecommendations.selectAll)
@@ -59,16 +58,12 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
     )
 
     if (!id) {
-        return (
-            <div className={classNames(cls.container, {}, [className])}>
-                {t('article-details.Статья не найдена')}
-            </div>
-        )
+        return <PageWrapper>{t('article-details.Статья не найдена')}</PageWrapper>
     }
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.container, {}, [className])}>
+            <PageWrapper>
                 <ArticleDetailsPageHeader />
 
                 <div className={cls.content}>
@@ -92,7 +87,7 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
                         </VStack>
                     </Card>
                 </div>
-            </div>
+            </PageWrapper>
         </DynamicModuleLoader>
     )
 })

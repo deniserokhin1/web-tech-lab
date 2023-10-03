@@ -1,12 +1,24 @@
-import { type ReactNode, useRef, type MutableRefObject, type UIEvent } from 'react'
+import {
+    type ReactNode,
+    useRef,
+    type MutableRefObject,
+    type UIEvent,
+    useEffect,
+} from 'react'
 import { classNames } from '6_shared/lib'
 import cls from './PageWrapper.module.scss'
 import { useInfinityScroll } from '6_shared/hooks/useInfinityScroll'
 import { getUIScrollByPath, uiActions } from '4_features/UI'
-import { type StateSchema, useAppDispatch, useAppSelector } from '1_app/providers/StoreProvider'
+import {
+    type StateSchema,
+    useAppDispatch,
+    useAppSelector,
+} from '1_app/providers/StoreProvider'
 import { useLocation } from 'react-router-dom'
 import { useInitialEffect } from '6_shared/hooks/useInitialEffect'
 import { useDebouce } from '6_shared/hooks/useDebounce'
+import { getIsScrolling } from '4_features/UI/model/selectors/getUI'
+import { useThrottle } from '6_shared/hooks/useThrottle'
 
 interface PageWrapperProps {
     className?: string
@@ -19,15 +31,21 @@ export const PageWrapper = (props: PageWrapperProps): JSX.Element => {
     const { className, children, offsetTop, onScrollEnd } = props
     const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>
+    const timer = useRef() as MutableRefObject<NodeJS.Timeout | null>
     const { pathname } = useLocation()
 
     const dispatch = useAppDispatch()
-    const { setScrollPosition } = uiActions
+    const { setScrollPosition, setScrolling } = uiActions
     const scrollPosition = useAppSelector((state: StateSchema) => {
         return getUIScrollByPath(state, pathname)
     })
+    const isScrolling = useAppSelector(getIsScrolling)
 
-    console.log('scrollPosition:', scrollPosition)
+    useEffect(() => {
+        return () => {
+            clearTimeout(timer.current as NodeJS.Timeout)
+        }
+    }, [])
 
     useInfinityScroll({
         callback: onScrollEnd,
@@ -39,26 +57,40 @@ export const PageWrapper = (props: PageWrapperProps): JSX.Element => {
         wrapperRef.current.scrollTop = scrollPosition
     })
 
-    // const scrollHandler = useThrottle((e: UIEvent<HTMLDivElement>): void => {
-    //     dispatch(setScrollPosition({ path: pathname, position: e.currentTarget.scrollTop }))
-    // }, 500)
-
-    const scrollHandler = useDebouce((e: UIEvent<HTMLDivElement>): void => {
-        const target = e.target as HTMLElement
+    const scrollHandlerPosition = useDebouce((e: UIEvent<HTMLDivElement>): void => {
+        const target = e?.target as HTMLElement
         if (!(target instanceof HTMLElement)) return
         dispatch(setScrollPosition({ path: pathname, position: target.scrollTop }))
-    }, 50)
+    }, 100)
 
-    const mods = { [cls.offsetTop]: offsetTop }
+    const scrollHandlerIs = useThrottle((): void => {
+        if (!isScrolling) dispatch(setScrolling(true))
+
+        if (timer.current) clearTimeout(timer.current)
+
+        timer.current = setTimeout(() => {
+            dispatch(setScrolling(false))
+        }, 1200)
+    }, 1000)
+
+    const combinedScrollHandler = (e: UIEvent<HTMLDivElement>): void => {
+        scrollHandlerPosition(e)
+        scrollHandlerIs()
+    }
+
+    const mods = {
+        [cls.offsetTop]: offsetTop,
+        [cls.scrolling]: isScrolling,
+    }
 
     return (
         <div
             className={classNames(cls.container, mods, [className])}
             ref={wrapperRef}
-            onScroll={scrollHandler}
+            onScroll={combinedScrollHandler}
         >
             {children}
-            <div ref={triggerRef} />
+            <div className={cls.footer} ref={triggerRef} />
         </div>
     )
 }

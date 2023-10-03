@@ -13,6 +13,7 @@ import { Grid } from './components/Grid'
 import { List } from './components/List'
 import { Edit } from './components/Edit'
 import { AddArticle } from './components/AddArticle'
+import { Check } from './components/Check'
 
 export interface IconComponentProps extends ISvgOptions {
     name: IconComponentName
@@ -60,6 +61,9 @@ export const IconComponent = memo((props: IconComponentProps) => {
 
         case 'add':
             return <AddArticle pathFill={pathFill} />
+
+        case 'check':
+            return <Check pathFill={pathFill} />
 
         default:
             break

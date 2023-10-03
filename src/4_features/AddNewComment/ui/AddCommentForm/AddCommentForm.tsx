@@ -1,5 +1,4 @@
 import { memo, useCallback } from 'react'
-import { classNames } from '6_shared/lib'
 import { useTranslation } from 'react-i18next'
 import cls from './AddCommentForm.module.scss'
 import { Input } from '6_shared/ui/Input'
@@ -9,6 +8,7 @@ import { addNewCommentActions, addNewCommentReducer } from '../../model/slice/ad
 import { useAppDispatch, useAppSelector } from '1_app/providers/StoreProvider'
 import { getAddCommentText } from '../../model/selectors/getAddCommentForm'
 import { ButtonTheme } from '6_shared/ui/Button/Button'
+import { HStack } from '6_shared/ui/Stack'
 
 export interface AddCommentFormProps {
     className?: string
@@ -20,7 +20,7 @@ const reducers: ReducersList = {
 }
 
 const AddCommentForm = memo((props: AddCommentFormProps) => {
-    const { className, onSendComment } = props
+    const { onSendComment } = props
     const commentText = useAppSelector(getAddCommentText)
     const dispatch = useAppDispatch()
 
@@ -39,11 +39,9 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
         onCommentTextChange('')
     }, [onCommentTextChange, onSendComment, commentText])
 
-    const mods = {}
-
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.container, mods, [className])}>
+            <HStack gap="16" max={true}>
                 <Input
                     value={commentText}
                     onChange={onCommentTextChange}
@@ -56,7 +54,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
                     onClick={onSendHandler}
                     disabled={commentText === ''}
                 />
-            </div>
+            </HStack>
         </DynamicModuleLoader>
     )
 })

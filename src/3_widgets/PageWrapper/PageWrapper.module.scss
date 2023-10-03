@@ -1,28 +1,16 @@
 .container {
     position: absolute;
     inset: 0;
-    padding-right: 5px;
-    padding-left: 2px;
+    padding: 2px 5px 0 2px;
     margin-right: -10px;
     overflow-x: hidden;
     overflow-y: scroll;
 
-    &::-webkit-scrollbar-track {
-        width: 5px;
-        background-color: transparent;
-        border-radius: 10px;
-    }
 
-    &::-webkit-scrollbar {
-        width: 5px;
-        border-radius: 10px;
-        opacity: 0.7;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background: var(--scrollbar);
-        background-clip: border-box;
-        border-radius: 10px;
+    &.scrolling {
+        &::-webkit-scrollbar-thumb {
+            background: var(--scrollbar);
+        }
     }
 }
 
@@ -32,4 +20,9 @@
 
 .trigger {
     height: 20px;
+}
+
+.footer {
+    width: 100%;
+    height: var(--wrapper-padding);
 }

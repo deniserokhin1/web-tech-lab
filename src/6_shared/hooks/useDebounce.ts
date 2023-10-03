@@ -1,6 +1,9 @@
 import { type MutableRefObject, useCallback, useRef, useEffect } from 'react'
 
-export const useDebouce = <T extends (...args: any[]) => any>(callback: T, delay: number): (() => void) => {
+export const useDebouce = <T extends (...args: any[]) => any>(
+    callback: T,
+    delay: number,
+): ((...args: Parameters<typeof callback>) => void) => {
     const timer = useRef(null) as MutableRefObject<NodeJS.Timeout | null>
 
     useEffect(() => {

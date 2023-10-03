@@ -34,7 +34,8 @@ interface ArticlesPageFilterProps {
 export const ArticlesPageFilters = memo((props: ArticlesPageFilterProps) => {
     const { className } = props
     const dispatch = useAppDispatch()
-    const { setView, setFilter, setSort, setSearch, setPage, setType } = articlesPageActions
+    const { setView, setFilter, setSort, setSearch, setPage, setType } =
+        articlesPageActions
     const view = useAppSelector(getArticlesPageView)
     const order = useAppSelector(getArticlesPageSort)
     const filter = useAppSelector(getArticlesPageFilter)

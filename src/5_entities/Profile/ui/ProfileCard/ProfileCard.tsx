@@ -70,12 +70,20 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
 
             <HStack gap="16" max={true}>
                 <Text text={t('profile.Ваше имя')} align={TextAlign.LEFT} />
-                <Input value={data?.first} onChange={onChangeFirstName} readOnly={readonly} />
+                <Input
+                    value={data?.first}
+                    onChange={onChangeFirstName}
+                    readOnly={readonly}
+                />
             </HStack>
 
             <HStack gap="16" max={true}>
                 <Text text={t('profile.Ваша фамилия')} align={TextAlign.LEFT} />
-                <Input value={data?.lastname} onChange={onChangeLasttName} readOnly={readonly} />
+                <Input
+                    value={data?.lastname}
+                    onChange={onChangeLasttName}
+                    readOnly={readonly}
+                />
             </HStack>
 
             <HStack gap="16" max={true}>
@@ -90,21 +98,33 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
 
             <HStack gap="16" max={true}>
                 <Text text={t('profile.Имя пользователя')} align={TextAlign.LEFT} />
-                <Input value={data?.username} onChange={onChangeUsername} readOnly={readonly} />
+                <Input
+                    value={data?.username}
+                    onChange={onChangeUsername}
+                    readOnly={readonly}
+                />
             </HStack>
 
             <HStack gap="16" max={true}>
                 <Text text={t('profile.Ссылка на аватар')} align={TextAlign.LEFT} />
-                <Input value={data?.avatar} onChange={onChangeAvatar} readOnly={readonly} />
+                <Input
+                    value={data?.avatar}
+                    onChange={onChangeAvatar}
+                    readOnly={readonly}
+                />
             </HStack>
 
-            <HStack justify="start" gap="16" max={true}>
-                <CurrencySelect value={data?.currency} onChange={onChangeCurrency} readonly={readonly} />
-            </HStack>
+            <CurrencySelect
+                value={data?.currency}
+                onChange={onChangeCurrency}
+                readonly={readonly}
+            />
 
-            <HStack justify="start" gap="16" max={true}>
-                <CountrySelect value={data?.country} onChange={onChangeCountry} readonly={readonly} />
-            </HStack>
+            <CountrySelect
+                value={data?.country}
+                onChange={onChangeCountry}
+                readonly={readonly}
+            />
         </VStack>
     )
 }

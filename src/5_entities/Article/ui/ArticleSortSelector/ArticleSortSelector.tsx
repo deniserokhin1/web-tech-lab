@@ -1,10 +1,10 @@
 import { memo, useMemo } from 'react'
 import { classNames } from '6_shared/lib'
 import { useTranslation } from 'react-i18next'
-import cls from './ArticleSortSelector.module.scss'
 import { Select, type SelectOption } from '6_shared/ui/Select/Select'
 import { ArticleSortFeild } from '../../model/types/article'
 import { type SortOrder } from '6_shared/types'
+import { HStack } from '6_shared/ui/Stack'
 
 interface ArticleSortSelectorProps {
     className?: string
@@ -55,7 +55,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
     const mods = {}
 
     return (
-        <div className={classNames(cls.container, mods, [className])}>
+        <HStack gap="16" className={classNames('', mods, [className])}>
             <Select
                 label={t('article-details.Сортировать по')}
                 options={sortFeildOptions}
@@ -70,6 +70,6 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
                 value={order}
                 onChange={onChangeOrder}
             />
-        </div>
+        </HStack>
     )
 })

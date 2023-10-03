@@ -18,6 +18,9 @@ export const uiSlice = createSlice({
         setSecondaryColor: (state, action: PayloadAction<string>) => {
             state.secondaryColor = action.payload
         },
+        setScrolling: (state, action: PayloadAction<boolean>) => {
+            state.isScrolling = action.payload
+        },
     },
 })
 

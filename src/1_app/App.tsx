@@ -14,18 +14,20 @@ export const App = (): JSX.Element => {
     const mods = {}
 
     const dispatch = useAppDispatch()
-    const { setMainColor } = uiActions
+    const { setMainColor, setSecondaryColor } = uiActions
     const { initAuthData } = userActions
     const inited = useAppSelector(getUserInited)
 
     const mainRef = useRef<HTMLDivElement>(null)
     const color = useGetMainColor(mainRef)
     const primaryColor = useGetMainColor(mainRef, '--primary-color')
+    const secondaryColor = useGetMainColor(mainRef, '--secondary-color')
 
     useEffect(() => {
         dispatch(initAuthData())
         dispatch(setMainColor(primaryColor))
-    }, [color, dispatch, initAuthData, primaryColor, setMainColor])
+        dispatch(setSecondaryColor(secondaryColor))
+    }, [color, dispatch, initAuthData, primaryColor, secondaryColor, setMainColor, setSecondaryColor])
 
     return (
         <div className={classNames('main', mods, [theme])} ref={mainRef}>

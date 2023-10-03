@@ -8,6 +8,8 @@ import { SpinerDots } from '6_shared/ui/SpinerDots/SpinerDots'
 import { Avatar } from '6_shared/ui/Avatar/Avatar'
 import { type Currency, CurrencySelect } from '5_entities/Currency'
 import { type Country, CountrySelect } from '5_entities/Country'
+import { VStack } from '6_shared/ui/Stack/VStatck/VStack'
+import { HStack } from '6_shared/ui/Stack/HStack/HStack'
 
 interface ProfileCardProps {
     className?: string
@@ -59,46 +61,50 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
     }
 
     return (
-        <div className={cls.content}>
-            {data?.avatar && <div className={cls.avatarWrapper}>{<Avatar src={data.avatar} />}</div>}
+        <VStack className={cls.content} max={true} gap="8">
+            {data?.avatar && (
+                <HStack max={true} justify="start">
+                    {<Avatar src={data.avatar} />}
+                </HStack>
+            )}
 
-            <div className={cls.container}>
+            <HStack gap="16" max={true}>
                 <Text text={t('profile.Ваше имя')} align={TextAlign.LEFT} />
                 <Input value={data?.first} onChange={onChangeFirstName} readOnly={readonly} />
-            </div>
+            </HStack>
 
-            <div className={cls.container}>
+            <HStack gap="16" max={true}>
                 <Text text={t('profile.Ваша фамилия')} align={TextAlign.LEFT} />
                 <Input value={data?.lastname} onChange={onChangeLasttName} readOnly={readonly} />
-            </div>
+            </HStack>
 
-            <div className={cls.container}>
+            <HStack gap="16" max={true}>
                 <Text text={t('profile.Возраст')} align={TextAlign.LEFT} />
                 <Input value={data?.age} onChange={onChangeAge} readOnly={readonly} />
-            </div>
+            </HStack>
 
-            <div className={cls.container}>
+            <HStack gap="16" max={true}>
                 <Text text={t('profile.Город')} align={TextAlign.LEFT} />
                 <Input value={data?.city} onChange={onChangeCity} readOnly={readonly} />
-            </div>
+            </HStack>
 
-            <div className={cls.container}>
+            <HStack gap="16" max={true}>
                 <Text text={t('profile.Имя пользователя')} align={TextAlign.LEFT} />
                 <Input value={data?.username} onChange={onChangeUsername} readOnly={readonly} />
-            </div>
+            </HStack>
 
-            <div className={cls.container}>
+            <HStack gap="16" max={true}>
                 <Text text={t('profile.Ссылка на аватар')} align={TextAlign.LEFT} />
                 <Input value={data?.avatar} onChange={onChangeAvatar} readOnly={readonly} />
-            </div>
+            </HStack>
 
-            <div className={cls.container}>
+            <HStack justify="start" gap="16" max={true}>
                 <CurrencySelect value={data?.currency} onChange={onChangeCurrency} readonly={readonly} />
-            </div>
+            </HStack>
 
-            <div className={cls.container}>
+            <HStack justify="start" gap="16" max={true}>
                 <CountrySelect value={data?.country} onChange={onChangeCountry} readonly={readonly} />
-            </div>
-        </div>
+            </HStack>
+        </VStack>
     )
 }

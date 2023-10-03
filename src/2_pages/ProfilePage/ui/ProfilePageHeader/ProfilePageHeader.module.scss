@@ -1,19 +1,4 @@
-.container {
-    width: 100%;
-}
-
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-
     // костыль -- исправить
     min-height: 36px;
-    margin-bottom: 25px;
-}
-
-.buttons {
-    display: flex;
-    column-gap: 15px;
 }

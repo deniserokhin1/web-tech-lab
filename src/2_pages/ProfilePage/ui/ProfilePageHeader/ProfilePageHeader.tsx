@@ -14,6 +14,7 @@ import {
 } from '5_entities/Profile'
 import { useAppDispatch, useAppSelector } from '1_app/providers/StoreProvider'
 import { getUserAuthData } from '5_entities/User'
+import { HStack } from '6_shared/ui/Stack/HStack/HStack'
 
 interface ProfilePageHeaderProps {
     className?: string
@@ -55,7 +56,7 @@ export const ProfilePageHeader = memo((props: ProfilePageHeaderProps) => {
     }, [dispatch, setReadOnly])
 
     return (
-        <div className={cls.header}>
+        <HStack justify="between" className={cls.header} max={true}>
             <Text title={t('profile.Профиль')} />
 
             {canEdit && (
@@ -68,7 +69,7 @@ export const ProfilePageHeader = memo((props: ProfilePageHeaderProps) => {
                             disabled={isLoading || !!error}
                         />
                     ) : (
-                        <div className={cls.buttons}>
+                        <HStack gap="16">
                             <Button
                                 theme={ButtonTheme.BACKGROUND}
                                 children={t('profile.Сохранить')}
@@ -79,10 +80,10 @@ export const ProfilePageHeader = memo((props: ProfilePageHeaderProps) => {
                                 children={t('profile.Отменить')}
                                 onClick={onCancelEdit}
                             />
-                        </div>
+                        </HStack>
                     )}
                 </div>
             )}
-        </div>
+        </HStack>
     )
 })

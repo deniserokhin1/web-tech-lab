@@ -15,6 +15,9 @@ export const uiSlice = createSlice({
         setMainColor: (state, action: PayloadAction<string>) => {
             state.mainColor = action.payload
         },
+        setSecondaryColor: (state, action: PayloadAction<string>) => {
+            state.secondaryColor = action.payload
+        },
     },
 })
 

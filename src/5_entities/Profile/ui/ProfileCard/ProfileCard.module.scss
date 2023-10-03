@@ -1,17 +1,10 @@
 .content {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
     padding: 25px;
     border: 1px solid var(--secondary-color);
     border-radius: 2px;
 }
 
 .container {
-    display: flex;
-    column-gap: 10px;
-    align-items: center;
-
     &:not(:first-child) {
         margin-top: 10px;
     }
@@ -19,5 +12,4 @@
 
 .avatarWrapper {
     display: flex;
-    width: 100%;
 }

@@ -8,6 +8,7 @@ import { useTheme } from '1_app/providers/ThemeProvider'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
 import { useAppSelector } from '1_app/providers/StoreProvider'
 import { getSidebarItems } from '../../model/selectors/getSidebarItems'
+import { VStack } from '6_shared/ui/Stack/VStatck/VStack'
 
 export interface SidebarProps {
     className?: string
@@ -25,24 +26,22 @@ export const Sidebar = memo((props: SidebarProps) => {
     }
 
     return (
-        <div
-            className={classNames(cls.container, mods, [className])}
-            data-testid="sidebar"
-            ref={ref}
-        >
-            <Button
-                className={cls.toggle}
-                onClick={toggleSidebar}
-                data-testid="sidebar-toggle"
-            >
+        <div className={classNames(cls.container, mods, [className])} data-testid="sidebar" ref={ref}>
+            <Button className={cls.toggle} onClick={toggleSidebar} data-testid="sidebar-toggle">
                 <IconComponent name="burger" pathFill={color} />
             </Button>
 
-            <div className={classNames(cls.links)}>
+            {/* <div className={classNames(cls.links)}>
                 {sideBarItemsList.map((i, index) => (
                     <SidebarItem item={i} key={i.text + index} color={color} />
                 ))}
-            </div>
+            </div> */}
+
+            <VStack className={cls.links}>
+                {sideBarItemsList.map((i, index) => (
+                    <SidebarItem item={i} key={i.text + index} color={color} />
+                ))}
+            </VStack>
 
             <div className={cls.switchers}>
                 <LangSwitcher />

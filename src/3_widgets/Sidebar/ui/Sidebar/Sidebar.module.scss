@@ -31,8 +31,6 @@
 .links {
     position: absolute;
     inset: 50px calc(var(--sidebar-width-closed) / 2 - 15px) 150px calc(var(--sidebar-width-closed) / 2 - 15px);
-    display: flex;
-    flex-direction: column;
 
 }
 

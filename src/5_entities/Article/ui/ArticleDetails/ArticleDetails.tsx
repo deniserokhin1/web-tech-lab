@@ -1,25 +1,25 @@
-import { memo, useRef } from 'react'
-import { IconComponent } from '6_shared/lib'
-import { useTranslation } from 'react-i18next'
-import cls from './ArticleDetails.module.scss'
-import { Text, TextAlign, TextSize } from '6_shared/ui/Text/Text'
 import { useAppDispatch, useAppSelector } from '1_app/providers/StoreProvider'
-import { fetchArticleById } from '../../model/services/fetchArticleById'
+import { getUISecondaryColor } from '4_features/UI/model/selectors/getUI'
+import { useInitialEffect } from '6_shared/hooks/useInitialEffect'
+import { IconComponent } from '6_shared/lib'
+import { DynamicModuleLoader, type ReducersList } from '6_shared/lib/components/DynamicModuleLoader'
+import { Avatar } from '6_shared/ui/Avatar/Avatar'
+import { Skeleton } from '6_shared/ui/Skeleton/Skeleton'
+import { HStack, VStack } from '6_shared/ui/Stack'
+import { Text, TextAlign, TextSize } from '6_shared/ui/Text/Text'
+import { memo } from 'react'
+import { useTranslation } from 'react-i18next'
 import {
     getArticleDetailsData,
     getArticleDetailsError,
     getArticleDetailsIsLoading,
 } from '../../model/selectors/getArticleDetails'
-import { DynamicModuleLoader, type ReducersList } from '6_shared/lib/components/DynamicModuleLoader'
+import { fetchArticleById } from '../../model/services/fetchArticleById'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
-import { Skeleton } from '6_shared/ui/Skeleton/Skeleton'
-import { Avatar } from '6_shared/ui/Avatar/Avatar'
 import { ArticleDataType, type ArticleData } from '../../model/types/article'
 import { ArticleCodeBlock } from '../ArticleCodeBlock/ArticleCodeBlock'
 import { ArticleImageBlock } from '../ArticleImageBlock/ArticleImageBlock'
 import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock'
-import { useInitialEffect } from '6_shared/hooks/useInitialEffect'
-import { useGetMainColor } from '6_shared/hooks/useGetMainColor'
 
 const reducers: ReducersList = {
     articleDetails: articleDetailsReducer,
@@ -53,7 +53,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     // const isLoading = true
     const error = useAppSelector(getArticleDetailsError)
     const article = useAppSelector(getArticleDetailsData)
-    const ref = useRef<HTMLDivElement>(null)
+    const color = useAppSelector(getUISecondaryColor)
 
     useInitialEffect(() => {
         dispatch(fetchArticleById(id))
@@ -62,13 +62,11 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const namespace = __IS_DEV__ ? 'translation' : 'article-details'
     const { t } = useTranslation(namespace)
 
-    const color = useGetMainColor(ref, '--secondary-color')
-
     let content = null
 
     if (isLoading) {
         content = (
-            <div className={cls.content}>
+            <VStack gap="16" max={true}>
                 <Skeleton height={300} width="100%" borderRadius={'8px'} />
                 <Skeleton width={300} height={40} borderRadius="4px" type="short" />
                 <Skeleton width={300} height={32} borderRadius="4px" type="short" />
@@ -76,31 +74,31 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                 <Skeleton width="100%" height={200} borderRadius="4px" />
                 <Skeleton width="100%" height={200} borderRadius="4px" />
                 <Skeleton width="100%" height={200} borderRadius="4px" />
-            </div>
+            </VStack>
         )
     } else if (error) {
         content = <Text title={t('article-details.Статья не найдена')} />
     } else {
         content = (
-            <div className={cls.content} ref={ref}>
+            <VStack gap="16">
                 <Avatar height={300} width="100%" src={article?.img} borderRadius={'8px'} />
                 <Text title={article?.title} align={TextAlign.LEFT} size={TextSize.L} />
                 <Text text={article?.subtitle} align={TextAlign.LEFT} size={TextSize.L} />
 
-                <div className={cls.info}>
-                    <div className={cls.infoArticle}>
+                <HStack gap="16">
+                    <HStack gap="8">
                         <IconComponent name="calendar" pathFill={color} />
                         <Text text={article?.dataCreate} minWidth={true} />
-                    </div>
+                    </HStack>
 
-                    <div className={cls.infoArticle}>
+                    <HStack gap="8">
                         <IconComponent name="eye" pathFill={color} />
                         <Text text={article?.views.toString()} minWidth={true} />
-                    </div>
-                </div>
+                    </HStack>
+                </HStack>
 
                 {article?.data?.map(renderBlock)}
-            </div>
+            </VStack>
         )
     }
 

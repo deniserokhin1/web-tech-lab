@@ -1,6 +1,8 @@
 // import cls from './ProfilePage.module.scss'
-import { memo, useCallback } from 'react'
-import { DynamicModuleLoader, type ReducersList } from '6_shared/lib/components/DynamicModuleLoader'
+import { useAppDispatch, useAppSelector } from '1_app/providers/StoreProvider'
+import { PageWrapper } from '3_widgets/PageWrapper/PageWrapper'
+import { type Country } from '5_entities/Country'
+import { type Currency } from '5_entities/Currency'
 import {
     ProfileCard,
     ValidateProfileErrors,
@@ -13,16 +15,15 @@ import {
     profileActions,
     profileReducer,
 } from '5_entities/Profile'
-import { useAppDispatch, useAppSelector } from '1_app/providers/StoreProvider'
-import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
-import { type Currency } from '5_entities/Currency'
-import { type Country } from '5_entities/Country'
-import { useTranslation } from 'react-i18next'
-import { Text, TextTheme } from '6_shared/ui/Text/Text'
 import { useInitialEffect } from '6_shared/hooks/useInitialEffect'
-import { useParams } from 'react-router-dom'
+import { DynamicModuleLoader, type ReducersList } from '6_shared/lib/components/DynamicModuleLoader'
 import { Card } from '6_shared/ui/Card/Card'
-import { PageWrapper } from '3_widgets/PageWrapper/PageWrapper'
+import { VStack } from '6_shared/ui/Stack/VStatck/VStack'
+import { Text, TextTheme } from '6_shared/ui/Text/Text'
+import { memo, useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useParams } from 'react-router-dom'
+import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 
 interface ProfilePageProps {
     className?: string
@@ -121,27 +122,33 @@ const ProfilePage = memo((props: ProfilePageProps) => {
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
             <PageWrapper>
                 <Card>
-                    <ProfilePageHeader />
+                    <VStack gap="16" align="center">
+                        <ProfilePageHeader />
 
-                    {!!validateErrors?.length &&
-                        validateErrors.map((error) => (
-                            <Text theme={TextTheme.ERROR} text={validateErrorTranslate[error]} key={error} />
-                        ))}
+                        {!!validateErrors?.length &&
+                            validateErrors.map((error) => (
+                                <Text
+                                    theme={TextTheme.ERROR}
+                                    text={validateErrorTranslate[error]}
+                                    key={error}
+                                />
+                            ))}
 
-                    <ProfileCard
-                        data={formData}
-                        isLoading={isLoading}
-                        error={error}
-                        readonly={readOnly}
-                        onChangeFirstName={onChangeFirstName}
-                        onChangeLasttName={onChangeLasttName}
-                        onChangeAge={onChangeAge}
-                        onChangeCity={onChangeCity}
-                        onChangeAvatar={onChangeAvatar}
-                        onChangeUsername={onChangeUsername}
-                        onChangeCurrency={onChangeCurrency}
-                        onChangeCountry={onChangeCountry}
-                    />
+                        <ProfileCard
+                            data={formData}
+                            isLoading={isLoading}
+                            error={error}
+                            readonly={readOnly}
+                            onChangeFirstName={onChangeFirstName}
+                            onChangeLasttName={onChangeLasttName}
+                            onChangeAge={onChangeAge}
+                            onChangeCity={onChangeCity}
+                            onChangeAvatar={onChangeAvatar}
+                            onChangeUsername={onChangeUsername}
+                            onChangeCurrency={onChangeCurrency}
+                            onChangeCountry={onChangeCountry}
+                        />
+                    </VStack>
                 </Card>
             </PageWrapper>
         </DynamicModuleLoader>

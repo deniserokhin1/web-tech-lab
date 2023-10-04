@@ -9,12 +9,15 @@ interface AvatarProps {
     height?: number
     size?: number
     alt?: string
+    border?: boolean
     borderRadius?: string
 }
 
 export const Avatar = memo(
-    ({ className, src, height, width, alt, borderRadius, size }: AvatarProps) => {
-        const mods = {}
+    ({ className, src, height, width, alt, borderRadius, size, border }: AvatarProps) => {
+        const mods = {
+            [cls.border]: border
+        }
 
         const styles = useMemo<CSSProperties>(() => {
             return {

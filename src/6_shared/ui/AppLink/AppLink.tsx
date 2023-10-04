@@ -1,5 +1,5 @@
 import cls from './AppLink.module.scss'
-import { memo, type ReactNode } from 'react'
+import { type ForwardedRef, forwardRef, type ReactNode } from 'react'
 import { classNames } from '6_shared/lib'
 import { Link, type LinkProps } from 'react-router-dom'
 
@@ -17,16 +17,26 @@ interface AppLinkProps extends LinkProps {
     animation?: boolean
 }
 
-export const AppLink = memo((props: AppLinkProps) => {
-    const { className, children, to, theme = AppLinkTheme.PRIMARY, animation = false, ...otherProps } = props
-    const mods = { [cls.animation]: animation }
+export const AppLink = forwardRef(
+    (props: AppLinkProps, ref: ForwardedRef<HTMLAnchorElement>) => {
+        const {
+            className,
+            children,
+            to,
+            theme = AppLinkTheme.PRIMARY,
+            animation = false,
+            ...otherProps
+        } = props
+        const mods = { [cls.animation]: animation }
 
-    return (
-        <Link
-            to={to}
-            className={classNames(cls.container, mods, [className, cls[theme]])}
-            children={children}
-            {...otherProps}
-        />
-    )
-})
+        return (
+            <Link
+                to={to}
+                ref={ref}
+                className={classNames(cls.container, mods, [className, cls[theme]])}
+                children={children}
+                {...otherProps}
+            />
+        )
+    },
+)

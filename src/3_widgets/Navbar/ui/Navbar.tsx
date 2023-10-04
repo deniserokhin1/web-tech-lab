@@ -10,6 +10,9 @@ import {
     useAppSelector,
 } from '1_app/providers/StoreProvider/config/store'
 import { getUserAuthData, userActions } from '5_entities/User'
+import { Dropdown } from '6_shared/ui/DropDown/DropDown'
+import { Avatar } from '6_shared/ui/Avatar/Avatar'
+import { RoutePath } from '1_app/providers/Router/config/routeConfig'
 
 interface NavbarProps {
     className?: string
@@ -36,20 +39,31 @@ export const Navbar: FC<NavbarProps> = memo((props) => {
 
     if (authData) {
         return (
-            <div className={classNames(cls.container)}>
+            <header className={classNames(cls.container)}>
                 <div className={cls.links}>
-                    <Button theme={ButtonTheme.CLEAR_INVERT} onClick={onLogout}>
-                        {t('Выйти')}
-                    </Button>
+                    <Dropdown
+                        direciotn="right"
+                        items={[
+                            {
+                                content: t('Профиль'),
+                                href: RoutePath.profile + authData.id,
+                            },
+                            {
+                                content: t('Выйти'),
+                                onClick: onLogout,
+                            },
+                        ]}
+                        trigger={<Avatar size={35} src={authData.avatar} border={true} />}
+                    />
 
                     <LoginModal isOpen={isAuthModal} onClose={onToggleModal} />
                 </div>
-            </div>
+            </header>
         )
     }
 
     return (
-        <div className={classNames(cls.container)}>
+        <header className={classNames(cls.container)}>
             <div className={cls.links}>
                 <Button theme={ButtonTheme.CLEAR_INVERT} onClick={onToggleModal}>
                     {t('Войти')}
@@ -57,6 +71,6 @@ export const Navbar: FC<NavbarProps> = memo((props) => {
 
                 <LoginModal isOpen={isAuthModal} onClose={onToggleModal} />
             </div>
-        </div>
+        </header>
     )
 })

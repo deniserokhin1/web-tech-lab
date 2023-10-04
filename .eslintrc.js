@@ -52,6 +52,6 @@ module.exports = {
         '@typescript-eslint/prefer-includes': 0,
         'n/no-callback-literal': 0,
         '@typescript-eslint/ban-types': 0,
-        // 'yo-common/path-checker': 'error',
+        'yo-common/path-checker': 'error',
     },
 }

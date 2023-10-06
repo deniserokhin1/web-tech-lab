@@ -9,7 +9,6 @@ type ActionCreatorType<Return, Arg, RejectedValue> = (arg: Arg) => AsyncThunkAct
         rejectValue: RejectedValue
     }
 >
-
 jest.mock('axios')
 const mockedAxios = jest.mocked(axios)
 

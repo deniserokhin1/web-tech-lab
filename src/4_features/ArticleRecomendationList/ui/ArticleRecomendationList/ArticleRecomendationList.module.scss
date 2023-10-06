@@ -1,0 +1,10 @@
+.container {
+    width: 100%;
+}
+
+.recommendations {
+    display: flex !important;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}

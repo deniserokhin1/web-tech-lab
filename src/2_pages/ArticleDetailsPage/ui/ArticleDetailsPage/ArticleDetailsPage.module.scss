@@ -2,9 +2,9 @@
     width: 1000px;
     margin: 0 auto;
 
-    @media screen and (width<=1280px) {
-        width: 800px;
-    }
+    // @media screen and (width<=1280px) {
+    //     width: 800px;
+    // }
 
     @media screen and (width<=1150px) {
         width: 670px;
@@ -25,11 +25,4 @@
     @media screen and (width<=780px) {
         width: 470px;
     }
-}
-
-.recommendations {
-    display: flex !important;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
 }

@@ -30,7 +30,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     const renderArticle = (article: IArticle, view: ArticleView): JSX.Element => (
         <ArticleListItem article={article} view={view} key={article.id} target={target} />
     )
- 
+
     const mods = {}
 
     if (!isLoading && !articles.length) {

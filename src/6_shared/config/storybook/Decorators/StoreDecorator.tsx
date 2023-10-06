@@ -3,8 +3,9 @@ import { articleDetailsPageReducer } from '2_pages/ArticleDetailsPage/model/slic
 import { articlesPageReducer } from '2_pages/ArticlesPage/model/slice/articlesPageSlice'
 import { addNewCommentReducer } from '4_features/AddNewComment/model/slice/addCommentFormSlice'
 import { loginReducer } from '4_features/AuthByUserName/model/slice/loginSlice'
+import { profileReducer } from '4_features/EditableProfileCard/model/slices/EditableProfileCardSlice'
+import { uiReducer } from '4_features/UI'
 import { articleDetailsReducer } from '5_entities/Article'
-import { profileReducer } from '5_entities/Profile'
 import { type ReducersList } from '6_shared/lib/components/DynamicModuleLoader'
 import { type Decorator } from '@storybook/react'
 
@@ -15,6 +16,7 @@ const defaultAsyncReducers: ReducersList = {
     addCommentForm: addNewCommentReducer,
     articleDeatailsPage: articleDetailsPageReducer,
     articlesPage: articlesPageReducer,
+    ui: uiReducer,
 }
 
 export const StoreDecorator =

@@ -27,6 +27,9 @@ Light.decorators = [
         articleDetails: {
             data: article,
         },
+        ui: {
+            mainColor: '#1e325c',
+        },
     }),
 ]
 
@@ -60,6 +63,9 @@ Dark.decorators = [
     StoreDecorator({
         articleDetails: {
             data: article,
+        },
+        ui: {
+            mainColor: '#fff',
         },
     }),
 ]

@@ -13,6 +13,7 @@ import { type TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux
 import { createReducerManager } from './ReducerManager'
 import { $api } from '6_shared/api/api'
 import { uiReducer } from '4_features/UI'
+import { rtkAPI } from '6_shared/api/rtkApi'
 
 export const createReduxStore = (
     initialState?: StateSchema,
@@ -22,6 +23,7 @@ export const createReduxStore = (
         ...asyncReducers,
         user: userReducer,
         ui: uiReducer,
+        [rtkAPI.reducerPath]: rtkAPI.reducer,
     }
 
     const reducerManager = createReducerManager(rootReducer)
@@ -39,7 +41,7 @@ export const createReduxStore = (
                 thunk: {
                     extraArgument: extraArg,
                 },
-            }),
+            }).concat(rtkAPI.middleware),
     })
 
     // @ts-ignore
@@ -54,5 +56,7 @@ export type TypedDispatch<T> = ThunkDispatch<T, any, AnyAction>
 
 export const useAppDispatch = (): TypedDispatch<ToolkitStore<StateSchema>> =>
     useDispatch<TypedDispatch<AppStore>>()
+
+// export const useAppDispatch = (): Dispatch<AnyAction> => useDispatch<ReturnType<typeof createReduxStore>['dispatch']>()
 
 export const useAppSelector: TypedUseSelectorHook<StateSchema> = useSelector

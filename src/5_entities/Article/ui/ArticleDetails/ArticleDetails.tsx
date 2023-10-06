@@ -1,8 +1,11 @@
 import { useAppDispatch, useAppSelector } from '1_app/providers/StoreProvider'
-import { getUISecondaryColor } from '4_features/UI/model/selectors/getUI'
+import { getUIMainColor } from '4_features/UI/model/selectors/getUI'
 import { useInitialEffect } from '6_shared/hooks/useInitialEffect'
 import { IconComponent } from '6_shared/lib'
-import { DynamicModuleLoader, type ReducersList } from '6_shared/lib/components/DynamicModuleLoader'
+import {
+    DynamicModuleLoader,
+    type ReducersList,
+} from '6_shared/lib/components/DynamicModuleLoader'
 import { Avatar } from '6_shared/ui/Avatar/Avatar'
 import { Skeleton } from '6_shared/ui/Skeleton/Skeleton'
 import { HStack, VStack } from '6_shared/ui/Stack'
@@ -28,6 +31,7 @@ const reducers: ReducersList = {
 interface ArticleDetailsProps {
     className?: string
     id: string
+    color?: string
 }
 
 const renderBlock = (block: ArticleData): JSX.Element | null => {
@@ -46,14 +50,13 @@ const renderBlock = (block: ArticleData): JSX.Element | null => {
 }
 
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
-    const { id } = props
+    const { id, color } = props
     const dispatch = useAppDispatch()
 
     const isLoading = useAppSelector(getArticleDetailsIsLoading)
-    // const isLoading = true
     const error = useAppSelector(getArticleDetailsError)
     const article = useAppSelector(getArticleDetailsData)
-    const color = useAppSelector(getUISecondaryColor)
+    const mainColor = useAppSelector(getUIMainColor)
 
     useInitialEffect(() => {
         dispatch(fetchArticleById(id))
@@ -81,13 +84,18 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     } else {
         content = (
             <VStack gap="16">
-                <Avatar height={300} width="100%" src={article?.img} borderRadius={'8px'} />
+                <Avatar
+                    height={300}
+                    width="100%"
+                    src={article?.img}
+                    borderRadius={'8px'}
+                />
                 <Text title={article?.title} align={TextAlign.LEFT} size={TextSize.L} />
                 <Text text={article?.subtitle} align={TextAlign.LEFT} size={TextSize.L} />
 
                 <HStack gap="16">
                     <HStack gap="8">
-                        <IconComponent name="calendar" pathFill={color} />
+                        <IconComponent name="calendar" pathFill={color || mainColor} />
                         <Text text={article?.dataCreate} minWidth={true} />
                     </HStack>
 

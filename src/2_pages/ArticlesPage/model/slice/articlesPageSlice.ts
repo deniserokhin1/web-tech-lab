@@ -1,5 +1,10 @@
 import { type StateSchema } from '1_app/providers/StoreProvider'
-import { ArticleSortFeild, ArticleType, ArticleView, type IArticle } from '5_entities/Article'
+import {
+    ArticleSortFeild,
+    ArticleType,
+    ArticleView,
+    type IArticle,
+} from '5_entities/Article'
 import { type PayloadAction, createEntityAdapter, createSlice } from '@reduxjs/toolkit'
 import { type ArticlesPageSchema } from '../types/articlesPageSchema'
 import { fetchArticlesList } from '../services/fetchArticlesList'
@@ -58,7 +63,9 @@ const articlePageSlice = createSlice({
         },
 
         initView: (state) => {
-            const view = localStorage.getItem(ARTICLE_VIEW_LOCALSTORAGE_KEY) as ArticleView
+            const view = localStorage.getItem(
+                ARTICLE_VIEW_LOCALSTORAGE_KEY,
+            ) as ArticleView
             state._inited = true
             state.view = view
             state.limit = view === ArticleView.ROW ? 4 : 9
@@ -89,4 +96,5 @@ const articlePageSlice = createSlice({
     },
 })
 
-export const { actions: articlesPageActions, reducer: articlesPageReducer } = articlePageSlice
+export const { actions: articlesPageActions, reducer: articlesPageReducer } =
+    articlePageSlice

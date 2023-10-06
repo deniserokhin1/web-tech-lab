@@ -73,20 +73,20 @@ Dark.decorators = [
         articleDeatailsPage: {
             comments: {
                 ids: ['1', '2'],
-            entities: {
-                1: {
-                    id: '1',
-                    text: 'Comment 1',
-                    user: { id: '1', username: 'Den' },
-                },
-                2: {
-                    id: '2',
-                    text: 'Comment 2',
-                    user: { id: '1', username: 'Leon' },
+                entities: {
+                    1: {
+                        id: '1',
+                        text: 'Comment 1',
+                        user: { id: '1', username: 'Den' },
+                    },
+                    2: {
+                        id: '2',
+                        text: 'Comment 2',
+                        user: { id: '1', username: 'Leon' },
+                    },
                 },
             },
-            }
-        }
+        },
     }),
 ]
 

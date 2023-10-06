@@ -2,10 +2,11 @@ import { type ArticleDetailsPageSchema } from '2_pages/ArticleDetailsPage'
 import { type ArticlesPageSchema } from '2_pages/ArticlesPage'
 import { type AddCommentFormSchema } from '4_features/AddNewComment'
 import { type LoginSchema } from '4_features/AuthByUserName'
+import { type EditableProfileCardSchema } from '4_features/EditableProfileCard'
 import { type UISchema } from '4_features/UI'
 import { type ArticleDetailsSchema } from '5_entities/Article'
-import { type ProfileSchema } from '5_entities/Profile'
 import { type UserSchema } from '5_entities/User'
+import { type rtkAPI } from '6_shared/api/rtkApi'
 import {
     type Reducer,
     type AnyAction,
@@ -19,8 +20,9 @@ import { type NavigateOptions, type To } from 'react-router-dom'
 export interface StateSchema {
     user: UserSchema
     ui: UISchema
+    [rtkAPI.reducerPath]: ReturnType<typeof rtkAPI.reducer>
     login?: LoginSchema
-    profile?: ProfileSchema
+    profile?: EditableProfileCardSchema
     articleDetails?: ArticleDetailsSchema
     addCommentForm?: AddCommentFormSchema
     articlesPage?: ArticlesPageSchema

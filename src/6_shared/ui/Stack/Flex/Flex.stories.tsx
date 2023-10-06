@@ -1,8 +1,6 @@
 /* eslint-disable i18next/no-literal-string */
 import type { Meta, StoryObj } from '@storybook/react'
 import { Flex } from './Flex'
-import { Theme } from '1_app/providers/ThemeProvider'
-import { ThemeDecorator } from '6_shared/config/storybook/Decorators/ThemeDecorator'
 
 const meta = {
     title: '6_shared/Flex',

@@ -17,9 +17,7 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Light: Story = {
-    args: {},
-}
+export const Light: Story = {}
 Light.decorators = [
     StoreDecorator({
         profile: {
@@ -39,9 +37,7 @@ Light.decorators = [
     }),
 ]
 
-export const Dark: Story = {
-    args: {},
-}
+export const Dark: Story = {}
 Dark.decorators = [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({

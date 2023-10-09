@@ -9,18 +9,18 @@ import { StoreProvider } from '1_app/providers/StoreProvider'
 
 const domNode = document.getElementById('root')
 
-if (domNode instanceof HTMLElement) {
-    const root = createRoot(domNode)
+if (!domNode) throw new Error('Root не найден.')
 
-    root.render(
-        <BrowserRouter>
-            <StoreProvider>
-                <ErrorBoundary>
-                    <ThemeProvider>
-                        <App />
-                    </ThemeProvider>
-                </ErrorBoundary>
-            </StoreProvider>
-        </BrowserRouter>,
-    )
-}
+const root = createRoot(domNode)
+
+root.render(
+    <BrowserRouter>
+        <StoreProvider>
+            <ErrorBoundary>
+                <ThemeProvider>
+                    <App />
+                </ThemeProvider>
+            </ErrorBoundary>
+        </StoreProvider>
+    </BrowserRouter>,
+)

@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react'
+import { Suspense, memo, useCallback } from 'react'
 import { classNames } from '6_shared/lib'
 import { useTranslation } from 'react-i18next'
 import cls from './ArticleDetailsComments.module.scss'
@@ -45,7 +45,9 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
         <VStack gap="16" className={classNames(cls.container, mods, [className])}>
             <Text title={t('article-details.Комментарии')} align={TextAlign.LEFT} />
             <CommentList comments={comments} isLoading={commentsIsLoading} />
-            <AddCommentForm onSendComment={onSendComment} />
+            <Suspense>
+                <AddCommentForm onSendComment={onSendComment} />
+            </Suspense>
         </VStack>
     )
 })

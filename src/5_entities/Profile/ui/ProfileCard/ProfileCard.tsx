@@ -74,7 +74,8 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     value={data?.first}
                     onChange={onChangeFirstName}
                     readOnly={readonly}
-                />
+                    data-testid="ProfileCard.Firstname"
+                    />
             </HStack>
 
             <HStack gap="16" max={true}>
@@ -83,6 +84,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     value={data?.lastname}
                     onChange={onChangeLasttName}
                     readOnly={readonly}
+                    data-testid="ProfileCard.Lastname"
                 />
             </HStack>
 

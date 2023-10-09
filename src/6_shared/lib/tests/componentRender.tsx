@@ -5,21 +5,26 @@ import { MemoryRouter } from 'react-router-dom'
 import { type RenderResult, render } from '@testing-library/react'
 import { ThemeProvider } from '1_app/providers/ThemeProvider'
 import { type StateSchema, StoreProvider } from '1_app/providers/StoreProvider'
+import { type ReducersMapObject } from '@reduxjs/toolkit'
 
 export interface renderWithRouterOptions {
     route?: string
     initialState?: DeepPartial<StateSchema>
+    asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>
 }
 
 export const componentRender = (
     component: ReactNode,
     options: renderWithRouterOptions = {},
 ): RenderResult => {
-    const { initialState, route = '/' } = options
+    const { initialState, route = '/', asyncReducers } = options
 
     return render(
         <MemoryRouter initialEntries={[route]}>
-            <StoreProvider initialState={initialState as StateSchema}>
+            <StoreProvider
+                initialState={initialState as StateSchema}
+                asyncReducers={asyncReducers}
+            >
                 <ThemeProvider>
                     <I18nextProvider i18n={i18nForTests}>{component}</I18nextProvider>
                 </ThemeProvider>

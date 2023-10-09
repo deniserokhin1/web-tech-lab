@@ -28,6 +28,7 @@ interface TextProps {
     align?: TextAlign
     minWidth?: boolean
     size?: TextSize
+    'data-testid'?: string
 }
 
 export const Text = memo((props: TextProps) => {
@@ -39,14 +40,35 @@ export const Text = memo((props: TextProps) => {
         theme = TextTheme.DEFAULT,
         align = TextAlign.CENTER,
         minWidth = false,
+        'data-testid': dataTestId = 'Text',
     } = props
 
     const mods = { [cls.fitContent]: minWidth }
 
     return (
-        <div className={classNames(cls.container, mods, [className, cls[theme], cls[size]])}>
-            {title && <p className={classNames(cls.title, {}, [cls[align]])}>{title}</p>}
-            {text && <p className={classNames(cls.text, {}, [cls[align]])}>{text}</p>}
+        <div
+            className={classNames(cls.container, mods, [
+                className,
+                cls[theme],
+                cls[size],
+            ])}
+        >
+            {title && (
+                <p
+                    className={classNames(cls.title, {}, [cls[align]])}
+                    data-testid={`${dataTestId}.title`}
+                >
+                    {title}
+                </p>
+            )}
+            {text && (
+                <p
+                    className={classNames(cls.text, {}, [cls[align]])}
+                    data-testid={`${dataTestId}.text`}
+                >
+                    {text}
+                </p>
+            )}
         </div>
     )
 })

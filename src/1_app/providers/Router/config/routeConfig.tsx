@@ -1,15 +1,19 @@
-import { type RouteObject, type RouteProps } from 'react-router-dom'
 import { About } from '2_pages/About'
+import { AdminPanelPage } from '2_pages/AdminPanelPage'
+import { ArticleDetailsPage } from '2_pages/ArticleDetailsPage'
+import { ArticleEditPage } from '2_pages/ArticleEditPage'
+import { ArticlesPage } from '2_pages/ArticlesPage'
+import ForbiddenPage from '2_pages/ForbiddenPage/ui/ForbiddenPage/ForbiddenPage'
 import { Main } from '2_pages/Main'
 import { NotFoundPage } from '2_pages/NotFoundPage'
 import { ProfilePage } from '2_pages/ProfilePage'
-import { ArticleDetailsPage } from '2_pages/ArticleDetailsPage'
-import { ArticlesPage } from '2_pages/ArticlesPage'
-import { ArticleEditPage } from '2_pages/ArticleEditPage'
+import { UserRole } from '5_entities/User/model/types/user'
+import { type RouteObject, type RouteProps } from 'react-router-dom'
 
 export type AppRoutesProps = RouteProps &
     RouteObject & {
         authOnly?: boolean
+        roles?: UserRole[]
     }
 
 export enum AppRoutes {
@@ -20,6 +24,8 @@ export enum AppRoutes {
     ARTICLE_DETAILS = 'article_details',
     ARTICLE_CREATE = 'article_create',
     ARTICLE_EDIT = 'article_edit',
+    ADMIN_PANEL = 'admin_panel',
+    FORBIDDEN = 'forbidden',
     NOT_FOUND = 'not_found',
 }
 
@@ -31,6 +37,8 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.ARTICLE_DETAILS]: '/articles/', // + :id
     [AppRoutes.ARTICLE_CREATE]: '/articles/new',
     [AppRoutes.ARTICLE_EDIT]: '/articles/:id/edit',
+    [AppRoutes.ADMIN_PANEL]: '/admin',
+    [AppRoutes.FORBIDDEN]: '/forbidden',
     [AppRoutes.NOT_FOUND]: '*',
 }
 
@@ -66,6 +74,17 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.ARTICLE_EDIT]: {
         path: `${RoutePath.article_edit}`,
         element: <ArticleEditPage />,
+        authOnly: true,
+    },
+    [AppRoutes.ADMIN_PANEL]: {
+        path: `${RoutePath.admin_panel}`,
+        element: <AdminPanelPage />,
+        authOnly: true,
+        roles: [UserRole.ADMIN, UserRole.MANAGER],
+    },
+    [AppRoutes.FORBIDDEN]: {
+        path: `${RoutePath.forbidden}`,
+        element: <ForbiddenPage />,
         authOnly: true,
     },
     [AppRoutes.NOT_FOUND]: {

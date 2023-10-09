@@ -157,21 +157,21 @@
       "id": "2",
       "username": "Shashlyk",
       "password": "123",
-      "role": "USER",
+      "roles": ["USER"],
       "avatar": "https://www.ourmigrationstory.org.uk/uploads/_CGSmartImage/img-a2beae8392617b8c02b85d8b9197fb96"
     },
     {
       "id": "1",
       "username": "Den",
       "password": "123",
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://img.freepik.com/free-vector/creative-hacker-logo-template_23-2149199402.jpg?w=2000"
     },
     {
       "id": "3",
       "username": "Dude",
       "password": "123",
-      "role": "USER"
+      "roles": ["USER"]
     }
   ],
   "articles": [

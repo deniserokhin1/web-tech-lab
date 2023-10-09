@@ -9,7 +9,7 @@ import {
     useAppDispatch,
     useAppSelector,
 } from '1_app/providers/StoreProvider/config/store'
-import { getUserAuthData, userActions } from '5_entities/User'
+import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '5_entities/User'
 import { Dropdown } from '6_shared/ui/DropDown/DropDown'
 import { Avatar } from '6_shared/ui/Avatar/Avatar'
 import { RoutePath } from '1_app/providers/Router/config/routeConfig'
@@ -21,6 +21,8 @@ interface NavbarProps {
 export const Navbar: FC<NavbarProps> = memo((props) => {
     const [isAuthModal, setIsAuthModal] = useState(false)
     const authData = useAppSelector(getUserAuthData)
+    const isAdmin = useAppSelector(isUserAdmin)
+    const isManager = useAppSelector(isUserManager)
     const dispatch = useAppDispatch()
 
     const onToggleModal = useCallback(() => {
@@ -37,6 +39,8 @@ export const Navbar: FC<NavbarProps> = memo((props) => {
         if (authData) setIsAuthModal(false)
     }, [authData])
 
+    const isAdminPanelAvaliable = isAdmin || isManager
+
     if (authData) {
         return (
             <header className={classNames(cls.container)}>
@@ -44,6 +48,14 @@ export const Navbar: FC<NavbarProps> = memo((props) => {
                     <Dropdown
                         direciotn="right"
                         items={[
+                            ...(isAdminPanelAvaliable
+                                ? [
+                                      {
+                                          content: t('Админка'),
+                                          href: RoutePath.admin_panel,
+                                      },
+                                  ]
+                                : []),
                             {
                                 content: t('Профиль'),
                                 href: RoutePath.profile + authData.id,

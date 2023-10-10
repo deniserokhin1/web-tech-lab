@@ -4,7 +4,7 @@ import { Country } from '5_entities/Country'
 import { TestAsyncThunk } from '6_shared/lib/tests/TestAsyncThunk'
 import { updateProfileData } from './updateProfileData'
 import { type IProfile } from '5_entities/Profile'
-import { ValidateProfileErrors } from '../types/EditableProfileCardSchema'
+import { ValidateProfileErrors } from '../const/validateErrors'
 
 jest.mock('axios')
 const mockedAxios = jest.mocked(axios)

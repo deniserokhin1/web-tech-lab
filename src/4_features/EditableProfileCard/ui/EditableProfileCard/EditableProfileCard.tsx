@@ -21,8 +21,8 @@ import {
     profileActions,
     profileReducer,
 } from '../../model/slices/EditableProfileCardSlice'
-import { ValidateProfileErrors } from '../../model/types/EditableProfileCardSchema'
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader'
+import { ValidateProfileErrors } from '../../model/const/validateErrors'
 
 const namespace = __IS_DEV__ ? 'translation' : 'profile'
 const reducers: ReducersList = {

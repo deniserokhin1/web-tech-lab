@@ -1,8 +1,8 @@
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
-import type { EditableProfileCardSchema } from '../types/EditableProfileCardSchema'
 import { type IProfile } from '5_entities/Profile'
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import { fetchProfileData } from '../services/fetchProfileData'
 import { updateProfileData } from '../services/updateProfileData'
+import type { EditableProfileCardSchema } from '../types/EditableProfileCardSchema'
 
 const initialState: EditableProfileCardSchema = {
     isLoading: false,
@@ -60,6 +60,7 @@ export const editableProfileCardSlice = createSlice({
             })
 
             .addCase(updateProfileData.pending, (state, action) => {
+                state.readonly = true
                 state.error = undefined
                 state.isLoading = true
                 state.validateErrors = undefined

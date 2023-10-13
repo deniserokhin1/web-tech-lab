@@ -43,7 +43,15 @@ export interface FlexProps {
 }
 
 export const Flex = (props: FlexProps): JSX.Element => {
-    const { className, children, align = 'center', direction = 'row', justify = 'center', gap, max } = props
+    const {
+        className,
+        children,
+        align = 'center',
+        direction = 'row',
+        justify = 'center',
+        gap,
+        max,
+    } = props
 
     const classes = [
         className,

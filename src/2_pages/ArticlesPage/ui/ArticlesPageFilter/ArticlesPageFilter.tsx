@@ -21,11 +21,13 @@ import {
     getArticlesPageSearch,
     getArticlesPageSort,
     getArticlesPageType,
-    getArticlesPageView,
+    getArticlesPageView
 } from '../../model/selectors/getArticlesPage'
 import { fetchArticlesList } from '../../model/services/fetchArticlesList'
 import { articlesPageActions } from '../../model/slice/articlesPageSlice'
 import cls from './ArticlesPageFilter.module.scss'
+
+const namespace = __IS_DEV__ ? 'translation' : 'articles-list'
 
 interface ArticlesPageFilterProps {
     className?: string
@@ -43,7 +45,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFilterProps) => {
     const type = useAppSelector(getArticlesPageType)
     const primaryColor = useAppSelector(getUIMainColor)
 
-    const namespace = __IS_DEV__ ? 'translation' : 'articles-list'
+ 
     const { t } = useTranslation(namespace)
 
     const fetchData = useCallback(() => {

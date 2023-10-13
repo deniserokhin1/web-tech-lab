@@ -3,9 +3,10 @@ import { getUISecondaryColor } from '4_features/UI/model/selectors/getUI'
 import { IconComponent, classNames } from '6_shared/lib'
 import { Listbox as HListbox } from '@headlessui/react'
 import { Fragment, memo, useMemo, type ReactNode } from 'react'
-import { Button } from '../Button'
-import { ButtonTheme } from '../Button/Button'
+import { Button } from '../../../Button'
+import { ButtonTheme } from '../../../Button/Button'
 import cls from './ListBox.module.scss'
+import popUpCls from '../styles/popup.module.scss'
 
 export interface HListboxItems {
     value: string
@@ -38,15 +39,15 @@ export const ListBox = memo((props: HListboxProps) => {
         <HListbox
             as="div"
             disabled={readonly}
-            className={classNames(cls.container, mods, [className])}
+            className={classNames(popUpCls.container, mods, [className])}
             value={value}
             onChange={onChange}
         >
-            <HListbox.Button className={cls.trigger} as="div">
+            <HListbox.Button className={popUpCls.button} as="div">
                 <Button theme={ButtonTheme.OUTLINE}>{buttonTitle || defaultValue}</Button>
             </HListbox.Button>
 
-            <HListbox.Options className={cls.options}>
+            <HListbox.Options className={popUpCls.menu}>
                 {items?.map((item, index) => (
                     <HListbox.Option
                         key={index}
@@ -56,8 +57,8 @@ export const ListBox = memo((props: HListboxProps) => {
                     >
                         {({ active, selected }) => (
                             <li
-                                className={classNames(cls.item, {
-                                    [cls.active]: active,
+                                className={classNames(popUpCls.item, {
+                                    [popUpCls.active]: active,
                                     [cls.disabled]: item.unavailable,
                                 })}
                             >

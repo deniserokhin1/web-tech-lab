@@ -1,19 +1,19 @@
+import { uiReducer } from '4_features/UI'
+import { userReducer } from '5_entities/User'
+import { $api } from '6_shared/api/api'
+import { rtkAPI } from '6_shared/api/rtkApi'
 import {
-    type ReducersMapObject,
     configureStore,
     type AnyAction,
-    type ThunkDispatch,
     type CombinedState,
     type Reducer,
+    type ReducersMapObject,
+    type ThunkDispatch,
 } from '@reduxjs/toolkit'
 import { type ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
-import { type ThunkExtraArg, type StateSchema } from './StateSchema'
-import { userReducer } from '5_entities/User'
-import { type TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector, type TypedUseSelectorHook } from 'react-redux'
 import { createReducerManager } from './ReducerManager'
-import { $api } from '6_shared/api/api'
-import { uiReducer } from '4_features/UI'
-import { rtkAPI } from '6_shared/api/rtkApi'
+import { type StateSchema, type ThunkExtraArg } from './StateSchema'
 
 export const createReduxStore = (
     initialState?: StateSchema,

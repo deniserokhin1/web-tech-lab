@@ -28,7 +28,7 @@ Light.decorators = [
             data: article,
         },
         ui: {
-            mainColor: '#1e325c',
+            bgColor: '#1e325c',
         },
     }),
 ]
@@ -65,7 +65,7 @@ Dark.decorators = [
             data: article,
         },
         ui: {
-            mainColor: '#fff',
+            primaryColor: '#fff',
         },
     }),
 ]

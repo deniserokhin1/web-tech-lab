@@ -1,7 +1,12 @@
 import { type HTMLAttributeAnchorTarget, memo, useRef } from 'react'
 import { IconComponent, classNames } from '6_shared/lib'
 import cls from './ArticleListItem.module.scss'
-import { ArticleDataType, type ArticleText, ArticleView, type IArticle } from '../../model/types/article'
+import {
+    ArticleDataType,
+    type ArticleText,
+    ArticleView,
+    type IArticle,
+} from '../../model/types/article'
 import { Text, TextAlign } from '6_shared/ui/Text/Text'
 import { Card } from '6_shared/ui/Card/Card'
 import { useHover } from '6_shared/hooks/useHover'
@@ -19,10 +24,11 @@ interface ArticleListItemProps {
     article?: IArticle
     view?: ArticleView
     target?: HTMLAttributeAnchorTarget
+    padding?: string | number
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-    const { className, article, view = ArticleView.ROW, target } = props
+    const { className, article, view = ArticleView.ROW, target, padding } = props
     const ref = useRef<HTMLDivElement>(null)
     // const navigate = useNavigate()
 
@@ -36,28 +42,51 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     const color = useGetMainColor(ref, '--secondary-color')
 
     const types = (
-        <Text text={article?.type.join(', ')} className={cls.types} minWidth={true} align={TextAlign.LEFT} />
+        <Text
+            text={article?.type.join(', ')}
+            className={cls.types}
+            minWidth={true}
+            align={TextAlign.LEFT}
+        />
     )
     const views = (
         <>
-            <Text text={article?.views.toString()} className={cls.views} minWidth={true} />
+            <Text
+                text={article?.views.toString()}
+                className={cls.views}
+                minWidth={true}
+            />
 
             <IconComponent name="eye" pathFill={color} />
         </>
     )
 
     if (view === ArticleView.ROW) {
-        const textBlock = article?.data.find((item) => item.type === ArticleDataType.TEXT) as ArticleText
+        const textBlock = article?.data.find(
+            (item) => item.type === ArticleDataType.TEXT,
+        ) as ArticleText
 
         return (
-            <div className={classNames(cls[view], mods, [className])} {...bindHover} ref={ref}>
+            <div
+                className={classNames(cls[view], mods, [className])}
+                {...bindHover}
+                ref={ref}
+            >
                 <Card className={cls.card}>
                     <div className={cls.header}>
                         <Avatar src={article?.user.avatar} size={30} />
 
-                        <Text text={article?.user.username} className="" minWidth={true} />
+                        <Text
+                            text={article?.user.username}
+                            className=""
+                            minWidth={true}
+                        />
 
-                        <Text text={article?.dataCreate} className={cls.date} minWidth={true} />
+                        <Text
+                            text={article?.dataCreate}
+                            className={cls.date}
+                            minWidth={true}
+                        />
                     </div>
 
                     <Text title={article?.title} minWidth={true} align={TextAlign.LEFT} />
@@ -68,9 +97,14 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
                     {textBlock && <ArticleTextBlock block={textBlock} short={true} />}
 
-                    <div className="">
-                        <AppLink to={`${RoutePath.article_details + article?.id}`} target={target}>
-                            <Button theme={ButtonTheme.OUTLINE}>{t('articles-list.Читать далее')}</Button>
+                    <div>
+                        <AppLink
+                            to={`${RoutePath.article_details + article?.id}`}
+                            target={target}
+                        >
+                            <Button theme={ButtonTheme.OUTLINE}>
+                                {t('articles-list.Читать далее')}
+                            </Button>
                         </AppLink>
                     </div>
                 </Card>
@@ -80,20 +114,32 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
     return (
         <AppLink to={`${RoutePath.article_details + article?.id}`} target={target}>
-            <div className={classNames(cls[view], mods, [className])} {...bindHover} ref={ref}>
-                <Card className={cls.card}>
+            <div
+                className={classNames(cls[view], mods, [className])}
+                {...bindHover}
+                ref={ref}
+            >
+                <Card className={cls.card} padding={padding}>
                     <div className={cls.imageWrapper}>
                         <img src={article?.img} className={cls.img} />
                     </div>
 
-                    <Text text={article?.dataCreate} className={cls.date} minWidth={true} />
+                    <Text
+                        text={article?.dataCreate}
+                        className={cls.date}
+                        minWidth={true}
+                    />
 
                     <div className={cls.infoWrapper}>
                         {types}
                         {views}
                     </div>
 
-                    <Text text={article?.title} align={TextAlign.LEFT} className={cls.title} />
+                    <Text
+                        text={article?.title}
+                        align={TextAlign.LEFT}
+                        className={cls.title}
+                    />
                 </Card>
             </div>
         </AppLink>

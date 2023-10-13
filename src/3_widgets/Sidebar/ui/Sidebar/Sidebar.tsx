@@ -31,12 +31,6 @@ export const Sidebar = memo((props: SidebarProps) => {
                 <IconComponent name="burger" pathFill={color} />
             </Button>
 
-            {/* <div className={classNames(cls.links)}>
-                {sideBarItemsList.map((i, index) => (
-                    <SidebarItem item={i} key={i.text + index} color={color} />
-                ))}
-            </div> */}
-
             <VStack className={cls.links}>
                 {sideBarItemsList.map((i, index) => (
                     <SidebarItem item={i} key={i.text + index} color={color} />

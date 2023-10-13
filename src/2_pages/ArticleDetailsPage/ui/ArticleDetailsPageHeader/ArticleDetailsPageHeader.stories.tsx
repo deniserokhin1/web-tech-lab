@@ -21,7 +21,7 @@ export const Light: Story = {
 Light.decorators = [
     StoreDecorator({
         ui: {
-            mainColor: '#1e325c',
+            bgColor: '#1e325c',
         },
     }),
 ]
@@ -33,7 +33,7 @@ Dark.decorators = [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({
         ui: {
-            mainColor: '#fff',
+            bgColor: '#fff',
         },
     }),
 ]

@@ -1,7 +1,7 @@
 import { classNames } from '6_shared/lib'
 import cls from './Select.module.scss'
 import { useCallback } from 'react'
-import { ListBox } from '../ListBox/ListBox'
+import { ListBox } from '../Popups/ui/ListBox/ListBox'
 
 export interface SelectOption<T extends string> {
     value: T

@@ -2,6 +2,18 @@
     position: relative;
 }
 
+.menu {
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    margin-top: 5px;
+    background: var(--list-box-bg);
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+}
+
 .button {
     display: flex;
     padding: 0;
@@ -17,19 +29,9 @@
     }
 }
 
-.menu {
-    position: absolute;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    width: max-content;
-    margin-top: 5px;
-    background: var(--list-box-bg);
-    border: 1px solid var(--secondary-color);
-    border-radius: 4px;
-}
-
 .item {
+    display: flex;
+    column-gap: 5px;
     width: 100%;
     padding: 10px;
     color: var(--primary-color);
@@ -59,8 +61,4 @@
 
 .top {
     top: 0;
-}
-
-.link {
-    display: block;
 }

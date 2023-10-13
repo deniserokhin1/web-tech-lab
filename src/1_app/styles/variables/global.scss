@@ -1,8 +1,8 @@
 :root {
     // Шрифт
     --font-family-main: arial, helvetica, sans-serif;
-    --font-size-s: 8px;
-    --font-line-s: 16px;
+    --font-size-s: 14px;
+    --font-line-s: 20px;
     --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
     --font-size-m: 16px;
     --font-line-m: 24px;
@@ -33,6 +33,7 @@
     --modal-font-color: #1e325c;
     --red-primary: #f1250b;
     --red-secondary: #ee4e39;
+    --notification-color: #fff;
 
     @media screen and (width<=1000px) {
         --sidebar-width: 200px;

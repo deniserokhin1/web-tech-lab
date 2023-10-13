@@ -13,10 +13,11 @@ interface ArticleListProps {
     isLoading?: boolean
     view?: ArticleView
     target?: HTMLAttributeAnchorTarget
+    padding?: string | number
 }
 
 export const ArticleList = memo((props: ArticleListProps) => {
-    const { className, articles = [], isLoading, view = ArticleView.TILE, target } = props
+    const { className, articles = [], isLoading, view = ArticleView.TILE, target, padding } = props
 
     const namespace = __IS_DEV__ ? 'translation' : 'articles-list'
     const { t } = useTranslation(namespace)
@@ -28,7 +29,14 @@ export const ArticleList = memo((props: ArticleListProps) => {
     }
 
     const renderArticle = (article: IArticle, view: ArticleView): JSX.Element => (
-        <ArticleListItem article={article} view={view} key={article.id} target={target} />
+        <ArticleListItem
+            article={article}
+            view={view}
+            key={article.id}
+            target={target}
+            padding={padding}
+            
+        />
     )
 
     const mods = {}

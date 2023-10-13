@@ -20,9 +20,12 @@
 }
 
 .container {
+    position: relative;
     display: flex;
     font-family: var(--font-family-main);
+}
 
+.animate {
     &:active {
         transform: scale(0.97);
     }

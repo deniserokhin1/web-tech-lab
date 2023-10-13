@@ -11,6 +11,7 @@ import { classNames } from '6_shared/lib'
 import { Portal } from '../Portal'
 import { useTheme } from '1_app/providers/ThemeProvider'
 import { type Mods } from '6_shared/lib/classNames/classNames'
+import { Overlay } from '../Overlay/Overlay'
 
 interface ModalProps {
     className?: string
@@ -71,6 +72,7 @@ export const Modal: FC<ModalProps> = (props) => {
                 className={classNames(cls.container, mods, [className, theme])}
                 onClick={closeHandler}
             >
+                {/* <Overlay onClick={onClose} /> */}
                 <div
                     className={classNames(cls.overlay)}
                     onTransitionEnd={onTransitionEnd}

@@ -1,17 +1,10 @@
-import cls from './Modal.module.scss'
-import {
-    type FC,
-    type ReactNode,
-    useState,
-    useCallback,
-    useEffect,
-    type TransitionEvent,
-} from 'react'
-import { classNames } from '6_shared/lib'
-import { Portal } from '../Portal'
 import { useTheme } from '1_app/providers/ThemeProvider'
+import { useModal } from '6_shared/hooks/useModal'
+import { classNames } from '6_shared/lib'
 import { type Mods } from '6_shared/lib/classNames/classNames'
-import { Overlay } from '../Overlay/Overlay'
+import { type FC, type ReactNode } from 'react'
+import { Portal } from '../Portal'
+import cls from './Modal.module.scss'
 
 interface ModalProps {
     className?: string
@@ -22,44 +15,17 @@ interface ModalProps {
 }
 
 export const Modal: FC<ModalProps> = (props) => {
-    const { className, children, isOpen, onClose, lazy } = props
-    const [showModal, setShowModal] = useState(isOpen)
+    const { className, children, isOpen = false, onClose, lazy } = props
     const { theme } = useTheme()
 
-    useEffect(() => {
-        setShowModal(isOpen)
-    }, [isOpen])
-
-    const closeHandler = useCallback(() => {
-        setShowModal(false)
-    }, [])
-
-    const onContentClick = (e: React.MouseEvent): void => {
-        e.stopPropagation()
-    }
-
-    const onKeyDown = useCallback(
-        (e: KeyboardEvent) => {
-            if (e.key === 'Escape') closeHandler()
-        },
-        [closeHandler],
+    const { closeHandler, onContentClick, showModal, onTransitionEnd } = useModal(
+        isOpen,
+        cls,
+        onClose,
     )
-
-    useEffect(() => {
-        isOpen
-            ? window.addEventListener('keydown', onKeyDown)
-            : window.removeEventListener('keydown', onKeyDown)
-    }, [isOpen, onKeyDown])
 
     const mods: Mods = {
         [cls.opened]: showModal,
-    }
-
-    const onTransitionEnd = (e: TransitionEvent<HTMLDivElement>): void => {
-        const target = e.target as HTMLElement
-
-        if (target.className !== cls.overlay) return
-        if (isOpen && !showModal) onClose?.()
     }
 
     if (lazy && !isOpen) {
@@ -72,7 +38,6 @@ export const Modal: FC<ModalProps> = (props) => {
                 className={classNames(cls.container, mods, [className, theme])}
                 onClick={closeHandler}
             >
-                {/* <Overlay onClick={onClose} /> */}
                 <div
                     className={classNames(cls.overlay)}
                     onTransitionEnd={onTransitionEnd}

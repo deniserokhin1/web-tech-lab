@@ -49,15 +49,11 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
                     </Drawer>
                 </>
             )}
+
             {!isMobile && (
-                <>
-                    <Popover trigger={trigger} className={className} direciotn="right">
-                        <NotificationList
-                            className={cls.notifications}
-                            getData={getAmount}
-                        />
-                    </Popover>
-                </>
+                <Popover trigger={trigger} className={className} direciotn="right">
+                    <NotificationList className={cls.notifications} getData={getAmount} />
+                </Popover>
             )}
         </>
     )

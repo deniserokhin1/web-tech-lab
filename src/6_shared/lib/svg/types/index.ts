@@ -14,6 +14,7 @@ export type IconComponentName =
     | 'add'
     | 'check'
     | 'notifications'
+    | 'down'
 
 export interface ISvgOptions {
     pathFill?: string

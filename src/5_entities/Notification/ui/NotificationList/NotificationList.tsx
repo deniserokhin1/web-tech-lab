@@ -20,7 +20,7 @@ export const NotificationList = memo((props: NotificationListProps) => {
 
     useEffect(() => {
         if (!data || !getData) return
-        getData?.(data)
+        getData(data)
     }, [data, getData])
 
     if (isLoading) {

@@ -1,13 +1,13 @@
 import { memo, useCallback, useRef } from 'react'
-import { IconComponent, classNames } from '6_shared/lib'
+import { IconComponent, classNames } from '@/6_shared/lib'
 import cls from './ArticleDetailsPageHeader.module.scss'
-import { Button } from '6_shared/ui/Button'
-import { RoutePath } from '1_app/providers/Router/config/routeConfig'
+import { Button } from '@/6_shared/ui/Button'
+import { RoutePath } from '@/1_app/providers/Router/config/routeConfig'
 import { useNavigate } from 'react-router-dom'
-import { useAppSelector } from '1_app/providers/StoreProvider'
+import { useAppSelector } from '@/1_app/providers/StoreProvider'
 import { getCanArticleEdit } from '../../model/selectors/article'
-import { getArticleDetailsData } from '5_entities/Article'
-import { getUIMainColor } from '4_features/UI/model/selectors/getUI'
+import { getArticleDetailsData } from '@/5_entities/Article'
+import { getUIMainColor } from '@/4_features/UI/model/selectors/getUI'
 
 interface ArticleDetailsPageHeaderProps {
     className?: string

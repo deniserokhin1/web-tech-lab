@@ -1,7 +1,7 @@
-import { TestAsyncThunk } from '6_shared/lib/tests/TestAsyncThunk'
+import { TestAsyncThunk } from '@/6_shared/lib/tests/TestAsyncThunk'
 import { fetchCommentsByArticleId } from './fetchCommentsByArticleId'
 import axios from 'axios'
-import { type IComment } from '5_entities/Comment'
+import { type IComment } from '@/5_entities/Comment'
 
 jest.mock('axios')
 const mockedAxios = jest.mocked(axios)

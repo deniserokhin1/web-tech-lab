@@ -1,9 +1,9 @@
 import { memo } from 'react'
-import { classNames } from '6_shared/lib'
+import { classNames } from '@/6_shared/lib'
 import cls from './ArticleImageBlock.module.scss'
 import { type ArticleImage } from '../../model/types/article'
-import { Text } from '6_shared/ui/Text/Text'
-import { Avatar } from '6_shared/ui/Avatar/Avatar'
+import { Text } from '@/6_shared/ui/Text/Text'
+import { Avatar } from '@/6_shared/ui/Avatar/Avatar'
 
 interface ArticleImageBlockProps {
     className?: string

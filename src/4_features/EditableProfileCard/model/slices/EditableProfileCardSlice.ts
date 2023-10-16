@@ -1,4 +1,4 @@
-import { type IProfile } from '5_entities/Profile'
+import { type IProfile } from '@/5_entities/Profile'
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import { fetchProfileData } from '../services/fetchProfileData'
 import { updateProfileData } from '../services/updateProfileData'

@@ -1,4 +1,4 @@
-import { classNames } from '6_shared/lib'
+import { classNames } from '@/6_shared/lib'
 import cls from './Input.module.scss'
 import { type InputHTMLAttributes, memo, type ChangeEvent } from 'react'
 

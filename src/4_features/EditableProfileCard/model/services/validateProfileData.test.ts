@@ -1,7 +1,7 @@
-import { Currency } from '5_entities/Currency'
+import { Currency } from '@/5_entities/Currency'
 import { validateProfileData } from './validateProfileData'
-import { Country } from '5_entities/Country'
-import { type IProfile } from '5_entities/Profile'
+import { Country } from '@/5_entities/Country'
+import { type IProfile } from '@/5_entities/Profile'
 import { ValidateProfileErrors } from '../const/validateErrors'
 
 // jest.mock('axios')

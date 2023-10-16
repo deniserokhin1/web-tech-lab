@@ -1,5 +1,5 @@
-import { useAppDispatch, useAppSelector } from '1_app/providers/StoreProvider'
-import { ArticleList } from '5_entities/Article'
+import { useAppDispatch, useAppSelector } from '@/1_app/providers/StoreProvider'
+import { ArticleList } from '@/5_entities/Article'
 import { memo, useEffect } from 'react'
 import {
     getArticlesPageHasMore,

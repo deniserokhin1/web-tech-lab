@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import ArticleDetailsPage from './ArticleDetailsPage'
-import { Theme } from '1_app/providers/ThemeProvider'
-import { ThemeDecorator } from '6_shared/config/storybook/Decorators/ThemeDecorator'
-import { StoreDecorator } from '6_shared/config/storybook/Decorators/StoreDecorator'
-import { article } from '5_entities/Article/mocks/data'
+import { Theme } from '@/1_app/providers/ThemeProvider'
+import { ThemeDecorator } from '@/6_shared/config/storybook/Decorators/ThemeDecorator'
+import { StoreDecorator } from '@/6_shared/config/storybook/Decorators/StoreDecorator'
+import { article } from '@/5_entities/Article/mocks/data'
 
 const meta = {
     title: '2_pages/ArticleDetailsPage',

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Theme } from '1_app/providers/ThemeProvider'
-import { ThemeDecorator } from '6_shared/config/storybook/Decorators/ThemeDecorator'
+import { Theme } from '@/1_app/providers/ThemeProvider'
+import { ThemeDecorator } from '@/6_shared/config/storybook/Decorators/ThemeDecorator'
 import { EditableProfileCard } from './EditableProfileCard'
-import { StoreDecorator } from '6_shared/config/storybook/Decorators/StoreDecorator'
-import { Currency } from '5_entities/Currency'
-import { Country } from '5_entities/Country'
+import { StoreDecorator } from '@/6_shared/config/storybook/Decorators/StoreDecorator'
+import { Currency } from '@/5_entities/Currency'
+import { Country } from '@/5_entities/Country'
 
 const meta = {
     title: '4_features/EditableProfileCard',

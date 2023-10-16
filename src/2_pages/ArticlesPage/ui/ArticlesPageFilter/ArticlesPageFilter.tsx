@@ -1,19 +1,19 @@
-import { RoutePath } from '1_app/providers/Router/config/routeConfig'
-import { useAppDispatch, useAppSelector } from '1_app/providers/StoreProvider'
-import { ArticleViewSelector } from '4_features/ArticleViewSelector'
-import { getUIMainColor } from '4_features/UI/model/selectors/getUI'
+import { RoutePath } from '@/1_app/providers/Router/config/routeConfig'
+import { useAppDispatch, useAppSelector } from '@/1_app/providers/StoreProvider'
+import { ArticleViewSelector } from '@/4_features/ArticleViewSelector'
+import { getUIMainColor } from '@/4_features/UI/model/selectors/getUI'
 import {
     ArticleSortSelector,
     ArticleTypeTabs,
     type ArticleSortFeild,
     type ArticleType,
     type ArticleView,
-} from '5_entities/Article'
-import { useDebouce } from '6_shared/hooks/useDebounce'
-import { IconComponent, classNames } from '6_shared/lib'
-import { type SortOrder } from '6_shared/types'
-import { AppLink } from '6_shared/ui/AppLink'
-import { Input } from '6_shared/ui/Input'
+} from '@/5_entities/Article'
+import { useDebouce } from '@/6_shared/hooks/useDebounce'
+import { IconComponent, classNames } from '@/6_shared/lib'
+import { type SortOrder } from '@/6_shared/types'
+import { AppLink } from '@/6_shared/ui/AppLink'
+import { Input } from '@/6_shared/ui/Input'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import {

@@ -1,7 +1,7 @@
-import { Country } from '5_entities/Country'
-import { Currency } from '5_entities/Currency'
+import { Country } from '@/5_entities/Country'
+import { Currency } from '@/5_entities/Currency'
 import { updateProfileData } from '../services/updateProfileData'
-import { type IProfile } from '5_entities/Profile'
+import { type IProfile } from '@/5_entities/Profile'
 import { profileActions, profileReducer } from './EditableProfileCardSlice'
 import { type EditableProfileCardSchema } from '../types/EditableProfileCardSchema'
 import { ValidateProfileErrors } from '../const/validateErrors'
@@ -20,9 +20,14 @@ const data: IProfile = {
 describe('profileSlice', () => {
     const { cancelEdit, setReadOnly, updateProfile } = profileActions
     test('test set readonly', () => {
-        const state: DeepPartial<EditableProfileCardSchema> = { readonly: false }
+        const state: DeepPartial<EditableProfileCardSchema> = {
+            readonly: false,
+        }
         expect(
-            profileReducer(state as EditableProfileCardSchema, setReadOnly(true)),
+            profileReducer(
+                state as EditableProfileCardSchema,
+                setReadOnly(true),
+            ),
         ).toEqual({
             readonly: true,
         })
@@ -34,7 +39,9 @@ describe('profileSlice', () => {
             form: { username: '' },
         }
 
-        expect(profileReducer(state as EditableProfileCardSchema, cancelEdit())).toEqual({
+        expect(
+            profileReducer(state as EditableProfileCardSchema, cancelEdit()),
+        ).toEqual({
             readonly: true,
             validateErrors: undefined,
             data,
@@ -66,10 +73,15 @@ describe('profileSlice', () => {
         }
 
         expect(
-            profileReducer(state as EditableProfileCardSchema, updateProfileData.pending),
+            profileReducer(
+                state as EditableProfileCardSchema,
+                updateProfileData.pending,
+            ),
         ).toEqual({
             isLoading: true,
             validateErrors: undefined,
+            error: undefined,
+            readonly: true,
         })
     })
 

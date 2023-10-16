@@ -1,5 +1,5 @@
-import { type IArticle } from '5_entities/Article'
-import { ArticleDataType, ArticleType } from '5_entities/Article/model/types/article'
+import { type IArticle } from '@/5_entities/Article'
+import { ArticleDataType, ArticleType } from '@/5_entities/Article/model/types/article'
 
 export const articles: IArticle[] = [
     {

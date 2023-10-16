@@ -1,13 +1,13 @@
-import { useAppDispatch, useAppSelector } from '1_app/providers/StoreProvider'
-import { type Country } from '5_entities/Country'
-import { type Currency } from '5_entities/Currency'
-import { ProfileCard } from '5_entities/Profile'
-import { useInitialEffect } from '6_shared/hooks/useInitialEffect'
+import { useAppDispatch, useAppSelector } from '@/1_app/providers/StoreProvider'
+import { type Country } from '@/5_entities/Country'
+import { type Currency } from '@/5_entities/Currency'
+import { ProfileCard } from '@/5_entities/Profile'
+import { useInitialEffect } from '@/6_shared/hooks/useInitialEffect'
 import {
     DynamicModuleLoader,
     type ReducersList,
-} from '6_shared/lib/components/DynamicModuleLoader'
-import { Text, TextTheme } from '6_shared/ui/Text/Text'
+} from '@/6_shared/lib/components/DynamicModuleLoader'
+import { Text, TextTheme } from '@/6_shared/ui/Text/Text'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router-dom'

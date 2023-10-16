@@ -1,21 +1,21 @@
-import { PageWrapper } from '3_widgets/PageWrapper/PageWrapper'
-import { ArticleDetails } from '5_entities/Article'
+import { PageWrapper } from '@/3_widgets/PageWrapper/PageWrapper'
+import { ArticleDetails } from '@/5_entities/Article'
 import {
     DynamicModuleLoader,
     type ReducersList,
-} from '6_shared/lib/components/DynamicModuleLoader'
-import { Card } from '6_shared/ui/Card/Card'
-import { VStack } from '6_shared/ui/Stack'
+} from '@/6_shared/lib/components/DynamicModuleLoader'
+import { Card } from '@/6_shared/ui/Card/Card'
+import { VStack } from '@/6_shared/ui/Stack'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router-dom'
 import { articleDetailsPageReducer } from '../../model/slice'
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 import cls from './ArticleDetailsPage.module.scss'
-import { ArticleRecomendationList } from '4_features/ArticleRecomendationList'
+import { ArticleRecomendationList } from '@/4_features/ArticleRecomendationList'
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments'
-import { useAppSelector } from '1_app/providers/StoreProvider'
-import { getUIMainColor } from '4_features/UI/model/selectors/getUI'
+import { useAppSelector } from '@/1_app/providers/StoreProvider'
+import { getUIMainColor } from '@/4_features/UI/model/selectors/getUI'
 
 const namespace = __IS_DEV__ ? 'translation' : 'article-details'
 

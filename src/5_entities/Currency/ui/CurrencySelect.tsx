@@ -1,7 +1,7 @@
 import { memo, useCallback } from 'react'
-import { Select } from '6_shared/ui/Select/Select'
+import { Select } from '@/6_shared/ui/Select/Select'
 import { useTranslation } from 'react-i18next'
-import { classNames } from '6_shared/lib'
+import { classNames } from '@/6_shared/lib'
 import { Currency } from '../model/types/currency'
 
 const options = [

@@ -1,5 +1,5 @@
 import { type HTMLAttributeAnchorTarget, memo, useRef } from 'react'
-import { IconComponent, classNames } from '6_shared/lib'
+import { IconComponent, classNames } from '@/6_shared/lib'
 import cls from './ArticleListItem.module.scss'
 import {
     ArticleDataType,
@@ -7,17 +7,17 @@ import {
     ArticleView,
     type IArticle,
 } from '../../model/types/article'
-import { Text, TextAlign } from '6_shared/ui/Text/Text'
-import { Card } from '6_shared/ui/Card/Card'
-import { useHover } from '6_shared/hooks/useHover'
-import { useGetMainColor } from '6_shared/hooks/useGetMainColor'
-import { Avatar } from '6_shared/ui/Avatar/Avatar'
-import { Button } from '6_shared/ui/Button'
+import { Text, TextAlign } from '@/6_shared/ui/Text/Text'
+import { Card } from '@/6_shared/ui/Card/Card'
+import { useHover } from '@/6_shared/hooks/useHover'
+import { useGetMainColor } from '@/6_shared/hooks/useGetMainColor'
+import { Avatar } from '@/6_shared/ui/Avatar/Avatar'
+import { Button } from '@/6_shared/ui/Button'
 import { useTranslation } from 'react-i18next'
-import { ButtonTheme } from '6_shared/ui/Button/Button'
+import { ButtonTheme } from '@/6_shared/ui/Button/Button'
 import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock'
-import { RoutePath } from '1_app/providers/Router/config/routeConfig'
-import { AppLink } from '6_shared/ui/AppLink'
+import { RoutePath } from '@/1_app/providers/Router/config/routeConfig'
+import { AppLink } from '@/6_shared/ui/AppLink'
 
 interface ArticleListItemProps {
     className?: string

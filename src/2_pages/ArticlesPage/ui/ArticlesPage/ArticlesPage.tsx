@@ -1,10 +1,10 @@
-import { useAppDispatch } from '1_app/providers/StoreProvider'
-import { PageWrapper } from '3_widgets/PageWrapper/PageWrapper'
-import { useInitialEffect } from '6_shared/hooks/useInitialEffect'
+import { useAppDispatch } from '@/1_app/providers/StoreProvider'
+import { PageWrapper } from '@/3_widgets/PageWrapper/PageWrapper'
+import { useInitialEffect } from '@/6_shared/hooks/useInitialEffect'
 import {
     DynamicModuleLoader,
     type ReducersList,
-} from '6_shared/lib/components/DynamicModuleLoader'
+} from '@/6_shared/lib/components/DynamicModuleLoader'
 import { memo, useCallback } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { fetchNextArticlesPage } from '../../model/services/fecthNextArticlePage'

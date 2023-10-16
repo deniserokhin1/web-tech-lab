@@ -1,5 +1,5 @@
 import { type CSSProperties, memo } from 'react'
-import { classNames } from '6_shared/lib'
+import { classNames } from '@/6_shared/lib'
 import cls from './Skeleton.module.scss'
 
 export type TSckeleton = 'long' | 'short'

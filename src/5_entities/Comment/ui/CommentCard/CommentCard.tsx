@@ -1,13 +1,13 @@
 import { memo } from 'react'
-import { classNames } from '6_shared/lib'
+import { classNames } from '@/6_shared/lib'
 import cls from './CommentCard.module.scss'
 import { type IComment } from '../../model/types/comment'
-import { Text, TextAlign, TextSize } from '6_shared/ui/Text/Text'
-import { Avatar } from '6_shared/ui/Avatar/Avatar'
-import { Skeleton } from '6_shared/ui/Skeleton/Skeleton'
-import { AppLink } from '6_shared/ui/AppLink'
-import { RoutePath } from '1_app/providers/Router/config/routeConfig'
-import { Card } from '6_shared/ui/Card/Card'
+import { Text, TextAlign, TextSize } from '@/6_shared/ui/Text/Text'
+import { Avatar } from '@/6_shared/ui/Avatar/Avatar'
+import { Skeleton } from '@/6_shared/ui/Skeleton/Skeleton'
+import { AppLink } from '@/6_shared/ui/AppLink'
+import { RoutePath } from '@/1_app/providers/Router/config/routeConfig'
+import { Card } from '@/6_shared/ui/Card/Card'
 
 interface CommentCardProps {
     className?: string

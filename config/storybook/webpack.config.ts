@@ -4,7 +4,11 @@ import { type IBuildPaths } from '../build/types/config'
 import path from 'path'
 import type webpack from 'webpack'
 
-export default ({ config }: { config: webpack.Configuration }): webpack.Configuration => {
+export default ({
+    config,
+}: {
+    config: webpack.Configuration
+}): webpack.Configuration => {
     const paths: IBuildPaths = {
         build: '',
         entry: '',
@@ -17,11 +21,14 @@ export default ({ config }: { config: webpack.Configuration }): webpack.Configur
     config.resolve?.modules?.push(paths.src)
     config.resolve?.extensions?.push('.ts', '.tsx')
     config.module?.rules?.push(buildCSSLoaders(true))
+    config.resolve!.alias = { '@': paths.src }
 
     if (config?.module?.rules) {
         const rules = config.module.rules as RuleSetRule[]
         config.module.rules = rules.map((rule) =>
-            /svg/.test(rule.test as string) ? { ...rule, exclude: /\.svg$/i } : rule,
+            /svg/.test(rule.test as string)
+                ? { ...rule, exclude: /\.svg$/i }
+                : rule,
         )
 
         config.module.rules.push({

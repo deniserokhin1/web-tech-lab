@@ -1,7 +1,7 @@
-import { uiReducer } from '4_features/UI'
-import { userReducer } from '5_entities/User'
-import { $api } from '6_shared/api/api'
-import { rtkAPI } from '6_shared/api/rtkApi'
+import { uiReducer } from '@/4_features/UI'
+import { userReducer } from '@/5_entities/User'
+import { $api } from '@/6_shared/api/api'
+import { rtkAPI } from '@/6_shared/api/rtkApi'
 import {
     configureStore,
     type AnyAction,

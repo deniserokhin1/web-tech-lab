@@ -1,13 +1,13 @@
 import cls from './PageError.module.scss'
 import type { FC } from 'react'
-import { classNames } from '6_shared/lib'
+import { classNames } from '@/6_shared/lib'
 import { useTranslation } from 'react-i18next'
-import { Button } from '6_shared/ui/Button'
-import { ButtonTheme } from '6_shared/ui/Button/Button'
+import { Button } from '@/6_shared/ui/Button'
+import { ButtonTheme } from '@/6_shared/ui/Button/Button'
 import {
     LOCAL_STORAGE_THEME_KEY,
     Theme,
-} from '1_app/providers/ThemeProvider/lib/ThemeContext'
+} from '@/1_app/providers/ThemeProvider/lib/ThemeContext'
 
 interface PageErrorProps {
     className?: string

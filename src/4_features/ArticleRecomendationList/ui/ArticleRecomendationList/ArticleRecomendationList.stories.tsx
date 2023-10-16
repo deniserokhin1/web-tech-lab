@@ -1,7 +1,7 @@
-import { Theme } from '1_app/providers/ThemeProvider'
-import { article } from '5_entities/Article/mocks/data'
-import { StoreDecorator } from '6_shared/config/storybook/Decorators/StoreDecorator'
-import { ThemeDecorator } from '6_shared/config/storybook/Decorators/ThemeDecorator'
+import { Theme } from '@/1_app/providers/ThemeProvider'
+import { article } from '@/5_entities/Article/mocks/data'
+import { StoreDecorator } from '@/6_shared/config/storybook/Decorators/StoreDecorator'
+import { ThemeDecorator } from '@/6_shared/config/storybook/Decorators/ThemeDecorator'
 import type { Meta, StoryObj } from '@storybook/react'
 import { ArticleRecomendationList } from './ArticleRecomendationList'
 

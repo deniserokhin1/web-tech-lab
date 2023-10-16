@@ -1,9 +1,9 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { type IComment } from '../../model/types/comment'
-import { Text, TextAlign } from '6_shared/ui/Text/Text'
+import { Text, TextAlign } from '@/6_shared/ui/Text/Text'
 import { CommentCard } from '../CommentCard/CommentCard'
-import { VStack } from '6_shared/ui/Stack'
+import { VStack } from '@/6_shared/ui/Stack'
 
 interface CommentListProps {
     className?: string

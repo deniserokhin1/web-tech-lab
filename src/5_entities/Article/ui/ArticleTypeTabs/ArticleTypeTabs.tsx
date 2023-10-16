@@ -1,5 +1,5 @@
 import { memo, useMemo } from 'react'
-import { type TabItem, Tabs } from '6_shared/ui/Tabs/Tabs'
+import { type TabItem, Tabs } from '@/6_shared/ui/Tabs/Tabs'
 import { ArticleType } from '../../model/types/article'
 import { useTranslation } from 'react-i18next'
 

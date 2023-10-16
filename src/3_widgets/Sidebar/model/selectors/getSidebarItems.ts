@@ -1,7 +1,7 @@
-import { getUserAuthData } from '5_entities/User'
+import { getUserAuthData } from '@/5_entities/User'
 import { createSelector } from '@reduxjs/toolkit'
 import { type ISidebarItems } from '../items'
-import { RoutePath } from '1_app/providers/Router/config/routeConfig'
+import { RoutePath } from '@/1_app/providers/Router/config/routeConfig'
 
 export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
     const sideBarItemsList: ISidebarItems[] = [

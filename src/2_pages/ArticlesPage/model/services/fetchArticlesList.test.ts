@@ -1,4 +1,4 @@
-import { TestAsyncThunk } from '6_shared/lib/tests/TestAsyncThunk'
+import { TestAsyncThunk } from '@/6_shared/lib/tests/TestAsyncThunk'
 import { fetchArticlesList } from './fetchArticlesList'
 import axios from 'axios'
 import { articles } from '../../mock/data'

@@ -1,12 +1,12 @@
-import { type ArticleDetailsPageSchema } from '2_pages/ArticleDetailsPage'
-import { type ArticlesPageSchema } from '2_pages/ArticlesPage'
-import { type AddCommentFormSchema } from '4_features/AddNewComment'
-import { type LoginSchema } from '4_features/AuthByUserName'
-import { type EditableProfileCardSchema } from '4_features/EditableProfileCard'
-import { type UISchema } from '4_features/UI'
-import { type ArticleDetailsSchema } from '5_entities/Article'
-import { type UserSchema } from '5_entities/User'
-import { type rtkAPI } from '6_shared/api/rtkApi'
+import { type ArticleDetailsPageSchema } from '@/2_pages/ArticleDetailsPage'
+import { type ArticlesPageSchema } from '@/2_pages/ArticlesPage'
+import { type AddCommentFormSchema } from '@/4_features/AddNewComment'
+import { type LoginSchema } from '@/4_features/AuthByUserName'
+import { type EditableProfileCardSchema } from '@/4_features/EditableProfileCard'
+import { type UISchema } from '@/4_features/UI'
+import { type ArticleDetailsSchema } from '@/5_entities/Article'
+import { type UserSchema } from '@/5_entities/User'
+import { type rtkAPI } from '@/6_shared/api/rtkApi'
 import {
     type Reducer,
     type AnyAction,

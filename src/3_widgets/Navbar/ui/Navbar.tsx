@@ -1,13 +1,13 @@
 /* eslint-disable i18next/no-literal-string */
-import { useAppSelector } from '1_app/providers/StoreProvider/config/store'
-import { LoginModal } from '4_features/AuthByUserName'
-import { AvatarDropDown } from '4_features/AvatarDropDown'
-import { NotificationButton } from '4_features/NotificationButton'
-import { getUserAuthData } from '5_entities/User'
-import { classNames } from '6_shared/lib'
-import { Button } from '6_shared/ui/Button'
-import { ButtonTheme } from '6_shared/ui/Button/Button'
-import { HStack } from '6_shared/ui/Stack'
+import { useAppSelector } from '@/1_app/providers/StoreProvider/config/store'
+import { LoginModal } from '@/4_features/AuthByUserName'
+import { AvatarDropDown } from '@/4_features/AvatarDropDown'
+import { NotificationButton } from '@/4_features/NotificationButton'
+import { getUserAuthData } from '@/5_entities/User'
+import { classNames } from '@/6_shared/lib'
+import { Button } from '@/6_shared/ui/Button'
+import { ButtonTheme } from '@/6_shared/ui/Button/Button'
+import { HStack } from '@/6_shared/ui/Stack'
 import { memo, useCallback, useEffect, useState, type FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import cls from './Navbar.module.scss'
@@ -45,7 +45,10 @@ export const Navbar: FC<NavbarProps> = memo((props) => {
     return (
         <header className={classNames(cls.container)}>
             <div className={cls.links}>
-                <Button theme={ButtonTheme.CLEAR_INVERT} onClick={onToggleModal}>
+                <Button
+                    theme={ButtonTheme.CLEAR_INVERT}
+                    onClick={onToggleModal}
+                >
                     {t('Войти')}
                 </Button>
 

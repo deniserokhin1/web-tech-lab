@@ -1,4 +1,4 @@
-import '1_app/styles/index.scss'
+import '@/1_app/styles/index.scss'
 import { type Decorator } from '@storybook/react'
 
 

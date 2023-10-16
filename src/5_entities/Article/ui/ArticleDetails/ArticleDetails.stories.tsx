@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { ArticleDetails } from './ArticleDetails'
-import { Theme } from '1_app/providers/ThemeProvider'
-import { ThemeDecorator } from '6_shared/config/storybook/Decorators/ThemeDecorator'
-import { StoreDecorator } from '6_shared/config/storybook/Decorators/StoreDecorator'
+import { Theme } from '@/1_app/providers/ThemeProvider'
+import { ThemeDecorator } from '@/6_shared/config/storybook/Decorators/ThemeDecorator'
+import { StoreDecorator } from '@/6_shared/config/storybook/Decorators/StoreDecorator'
 import { article } from '../../mocks/data'
 
 const meta = {

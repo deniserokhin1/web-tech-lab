@@ -1,8 +1,8 @@
 import { type FC, type ReactNode, useEffect } from 'react'
 import { useStore } from 'react-redux'
-import { type ReduxStoreWidthManager, type StateSchemaKey } from '1_app/providers/StoreProvider'
+import { type ReduxStoreWidthManager, type StateSchemaKey } from '@/1_app/providers/StoreProvider'
 import { type Reducer } from '@reduxjs/toolkit'
-import { useAppDispatch } from '1_app/providers/StoreProvider'
+import { useAppDispatch } from '@/1_app/providers/StoreProvider'
 
 export type ReducersList = {
     [name in StateSchemaKey]?: Reducer

@@ -1,5 +1,5 @@
-import { RoutePath } from '1_app/providers/Router/config/routeConfig'
-import { type IconComponentName } from '6_shared/lib/svg/types'
+import { RoutePath } from '@/1_app/providers/Router/config/routeConfig'
+import { type IconComponentName } from '@/6_shared/lib/svg/types'
 
 export interface ISidebarItems {
     path: string

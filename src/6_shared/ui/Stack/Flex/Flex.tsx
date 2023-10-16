@@ -1,4 +1,4 @@
-import { classNames } from '6_shared/lib'
+import { classNames } from '@/6_shared/lib'
 import cls from './Flex.module.scss'
 import { type ReactNode } from 'react'
 

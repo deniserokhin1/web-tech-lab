@@ -1,15 +1,15 @@
-import { useAppDispatch, useAppSelector } from '1_app/providers/StoreProvider'
-import { getUIMainColor } from '4_features/UI/model/selectors/getUI'
-import { useInitialEffect } from '6_shared/hooks/useInitialEffect'
-import { IconComponent } from '6_shared/lib'
+import { useAppDispatch, useAppSelector } from '@/1_app/providers/StoreProvider'
+import { getUIMainColor } from '@/4_features/UI/model/selectors/getUI'
+import { useInitialEffect } from '@/6_shared/hooks/useInitialEffect'
+import { IconComponent } from '@/6_shared/lib'
 import {
     DynamicModuleLoader,
     type ReducersList,
-} from '6_shared/lib/components/DynamicModuleLoader'
-import { Avatar } from '6_shared/ui/Avatar/Avatar'
-import { Skeleton } from '6_shared/ui/Skeleton/Skeleton'
-import { HStack, VStack } from '6_shared/ui/Stack'
-import { Text, TextAlign, TextSize } from '6_shared/ui/Text/Text'
+} from '@/6_shared/lib/components/DynamicModuleLoader'
+import { Avatar } from '@/6_shared/ui/Avatar/Avatar'
+import { Skeleton } from '@/6_shared/ui/Skeleton/Skeleton'
+import { HStack, VStack } from '@/6_shared/ui/Stack'
+import { Text, TextAlign, TextSize } from '@/6_shared/ui/Text/Text'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import {

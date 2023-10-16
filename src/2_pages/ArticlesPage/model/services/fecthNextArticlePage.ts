@@ -1,7 +1,7 @@
 import {
     type StateSchema,
     type ThunkConfig,
-} from '1_app/providers/StoreProvider/config/StateSchema'
+} from '@/1_app/providers/StoreProvider/config/StateSchema'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import {
     getArticlesPageHasMore,

@@ -1,4 +1,4 @@
-import { USER_LOCALSTORAGE_KEY } from '6_shared/const/localStorage'
+import { USER_LOCALSTORAGE_KEY } from '@/6_shared/const/localStorage'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react'
 
 export const rtkAPI = createApi({

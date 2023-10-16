@@ -1,4 +1,4 @@
-import { classNames } from '6_shared/lib'
+import { classNames } from '@/6_shared/lib'
 import cls from './Select.module.scss'
 import { useCallback } from 'react'
 import { ListBox } from '../Popups/ui/ListBox/ListBox'

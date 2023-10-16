@@ -5,20 +5,20 @@ import {
     type UIEvent,
     useEffect,
 } from 'react'
-import { classNames } from '6_shared/lib'
+import { classNames } from '@/6_shared/lib'
 import cls from './PageWrapper.module.scss'
-import { useInfinityScroll } from '6_shared/hooks/useInfinityScroll'
-import { getUIScrollByPath, uiActions } from '4_features/UI'
+import { useInfinityScroll } from '@/6_shared/hooks/useInfinityScroll'
+import { getUIScrollByPath, uiActions } from '@/4_features/UI'
 import {
     type StateSchema,
     useAppDispatch,
     useAppSelector,
-} from '1_app/providers/StoreProvider'
+} from '@/1_app/providers/StoreProvider'
 import { useLocation } from 'react-router-dom'
-import { useInitialEffect } from '6_shared/hooks/useInitialEffect'
-import { useDebouce } from '6_shared/hooks/useDebounce'
-import { getIsScrolling } from '4_features/UI/model/selectors/getUI'
-import { useThrottle } from '6_shared/hooks/useThrottle'
+import { useInitialEffect } from '@/6_shared/hooks/useInitialEffect'
+import { useDebouce } from '@/6_shared/hooks/useDebounce'
+import { getIsScrolling } from '@/4_features/UI/model/selectors/getUI'
+import { useThrottle } from '@/6_shared/hooks/useThrottle'
 
 interface PageWrapperProps {
     className?: string

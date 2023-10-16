@@ -1,12 +1,12 @@
-import { useTheme } from '1_app/providers/ThemeProvider'
-import { useModal } from '6_shared/hooks/useModal'
-import { IconComponent } from '6_shared/lib'
-import { classNames, type Mods } from '6_shared/lib/classNames/classNames'
+import { useTheme } from '@/1_app/providers/ThemeProvider'
+import { useModal } from '@/6_shared/hooks/useModal'
+import { IconComponent } from '@/6_shared/lib'
+import { classNames, type Mods } from '@/6_shared/lib/classNames/classNames'
 import { useCallback, useEffect, type FC, type ReactNode, memo } from 'react'
 import { Button } from '../Button'
 import { Portal } from '../Portal/Portal'
 import cls from './Drawer.module.scss'
-import { useAnimationLibs } from '6_shared/lib/components/AnimationProvider'
+import { useAnimationLibs } from '@/6_shared/lib/components/AnimationProvider'
 
 interface DrawerProps {
     className?: string
@@ -25,7 +25,7 @@ export const DrawerContent: FC<DrawerProps> = (props) => {
     const { closeHandler, onContentClick, showModal, onTransitionEnd } =
         useModal(isOpen, cls, onClose, true)
 
-    const { isLoaded, Gesture, Spring } = useAnimationLibs()
+    const { Gesture, Spring } = useAnimationLibs()
     const [{ y }, api] = Spring.useSpring(() => ({ y: height }))
 
     const open = useCallback(() => {

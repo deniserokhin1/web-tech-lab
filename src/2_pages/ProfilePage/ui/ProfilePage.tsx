@@ -1,7 +1,7 @@
-import { PageWrapper } from '3_widgets/PageWrapper/PageWrapper'
-import { EditableProfileCard } from '4_features/EditableProfileCard'
-import { Card } from '6_shared/ui/Card/Card'
-import { VStack } from '6_shared/ui/Stack/VStatck/VStack'
+import { PageWrapper } from '@/3_widgets/PageWrapper/PageWrapper'
+import { EditableProfileCard } from '@/4_features/EditableProfileCard'
+import { Card } from '@/6_shared/ui/Card/Card'
+import { VStack } from '@/6_shared/ui/Stack/VStatck/VStack'
 import { memo } from 'react'
 
 interface ProfilePageProps {

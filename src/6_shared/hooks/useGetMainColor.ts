@@ -1,4 +1,4 @@
-import { useTheme } from '1_app/providers/ThemeProvider'
+import { useTheme } from '@/1_app/providers/ThemeProvider'
 import { type RefObject, useEffect, useState } from 'react'
 
 export const useGetMainColor = (

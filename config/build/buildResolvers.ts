@@ -5,6 +5,8 @@ export function buildResolvers(src: string): webpack.ResolveOptions {
         extensions: ['.tsx', '.ts', '.js'],
         preferAbsolute: true,
         modules: [src, 'node_modules'],
-        alias: {},
+        alias: {
+            '@': src,
+        },
     }
 }

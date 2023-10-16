@@ -1,6 +1,6 @@
-import { IconComponent, classNames } from '6_shared/lib'
-import { useTheme } from '1_app/providers/ThemeProvider'
-import { Button } from '6_shared/ui/Button'
+import { IconComponent, classNames } from '@/6_shared/lib'
+import { useTheme } from '@/1_app/providers/ThemeProvider'
+import { Button } from '@/6_shared/ui/Button'
 import { memo } from 'react'
 
 export interface ThemeSwitcherProps {

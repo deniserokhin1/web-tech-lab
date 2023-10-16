@@ -1,5 +1,5 @@
 import type { FC } from 'react'
-import { classNames } from '6_shared/lib'
+import { classNames } from '@/6_shared/lib'
 
 interface UserProps {
     className?: string

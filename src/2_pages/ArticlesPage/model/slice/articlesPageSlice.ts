@@ -1,15 +1,15 @@
-import { type StateSchema } from '1_app/providers/StoreProvider'
+import { type StateSchema } from '@/1_app/providers/StoreProvider'
 import {
     ArticleSortFeild,
     ArticleType,
     ArticleView,
     type IArticle,
-} from '5_entities/Article'
+} from '@/5_entities/Article'
 import { type PayloadAction, createEntityAdapter, createSlice } from '@reduxjs/toolkit'
 import { type ArticlesPageSchema } from '../types/articlesPageSchema'
 import { fetchArticlesList } from '../services/fetchArticlesList'
-import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from '6_shared/const/localStorage'
-import { type SortOrder } from '6_shared/types'
+import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from '@/6_shared/const/localStorage'
+import { type SortOrder } from '@/6_shared/types'
 
 const articlesAdapter = createEntityAdapter<IArticle>({
     selectId: (article) => article.id,

@@ -1,4 +1,4 @@
-import { type StateSchema } from '1_app/providers/StoreProvider'
+import { type StateSchema } from '@/1_app/providers/StoreProvider'
 import { getProfileReadOnly } from './getProfileReadonly'
 
 describe('getProfileReadonly', () => {

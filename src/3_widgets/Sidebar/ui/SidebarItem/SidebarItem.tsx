@@ -1,13 +1,13 @@
 import cls from './SidebarItem.module.scss'
 import { memo } from 'react'
-import { IconComponent, classNames } from '6_shared/lib'
+import { IconComponent, classNames } from '@/6_shared/lib'
 import { useTranslation } from 'react-i18next'
-import { AppLink } from '6_shared/ui/AppLink'
-import { AppLinkTheme } from '6_shared/ui/AppLink/AppLink'
+import { AppLink } from '@/6_shared/ui/AppLink'
+import { AppLinkTheme } from '@/6_shared/ui/AppLink/AppLink'
 import { type ISidebarItems } from '../../model/items'
-import { useTheme } from '1_app/providers/ThemeProvider'
-import { useAppSelector } from '1_app/providers/StoreProvider'
-import { getUserAuthData } from '5_entities/User'
+import { useTheme } from '@/1_app/providers/ThemeProvider'
+import { useAppSelector } from '@/1_app/providers/StoreProvider'
+import { getUserAuthData } from '@/5_entities/User'
 
 interface SidebarItemProps {
     className?: string

@@ -19,7 +19,7 @@ export const Popover = (props: HPopoverProps): JSX.Element => {
             <HPopover.Button as="div" className={popUpCls.button}>
                 {trigger}
             </HPopover.Button>
-            
+
             <HPopover.Panel
                 className={classNames(cls.panel, {}, [popUpCls[direciotn]])}
                 unmount={false}

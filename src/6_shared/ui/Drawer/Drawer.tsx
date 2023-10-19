@@ -1,12 +1,13 @@
 import { useTheme } from '@/1_app/providers/ThemeProvider'
 import { useModal } from '@/6_shared/hooks/useModal'
-import { IconComponent } from '@/6_shared/lib'
 import { classNames, type Mods } from '@/6_shared/lib/classNames/classNames'
-import { useCallback, useEffect, type FC, type ReactNode, memo } from 'react'
-import { Button } from '../Button'
+import {
+    AnimationProvider,
+    useAnimationLibs,
+} from '@/6_shared/lib/components/AnimationProvider'
+import { useCallback, useEffect, type FC, type ReactNode } from 'react'
 import { Portal } from '../Portal/Portal'
 import cls from './Drawer.module.scss'
-import { useAnimationLibs } from '@/6_shared/lib/components/AnimationProvider'
 
 interface DrawerProps {
     className?: string
@@ -39,16 +40,17 @@ export const DrawerContent: FC<DrawerProps> = (props) => {
         })
     }, [api])
 
-    useEffect(() => {
-        if (isOpen) open()
-    }, [isOpen, open])
-
     const close = useCallback(() => {
         api.start({
             y: height,
             immediate: false,
         })
     }, [api])
+
+    useEffect(() => {
+        if (isOpen) open()
+        if (!isOpen) close()
+    }, [close, isOpen, open])
 
     const downClickHandler = useCallback(() => {
         closeHandler()
@@ -90,9 +92,6 @@ export const DrawerContent: FC<DrawerProps> = (props) => {
 
     const display = y.to((py) => (py < height ? 'block' : 'none'))
 
-    y.to((py) => console.log('py:', py))
-    console.log('height:', height)
-
     if (lazy && !isOpen) return null
 
     return (
@@ -115,10 +114,6 @@ export const DrawerContent: FC<DrawerProps> = (props) => {
                     onClick={onContentClick}
                     {...bind()}
                 >
-                    <Button className={cls.button} onClick={downClickHandler}>
-                        <IconComponent name="down" pathFill={color} />
-                    </Button>
-
                     {children}
                 </Spring.a.div>
             </div>
@@ -126,10 +121,18 @@ export const DrawerContent: FC<DrawerProps> = (props) => {
     )
 }
 
-export const Drawer = memo((props: DrawerProps) => {
+const DrawerAsync = (props: DrawerProps): JSX.Element | null => {
     const { isLoaded } = useAnimationLibs()
 
     if (!isLoaded) return null
 
     return <DrawerContent {...props} />
-})
+}
+
+export const Drawer = (props: DrawerProps): JSX.Element => {
+    return (
+        <AnimationProvider>
+            <DrawerAsync {...props} />
+        </AnimationProvider>
+    )
+}

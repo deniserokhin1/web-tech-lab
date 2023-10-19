@@ -23,10 +23,24 @@
     z-index: var(--modal-z-index);
     width: 100%;
     height: calc(100vh - 5vh);
-    padding: 0 30px 30px;
+    padding: 30px;
     touch-action: none;
     background: var(--bg-color);
     border-radius: 6px 6px 0 0;
+
+    &::before {
+        position: relative;
+        left: 50%;
+        display: block;
+        width: 100px;
+        height: 5px;
+        margin-bottom: 15px;
+        content: '';
+        background: var(--i-bg-color);
+        border-radius: 10px;
+        opacity: 0.5;
+        transform: translate(-50%, -50%);
+    }
 }
 
 .button {

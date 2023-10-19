@@ -23,6 +23,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     size?: ButtonSize
     disabled?: boolean
     animate?: boolean
+    maxWidth?: boolean
 }
 
 export const Button = memo((props: ButtonProps) => {
@@ -32,6 +33,7 @@ export const Button = memo((props: ButtonProps) => {
         theme = ButtonTheme.CLEAR,
         size = ButtonSize.M,
         disabled,
+        maxWidth,
         animate = true,
         ...otherProps
     } = props
@@ -39,6 +41,7 @@ export const Button = memo((props: ButtonProps) => {
     const mods = {
         [cls.disabled]: disabled,
         [cls.animate]: animate,
+        [cls.maxWidth]: maxWidth,
     }
 
     return (

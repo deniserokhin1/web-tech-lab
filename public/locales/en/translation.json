@@ -16,6 +16,7 @@
   "Выйти": "Logout",
   "Профиль": "Profile",
   "Статьи": "Articles",
+  "Ваш отзыв": "Your feedback",
   "profile": {
     "Профиль": "Profile",
     "Редактировать": " Edit",
@@ -68,5 +69,8 @@
   "У вас нет доступа к этой странице": {
     "": "You do not have access to this page."
   },
-  "Админ панель": "Admin panel"
+  "Админ панель": "Admin panel",
+  "Закрыть": "Close",
+  "Ок": "Ok",
+  "Отправить": "Send"
 }

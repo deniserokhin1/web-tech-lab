@@ -27,6 +27,7 @@ interface TextProps {
     theme?: TextTheme
     align?: TextAlign
     minWidth?: boolean
+    maxWidth?: boolean
     size?: TextSize
     'data-testid'?: string
 }
@@ -40,10 +41,11 @@ export const Text = memo((props: TextProps) => {
         theme = TextTheme.DEFAULT,
         align = TextAlign.CENTER,
         minWidth = false,
+        maxWidth = false,
         'data-testid': dataTestId = 'Text',
     } = props
 
-    const mods = { [cls.fitContent]: minWidth }
+    const mods = { [cls.fitContent]: minWidth, [cls.maxWidth]: maxWidth }
 
     return (
         <div

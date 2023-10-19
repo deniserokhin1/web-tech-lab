@@ -1,4 +1,6 @@
 @mixin backgroundMixin {
+    display: flex;
+    justify-content: center;
     width: fit-content;
     padding: 5px 10px;
     color: var(--i-primary-color);
@@ -76,4 +78,8 @@
 .disabled {
     pointer-events: none;
     opacity: 0.5;
+}
+
+.maxWidth {
+    width: 100%;
 }

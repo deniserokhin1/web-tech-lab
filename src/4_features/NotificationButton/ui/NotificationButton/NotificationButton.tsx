@@ -5,7 +5,7 @@ import {
 } from '@/4_features/UI/model/selectors/getUI'
 import { NotificationList } from '@/5_entities/Notification'
 import { type INotification } from '@/5_entities/Notification/model/types/notification'
-import { useDevice } from '@/6_shared/hooks/useDevice'
+import { useDetectDevice } from '@/6_shared/hooks/useDetectDevice'
 import { IconComponent } from '@/6_shared/lib'
 import { Button } from '@/6_shared/ui/Button'
 import { ButtonTheme } from '@/6_shared/ui/Button/Button'
@@ -14,7 +14,6 @@ import { NotificationBadge } from '@/6_shared/ui/NotificationBadge/NotificationB
 import { Popover } from '@/6_shared/ui/Popups'
 import { memo, useCallback, useState } from 'react'
 import cls from './NotificationButton.module.scss'
-import { AnimationProvider } from '@/6_shared/lib/components/AnimationProvider'
 
 interface NotificationButtonProps {
     className?: string
@@ -42,12 +41,12 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
         </Button>
     )
 
-    const isMobile = useDevice()
+    const isMobile = useDetectDevice()
 
     return (
         <>
             {isMobile && (
-                <AnimationProvider>
+                <>
                     {trigger}
                     <Drawer isOpen={isOpen} onClose={onToggle} color={color}>
                         <NotificationList
@@ -55,7 +54,7 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
                             className={cls.drawerNotifications}
                         />
                     </Drawer>
-                </AnimationProvider>
+                </>
             )}
 
             {!isMobile && (

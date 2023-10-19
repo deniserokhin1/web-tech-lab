@@ -2,3 +2,4 @@
 scripts
 json-server/index.js
 config/storybook
+vite.config.ts

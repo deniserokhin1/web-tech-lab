@@ -1,0 +1,19 @@
+.container {
+    width: 100%;
+}
+
+.starIcon {
+    cursor: pointer;
+}
+
+.normal {
+    fill: none;
+}
+
+.hovered {
+    fill: var(--primary-color);
+}
+
+.isSelected {
+    cursor: auto;
+}

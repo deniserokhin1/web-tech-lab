@@ -16,6 +16,7 @@ export const useModal = (
     const [showModal, setShowModal] = useState(isOpen)
 
     useEffect(() => {
+        console.log('close into useModal')
         setShowModal(isOpen)
     }, [isOpen])
 

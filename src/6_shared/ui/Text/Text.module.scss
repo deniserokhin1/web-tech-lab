@@ -4,6 +4,10 @@
     min-width: fit-content;
 }
 
+.container.maxWidth {
+    min-width: 100%;
+}
+
 .title {
     width: 100%;
     font-weight: 600;

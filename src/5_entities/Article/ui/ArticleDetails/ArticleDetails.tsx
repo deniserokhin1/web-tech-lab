@@ -71,9 +71,24 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         content = (
             <VStack gap="16" max={true}>
                 <Skeleton height={300} width="100%" borderRadius={'8px'} />
-                <Skeleton width={300} height={40} borderRadius="4px" type="short" />
-                <Skeleton width={300} height={32} borderRadius="4px" type="short" />
-                <Skeleton width={300} height={30} borderRadius="4px" type="short" />
+                <Skeleton
+                    width={300}
+                    height={40}
+                    borderRadius="4px"
+                    type="short"
+                />
+                <Skeleton
+                    width={300}
+                    height={32}
+                    borderRadius="4px"
+                    type="short"
+                />
+                <Skeleton
+                    width={300}
+                    height={30}
+                    borderRadius="4px"
+                    type="short"
+                />
                 <Skeleton width="100%" height={200} borderRadius="4px" />
                 <Skeleton width="100%" height={200} borderRadius="4px" />
                 <Skeleton width="100%" height={200} borderRadius="4px" />
@@ -90,18 +105,32 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     src={article?.img}
                     borderRadius={'8px'}
                 />
-                <Text title={article?.title} align={TextAlign.LEFT} size={TextSize.L} />
-                <Text text={article?.subtitle} align={TextAlign.LEFT} size={TextSize.L} />
+                <Text
+                    title={article?.title}
+                    align={TextAlign.LEFT}
+                    size={TextSize.L}
+                />
+                <Text
+                    text={article?.subtitle}
+                    align={TextAlign.LEFT}
+                    size={TextSize.L}
+                />
 
                 <HStack gap="16">
                     <HStack gap="8">
-                        <IconComponent name="calendar" pathFill={color || mainColor} />
+                        <IconComponent
+                            name="calendar"
+                            pathFill={color || mainColor}
+                        />
                         <Text text={article?.dataCreate} minWidth={true} />
                     </HStack>
 
                     <HStack gap="8">
                         <IconComponent name="eye" pathFill={color} />
-                        <Text text={article?.views.toString()} minWidth={true} />
+                        <Text
+                            text={article?.views.toString()}
+                            minWidth={true}
+                        />
                     </HStack>
                 </HStack>
 
@@ -110,5 +139,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         )
     }
 
-    return <DynamicModuleLoader reducers={reducers}>{content}</DynamicModuleLoader>
+    return (
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
+            {content}
+        </DynamicModuleLoader>
+    )
 })

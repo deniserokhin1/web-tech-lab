@@ -171,10 +171,10 @@
   "profile": [
     {
       "id": "1",
-      "first": "Денис",
+      "first": "Ден",
       "lastname": "Ерохин",
       "age": 32,
-      "currency": "USD",
+      "currency": "RUB",
       "country": "Russia",
       "city": "Москва",
       "username": "Denis",
@@ -218,6 +218,27 @@
       "roles": [
         "USER"
       ]
+    }
+  ],
+  "article-ratings": [
+    {
+      "userId": "1",
+      "articleId": "1",
+      "rate": 2,
+      "id": 1
+    },
+    {
+      "userId": "1",
+      "articleId": "2",
+      "rate": 3,
+      "id": 2
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 5,
+      "feedback": "Теперь точно все кул!",
+      "id": 3
     }
   ],
   "articles": [

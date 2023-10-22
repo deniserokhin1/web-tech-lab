@@ -4,7 +4,7 @@ import svgr from 'vite-plugin-svgr'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [svgr({ exportAsDefault: true }), react()],
+    plugins: [svgr(), react()],
     resolve: {
         alias: [{ find: '@', replacement: '/src' }],
     },
@@ -12,5 +12,10 @@ export default defineConfig({
         __IS_DEV__: JSON.stringify(true),
         __API__: JSON.stringify('http://localhost:8000'),
         __PROJECT__: JSON.stringify('frontend'),
+    },
+    css: {
+        modules: {
+            generateScopedName: '[name]__[local]--[hash:base64:5]',
+        },
     },
 })

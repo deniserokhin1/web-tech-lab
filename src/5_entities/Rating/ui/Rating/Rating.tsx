@@ -1,5 +1,3 @@
-import { useAppSelector } from '@/1_app/providers/StoreProvider'
-import { getUIMainColor } from '@/4_features/UI/model/selectors/getUI'
 import { useDetectDevice } from '@/6_shared/hooks/useDetectDevice'
 import { classNames } from '@/6_shared/lib'
 import { Button } from '@/6_shared/ui/Button'
@@ -19,6 +17,7 @@ interface RatingProps {
     className?: string
     title?: string
     feedBackTitle?: string
+    rate?: number
     onCancel?: (starsCount: number) => void
     onAccept?: (starsCount: number, feedback?: string) => void
 }
@@ -26,13 +25,19 @@ interface RatingProps {
 const namespace = __IS_DEV__ ? 'translation' : ''
 
 export const Rating = memo((props: RatingProps) => {
-    const { className, feedBackTitle, onAccept, onCancel, title } = props
+    const {
+        className,
+        feedBackTitle,
+        onAccept,
+        onCancel,
+        title,
+        rate = 0,
+    } = props
 
     const { t } = useTranslation(namespace)
     const [isModalOpen, setModalOpen] = useState(false)
-    const [starsCount, setStarsCount] = useState(0)
+    const [starsCount, setStarsCount] = useState(rate)
     const [feedBack, setFeedBack] = useState('')
-    const color = useAppSelector(getUIMainColor)
 
     const onSelectStars = useCallback(
         (selectedStarsCount: number) => {
@@ -97,23 +102,23 @@ export const Rating = memo((props: RatingProps) => {
         </VStack>
     )
 
+    const theTitle = starsCount ? t('Ваша оценка') : title
+
     return (
         <Card className={classNames('', {}, [className])}>
             <VStack gap="16" align="center">
-                <Text title={title} align={TextAlign.CENTER} />
-                <StarRating onSelect={onSelectStars} />
+                <Text title={theTitle} align={TextAlign.CENTER} />
+                <StarRating selectedStars={rate} onSelect={onSelectStars} />
             </VStack>
 
             {isMobile ? (
-                <Drawer
-                    isOpen={isModalOpen}
-                    onClose={cancelHandler}
-                    color={color}
-                >
+                <Drawer isOpen={isModalOpen} onClose={cancelHandler}>
                     {modalContent}
                 </Drawer>
             ) : (
-                <Modal isOpen={isModalOpen}>{modalContent}</Modal>
+                <Modal isOpen={isModalOpen} onClose={cancelHandler}>
+                    {modalContent}
+                </Modal>
             )}
         </Card>
     )

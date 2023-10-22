@@ -11,12 +11,11 @@ export const useModal = (
     isOpen: boolean,
     cls: Record<string, string>,
     onClose?: () => void,
-    isMobile?: boolean
+    isMobile?: boolean,
 ): IUseModal => {
     const [showModal, setShowModal] = useState(isOpen)
 
     useEffect(() => {
-        console.log('close into useModal')
         setShowModal(isOpen)
     }, [isOpen])
 
@@ -43,7 +42,7 @@ export const useModal = (
     )
 
     useEffect(() => {
-        if(isMobile) return
+        if (isMobile) return
         isOpen
             ? window.addEventListener('keydown', onKeyDown)
             : window.removeEventListener('keydown', onKeyDown)

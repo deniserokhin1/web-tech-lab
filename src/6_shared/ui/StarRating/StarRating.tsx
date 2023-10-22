@@ -2,7 +2,7 @@ import { memo, useState } from 'react'
 import { classNames } from '@/6_shared/lib'
 import cls from './StarRating.module.scss'
 import { Icon } from '@/6_shared/ui/Icon/Icon'
-import StarIcon from '../../assets/star.svg'
+import StarIcon from '../../assets/star.svg?react'
 import { HStack } from '../Stack'
 
 interface StarRatingProps {
@@ -16,7 +16,7 @@ const stars = [1, 2, 3, 4, 5]
 
 export const StarRating = memo((props: StarRatingProps) => {
     const { className, onSelect, selectedStars = 0, size = 50 } = props
-    const [currentStarsCount, setCurrentStarsCount] = useState(0)
+    const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars)
     const [isSelected, setSelected] = useState(Boolean(selectedStars))
 
     const onClick = (starsCount: number) => () => {

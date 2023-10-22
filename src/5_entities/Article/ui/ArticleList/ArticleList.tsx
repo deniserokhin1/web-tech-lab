@@ -39,14 +39,12 @@ export const ArticleList = memo((props: ArticleListProps) => {
         />
     )
 
-    const mods = {}
-
     if (!isLoading && !articles.length) {
         return <Text title={t('articles-list.Статьи не найдены')} />
     }
 
     return (
-        <div className={classNames(cls[view], mods, [className])}>
+        <div className={classNames(cls[view], {}, [className])}>
             {articles?.map((i) => renderArticle(i, view))}
             {isLoading && skeletons(view)}
         </div>

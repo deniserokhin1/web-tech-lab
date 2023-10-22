@@ -14,14 +14,13 @@ interface DrawerProps {
     children?: ReactNode
     isOpen?: boolean
     lazy?: boolean
-    color?: string
     onClose?: () => void
 }
 
 const height = window.innerHeight - 100
 
 export const DrawerContent: FC<DrawerProps> = (props) => {
-    const { className, children, onClose, isOpen = false, lazy, color } = props
+    const { className, children, onClose, isOpen = false, lazy } = props
     const { theme } = useTheme()
     const { closeHandler, onContentClick, showModal, onTransitionEnd } =
         useModal(isOpen, cls, onClose, true)

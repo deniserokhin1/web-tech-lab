@@ -4,6 +4,7 @@
 
 .starIcon {
     cursor: pointer;
+    transition: all 0.2s;
 }
 
 .normal {
@@ -12,6 +13,7 @@
 
 .hovered {
     fill: var(--primary-color);
+    transform: scale(1.05);
 }
 
 .isSelected {

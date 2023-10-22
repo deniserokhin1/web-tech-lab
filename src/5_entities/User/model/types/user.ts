@@ -5,7 +5,7 @@ export enum UserRole {
 }
 
 export interface IUser {
-    id: string | number
+    id: string
     username: string
     avatar?: string
     roles?: UserRole[]

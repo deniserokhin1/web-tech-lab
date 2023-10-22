@@ -1,7 +1,6 @@
 import { useAppSelector } from '@/1_app/providers/StoreProvider'
 import {
-    getUIBgColor,
-    getUIMainColor,
+    getUIBgColor
 } from '@/4_features/UI/model/selectors/getUI'
 import { NotificationList } from '@/5_entities/Notification'
 import { type INotification } from '@/5_entities/Notification/model/types/notification'
@@ -24,7 +23,6 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
     const bgColor = useAppSelector(getUIBgColor)
     const [isOpen, setOpen] = useState(false)
     const [amount, setAmount] = useState(0)
-    const color = useAppSelector(getUIMainColor)
 
     const getAmount = useCallback((data: INotification[]) => {
         setAmount(data.length)
@@ -48,7 +46,7 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
             {isMobile && (
                 <>
                     {trigger}
-                    <Drawer isOpen={isOpen} onClose={onToggle} color={color}>
+                    <Drawer isOpen={isOpen} onClose={onToggle}>
                         <NotificationList
                             getData={getAmount}
                             className={cls.drawerNotifications}

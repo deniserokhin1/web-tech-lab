@@ -8,8 +8,8 @@ import {
     getArticlesPageNum,
     getArticlesPageView,
 } from '../../model/selectors/getArticlesPage'
-import { articlesPageActions, getArticles } from '../../model/slice/articlesPageSlice'
 import { fetchArticlesList } from '../../model/services/fetchArticlesList'
+import { articlesPageActions, getArticles } from '../../model/slice/articlesPageSlice'
 
 interface ArticleInfiniteListProps {
     className?: string
@@ -30,7 +30,6 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
         if (!limit || !articles.length || !hasMore || isLoading) return
 
         if (articles.length !== limit * page) {
-            // const kPage = Math.round(articles.length / limit)
             dispatch(setPage(1))
             dispatch(fetchArticlesList({ replace: true }))
         }

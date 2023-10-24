@@ -38,7 +38,10 @@ module.exports = {
         '@typescript-eslint/naming-convention': 0,
         'linebreak-style': ['error', 'unix'],
         'react/display-name': 0,
-        'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid'] }],
+        'i18next/no-literal-string': [
+            'error',
+            { markupOnly: true, ignoreAttribute: ['data-testid'] },
+        ],
         'no-duplicate-case': 0,
         indent: 0,
         'react-hooks/rules-of-hooks': 'error',
@@ -52,7 +55,7 @@ module.exports = {
         '@typescript-eslint/prefer-includes': 0,
         'n/no-callback-literal': 0,
         '@typescript-eslint/ban-types': 0,
-        'yo-common/path-checker': 'error',
+        'yo-common/path-checker': ['error', { alias: '@' }],
         '@typescript-eslint/consistent-type-imports': 0,
     },
 }

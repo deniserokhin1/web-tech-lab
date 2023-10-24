@@ -1,9 +1,7 @@
 import { useAppSelector } from '@/1_app/providers/StoreProvider'
-import {
-    getUIBgColor
-} from '@/4_features/UI/model/selectors/getUI'
+import { getUIBgColor } from '@/4_features/UI'
 import { NotificationList } from '@/5_entities/Notification'
-import { type INotification } from '@/5_entities/Notification/model/types/notification'
+import { type INotification } from '@/5_entities/Notification'
 import { useDetectDevice } from '@/6_shared/hooks/useDetectDevice'
 import { IconComponent } from '@/6_shared/lib'
 import { Button } from '@/6_shared/ui/Button'

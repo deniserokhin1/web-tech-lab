@@ -1,6 +1,6 @@
 import { RoutePath } from '@/1_app/providers/Router/config/routeConfig'
 import { useAppSelector } from '@/1_app/providers/StoreProvider'
-import { getUIMainColor } from '@/4_features/UI/model/selectors/getUI'
+import { getUIMainColor } from '@/4_features/UI'
 import { getArticleDetailsData } from '@/5_entities/Article'
 import { IconComponent, classNames } from '@/6_shared/lib'
 import { Button } from '@/6_shared/ui/Button'

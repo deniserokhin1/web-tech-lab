@@ -3,11 +3,11 @@ import { AdminPanelPage } from '@/2_pages/AdminPanelPage'
 import { ArticleDetailsPage } from '@/2_pages/ArticleDetailsPage'
 import { ArticleEditPage } from '@/2_pages/ArticleEditPage'
 import { ArticlesPage } from '@/2_pages/ArticlesPage'
-import ForbiddenPage from '@/2_pages/ForbiddenPage/ui/ForbiddenPage/ForbiddenPage'
+import { ForbiddenPage } from '@/2_pages/ForbiddenPage'
 import { Main } from '@/2_pages/Main'
 import { NotFoundPage } from '@/2_pages/NotFoundPage'
 import { ProfilePage } from '@/2_pages/ProfilePage'
-import { UserRole } from '@/5_entities/User/model/types/user'
+import { UserRole } from '@/5_entities/User'
 import { type RouteObject, type RouteProps } from 'react-router-dom'
 
 export type AppRoutesProps = RouteProps &

@@ -3,8 +3,7 @@ import {
     useAppSelector,
     type StateSchema,
 } from '@/1_app/providers/StoreProvider'
-import { getUIScrollByPath, uiActions } from '@/4_features/UI'
-import { getIsScrolling } from '@/4_features/UI/model/selectors/getUI'
+import { getUIScrollByPath, uiActions, getIsScrolling } from '@/4_features/UI'
 import { useDebouce } from '@/6_shared/hooks/useDebounce'
 import { useInfinityScroll } from '@/6_shared/hooks/useInfinityScroll'
 import { useInitialEffect } from '@/6_shared/hooks/useInitialEffect'

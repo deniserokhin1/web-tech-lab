@@ -1,5 +1,5 @@
 import { useAppDispatch } from '@/1_app/providers/StoreProvider'
-import { PageWrapper } from '@/3_widgets/PageWrapper/PageWrapper'
+import { PageWrapper } from '@/3_widgets/PageWrapper'
 import { useInitialEffect } from '@/6_shared/hooks/useInitialEffect'
 import {
     DynamicModuleLoader,

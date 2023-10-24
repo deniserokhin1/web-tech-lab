@@ -56,6 +56,7 @@ module.exports = {
         'n/no-callback-literal': 0,
         '@typescript-eslint/ban-types': 0,
         'yo-common/path-checker': ['error', { alias: '@' }],
+        'yo-common/public-api-imports': ['error', { alias: '@' }],
         '@typescript-eslint/consistent-type-imports': 0,
     },
 }

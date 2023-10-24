@@ -1,12 +1,10 @@
-import { useAppSelector } from '@/1_app/providers/StoreProvider'
-import { getUISecondaryColor } from '@/4_features/UI/model/selectors/getUI'
 import { IconComponent, classNames } from '@/6_shared/lib'
 import { Listbox as HListbox } from '@headlessui/react'
 import { Fragment, memo, useMemo, type ReactNode } from 'react'
 import { Button } from '../../../Button'
 import { ButtonTheme } from '../../../Button/Button'
-import cls from './ListBox.module.scss'
 import popUpCls from '../styles/popup.module.scss'
+import cls from './ListBox.module.scss'
 
 export interface HListboxItems {
     value: string
@@ -20,12 +18,12 @@ export interface HListboxProps {
     value?: string
     defaultValue?: string
     readonly?: boolean
+    color?: string
     onChange?: <T extends string>(value: T) => void
 }
 
 export const ListBox = memo((props: HListboxProps) => {
-    const { className, items, defaultValue, onChange, value, readonly } = props
-    const color = useAppSelector(getUISecondaryColor)
+    const { className, items, defaultValue, onChange, value, readonly, color } = props
 
     const buttonTitle = useMemo(() => {
         return items?.find((i) => i.value === value)?.content

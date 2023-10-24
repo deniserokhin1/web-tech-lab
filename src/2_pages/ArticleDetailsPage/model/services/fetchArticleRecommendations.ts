@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { type StateSchema, type ThunkConfig } from '@/1_app/providers/StoreProvider/config/StateSchema'
 import { type IArticle } from '@/5_entities/Article'
-import { getArticlesPageLimit } from '@/2_pages/ArticlesPage/model/selectors/getArticlesPage'
+import { getArticlesPageLimit } from '@/2_pages/ArticlesPage'
 
 export const fetchArticleRecommendations = createAsyncThunk<IArticle[], void, ThunkConfig<string>>(
     'articleDetailsPage/fetchArticleRecommendations',

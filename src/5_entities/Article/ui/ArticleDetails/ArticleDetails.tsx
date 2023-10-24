@@ -1,5 +1,4 @@
 import { useAppDispatch, useAppSelector } from '@/1_app/providers/StoreProvider'
-import { getUIMainColor } from '@/4_features/UI/model/selectors/getUI'
 import { useInitialEffect } from '@/6_shared/hooks/useInitialEffect'
 import { IconComponent } from '@/6_shared/lib'
 import {
@@ -56,7 +55,6 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const isLoading = useAppSelector(getArticleDetailsIsLoading)
     const error = useAppSelector(getArticleDetailsError)
     const article = useAppSelector(getArticleDetailsData)
-    const mainColor = useAppSelector(getUIMainColor)
 
     useInitialEffect(() => {
         dispatch(fetchArticleById(id))
@@ -118,10 +116,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
                 <HStack gap="16">
                     <HStack gap="8">
-                        <IconComponent
-                            name="calendar"
-                            pathFill={color || mainColor}
-                        />
+                        <IconComponent name="calendar" pathFill={color} />
                         <Text text={article?.dataCreate} minWidth={true} />
                     </HStack>
 

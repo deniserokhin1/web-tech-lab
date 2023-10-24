@@ -1,8 +1,8 @@
 import { useAppSelector } from '@/1_app/providers/StoreProvider'
-import { PageWrapper } from '@/3_widgets/PageWrapper/PageWrapper'
+import { PageWrapper } from '@/3_widgets/PageWrapper'
 import { ArticleRating } from '@/4_features/ArticleRating'
 import { ArticleRecomendationList } from '@/4_features/ArticleRecomendationList'
-import { getUIMainColor } from '@/4_features/UI/model/selectors/getUI'
+import { getUIMainColor } from '@/4_features/UI'
 import { ArticleDetails } from '@/5_entities/Article'
 import {
     DynamicModuleLoader,

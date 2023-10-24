@@ -1,7 +1,7 @@
 import { RoutePath } from '@/1_app/providers/Router/config/routeConfig'
 import { useAppDispatch, useAppSelector } from '@/1_app/providers/StoreProvider'
 import { ArticleViewSelector } from '@/4_features/ArticleViewSelector'
-import { getUIMainColor } from '@/4_features/UI/model/selectors/getUI'
+import { getUIMainColor } from '@/4_features/UI'
 import {
     ArticleSortSelector,
     ArticleTypeTabs,

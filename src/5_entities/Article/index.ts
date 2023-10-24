@@ -19,4 +19,3 @@ export {
 export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector'
 export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs'
 export { ArticleList } from './ui/ArticleList/ArticleList'
-export { article } from './mocks/data'

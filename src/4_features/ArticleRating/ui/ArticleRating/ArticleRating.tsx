@@ -20,9 +20,11 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
     const { t } = useTranslation(namespace)
     const userData = useAppSelector(getUserAuthData)
 
+    const userId = userData?.id ?? ''
+
     const { data, isLoading, refetch } = useArticleRating({
         articleId,
-        userId: userData?.id ?? '',
+        userId,
     })
 
     const [rateArticleMutation] = useRateArticle()
@@ -33,7 +35,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
         (starsCount: number, feedback?: string) => {
             try {
                 rateArticleMutation({
-                    userId: userData?.id ?? '',
+                    userId,
                     articleId,
                     rate: starsCount,
                     feedback,
@@ -44,7 +46,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
                 refetch()
             }
         },
-        [articleId, rateArticleMutation, refetch, userData?.id],
+        [articleId, rateArticleMutation, refetch, userId],
     )
 
     const onAccept = useCallback(

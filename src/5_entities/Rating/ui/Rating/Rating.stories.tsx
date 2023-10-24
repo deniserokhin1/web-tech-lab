@@ -4,7 +4,7 @@ import { Theme } from '@/1_app/providers/ThemeProvider'
 import { ThemeDecorator } from '@/6_shared/config/storybook/Decorators/ThemeDecorator'
 
 const meta = {
-    title: '/Rating',
+    title: '5_entities/Rating',
     component: Rating,
     parameters: {
         layout: 'fullscreen',

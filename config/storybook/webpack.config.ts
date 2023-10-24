@@ -21,7 +21,7 @@ export default ({
     config.resolve?.modules?.push(paths.src)
     config.resolve?.extensions?.push('.ts', '.tsx')
     config.module?.rules?.push(buildCSSLoaders(true))
-    config.resolve!.alias = { '@': paths.src }
+    config!.resolve!.alias = { ...config!.resolve!.alias, '@': paths.src }
 
     if (config?.module?.rules) {
         const rules = config.module.rules as RuleSetRule[]

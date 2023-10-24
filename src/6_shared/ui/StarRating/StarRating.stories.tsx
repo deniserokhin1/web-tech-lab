@@ -4,7 +4,7 @@ import { Theme } from '@/1_app/providers/ThemeProvider'
 import { ThemeDecorator } from '@/6_shared/config/storybook/Decorators/ThemeDecorator'
 
 const meta = {
-    title: '/StarRating',
+    title: '6_shared/StarRating',
     component: StarRating,
     parameters: {
         layout: 'fullscreen',

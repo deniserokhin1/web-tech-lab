@@ -108,7 +108,10 @@ export const Rating = memo((props: RatingProps) => {
         <Card className={classNames('', {}, [className])}>
             <VStack gap="16" align="center">
                 <Text title={theTitle} align={TextAlign.CENTER} />
-                <StarRating selectedStars={rate} onSelect={onSelectStars} />
+                <StarRating
+                    selectedStars={rate}
+                    onSelect={onSelectStars}
+                />
             </VStack>
 
             {isMobile ? (

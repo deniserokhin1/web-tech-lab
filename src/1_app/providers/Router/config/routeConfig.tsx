@@ -8,6 +8,7 @@ import { Main } from '@/2_pages/Main'
 import { NotFoundPage } from '@/2_pages/NotFoundPage'
 import { ProfilePage } from '@/2_pages/ProfilePage'
 import { UserRole } from '@/5_entities/User'
+import { AppRoutes } from '@/6_shared/const/router'
 import { type RouteObject, type RouteProps } from 'react-router-dom'
 
 export type AppRoutesProps = RouteProps &
@@ -15,19 +16,6 @@ export type AppRoutesProps = RouteProps &
         authOnly?: boolean
         roles?: UserRole[]
     }
-
-export enum AppRoutes {
-    MAIN = 'main',
-    ABOUT = 'about',
-    PROFILE = 'profile',
-    ARTICLES = 'articles',
-    ARTICLE_DETAILS = 'article_details',
-    ARTICLE_CREATE = 'article_create',
-    ARTICLE_EDIT = 'article_edit',
-    ADMIN_PANEL = 'admin_panel',
-    FORBIDDEN = 'forbidden',
-    NOT_FOUND = 'not_found',
-}
 
 export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',

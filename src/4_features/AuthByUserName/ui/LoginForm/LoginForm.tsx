@@ -2,13 +2,12 @@ import { classNames } from '@/6_shared/lib/classNames/classNames'
 import cls from './LoginForm.module.scss'
 import { useCallback, type FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Button } from '@/6_shared/ui/Button'
-import { ButtonTheme } from '@/6_shared/ui/Button/Button'
+import { Button, ButtonTheme } from '@/6_shared/ui/Button'
 import { Input } from '@/6_shared/ui/Input'
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername'
 import { loginActions, loginReducer } from '../../model/slice/loginSlice'
 import { useAppDispatch, useAppSelector } from '@/1_app/providers/StoreProvider'
-import { Text, TextTheme } from '@/6_shared/ui/Text/Text'
+import { Text, TextTheme } from '@/6_shared/ui/Text'
 import { getLoginUsername } from '../../model/selectros/getLoginUsername'
 import { getLoginPassword } from '../../model/selectros/getLoginPassword'
 import { getLoginIsLoading } from '../../model/selectros/getLoginIsLoading'
@@ -62,7 +61,10 @@ const LoginForm: FC<LoginFrormProps> = memo(() => {
     return (
         <DynamicModuleLoader reducers={initialReducers}>
             <div className={classNames(cls.container)}>
-                <Text title={t('Форма авторизации')} theme={TextTheme.DEFAULT_INVERT} />
+                <Text
+                    title={t('Форма авторизации')}
+                    theme={TextTheme.DEFAULT_INVERT}
+                />
 
                 {error && <Text text={error} theme={TextTheme.ERROR} />}
 

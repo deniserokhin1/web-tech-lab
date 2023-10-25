@@ -1,5 +1,5 @@
 import { classNames } from '@/6_shared/lib'
-import { Skeleton } from '@/6_shared/ui/Skeleton/Skeleton'
+import { Skeleton } from '@/6_shared/ui/Skeleton'
 import { VStack } from '@/6_shared/ui/Stack'
 import { memo, useEffect } from 'react'
 import { useNotifications } from '../../api/notificationApi'

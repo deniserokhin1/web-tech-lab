@@ -7,7 +7,7 @@ import {
     DynamicModuleLoader,
     type ReducersList,
 } from '@/6_shared/lib/components/DynamicModuleLoader'
-import { Text, TextTheme } from '@/6_shared/ui/Text/Text'
+import { Text, TextTheme } from '@/6_shared/ui/Text'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router-dom'

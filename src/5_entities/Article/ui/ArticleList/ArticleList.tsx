@@ -1,5 +1,5 @@
 import { classNames } from '@/6_shared/lib'
-import { Text } from '@/6_shared/ui/Text/Text'
+import { Text } from '@/6_shared/ui/Text'
 import { memo, type HTMLAttributeAnchorTarget } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ArticleView, type IArticle } from '../../model/types/article'

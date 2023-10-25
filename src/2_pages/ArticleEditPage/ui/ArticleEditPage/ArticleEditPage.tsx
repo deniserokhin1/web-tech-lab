@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import cls from './ArticleEditPage.module.scss'
 import { PageWrapper } from '@/3_widgets/PageWrapper'
 import { useParams } from 'react-router-dom'
-import { Text, TextAlign } from '@/6_shared/ui/Text/Text'
+import { Text, TextAlign } from '@/6_shared/ui/Text'
 
 interface ArticleEditPageProps {
     className?: string

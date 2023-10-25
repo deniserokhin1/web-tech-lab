@@ -7,14 +7,13 @@ import {
     ArticleView,
     type IArticle,
 } from '../../model/types/article'
-import { Text, TextAlign } from '@/6_shared/ui/Text/Text'
-import { Card } from '@/6_shared/ui/Card/Card'
+import { Text, TextAlign } from '@/6_shared/ui/Text'
+import { Card } from '@/6_shared/ui/Card'
 import { useHover } from '@/6_shared/hooks/useHover'
 import { useGetMainColor } from '@/6_shared/hooks/useGetMainColor'
-import { Avatar } from '@/6_shared/ui/Avatar/Avatar'
-import { Button } from '@/6_shared/ui/Button'
+import { Avatar } from '@/6_shared/ui/Avatar'
 import { useTranslation } from 'react-i18next'
-import { ButtonTheme } from '@/6_shared/ui/Button/Button'
+import { ButtonTheme, Button } from '@/6_shared/ui/Button'
 import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock'
 import { RoutePath } from '@/1_app/providers/Router/config/routeConfig'
 import { AppLink } from '@/6_shared/ui/AppLink'

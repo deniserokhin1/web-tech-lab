@@ -2,8 +2,7 @@ import cls from './PageError.module.scss'
 import type { FC } from 'react'
 import { classNames } from '@/6_shared/lib'
 import { useTranslation } from 'react-i18next'
-import { Button } from '@/6_shared/ui/Button'
-import { ButtonTheme } from '@/6_shared/ui/Button/Button'
+import { Button, ButtonTheme } from '@/6_shared/ui/Button'
 import {
     LOCAL_STORAGE_THEME_KEY,
     Theme,

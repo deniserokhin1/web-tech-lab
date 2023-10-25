@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { Code } from '@/6_shared/ui/Code/Code'
+import { Code } from '@/6_shared/ui/Code'
 import { type ArticleCode } from '../../model/types/article'
 
 interface ArticleCodeBlockProps {

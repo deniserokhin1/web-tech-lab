@@ -5,10 +5,10 @@ import {
     DynamicModuleLoader,
     type ReducersList,
 } from '@/6_shared/lib/components/DynamicModuleLoader'
-import { Avatar } from '@/6_shared/ui/Avatar/Avatar'
-import { Skeleton } from '@/6_shared/ui/Skeleton/Skeleton'
+import { Avatar } from '@/6_shared/ui/Avatar'
+import { Skeleton } from '@/6_shared/ui/Skeleton'
 import { HStack, VStack } from '@/6_shared/ui/Stack'
-import { Text, TextAlign, TextSize } from '@/6_shared/ui/Text/Text'
+import { Text, TextAlign, TextSize } from '@/6_shared/ui/Text'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import {

@@ -1,6 +1,6 @@
 import { classNames } from '@/6_shared/lib'
-import { Card } from '@/6_shared/ui/Card/Card'
-import { Text, TextAlign, TextSize } from '@/6_shared/ui/Text/Text'
+import { Card } from '@/6_shared/ui/Card'
+import { Text, TextAlign, TextSize } from '@/6_shared/ui/Text'
 import { type INotification } from '../../model/types/notification'
 import cls from './NotificationItem.module.scss'
 

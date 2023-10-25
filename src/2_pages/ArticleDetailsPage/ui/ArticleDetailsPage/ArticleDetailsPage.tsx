@@ -8,7 +8,7 @@ import {
     DynamicModuleLoader,
     type ReducersList,
 } from '@/6_shared/lib/components/DynamicModuleLoader'
-import { Card } from '@/6_shared/ui/Card/Card'
+import { Card } from '@/6_shared/ui/Card'
 import { VStack } from '@/6_shared/ui/Stack'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'

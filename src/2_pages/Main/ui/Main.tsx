@@ -1,4 +1,4 @@
-import { Text, TextAlign } from '@/6_shared/ui/Text/Text'
+import { Text, TextAlign } from '@/6_shared/ui/Text'
 import { useTranslation } from 'react-i18next'
 
 const Main = (): JSX.Element => {

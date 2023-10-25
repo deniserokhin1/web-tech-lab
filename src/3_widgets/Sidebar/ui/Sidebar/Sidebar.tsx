@@ -8,7 +8,7 @@ import { useTheme } from '@/1_app/providers/ThemeProvider'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
 import { useAppSelector } from '@/1_app/providers/StoreProvider'
 import { getSidebarItems } from '../../model/selectors/getSidebarItems'
-import { VStack } from '@/6_shared/ui/Stack/VStatck/VStack'
+import { VStack } from '@/6_shared/ui/Stack'
 
 export interface SidebarProps {
     className?: string

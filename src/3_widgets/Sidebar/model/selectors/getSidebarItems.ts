@@ -1,7 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit'
 
-import { RoutePath } from '@/1_app/providers/Router/config/routeConfig'
 import { getUserAuthData } from '@/5_entities/User'
+import { RoutePath } from '@/6_shared/const/router'
 
 import { type ISidebarItems } from '../items'
 

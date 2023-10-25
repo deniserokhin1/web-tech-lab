@@ -20,8 +20,8 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 - `npm run lint:fix` - Исправление ts файлов линтером
 - `npm run stylelint` - Проверка scss файлов style линтером
 - `npm run stylelint:fix` - Исправление scss файлов style линтером
-- `npm run test:unit` - Хапуск unit тестов с jest
-- `npm run test:ui` - Хапуск скриншотных тестов с loki
+- `npm run test:unit` - Запуск unit тестов с jest
+- `npm run test:ui` - Запуск скриншотных тестов с loki
 - `npm run test:ui:ok` - Подтверждение новых скриншотов
 - `npm run test:ui:ci` - Запуск скриншотных тестов в CI
 - `npm run test:ui:report` - Генерация полного отчета для скриншотных тестов
@@ -53,13 +53,10 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 
 ## Тесты
 
-В проекте используются 4 вида тестов:
+В проекте используются 3 вида тестов:
 1) Обычные unit тесты на jest - `npm run test:unit`
 2) Тесты на компоненты с React testing library -`npm run test:unit`
 3) Скриншотное тестирование с loki `npm run test:ui`
-4) e2e тестирование с Cypress `npm run test:e2e`
-
-Подробнее о тестах - [документация тестирование](/docs/tests.md)
 
 ----
 
@@ -89,8 +86,6 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 
 Запустить сторибук можно командой:
 - `npm run storybook`
-
-Подробнее о [Storybook](/docs/storybook.md)
 
 Пример:
 
@@ -211,34 +206,6 @@ export const Disabled: Story = {
 Запросы на сервер отправляются с помощью [RTK query](/src/shared/api/rtkApi.ts)
 
 Для асинхронного подключения редюсеров (чтобы не тянуть их в общий бандл) используется
-[DynamicModuleLoader](/src/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tsx)
+[DynamicModuleLoader](/src/6_shared/lib/components/DynamicModuleLoader.tsx)
 
 ----
-
-
-## Сущности (entities)
-
-- [Article](/src/entities/Article)
-- [Comment](/src/entities/Comment)
-- [Counter](/src/entities/Counter)
-- [Country](/src/entities/Country)
-- [Currency](/src/entities/Currency)
-- [Notification](/src/entities/Notification)
-- [Profile](/src/entities/Profile)
-- [Rating](/src/entities/Rating)
-- [User](/src/entities/User)
-
-## Фичи (features)
-
-- [addCommentForm](/src/features/addCommentForm)
-- [articleEditForm](/src/features/articleEditForm)
-- [articleRating](/src/features/articleRating)
-- [articleRecommendationsList](/src/features/articleRecommendationsList)
-- [AuthByUsername](/src/features/AuthByUsername)
-- [avatarDropdown](/src/features/avatarDropdown)
-- [editableProfileCard](/src/features/editableProfileCard)
-- [LangSwitcher](/src/features/LangSwitcher)
-- [notificationButton](/src/features/notificationButton)
-- [profileRating](/src/features/profileRating)
-- [ThemeSwitcher](/src/features/ThemeSwitcher)
-- [UI](/src/features/UI)

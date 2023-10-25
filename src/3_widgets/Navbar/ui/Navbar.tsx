@@ -1,4 +1,3 @@
-/* eslint-disable i18next/no-literal-string */
 import { memo, useCallback, useEffect, useState, type FC } from 'react'
 
 import { useTranslation } from 'react-i18next'

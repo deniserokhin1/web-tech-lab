@@ -2,9 +2,14 @@ import { memo, useCallback } from 'react'
 
 import { useTranslation } from 'react-i18next'
 
-import { RoutePath } from '@/1_app/providers/Router/config/routeConfig'
 import { useAppDispatch, useAppSelector } from '@/1_app/providers/StoreProvider'
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/5_entities/User'
+import {
+    getUserAuthData,
+    isUserAdmin,
+    isUserManager,
+    userActions,
+} from '@/5_entities/User'
+import { RoutePath } from '@/6_shared/const/router'
 import { Avatar } from '@/6_shared/ui/Avatar'
 import { Dropdown } from '@/6_shared/ui/Popups'
 

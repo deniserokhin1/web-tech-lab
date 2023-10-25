@@ -2,7 +2,7 @@ import { type HTMLAttributeAnchorTarget, memo, useRef } from 'react'
 
 import { useTranslation } from 'react-i18next'
 
-import { RoutePath } from '@/1_app/providers/Router/config/routeConfig'
+import { RoutePath } from '@/6_shared/const/router'
 import { useGetMainColor } from '@/6_shared/hooks/useGetMainColor'
 import { useHover } from '@/6_shared/hooks/useHover'
 import { IconComponent, classNames } from '@/6_shared/lib'
@@ -31,7 +31,13 @@ interface ArticleListItemProps {
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-    const { className, article, view = ArticleView.ROW, target, padding } = props
+    const {
+        className,
+        article,
+        view = ArticleView.ROW,
+        target,
+        padding,
+    } = props
     const ref = useRef<HTMLDivElement>(null)
     // const navigate = useNavigate()
 
@@ -92,13 +98,19 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                         />
                     </div>
 
-                    <Text title={article?.title} minWidth={true} align={TextAlign.LEFT} />
+                    <Text
+                        title={article?.title}
+                        minWidth={true}
+                        align={TextAlign.LEFT}
+                    />
 
                     {types}
 
                     <img src={article?.img} className={cls.img} />
 
-                    {textBlock && <ArticleTextBlock block={textBlock} short={true} />}
+                    {textBlock && (
+                        <ArticleTextBlock block={textBlock} short={true} />
+                    )}
 
                     <div>
                         <AppLink
@@ -116,7 +128,10 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     }
 
     return (
-        <AppLink to={`${RoutePath.article_details + article?.id}`} target={target}>
+        <AppLink
+            to={`${RoutePath.article_details + article?.id}`}
+            target={target}
+        >
             <div
                 className={classNames(cls[view], mods, [className])}
                 {...bindHover}

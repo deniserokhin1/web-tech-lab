@@ -1,6 +1,6 @@
 import { memo } from 'react'
 
-import { RoutePath } from '@/1_app/providers/Router/config/routeConfig'
+import { RoutePath } from '@/6_shared/const/router'
 import { classNames } from '@/6_shared/lib'
 import { AppLink } from '@/6_shared/ui/AppLink'
 import { Avatar } from '@/6_shared/ui/Avatar'
@@ -33,7 +33,12 @@ export const CommentCard = memo((props: CommentCardProps) => {
         return (
             <div className={classNames(cls.container, mods, [className])}>
                 <div className={cls.header}>
-                    <Skeleton width={30} height={30} borderRadius="50%" type="short" />
+                    <Skeleton
+                        width={30}
+                        height={30}
+                        borderRadius="50%"
+                        type="short"
+                    />
                     <Skeleton
                         width={100}
                         height={32}
@@ -49,10 +54,17 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
     return (
         <Card className={classNames(cls.container, mods, [className])}>
-            <AppLink to={`${RoutePath.profile}${user.id}`} className={cls.header}>
+            <AppLink
+                to={`${RoutePath.profile}${user.id}`}
+                className={cls.header}
+            >
                 {user?.avatar && <Avatar size={30} src={user.avatar} />}
 
-                <Text title={user?.username} className={cls.username} size={TextSize.S} />
+                <Text
+                    title={user?.username}
+                    className={cls.username}
+                    size={TextSize.S}
+                />
             </AppLink>
 
             <Text text={text} align={TextAlign.LEFT} />

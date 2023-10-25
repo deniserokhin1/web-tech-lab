@@ -10,26 +10,13 @@ import { Main } from '@/2_pages/Main'
 import { NotFoundPage } from '@/2_pages/NotFoundPage'
 import { ProfilePage } from '@/2_pages/ProfilePage'
 import { UserRole } from '@/5_entities/User'
-import { AppRoutes } from '@/6_shared/const/router'
+import { AppRoutes, RoutePath } from '@/6_shared/const/router'
 
 export type AppRoutesProps = RouteProps &
     RouteObject & {
         authOnly?: boolean
         roles?: UserRole[]
     }
-
-export const RoutePath: Record<AppRoutes, string> = {
-    [AppRoutes.MAIN]: '/',
-    [AppRoutes.ABOUT]: '/about',
-    [AppRoutes.PROFILE]: '/profile/',
-    [AppRoutes.ARTICLES]: '/articles',
-    [AppRoutes.ARTICLE_DETAILS]: '/articles/', // + :id
-    [AppRoutes.ARTICLE_CREATE]: '/articles/new',
-    [AppRoutes.ARTICLE_EDIT]: '/articles/:id/edit',
-    [AppRoutes.ADMIN_PANEL]: '/admin',
-    [AppRoutes.FORBIDDEN]: '/forbidden',
-    [AppRoutes.NOT_FOUND]: '*',
-}
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.MAIN]: {

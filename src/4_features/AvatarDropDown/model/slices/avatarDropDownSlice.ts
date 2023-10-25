@@ -1,8 +1,6 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
-import type { AvatarDropDownSchema } from '../types/avatarDropDownSchema'
-
-const initialState: AvatarDropDownSchema = {}
+const initialState = {}
 
 export const avatarDropDownSlice = createSlice({
     name: 'avatarDropDown',
@@ -12,20 +10,6 @@ export const avatarDropDownSlice = createSlice({
            
         },
     },
-    // extraReducers: (builder) => {
-    //     builder
-    //         .addCase(, (state) => {
-    //             state.error = undefined;
-    //             state.isLoading = true;
-    //         })
-    //         .addCase(, (state) => {
-    //             state.isLoading = false;
-    //         })
-    //         .addCase(, (state, action) => {
-    //             state.isLoading = false;
-    //             state.error = action.payload;
-    //         });
-    // },
 });
 
 export const { actions: avatarDropDownActions } = avatarDropDownSlice;

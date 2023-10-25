@@ -26,7 +26,7 @@ Light.decorators = [
     StoreDecorator({
         user: {
             authData: {
-                id: 1,
+                id: '1',
                 username: 'user',
             },
         },
@@ -43,7 +43,7 @@ Dark.decorators = [
     StoreDecorator({
         user: {
             authData: {
-                id: 1,
+                id: '1',
                 username: 'user',
             },
         },

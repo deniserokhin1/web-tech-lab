@@ -1,4 +1,4 @@
-import { RoutePath } from '@/1_app/providers/Router/config/routeConfig'
+import { RoutePath } from '@/6_shared/const/router'
 import { type IconComponentName } from '@/6_shared/lib/svg/types'
 
 export interface ISidebarItems {

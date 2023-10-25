@@ -1,10 +1,13 @@
 import { memo, useMemo } from 'react'
-import { classNames } from '@/6_shared/lib'
+
 import { useTranslation } from 'react-i18next'
-import { Select, type SelectOption } from '@/6_shared/ui/Select'
-import { ArticleSortFeild } from '../../model/types/article'
+
+import { classNames } from '@/6_shared/lib'
 import { type SortOrder } from '@/6_shared/types'
+import { Select, type SelectOption } from '@/6_shared/ui/Select'
 import { HStack } from '@/6_shared/ui/Stack'
+
+import { ArticleSortFeild } from '../../model/types/article'
 
 interface ArticleSortSelectorProps {
     className?: string

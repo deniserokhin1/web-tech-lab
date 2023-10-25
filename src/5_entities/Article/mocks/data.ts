@@ -1,7 +1,8 @@
-import { ArticleDataType, ArticleType, type IArticle } from '../model/types/article'
+import avatar from '@/6_shared/assets/img/hacker-logo.jpg'
 import img1 from '@/6_shared/assets/img/technical-progress-1.jpg'
 import img2 from '@/6_shared/assets/img/technical-progress-2.jpg'
-import avatar from '@/6_shared/assets/img/hacker-logo.jpg'
+
+import { ArticleDataType, ArticleType, type IArticle } from '../model/types/article'
 
 export const article: IArticle = {
     id: '1',

@@ -26,7 +26,14 @@ module.exports = {
         sourceType: 'module',
         project: './tsconfig.json',
     },
-    plugins: ['react', 'i18next', 'react-hooks', 'yo-common'],
+    plugins: [
+        'react',
+        'i18next',
+        'react-hooks',
+        'yo-common',
+        'unused-imports',
+        'import',
+    ],
     rules: {
         '@typescript-eslint/prefer-nullish-coalescing': 0,
         '@typescript-eslint/strict-boolean-expressions': 0,
@@ -68,5 +75,33 @@ module.exports = {
             },
         ],
         '@typescript-eslint/consistent-type-imports': 0,
+        'import/order': [
+            'error',
+            {
+                pathGroups: [
+                    {
+                        pattern: 'react',
+                        group: 'external',
+                        position: 'before',
+                    },
+                    {
+                        pattern: '@/**',
+                        group: 'external',
+                        position: 'after',
+                    },
+                    {
+                        pattern: './**.module.*',
+                        group: 'internal',
+                        position: 'after',
+                    },
+                ],
+                pathGroupsExcludedImportTypes: ['react'],
+                'newlines-between': 'always',
+                alphabetize: {
+                    order: 'asc',
+                    caseInsensitive: true,
+                },
+            },
+        ],
     },
 }

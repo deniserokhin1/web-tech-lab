@@ -1,9 +1,13 @@
+import { memo } from 'react'
+
+import { useTranslation } from 'react-i18next'
+
 import { ArticleList } from '@/5_entities/Article'
 import { VStack } from '@/6_shared/ui/Stack'
 import { Text, TextAlign } from '@/6_shared/ui/Text'
-import { memo } from 'react'
-import { useTranslation } from 'react-i18next'
+
 import { useArticleRecomendationList } from '../../api/artilceRecomendationApi'
+
 import cls from './ArticleRecomendationList.module.scss'
 
 const namespace = __IS_DEV__ ? 'translation' : 'article-details'

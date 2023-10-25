@@ -1,3 +1,7 @@
+import { memo, useCallback, useState } from 'react'
+
+import { useTranslation } from 'react-i18next'
+
 import { useDetectDevice } from '@/6_shared/hooks/useDetectDevice'
 import { classNames } from '@/6_shared/lib'
 import { ButtonTheme, Button } from '@/6_shared/ui/Button'
@@ -8,8 +12,7 @@ import { Modal } from '@/6_shared/ui/Modal'
 import { HStack, VStack } from '@/6_shared/ui/Stack'
 import { StarRating } from '@/6_shared/ui/StarRating'
 import { Text, TextAlign, TextTheme } from '@/6_shared/ui/Text'
-import { memo, useCallback, useState } from 'react'
-import { useTranslation } from 'react-i18next'
+
 import cls from './Rating.module.scss'
 
 interface RatingProps {

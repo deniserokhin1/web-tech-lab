@@ -1,10 +1,12 @@
 import { Country } from '@/5_entities/Country'
 import { Currency } from '@/5_entities/Currency'
-import { updateProfileData } from '../services/updateProfileData'
 import { type IProfile } from '@/5_entities/Profile'
-import { profileActions, profileReducer } from './EditableProfileCardSlice'
-import { type EditableProfileCardSchema } from '../types/EditableProfileCardSchema'
+
 import { ValidateProfileErrors } from '../const/validateErrors'
+import { updateProfileData } from '../services/updateProfileData'
+import { type EditableProfileCardSchema } from '../types/EditableProfileCardSchema'
+
+import { profileActions, profileReducer } from './EditableProfileCardSlice'
 
 const data: IProfile = {
     username: 'admin',

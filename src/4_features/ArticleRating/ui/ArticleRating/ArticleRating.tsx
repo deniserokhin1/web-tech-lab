@@ -1,11 +1,15 @@
+import { memo, useCallback } from 'react'
+
+import { useTranslation } from 'react-i18next'
+
 import { useAppSelector } from '@/1_app/providers/StoreProvider'
 import { Rating } from '@/5_entities/Rating'
 import { getUserAuthData } from '@/5_entities/User'
 import { classNames } from '@/6_shared/lib/classNames/classNames'
 import { Skeleton } from '@/6_shared/ui/Skeleton'
-import { memo, useCallback } from 'react'
-import { useTranslation } from 'react-i18next'
+
 import { useArticleRating, useRateArticle } from '../../api/articleRatingApi'
+
 import cls from './ArticleRating.module.scss'
 
 const namespace = __IS_DEV__ ? 'translation' : 'namespace'

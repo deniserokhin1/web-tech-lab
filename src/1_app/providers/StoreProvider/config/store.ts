@@ -1,7 +1,3 @@
-import { uiReducer } from '@/4_features/UI'
-import { userReducer } from '@/5_entities/User'
-import { $api } from '@/6_shared/api/api'
-import { rtkAPI } from '@/6_shared/api/rtkApi'
 import {
     configureStore,
     type AnyAction,
@@ -12,6 +8,12 @@ import {
 } from '@reduxjs/toolkit'
 import { type ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
 import { useDispatch, useSelector, type TypedUseSelectorHook } from 'react-redux'
+
+import { uiReducer } from '@/4_features/UI'
+import { userReducer } from '@/5_entities/User'
+import { $api } from '@/6_shared/api/api'
+import { rtkAPI } from '@/6_shared/api/rtkApi'
+
 import { createReducerManager } from './ReducerManager'
 import { type StateSchema, type ThunkExtraArg } from './StateSchema'
 

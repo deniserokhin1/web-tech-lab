@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/prefer-ts-expect-error */
 import { type FC, lazy } from 'react'
+
 import { type LoginFrormProps } from './LoginForm'
 
 export const LoginFormAsync = lazy<FC<LoginFrormProps>>(

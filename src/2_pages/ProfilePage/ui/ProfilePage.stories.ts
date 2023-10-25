@@ -1,10 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import ProfilePage from './ProfilePage'
-import { ThemeDecorator } from '@/6_shared/config/storybook/Decorators/ThemeDecorator'
+
 import { Theme } from '@/1_app/providers/ThemeProvider'
-import { StoreDecorator } from '@/6_shared/config/storybook/Decorators/StoreDecorator'
-import { Currency } from '@/5_entities/Currency'
 import { Country } from '@/5_entities/Country'
+import { Currency } from '@/5_entities/Currency'
+import { StoreDecorator } from '@/6_shared/config/storybook/Decorators/StoreDecorator'
+import { ThemeDecorator } from '@/6_shared/config/storybook/Decorators/ThemeDecorator'
+
+import ProfilePage from './ProfilePage'
 
 const meta = {
     title: '2_pages/ProfilePage',

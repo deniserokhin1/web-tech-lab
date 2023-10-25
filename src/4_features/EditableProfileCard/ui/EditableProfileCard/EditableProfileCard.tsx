@@ -1,3 +1,8 @@
+import { memo, useCallback } from 'react'
+
+import { useTranslation } from 'react-i18next'
+import { useParams } from 'react-router-dom'
+
 import { useAppDispatch, useAppSelector } from '@/1_app/providers/StoreProvider'
 import { type Country } from '@/5_entities/Country'
 import { type Currency } from '@/5_entities/Currency'
@@ -8,9 +13,8 @@ import {
     type ReducersList,
 } from '@/6_shared/lib/components/DynamicModuleLoader'
 import { Text, TextTheme } from '@/6_shared/ui/Text'
-import { memo, useCallback } from 'react'
-import { useTranslation } from 'react-i18next'
-import { useParams } from 'react-router-dom'
+
+import { ValidateProfileErrors } from '../../model/const/validateErrors'
 import { getProfileError } from '../../model/selectors/getProfileError'
 import { getProfileForm } from '../../model/selectors/getProfileForm'
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading'
@@ -22,7 +26,6 @@ import {
     profileReducer,
 } from '../../model/slices/EditableProfileCardSlice'
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader'
-import { ValidateProfileErrors } from '../../model/const/validateErrors'
 
 const namespace = __IS_DEV__ ? 'translation' : 'profile'
 const reducers: ReducersList = {
@@ -46,9 +49,15 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
     const validateErrorTranslate = {
         [ValidateProfileErrors.SERVER_ERROR]: t('profile.Ошибка сервера'),
-        [ValidateProfileErrors.INCORRECT_AGE]: t('profile.Некорректный возраст'),
-        [ValidateProfileErrors.INCORRECT_COUNTRY]: t('profile.Некорректная страна'),
-        [ValidateProfileErrors.INCORRECT_USER_DATA]: t('profile.Некорректные данные'),
+        [ValidateProfileErrors.INCORRECT_AGE]: t(
+            'profile.Некорректный возраст',
+        ),
+        [ValidateProfileErrors.INCORRECT_COUNTRY]: t(
+            'profile.Некорректная страна',
+        ),
+        [ValidateProfileErrors.INCORRECT_USER_DATA]: t(
+            'profile.Некорректные данные',
+        ),
         [ValidateProfileErrors.NO_DATA]: t('profile.Нет данных'),
     }
 

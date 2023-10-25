@@ -1,10 +1,12 @@
+import { memo, useEffect } from 'react'
+
 import { classNames } from '@/6_shared/lib'
 import { Skeleton } from '@/6_shared/ui/Skeleton'
 import { VStack } from '@/6_shared/ui/Stack'
-import { memo, useEffect } from 'react'
+
 import { useNotifications } from '../../api/notificationApi'
-import { NotificationItem } from '../NotificationItem/NotificationItem'
 import { type INotification } from '../../model/types/notification'
+import { NotificationItem } from '../NotificationItem/NotificationItem'
 
 interface NotificationListProps {
     className?: string

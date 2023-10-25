@@ -1,10 +1,13 @@
 import { memo } from 'react'
-import { classNames } from '@/6_shared/lib'
+
 import { useTranslation } from 'react-i18next'
-import cls from './ArticleEditPage.module.scss'
-import { PageWrapper } from '@/3_widgets/PageWrapper'
 import { useParams } from 'react-router-dom'
+
+import { PageWrapper } from '@/3_widgets/PageWrapper'
+import { classNames } from '@/6_shared/lib'
 import { Text, TextAlign } from '@/6_shared/ui/Text'
+
+import cls from './ArticleEditPage.module.scss'
 
 interface ArticleEditPageProps {
     className?: string

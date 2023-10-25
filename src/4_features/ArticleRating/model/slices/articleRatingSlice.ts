@@ -1,4 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
+
 import type { ArticleRatingSchema } from '../types/articleRatingSchema'
 
 const initialState: ArticleRatingSchema = {}

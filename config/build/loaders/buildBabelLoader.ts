@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
-import { type IBuildOptions } from '../types/config'
 import babelRemovePropsPlugin from '../../babel/babelRemovePropsPlugin'
+import { type IBuildOptions } from '../types/config'
 
 interface BuildBabelLoaderProps extends IBuildOptions {
     isTsx?: boolean

@@ -1,7 +1,10 @@
-import cls from './AppLink.module.scss'
 import { type ForwardedRef, forwardRef, type ReactNode } from 'react'
-import { classNames } from '@/6_shared/lib'
+
 import { Link, type LinkProps } from 'react-router-dom'
+
+import { classNames } from '@/6_shared/lib'
+
+import cls from './AppLink.module.scss'
 
 export enum AppLinkTheme {
     PRIMARY = 'primary',

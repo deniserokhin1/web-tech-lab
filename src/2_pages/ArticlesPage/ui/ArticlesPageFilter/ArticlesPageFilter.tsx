@@ -1,3 +1,7 @@
+import { memo, useCallback } from 'react'
+
+import { useTranslation } from 'react-i18next'
+
 import { RoutePath } from '@/1_app/providers/Router/config/routeConfig'
 import { useAppDispatch, useAppSelector } from '@/1_app/providers/StoreProvider'
 import { ArticleViewSelector } from '@/4_features/ArticleViewSelector'
@@ -14,8 +18,7 @@ import { IconComponent, classNames } from '@/6_shared/lib'
 import { type SortOrder } from '@/6_shared/types'
 import { AppLink } from '@/6_shared/ui/AppLink'
 import { Input } from '@/6_shared/ui/Input'
-import { memo, useCallback } from 'react'
-import { useTranslation } from 'react-i18next'
+
 import {
     getArticlesPageFilter,
     getArticlesPageSearch,
@@ -25,6 +28,7 @@ import {
 } from '../../model/selectors/getArticlesPage'
 import { fetchArticlesList } from '../../model/services/fetchArticlesList'
 import { articlesPageActions } from '../../model/slice/articlesPageSlice'
+
 import cls from './ArticlesPageFilter.module.scss'
 
 const namespace = __IS_DEV__ ? 'translation' : 'articles-list'

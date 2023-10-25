@@ -1,6 +1,8 @@
-import { Text, TextAlign } from '@/6_shared/ui/Text'
 import { memo } from 'react'
+
 import { useTranslation } from 'react-i18next'
+
+import { Text, TextAlign } from '@/6_shared/ui/Text'
 
 const About = memo((): JSX.Element => {
     const { t } = useTranslation('about')

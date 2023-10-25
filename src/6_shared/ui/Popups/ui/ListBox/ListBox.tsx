@@ -1,9 +1,14 @@
-import { IconComponent, classNames } from '@/6_shared/lib'
-import { Listbox as HListbox } from '@headlessui/react'
 import { Fragment, memo, useMemo, type ReactNode } from 'react'
+
+import { Listbox as HListbox } from '@headlessui/react'
+
+import { IconComponent, classNames } from '@/6_shared/lib'
+
 import { Button } from '../../../Button'
 import { ButtonTheme } from '../../../Button/Button'
 import popUpCls from '../styles/popup.module.scss'
+
+
 import cls from './ListBox.module.scss'
 
 export interface HListboxItems {

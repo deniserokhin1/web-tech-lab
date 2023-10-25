@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { StarRating } from './StarRating'
+
 import { Theme } from '@/1_app/providers/ThemeProvider'
 import { ThemeDecorator } from '@/6_shared/config/storybook/Decorators/ThemeDecorator'
+
+import { StarRating } from './StarRating'
 
 const meta = {
     title: '6_shared/StarRating',

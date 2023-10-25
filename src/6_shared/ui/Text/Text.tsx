@@ -1,6 +1,8 @@
-import cls from './Text.module.scss'
 import { memo } from 'react'
+
 import { classNames } from '@/6_shared/lib'
+
+import cls from './Text.module.scss'
 
 export enum TextTheme {
     DEFAULT = 'default',

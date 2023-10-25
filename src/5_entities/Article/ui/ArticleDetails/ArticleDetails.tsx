@@ -1,3 +1,7 @@
+import { memo } from 'react'
+
+import { useTranslation } from 'react-i18next'
+
 import { useAppDispatch, useAppSelector } from '@/1_app/providers/StoreProvider'
 import { useInitialEffect } from '@/6_shared/hooks/useInitialEffect'
 import { IconComponent } from '@/6_shared/lib'
@@ -9,8 +13,7 @@ import { Avatar } from '@/6_shared/ui/Avatar'
 import { Skeleton } from '@/6_shared/ui/Skeleton'
 import { HStack, VStack } from '@/6_shared/ui/Stack'
 import { Text, TextAlign, TextSize } from '@/6_shared/ui/Text'
-import { memo } from 'react'
-import { useTranslation } from 'react-i18next'
+
 import {
     getArticleDetailsData,
     getArticleDetailsError,

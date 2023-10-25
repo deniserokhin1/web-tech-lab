@@ -1,7 +1,9 @@
-import cls from './PageLoader.module.scss'
 import type { FC } from 'react'
+
 import { classNames } from '@/6_shared/lib'
 import { SpinerDots, type SpinerDotsTheme } from '@/6_shared/ui/SpinerDots'
+
+import cls from './PageLoader.module.scss'
 
 interface PageLoaderProps {
     className?: string

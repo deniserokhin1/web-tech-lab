@@ -1,3 +1,7 @@
+import type { FC } from 'react'
+
+import { useTranslation } from 'react-i18next'
+
 import { CountrySelect, type Country } from '@/5_entities/Country'
 import { CurrencySelect, type Currency } from '@/5_entities/Currency'
 import { Avatar } from '@/6_shared/ui/Avatar'
@@ -5,9 +9,9 @@ import { Input } from '@/6_shared/ui/Input'
 import { SpinerDots } from '@/6_shared/ui/SpinerDots'
 import { HStack, VStack } from '@/6_shared/ui/Stack'
 import { Text, TextAlign, TextTheme } from '@/6_shared/ui/Text'
-import type { FC } from 'react'
-import { useTranslation } from 'react-i18next'
+
 import { type IProfile } from '../../model/types/profile'
+
 import cls from './ProfileCard.module.scss'
 
 interface ProfileCardProps {
@@ -74,7 +78,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     onChange={onChangeFirstName}
                     readOnly={readonly}
                     data-testid="ProfileCard.Firstname"
-                    />
+                />
             </HStack>
 
             <HStack gap="16" max={true}>
@@ -89,16 +93,27 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
 
             <HStack gap="16" max={true}>
                 <Text text={t('profile.Возраст')} align={TextAlign.LEFT} />
-                <Input value={data?.age} onChange={onChangeAge} readOnly={readonly} />
+                <Input
+                    value={data?.age}
+                    onChange={onChangeAge}
+                    readOnly={readonly}
+                />
             </HStack>
 
             <HStack gap="16" max={true}>
                 <Text text={t('profile.Город')} align={TextAlign.LEFT} />
-                <Input value={data?.city} onChange={onChangeCity} readOnly={readonly} />
+                <Input
+                    value={data?.city}
+                    onChange={onChangeCity}
+                    readOnly={readonly}
+                />
             </HStack>
 
             <HStack gap="16" max={true}>
-                <Text text={t('profile.Имя пользователя')} align={TextAlign.LEFT} />
+                <Text
+                    text={t('profile.Имя пользователя')}
+                    align={TextAlign.LEFT}
+                />
                 <Input
                     value={data?.username}
                     onChange={onChangeUsername}
@@ -107,7 +122,10 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
             </HStack>
 
             <HStack gap="16" max={true}>
-                <Text text={t('profile.Ссылка на аватар')} align={TextAlign.LEFT} />
+                <Text
+                    text={t('profile.Ссылка на аватар')}
+                    align={TextAlign.LEFT}
+                />
                 <Input
                     value={data?.avatar}
                     onChange={onChangeAvatar}

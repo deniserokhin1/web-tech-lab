@@ -1,8 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { ArticleDetailsComments } from './ArticleDetailsComments'
+
 import { Theme } from '@/1_app/providers/ThemeProvider'
-import { ThemeDecorator } from '@/6_shared/config/storybook/Decorators/ThemeDecorator'
 import { StoreDecorator } from '@/6_shared/config/storybook/Decorators/StoreDecorator'
+import { ThemeDecorator } from '@/6_shared/config/storybook/Decorators/ThemeDecorator'
+
+import { ArticleDetailsComments } from './ArticleDetailsComments'
 
 const meta = {
     title: '2_pages/ArticleDetailsComments',

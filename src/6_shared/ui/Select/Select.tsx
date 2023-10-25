@@ -1,7 +1,10 @@
-import { classNames } from '@/6_shared/lib'
-import cls from './Select.module.scss'
 import { useCallback } from 'react'
+
+import { classNames } from '@/6_shared/lib'
+
 import { ListBox } from '../Popups/ui/ListBox/ListBox'
+
+import cls from './Select.module.scss'
 
 export interface SelectOption<T extends string> {
     value: T

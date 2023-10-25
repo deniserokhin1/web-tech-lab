@@ -1,12 +1,15 @@
-import { Route, Routes } from 'react-router-dom'
 import { Suspense, memo } from 'react'
+
+import { Route, Routes } from 'react-router-dom'
+
 import {
     type AppRoutesProps,
     routeConfig,
 } from '@/1_app/providers/Router/config/routeConfig'
-import { PageLoader } from '@/3_widgets/PageLoader'
 import { useTheme } from '@/1_app/providers/ThemeProvider'
+import { PageLoader } from '@/3_widgets/PageLoader'
 import { classNames } from '@/6_shared/lib'
+
 import { RequireAuth } from './RequireAuth'
 
 export const AppRouter = memo((): JSX.Element => {

@@ -1,3 +1,8 @@
+import { memo } from 'react'
+
+import { useTranslation } from 'react-i18next'
+import { useParams } from 'react-router-dom'
+
 import { useAppSelector } from '@/1_app/providers/StoreProvider'
 import { PageWrapper } from '@/3_widgets/PageWrapper'
 import { ArticleRating } from '@/4_features/ArticleRating'
@@ -10,12 +15,11 @@ import {
 } from '@/6_shared/lib/components/DynamicModuleLoader'
 import { Card } from '@/6_shared/ui/Card'
 import { VStack } from '@/6_shared/ui/Stack'
-import { memo } from 'react'
-import { useTranslation } from 'react-i18next'
-import { useParams } from 'react-router-dom'
+
 import { articleDetailsPageReducer } from '../../model/slice'
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments'
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
+
 import cls from './ArticleDetailsPage.module.scss'
 
 const namespace = __IS_DEV__ ? 'translation' : 'article-details'

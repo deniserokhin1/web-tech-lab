@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { SpinerDots } from './SpinerDots'
-import { ThemeDecorator } from '@/6_shared/config/storybook/Decorators/ThemeDecorator'
+
 import { Theme } from '@/1_app/providers/ThemeProvider'
+import { ThemeDecorator } from '@/6_shared/config/storybook/Decorators/ThemeDecorator'
+
+import { SpinerDots } from './SpinerDots'
 
 const meta = {
     title: '6_shared/SpinerDots',

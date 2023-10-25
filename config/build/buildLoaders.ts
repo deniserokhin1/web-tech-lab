@@ -1,7 +1,8 @@
 import type webpack from 'webpack'
-import { type IBuildOptions } from './types/config'
-import { buildCSSLoaders } from './loaders/buildCSSLoaders'
+
 import { buildBabelLoader } from './loaders/buildBabelLoader'
+import { buildCSSLoaders } from './loaders/buildCSSLoaders'
+import { type IBuildOptions } from './types/config'
 
 export function buildLoaders(options: IBuildOptions): webpack.RuleSetRule[] {
     const { isDev } = options

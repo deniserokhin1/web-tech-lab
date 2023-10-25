@@ -1,3 +1,5 @@
+import { type RouteObject, type RouteProps } from 'react-router-dom'
+
 import { About } from '@/2_pages/About'
 import { AdminPanelPage } from '@/2_pages/AdminPanelPage'
 import { ArticleDetailsPage } from '@/2_pages/ArticleDetailsPage'
@@ -9,7 +11,6 @@ import { NotFoundPage } from '@/2_pages/NotFoundPage'
 import { ProfilePage } from '@/2_pages/ProfilePage'
 import { UserRole } from '@/5_entities/User'
 import { AppRoutes } from '@/6_shared/const/router'
-import { type RouteObject, type RouteProps } from 'react-router-dom'
 
 export type AppRoutesProps = RouteProps &
     RouteObject & {

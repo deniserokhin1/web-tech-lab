@@ -1,14 +1,17 @@
-import cls from './Sidebar.module.scss'
 import { memo, useRef } from 'react'
+
+import { useAppSelector } from '@/1_app/providers/StoreProvider'
+import { useTheme } from '@/1_app/providers/ThemeProvider'
+import { LangSwitcher } from '@/3_widgets/LangSwitcher'
+import { ThemeSwitcher } from '@/3_widgets/ThemeSwitcher'
 import { IconComponent, classNames } from '@/6_shared/lib'
 import { Button } from '@/6_shared/ui/Button'
-import { ThemeSwitcher } from '@/3_widgets/ThemeSwitcher'
-import { LangSwitcher } from '@/3_widgets/LangSwitcher'
-import { useTheme } from '@/1_app/providers/ThemeProvider'
-import { SidebarItem } from '../SidebarItem/SidebarItem'
-import { useAppSelector } from '@/1_app/providers/StoreProvider'
-import { getSidebarItems } from '../../model/selectors/getSidebarItems'
 import { VStack } from '@/6_shared/ui/Stack'
+
+import { getSidebarItems } from '../../model/selectors/getSidebarItems'
+import { SidebarItem } from '../SidebarItem/SidebarItem'
+
+import cls from './Sidebar.module.scss'
 
 export interface SidebarProps {
     className?: string

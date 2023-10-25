@@ -1,12 +1,15 @@
-import cls from './PageError.module.scss'
 import type { FC } from 'react'
-import { classNames } from '@/6_shared/lib'
+
 import { useTranslation } from 'react-i18next'
-import { Button, ButtonTheme } from '@/6_shared/ui/Button'
+
 import {
     LOCAL_STORAGE_THEME_KEY,
     Theme,
 } from '@/1_app/providers/ThemeProvider/lib/ThemeContext'
+import { classNames } from '@/6_shared/lib'
+import { Button, ButtonTheme } from '@/6_shared/ui/Button'
+
+import cls from './PageError.module.scss'
 
 interface PageErrorProps {
     className?: string
@@ -24,11 +27,14 @@ export const PageError: FC<PageErrorProps> = (props) => {
         location.reload()
     }
 
-    const theme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT
+    const theme =
+        (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT
 
     return (
         <div className={classNames(cls.container, mods, [className, theme])}>
-            <h1 className={cls.title}>{t('Произошла непредвиденная ошибка')}</h1>
+            <h1 className={cls.title}>
+                {t('Произошла непредвиденная ошибка')}
+            </h1>
 
             <Button
                 children={t('Обновить страницу')}

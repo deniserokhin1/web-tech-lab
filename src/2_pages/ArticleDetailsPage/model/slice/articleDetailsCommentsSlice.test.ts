@@ -1,6 +1,8 @@
 import { type IComment } from '@/5_entities/Comment'
+
 import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId'
 import { type ArticleDetailsCommentsSchema } from '../types/articleDetailsCommentsSchema'
+
 import { articleDetailsCommentsReducer } from './articleDetailsCommentsSlice'
 
 const data: IComment[] = [

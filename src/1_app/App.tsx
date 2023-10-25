@@ -1,3 +1,5 @@
+import { Suspense, useEffect, useRef } from 'react'
+
 import { useTheme } from '@/1_app/providers/ThemeProvider'
 import { Navbar } from '@/3_widgets/Navbar'
 import { Sidebar } from '@/3_widgets/Sidebar'
@@ -6,7 +8,7 @@ import { getUserInited, userActions } from '@/5_entities/User'
 import { AppRouter } from '@/6_shared/config'
 import { useGetMainColor } from '@/6_shared/hooks/useGetMainColor'
 import { classNames } from '@/6_shared/lib'
-import { Suspense, useEffect, useRef } from 'react'
+
 import { useAppDispatch, useAppSelector } from './providers/StoreProvider/config/store'
 
 export const App = (): JSX.Element => {

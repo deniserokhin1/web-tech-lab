@@ -1,8 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { ArticleInfiniteList } from './ArticleInfiniteList'
+
 import { Theme } from '@/1_app/providers/ThemeProvider'
-import { ThemeDecorator } from '@/6_shared/config/storybook/Decorators/ThemeDecorator'
 import { StoreDecorator } from '@/6_shared/config/storybook/Decorators/StoreDecorator'
+import { ThemeDecorator } from '@/6_shared/config/storybook/Decorators/ThemeDecorator'
+
+import { ArticleInfiniteList } from './ArticleInfiniteList'
 
 const meta = {
     title: '2_pages/ArticleInfiniteList',

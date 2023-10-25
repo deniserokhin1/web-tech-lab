@@ -1,17 +1,21 @@
 import { Suspense, memo, useCallback } from 'react'
-import { classNames } from '@/6_shared/lib'
+
 import { useTranslation } from 'react-i18next'
-import cls from './ArticleDetailsComments.module.scss'
-import { Text, TextAlign } from '@/6_shared/ui/Text'
-import { CommentList } from '@/5_entities/Comment'
-import { AddCommentForm } from '@/4_features/AddNewComment'
+
 import { useAppDispatch, useAppSelector } from '@/1_app/providers/StoreProvider'
-import { getArticleDetailsCommentsIsLoading } from '../../model/selectors/getArticleDetailsCommentsIsLoading'
-import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice'
-import { addCommentForArticle } from '../../model/services/addCommentForArticle'
+import { AddCommentForm } from '@/4_features/AddNewComment'
+import { CommentList } from '@/5_entities/Comment'
 import { useInitialEffect } from '@/6_shared/hooks/useInitialEffect'
-import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId'
+import { classNames } from '@/6_shared/lib'
 import { VStack } from '@/6_shared/ui/Stack'
+import { Text, TextAlign } from '@/6_shared/ui/Text'
+
+import { getArticleDetailsCommentsIsLoading } from '../../model/selectors/getArticleDetailsCommentsIsLoading'
+import { addCommentForArticle } from '../../model/services/addCommentForArticle'
+import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId'
+import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice'
+
+import cls from './ArticleDetailsComments.module.scss'
 
 interface ArticleDetailsCommentsProps {
     className?: string

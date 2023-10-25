@@ -1,3 +1,5 @@
+import { memo, useCallback, useState } from 'react'
+
 import { useAppSelector } from '@/1_app/providers/StoreProvider'
 import { getUIBgColor } from '@/4_features/UI'
 import { NotificationList } from '@/5_entities/Notification'
@@ -8,7 +10,7 @@ import { Button, ButtonTheme } from '@/6_shared/ui/Button'
 import { Drawer } from '@/6_shared/ui/Drawer'
 import { NotificationBadge } from '@/6_shared/ui/NotificationBadge'
 import { Popover } from '@/6_shared/ui/Popups'
-import { memo, useCallback, useState } from 'react'
+
 import cls from './NotificationButton.module.scss'
 
 interface NotificationButtonProps {

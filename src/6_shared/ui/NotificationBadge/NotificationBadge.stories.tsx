@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { NotificationBadge } from './NotificationBadge'
+
 import { Theme } from '@/1_app/providers/ThemeProvider'
 import { ThemeDecorator } from '@/6_shared/config/storybook/Decorators/ThemeDecorator'
+
+import { NotificationBadge } from './NotificationBadge'
 
 const meta = {
     title: '6_shared/NotificationBadge',

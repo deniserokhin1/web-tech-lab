@@ -1,4 +1,8 @@
 /* eslint-disable i18next/no-literal-string */
+import { memo, useCallback, useEffect, useState, type FC } from 'react'
+
+import { useTranslation } from 'react-i18next'
+
 import { useAppSelector } from '@/1_app/providers/StoreProvider/config/store'
 import { LoginModal } from '@/4_features/AuthByUserName'
 import { AvatarDropDown } from '@/4_features/AvatarDropDown'
@@ -7,8 +11,7 @@ import { getUserAuthData } from '@/5_entities/User'
 import { classNames } from '@/6_shared/lib'
 import { Button, ButtonTheme } from '@/6_shared/ui/Button'
 import { HStack } from '@/6_shared/ui/Stack'
-import { memo, useCallback, useEffect, useState, type FC } from 'react'
-import { useTranslation } from 'react-i18next'
+
 import cls from './Navbar.module.scss'
 
 interface NavbarProps {

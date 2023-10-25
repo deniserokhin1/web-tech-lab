@@ -1,4 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
+
 import type { AvatarDropDownSchema } from '../types/avatarDropDownSchema'
 
 const initialState: AvatarDropDownSchema = {}

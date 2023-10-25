@@ -1,7 +1,9 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
 import { Theme } from '@/1_app/providers/ThemeProvider'
 import { StoreDecorator } from '@/6_shared/config/storybook/Decorators/StoreDecorator'
 import { ThemeDecorator } from '@/6_shared/config/storybook/Decorators/ThemeDecorator'
-import type { Meta, StoryObj } from '@storybook/react'
+
 import AdminPanelPage from './AdminPanelPage'
 
 const meta = {

@@ -1,4 +1,5 @@
 import { memo } from 'react'
+
 import { type ISvgOptions } from '../types'
 
 export const BurgerMenu = memo((props: ISvgOptions) => {

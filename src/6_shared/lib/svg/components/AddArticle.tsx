@@ -1,4 +1,5 @@
 import { type FC } from 'react'
+
 import { type ISvgOptions } from '../types'
 
 export const AddArticle: FC<ISvgOptions> = (props) => {

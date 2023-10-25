@@ -1,6 +1,8 @@
 import { type FC } from 'react'
-import styles from './SpinerDots.module.scss'
+
 import { classNames } from '@/6_shared/lib'
+
+import styles from './SpinerDots.module.scss'
 
 export enum SpinerDotsTheme {
     DEFAULT = 'default',

@@ -1,4 +1,5 @@
 import { type StateSchema } from '@/1_app/providers/StoreProvider'
+
 import { type IArticle } from '../types/article'
 
 export const getArticleDetailsData = (state: StateSchema): IArticle | undefined =>

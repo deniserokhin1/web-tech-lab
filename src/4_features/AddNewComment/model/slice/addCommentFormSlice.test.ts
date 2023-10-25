@@ -1,5 +1,7 @@
 import { type DeepPartial } from '@reduxjs/toolkit'
+
 import { type AddCommentFormSchema } from '../types/addCommentForm'
+
 import { addNewCommentActions, addNewCommentReducer } from './addCommentFormSlice'
 
 describe('addCommentFormSlice', () => {

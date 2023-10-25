@@ -1,10 +1,12 @@
 import { memo, useRef } from 'react'
-import { IconComponent, classNames } from '@/6_shared/lib'
-import cls from './ArticleViewSelector.module.scss'
+
 import { ArticleView } from '@/5_entities/Article'
+import { useGetMainColor } from '@/6_shared/hooks/useGetMainColor'
+import { IconComponent, classNames } from '@/6_shared/lib'
 import { type IconComponentName } from '@/6_shared/lib/svg/types'
 import { Button } from '@/6_shared/ui/Button'
-import { useGetMainColor } from '@/6_shared/hooks/useGetMainColor'
+
+import cls from './ArticleViewSelector.module.scss'
 
 interface ArticleViewSelectorProps {
     className?: string

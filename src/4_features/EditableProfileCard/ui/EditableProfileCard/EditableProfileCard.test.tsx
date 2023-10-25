@@ -1,12 +1,15 @@
-import { componentRender } from '@/6_shared/lib/tests/componentRender'
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { EditableProfileCard } from './EditableProfileCard'
-import { Currency } from '@/5_entities/Currency'
+
 import { Country } from '@/5_entities/Country'
+import { Currency } from '@/5_entities/Currency'
 import { type IProfile } from '@/5_entities/Profile'
-import { profileReducer } from '../../model/slices/EditableProfileCardSlice'
 import { $api } from '@/6_shared/api/api'
+import { componentRender } from '@/6_shared/lib/tests/componentRender'
+
+import { profileReducer } from '../../model/slices/EditableProfileCardSlice'
+
+import { EditableProfileCard } from './EditableProfileCard'
 
 const profile: IProfile = {
     first: 'Денис',

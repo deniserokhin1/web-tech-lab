@@ -1,3 +1,5 @@
+import { type Decorator } from '@storybook/react'
+
 import {
     type StateSchema,
     StoreProvider,
@@ -10,7 +12,6 @@ import { profileReducer } from '@/4_features/EditableProfileCard/testing'
 import { uiReducer } from '@/4_features/UI'
 import { articleDetailsReducer } from '@/5_entities/Article'
 import { type ReducersList } from '@/6_shared/lib/components/DynamicModuleLoader'
-import { type Decorator } from '@storybook/react'
 
 const defaultAsyncReducers: ReducersList = {
     login: loginReducer,

@@ -1,8 +1,13 @@
+import { type ReactNode } from 'react'
+
+import { Popover as HPopover } from '@headlessui/react'
+
+
 import { classNames } from '@/6_shared/lib'
 import { type DropDowDirection } from '@/6_shared/types/ui'
-import { Popover as HPopover } from '@headlessui/react'
-import { type ReactNode } from 'react'
+
 import popUpCls from '../styles/popup.module.scss'
+
 import cls from './Popover.module.scss'
 
 export interface HPopoverProps {

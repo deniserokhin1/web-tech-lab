@@ -1,5 +1,6 @@
-import { useTheme } from '@/1_app/providers/ThemeProvider'
 import { type RefObject, useEffect, useState } from 'react'
+
+import { useTheme } from '@/1_app/providers/ThemeProvider'
 
 export const useGetMainColor = (
     node: RefObject<HTMLDivElement>,

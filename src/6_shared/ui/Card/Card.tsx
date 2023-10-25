@@ -1,5 +1,7 @@
 import { type ReactNode, type HTMLAttributes, useMemo, type CSSProperties } from 'react'
+
 import { classNames } from '@/6_shared/lib'
+
 import cls from './Card.module.scss'
 
 export enum CardTheme {

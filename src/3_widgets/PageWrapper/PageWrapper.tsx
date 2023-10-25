@@ -1,4 +1,13 @@
 import {
+    useRef,
+    type MutableRefObject,
+    type ReactNode,
+    type UIEvent,
+} from 'react'
+
+import { useLocation } from 'react-router-dom'
+
+import {
     useAppDispatch,
     useAppSelector,
     type StateSchema,
@@ -8,13 +17,7 @@ import { useDebouce } from '@/6_shared/hooks/useDebounce'
 import { useInfinityScroll } from '@/6_shared/hooks/useInfinityScroll'
 import { useInitialEffect } from '@/6_shared/hooks/useInitialEffect'
 import { classNames } from '@/6_shared/lib'
-import {
-    useRef,
-    type MutableRefObject,
-    type ReactNode,
-    type UIEvent,
-} from 'react'
-import { useLocation } from 'react-router-dom'
+
 import cls from './PageWrapper.module.scss'
 
 interface PageWrapperProps {

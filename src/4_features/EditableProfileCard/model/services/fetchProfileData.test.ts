@@ -1,8 +1,10 @@
 import axios from 'axios'
-import { fetchProfileData } from './fetchProfileData'
-import { Currency } from '@/5_entities/Currency'
+
 import { Country } from '@/5_entities/Country'
+import { Currency } from '@/5_entities/Currency'
 import { TestAsyncThunk } from '@/6_shared/lib/tests/TestAsyncThunk'
+
+import { fetchProfileData } from './fetchProfileData'
 
 jest.mock('axios')
 const mockedAxios = jest.mocked(axios)

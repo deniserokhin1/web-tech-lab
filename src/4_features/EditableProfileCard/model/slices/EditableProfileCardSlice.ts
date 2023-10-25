@@ -1,5 +1,7 @@
-import { type IProfile } from '@/5_entities/Profile'
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
+
+import { type IProfile } from '@/5_entities/Profile'
+
 import { fetchProfileData } from '../services/fetchProfileData'
 import { updateProfileData } from '../services/updateProfileData'
 import type { EditableProfileCardSchema } from '../types/EditableProfileCardSchema'

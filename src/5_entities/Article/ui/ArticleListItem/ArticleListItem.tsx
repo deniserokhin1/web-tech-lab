@@ -2,7 +2,7 @@ import { type HTMLAttributeAnchorTarget, memo, useRef } from 'react'
 
 import { useTranslation } from 'react-i18next'
 
-import { RoutePath } from '@/6_shared/const/router'
+import { routePath } from '@/6_shared/const/router'
 import { useGetMainColor } from '@/6_shared/hooks/useGetMainColor'
 import { useHover } from '@/6_shared/hooks/useHover'
 import { IconComponent, classNames } from '@/6_shared/lib'
@@ -24,7 +24,7 @@ import cls from './ArticleListItem.module.scss'
 
 interface ArticleListItemProps {
     className?: string
-    article?: IArticle
+    article: IArticle
     view?: ArticleView
     target?: HTMLAttributeAnchorTarget
     padding?: string | number
@@ -114,7 +114,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
                     <div>
                         <AppLink
-                            to={`${RoutePath.article_details + article?.id}`}
+                            to={routePath.article_details(article.id)}
                             target={target}
                         >
                             <Button theme={ButtonTheme.OUTLINE}>
@@ -128,10 +128,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     }
 
     return (
-        <AppLink
-            to={`${RoutePath.article_details + article?.id}`}
-            target={target}
-        >
+        <AppLink to={routePath.article_details(article.id)} target={target}>
             <div
                 className={classNames(cls[view], mods, [className])}
                 {...bindHover}

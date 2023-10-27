@@ -6,7 +6,7 @@
     background: var(--i-bg-color);
     border-radius: 8px;
     transition: width var(--animation-transition), background-color var(--theme-transition);
-    will-change: transform;
+    will-change: contents;
 }
 
 

@@ -1,6 +1,6 @@
 import { memo } from 'react'
 
-import { RoutePath } from '@/6_shared/const/router'
+import { routePath } from '@/6_shared/const/router'
 import { classNames } from '@/6_shared/lib'
 import { AppLink } from '@/6_shared/ui/AppLink'
 import { Avatar } from '@/6_shared/ui/Avatar'
@@ -54,10 +54,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
     return (
         <Card className={classNames(cls.container, mods, [className])}>
-            <AppLink
-                to={`${RoutePath.profile}${user.id}`}
-                className={cls.header}
-            >
+            <AppLink to={routePath.profile(user.id)} className={cls.header}>
                 {user?.avatar && <Avatar size={30} src={user.avatar} />}
 
                 <Text

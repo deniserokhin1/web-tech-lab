@@ -3,11 +3,15 @@ import { type FC, type ReactNode, useEffect } from 'react'
 import { type Reducer } from '@reduxjs/toolkit'
 import { useStore } from 'react-redux'
 
-import { type ReduxStoreWidthManager, type StateSchemaKey } from '@/1_app/providers/StoreProvider'
+import {
+    StateSchema,
+    type ReduxStoreWidthManager,
+    type StateSchemaKey,
+} from '@/1_app/providers/StoreProvider'
 import { useAppDispatch } from '@/1_app/providers/StoreProvider'
 
 export type ReducersList = {
-    [name in StateSchemaKey]?: Reducer
+    [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>
 }
 
 interface DynamicModuleLoaderProps {
@@ -24,7 +28,7 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
 
     useEffect(() => {
         const mountedReducers = store.reducerManager.getMountedReducer()
-        
+
         Object.entries(reducers).forEach(([name, reducer]) => {
             const mounted = mountedReducers[name as StateSchemaKey]
 

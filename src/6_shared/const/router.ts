@@ -1,25 +1,26 @@
-export enum AppRoutes {
-    MAIN = 'main',
-    ABOUT = 'about',
-    PROFILE = 'profile',
-    ARTICLES = 'articles',
-    ARTICLE_DETAILS = 'article_details',
-    ARTICLE_CREATE = 'article_create',
-    ARTICLE_EDIT = 'article_edit',
-    ADMIN_PANEL = 'admin_panel',
-    FORBIDDEN = 'forbidden',
-    NOT_FOUND = 'not_found',
-}
+import { Routes } from '../types'
 
-export const RoutePath: Record<AppRoutes, string> = {
-    [AppRoutes.MAIN]: '/',
-    [AppRoutes.ABOUT]: '/about',
-    [AppRoutes.PROFILE]: '/profile/',
-    [AppRoutes.ARTICLES]: '/articles',
-    [AppRoutes.ARTICLE_DETAILS]: '/articles/', // + :id
-    [AppRoutes.ARTICLE_CREATE]: '/articles/new',
-    [AppRoutes.ARTICLE_EDIT]: '/articles/:id/edit',
-    [AppRoutes.ADMIN_PANEL]: '/admin',
-    [AppRoutes.FORBIDDEN]: '/forbidden',
-    [AppRoutes.NOT_FOUND]: '*',
+export type AppRoutes =
+    | 'main'
+    | 'about'
+    | 'profile'
+    | 'articles'
+    | 'article_details'
+    | 'article_create'
+    | 'article_edit'
+    | 'admin_panel'
+    | 'forbidden'
+    | 'not_found'
+
+export const routePath: Routes = {
+    about: () => '',
+    main: () => '',
+    article_edit: (id) => `/articles/${id}/edit`,
+    article_details: (id) => `/articles/${id}`,
+    article_create: () => '/articles/new',
+    forbidden: () => '/forbidden',
+    articles: () => '/articles',
+    profile: (id) => `/profile/${id}`,
+    admin_panel: () => 'admin',
+    not_found: () => '*',
 }

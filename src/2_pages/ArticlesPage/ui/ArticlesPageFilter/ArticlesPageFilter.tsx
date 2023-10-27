@@ -12,7 +12,7 @@ import {
     type ArticleType,
     type ArticleView,
 } from '@/5_entities/Article'
-import { RoutePath } from '@/6_shared/const/router'
+import { routePath } from '@/6_shared/const/router'
 import { useDebouce } from '@/6_shared/hooks/useDebounce'
 import { IconComponent, classNames } from '@/6_shared/lib'
 import { type SortOrder } from '@/6_shared/types'
@@ -107,7 +107,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFilterProps) => {
         <div className={classNames(cls.container, mods, [className])}>
             <div className={cls.wrapper}>
                 <div className={cls.leftSide}>
-                    <AppLink to={RoutePath.article_create}>
+                    <AppLink to={routePath.article_create()}>
                         <IconComponent name="add" pathFill={primaryColor} />
                     </AppLink>
 
@@ -120,6 +120,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFilterProps) => {
                         onChangeSort={onChangeFilter}
                     />
                 </div>
+
                 <ArticleViewSelector
                     view={view}
                     onViewClick={onChangeArticleView}

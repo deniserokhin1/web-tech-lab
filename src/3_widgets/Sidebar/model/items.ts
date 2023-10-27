@@ -1,4 +1,4 @@
-import { RoutePath } from '@/6_shared/const/router'
+import { routePath } from '@/6_shared/const/router'
 import { type IconComponentName } from '@/6_shared/lib/svg/types'
 
 export interface ISidebarItems {
@@ -11,23 +11,23 @@ export interface ISidebarItems {
 export const SidebarItemList: ISidebarItems[] = [
     {
         icon: 'home',
-        path: RoutePath.main,
+        path: routePath.main(),
         text: 'Главная',
     },
     {
         icon: 'info',
-        path: RoutePath.about,
+        path: routePath.about(),
         text: 'О проекте',
     },
     {
         icon: 'profile',
-        path: RoutePath.profile,
+        path: routePath.profile(':id'),
         text: 'Профиль',
         authOnly: true,
     },
     {
         icon: 'articles',
-        path: RoutePath.articles,
+        path: routePath.articles(),
         text: 'Статьи',
         authOnly: true,
     },

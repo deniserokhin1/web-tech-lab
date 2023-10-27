@@ -59,14 +59,14 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
 
     return (
         <HStack gap="16" className={classNames('', mods, [className])}>
-            <Select
+            <Select<ArticleSortFeild>
                 label={t('article-details.Сортировать по')}
                 options={sortFeildOptions}
                 labelFitContent={true}
                 value={sort}
                 onChange={onChangeSort}
             />
-            <Select
+            <Select<SortOrder>
                 label={t('article-details.по')}
                 options={orderOptions}
                 labelFitContent={true}

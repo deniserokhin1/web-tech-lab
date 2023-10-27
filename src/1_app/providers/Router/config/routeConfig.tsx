@@ -10,7 +10,7 @@ import { Main } from '@/2_pages/Main'
 import { NotFoundPage } from '@/2_pages/NotFoundPage'
 import { ProfilePage } from '@/2_pages/ProfilePage'
 import { UserRole } from '@/5_entities/User'
-import { AppRoutes, RoutePath } from '@/6_shared/const/router'
+import { AppRoutes, routePath } from '@/6_shared/const/router'
 
 export type AppRoutesProps = RouteProps &
     RouteObject & {
@@ -19,72 +19,72 @@ export type AppRoutesProps = RouteProps &
     }
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
-    [AppRoutes.MAIN]: {
-        path: RoutePath[AppRoutes.MAIN],
+    main: {
+        path: routePath.main(),
         element: <Main />,
     },
-    [AppRoutes.ABOUT]: {
-        path: RoutePath[AppRoutes.ABOUT],
+    about: {
+        path: routePath.about(),
         element: <About />,
     },
-    [AppRoutes.PROFILE]: {
-        path: `${RoutePath.profile}:id`,
+    profile: {
+        path: routePath.profile(':id'),
         element: <ProfilePage />,
         authOnly: true,
     },
-    [AppRoutes.ARTICLES]: {
-        path: RoutePath.articles,
+    articles: {
+        path: routePath.articles(),
         element: <ArticlesPage />,
         authOnly: true,
     },
-    [AppRoutes.ARTICLE_DETAILS]: {
-        path: `${RoutePath.article_details}:id`,
+    article_details: {
+        path: routePath.article_details(':id'),
         element: <ArticleDetailsPage />,
         authOnly: true,
     },
-    [AppRoutes.ARTICLE_CREATE]: {
-        path: `${RoutePath.article_create}`,
+    article_create: {
+        path: routePath.article_create(),
         element: <ArticleEditPage />,
         authOnly: true,
     },
-    [AppRoutes.ARTICLE_EDIT]: {
-        path: `${RoutePath.article_edit}`,
+    article_edit: {
+        path: routePath.article_edit(':id'),
         element: <ArticleEditPage />,
         authOnly: true,
     },
-    [AppRoutes.ADMIN_PANEL]: {
-        path: `${RoutePath.admin_panel}`,
+    admin_panel: {
+        path: routePath.admin_panel(),
         element: <AdminPanelPage />,
         authOnly: true,
         roles: [UserRole.ADMIN, UserRole.MANAGER],
     },
-    [AppRoutes.FORBIDDEN]: {
-        path: `${RoutePath.forbidden}`,
+    forbidden: {
+        path: routePath.forbidden(),
         element: <ForbiddenPage />,
         authOnly: true,
     },
-    [AppRoutes.NOT_FOUND]: {
-        path: RoutePath[AppRoutes.NOT_FOUND],
+    not_found: {
+        path: routePath.not_found(),
         element: <NotFoundPage />,
     },
 }
 
-export const routeConfigArray: AppRoutesProps[] = [
-    {
-        path: RoutePath[AppRoutes.MAIN],
-        element: <Main />,
-    },
-    {
-        path: RoutePath[AppRoutes.ABOUT],
-        element: <About />,
-    },
-    {
-        path: RoutePath[AppRoutes.PROFILE],
-        element: <ProfilePage />,
-        authOnly: true,
-    },
-    {
-        path: RoutePath[AppRoutes.NOT_FOUND],
-        element: <NotFoundPage />,
-    },
-]
+// export const routeConfigArray: AppRoutesProps[] = [
+//     {
+//         path: routePath[AppRoutes.MAIN],
+//         element: <Main />,
+//     },
+//     {
+//         path: routePath[AppRoutes.ABOUT],
+//         element: <About />,
+//     },
+//     {
+//         path: routePath[AppRoutes.PROFILE],
+//         element: <ProfilePage />,
+//         authOnly: true,
+//     },
+//     {
+//         path: routePath[AppRoutes.NOT_FOUND],
+//         element: <NotFoundPage />,
+//     },
+// ]

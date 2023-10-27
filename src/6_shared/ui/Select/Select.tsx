@@ -1,6 +1,7 @@
 import { useCallback } from 'react'
 
 import { classNames } from '@/6_shared/lib'
+import { typedMemo } from '@/6_shared/types'
 
 import { ListBox } from '../Popups/ui/ListBox/ListBox'
 
@@ -21,36 +22,33 @@ interface SelectProps<T extends string> {
     onChange?: (value: T) => void
 }
 
-export const Select = <T extends string>(props: SelectProps<T>): JSX.Element => {
-    const { label, options, onChange, value, readonly, labelFitContent } = props
+export const Select = typedMemo(
+    <T extends string>(props: SelectProps<T>): JSX.Element => {
+        const { label, options, onChange, value, readonly, labelFitContent } =
+            props
 
-    // const optionList = useMemo(() => {
-    //     return options?.map((item: SelectOption<T>) => (
-    //         <option className={cls.option} value={item.value} key={item.value}>
-    //             {item.content}
-    //         </option>
-    //     ))
-    // }, [options])
+        const onChangeHandler = useCallback(
+            (value: string) => onChange?.(value as T),
+            [onChange],
+        )
 
-    const onChangeHandler = useCallback(
-        (value: string) => onChange?.(value as T),
-        [onChange],
-    )
+        const labelMods = {
+            [cls.fitContent]: labelFitContent,
+        }
 
-    const labelMods = {
-        [cls.fitContent]: labelFitContent,
-    }
-
-    return (
-        <div className={classNames(cls.container, labelMods)}>
-            {label && <span className={classNames(cls.label)}>{label}</span>}
-            <ListBox
-                className={classNames('')}
-                value={value}
-                onChange={onChangeHandler}
-                items={options}
-                readonly={readonly}
-            />
-        </div>
-    )
-}
+        return (
+            <div className={classNames(cls.container, labelMods)}>
+                {label && (
+                    <span className={classNames(cls.label)}>{label}</span>
+                )}
+                <ListBox
+                    className={classNames('')}
+                    value={value}
+                    onChange={onChangeHandler}
+                    items={options}
+                    readonly={readonly}
+                />
+            </div>
+        )
+    },
+)

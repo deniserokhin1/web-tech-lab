@@ -1,11 +1,11 @@
-import { memo, useCallback, useRef } from 'react'
+import { memo, useCallback } from 'react'
 
 import { useNavigate } from 'react-router-dom'
 
 import { useAppSelector } from '@/1_app/providers/StoreProvider'
 import { getUIMainColor } from '@/4_features/UI'
 import { getArticleDetailsData } from '@/5_entities/Article'
-import { RoutePath } from '@/6_shared/const/router'
+import { routePath } from '@/6_shared/const/router'
 import { IconComponent, classNames } from '@/6_shared/lib'
 import { Button } from '@/6_shared/ui/Button'
 
@@ -20,7 +20,6 @@ interface ArticleDetailsPageHeaderProps {
 export const ArticleDetailsPageHeader = memo(
     (props: ArticleDetailsPageHeaderProps) => {
         const { className } = props
-        const ref = useRef<HTMLDivElement>(null)
         const canArticleEdit = useAppSelector(getCanArticleEdit)
         const article = useAppSelector(getArticleDetailsData)
         const primaryColor = useAppSelector(getUIMainColor)
@@ -28,20 +27,17 @@ export const ArticleDetailsPageHeader = memo(
         const navigate = useNavigate()
 
         const onBackToList = useCallback(() => {
-            navigate(RoutePath.articles)
+            navigate(routePath.articles())
         }, [navigate])
 
         const onEditArticle = useCallback(() => {
-            navigate(RoutePath.article_details + article?.id + '/edit')
-        }, [article?.id, navigate])
+            if (article) navigate(routePath.article_edit(article.id))
+        }, [article, navigate])
 
         const mods = {}
 
         return (
-            <div
-                className={classNames(cls.container, mods, [className])}
-                ref={ref}
-            >
+            <div className={classNames(cls.container, mods, [className])}>
                 <Button
                     onClick={onBackToList}
                     className={classNames(cls.systemButton)}

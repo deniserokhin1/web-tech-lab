@@ -74,6 +74,7 @@ module.exports = {
                 ],
             },
         ],
+        'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
         '@typescript-eslint/consistent-type-imports': 0,
         'import/order': [
             'error',

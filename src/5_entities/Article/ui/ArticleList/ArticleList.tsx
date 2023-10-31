@@ -39,7 +39,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
             key={article.id}
             target={target}
             padding={padding}
-            
         />
     )
 

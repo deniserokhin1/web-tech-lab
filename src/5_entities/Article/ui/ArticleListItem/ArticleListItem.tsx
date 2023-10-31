@@ -33,7 +33,13 @@ interface ArticleListItemProps {
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-    const { className, article, view = ArticleView.ROW, target, padding } = props
+    const {
+        className,
+        article,
+        view = ArticleView.ROW,
+        target,
+        padding,
+    } = props
     const ref = useRef<HTMLDivElement>(null)
 
     const namespace = __IS_DEV__ ? 'translation' : 'articles-list'
@@ -56,7 +62,11 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
     const views = (
         <>
-            <Text text={article?.views.toString()} className={cls.views} minWidth={true} />
+            <Text
+                text={article?.views.toString()}
+                className={cls.views}
+                minWidth={true}
+            />
 
             <IconComponent name="eye" pathFill={color} />
         </>
@@ -68,17 +78,33 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         ) as ArticleText
 
         return (
-            <div className={classNames(cls[view], mods, [className])} {...bindHover} ref={ref}>
+            <div
+                className={classNames(cls[view], mods, [className])}
+                {...bindHover}
+                ref={ref}
+            >
                 <Card className={cls.card}>
                     <div className={cls.header}>
                         <Avatar src={article?.user.avatar} size={30} />
 
-                        <Text text={article?.user.username} className="" minWidth={true} />
+                        <Text
+                            text={article?.user.username}
+                            className=""
+                            minWidth={true}
+                        />
 
-                        <Text text={article?.dataCreate} className={cls.date} minWidth={true} />
+                        <Text
+                            text={article?.dataCreate}
+                            className={cls.date}
+                            minWidth={true}
+                        />
                     </div>
 
-                    <Text title={article?.title} minWidth={true} align={TextAlign.LEFT} />
+                    <Text
+                        title={article?.title}
+                        minWidth={true}
+                        align={TextAlign.LEFT}
+                    />
 
                     {types}
 
@@ -86,13 +112,20 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                         src={article?.img}
                         className={cls.img}
                         fallback={<Skeleton borderRadius="6px" height={300} />}
-                        errorFallback={<Skeleton borderRadius="6px" height={300} />}
+                        errorFallback={
+                            <Skeleton borderRadius="6px" height={300} />
+                        }
                     />
 
-                    {textBlock && <ArticleTextBlock block={textBlock} short={true} />}
+                    {textBlock && (
+                        <ArticleTextBlock block={textBlock} short={true} />
+                    )}
 
                     <div>
-                        <AppLink to={routePath.article_details(article.id)} target={target}>
+                        <AppLink
+                            to={routePath.article_details(article.id)}
+                            target={target}
+                        >
                             <Button theme={ButtonTheme.OUTLINE}>
                                 {t('articles-list.Читать далее')}
                             </Button>
@@ -105,25 +138,41 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
     return (
         <AppLink to={routePath.article_details(article.id)} target={target}>
-            <div className={classNames(cls[view], mods, [className])} {...bindHover} ref={ref}>
+            <div
+                className={classNames(cls[view], mods, [className])}
+                {...bindHover}
+                ref={ref}
+            >
                 <Card className={cls.card} padding={padding} maxHeight={true}>
                     <div className={cls.imageWrapper}>
                         <AppImage
-                            fallback={<Skeleton minHeight={157} borderRadius="4px" />}
-                            errorFallback={<Skeleton minHeight={157} borderRadius="4px" />}
+                            fallback={
+                                <Skeleton minHeight={157} borderRadius="4px" />
+                            }
+                            errorFallback={
+                                <Skeleton minHeight={157} borderRadius="4px" />
+                            }
                             src={article?.img}
                             className={cls.img}
                         />
                     </div>
 
-                    <Text text={article?.dataCreate} className={cls.date} minWidth={true} />
+                    <Text
+                        text={article?.dataCreate}
+                        className={cls.date}
+                        minWidth={true}
+                    />
 
                     <div className={cls.infoWrapper}>
                         {types}
                         {views}
                     </div>
 
-                    <Text text={article?.title} align={TextAlign.LEFT} className={cls.title} />
+                    <Text
+                        text={article?.title}
+                        align={TextAlign.LEFT}
+                        className={cls.title}
+                    />
                 </Card>
             </div>
         </AppLink>

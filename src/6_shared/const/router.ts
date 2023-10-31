@@ -13,14 +13,14 @@ export type AppRoutes =
     | 'not_found'
 
 export const routePath: Routes = {
-    about: () => '',
-    main: () => '',
+    main: () => '/',
+    about: () => '/about',
     article_edit: (id) => `/articles/${id}/edit`,
     article_details: (id) => `/articles/${id}`,
     article_create: () => '/articles/new',
     forbidden: () => '/forbidden',
     articles: () => '/articles',
     profile: (id) => `/profile/${id}`,
-    admin_panel: () => 'admin',
+    admin_panel: () => '/admin',
     not_found: () => '*',
 }

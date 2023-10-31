@@ -2,7 +2,7 @@ import { memo, useState } from 'react'
 
 import { classNames } from '@/6_shared/lib'
 
-import StarIcon from '../../assets/star.svg?react'
+import StarIcon from '../../assets/star.svg'
 import { Icon } from '../../ui/Icon/Icon'
 import { HStack } from '../Stack'
 

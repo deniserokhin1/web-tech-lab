@@ -68,23 +68,3 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
         element: <NotFoundPage />,
     },
 }
-
-// export const routeConfigArray: AppRoutesProps[] = [
-//     {
-//         path: routePath[AppRoutes.MAIN],
-//         element: <Main />,
-//     },
-//     {
-//         path: routePath[AppRoutes.ABOUT],
-//         element: <About />,
-//     },
-//     {
-//         path: routePath[AppRoutes.PROFILE],
-//         element: <ProfilePage />,
-//         authOnly: true,
-//     },
-//     {
-//         path: routePath[AppRoutes.NOT_FOUND],
-//         element: <NotFoundPage />,
-//     },
-// ]

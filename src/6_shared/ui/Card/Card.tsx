@@ -17,6 +17,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
     hover?: boolean
     padding?: string | number
     borderRadius?: number
+    maxHeight?: boolean
 }
 
 export const Card = (props: CardProps): JSX.Element => {
@@ -28,11 +29,13 @@ export const Card = (props: CardProps): JSX.Element => {
         hover,
         padding,
         borderRadius,
+        maxHeight,
         ...otherProps
     } = props
 
     const mods = {
         [cls.smallPadding]: smallPadding,
+        [cls.max]: maxHeight,
         [cls.hover]: hover && theme !== CardTheme.OUTLINED,
     }
 

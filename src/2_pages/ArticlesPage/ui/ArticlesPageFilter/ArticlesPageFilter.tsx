@@ -40,8 +40,7 @@ interface ArticlesPageFilterProps {
 export const ArticlesPageFilters = memo((props: ArticlesPageFilterProps) => {
     const { className } = props
     const dispatch = useAppDispatch()
-    const { setView, setFilter, setSort, setSearch, setPage, setType } =
-        articlesPageActions
+    const { setView, setFilter, setSort, setSearch, setPage, setType } = articlesPageActions
     const view = useAppSelector(getArticlesPageView)
     const order = useAppSelector(getArticlesPageSort)
     const filter = useAppSelector(getArticlesPageFilter)
@@ -57,15 +56,13 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFilterProps) => {
 
     const debouncedFetchData = useDebouce(fetchData, 500)
 
-    const onChangeArticleView = useCallback(
-        (view: ArticleView): void => {
+    const onChangeArticleView = useCallback((view: ArticleView) => () => {
             dispatch(setView(view))
         },
         [dispatch, setView],
     )
 
-    const onChangeSort = useCallback(
-        (order: SortOrder): void => {
+    const onChangeSort = useCallback((order: SortOrder): void => {
             dispatch(setSort(order))
             dispatch(setPage(1))
             fetchData()
@@ -121,10 +118,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFilterProps) => {
                     />
                 </div>
 
-                <ArticleViewSelector
-                    view={view}
-                    onViewClick={onChangeArticleView}
-                />
+                <ArticleViewSelector view={view} onViewClick={onChangeArticleView} />
             </div>
             <Input
                 placeholder={t('articles-list.Поиск по статьям')}

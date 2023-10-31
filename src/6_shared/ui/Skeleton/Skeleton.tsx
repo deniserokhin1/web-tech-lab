@@ -10,25 +10,24 @@ interface SkeletonProps {
     className?: string
     height?: string | number
     width?: string | number
-    borderRadius?: string
+    minHeight?: string | number
+    borderRadius?: string | number
     type?: TSckeleton
 }
 
 export const Skeleton = memo((props: SkeletonProps) => {
-    const { className, borderRadius, height, width, type = 'long' } = props
+    const { className, borderRadius, height, width, minHeight, type = 'long' } = props
 
     const styles: CSSProperties = {
         width,
         height,
+        minHeight,
         borderRadius,
     }
 
     const mods = {}
 
     return (
-        <div
-            className={classNames(cls.container, mods, [className, cls[type]])}
-            style={styles}
-        />
+        <div className={classNames(cls.container, mods, [className, cls[type]])} style={styles} />
     )
 })

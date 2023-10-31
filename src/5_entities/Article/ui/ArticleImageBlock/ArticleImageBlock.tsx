@@ -1,7 +1,8 @@
 import { memo } from 'react'
 
-import { classNames } from '@/6_shared/lib'
-import { Avatar } from '@/6_shared/ui/Avatar'
+import { AppImage } from '@/6_shared/ui/AppImage'
+import { Skeleton } from '@/6_shared/ui/Skeleton'
+import { VStack } from '@/6_shared/ui/Stack'
 import { Text } from '@/6_shared/ui/Text'
 
 import { type ArticleImage } from '../../model/types/article'
@@ -20,12 +21,17 @@ export const ArticleImageBlock = memo((props: ArticleImageBlockProps) => {
 
     const { src, title } = block
 
-    const mods = {}
-
     return (
-        <div className={classNames(cls.container, mods, [className])}>
-            <Avatar height={300} width="100%" src={src} borderRadius={'8px'} />
-            <Text text={title} />
-        </div>
+        <VStack gap="16" max={true} className={className}>
+            <AppImage
+                fallback={<Skeleton height={300} borderRadius={4} />}
+                errorFallback={<Skeleton height={300} borderRadius={4} />}
+                className={cls.img}
+                src={src}
+                height={300}
+                width="100%"
+            />
+            <Text text={title} maxWidth={true} />
+        </VStack>
     )
 })

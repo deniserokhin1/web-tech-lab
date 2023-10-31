@@ -6,10 +6,12 @@ import { routePath } from '@/6_shared/const/router'
 import { useGetMainColor } from '@/6_shared/hooks/useGetMainColor'
 import { useHover } from '@/6_shared/hooks/useHover'
 import { IconComponent, classNames } from '@/6_shared/lib'
+import { AppImage } from '@/6_shared/ui/AppImage'
 import { AppLink } from '@/6_shared/ui/AppLink'
 import { Avatar } from '@/6_shared/ui/Avatar'
 import { ButtonTheme, Button } from '@/6_shared/ui/Button'
 import { Card } from '@/6_shared/ui/Card'
+import { Skeleton } from '@/6_shared/ui/Skeleton'
 import { Text, TextAlign } from '@/6_shared/ui/Text'
 
 import {
@@ -31,15 +33,8 @@ interface ArticleListItemProps {
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-    const {
-        className,
-        article,
-        view = ArticleView.ROW,
-        target,
-        padding,
-    } = props
+    const { className, article, view = ArticleView.ROW, target, padding } = props
     const ref = useRef<HTMLDivElement>(null)
-    // const navigate = useNavigate()
 
     const namespace = __IS_DEV__ ? 'translation' : 'articles-list'
     const { t } = useTranslation(namespace)
@@ -58,13 +53,10 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             align={TextAlign.LEFT}
         />
     )
+
     const views = (
         <>
-            <Text
-                text={article?.views.toString()}
-                className={cls.views}
-                minWidth={true}
-            />
+            <Text text={article?.views.toString()} className={cls.views} minWidth={true} />
 
             <IconComponent name="eye" pathFill={color} />
         </>
@@ -76,47 +68,31 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         ) as ArticleText
 
         return (
-            <div
-                className={classNames(cls[view], mods, [className])}
-                {...bindHover}
-                ref={ref}
-            >
+            <div className={classNames(cls[view], mods, [className])} {...bindHover} ref={ref}>
                 <Card className={cls.card}>
                     <div className={cls.header}>
                         <Avatar src={article?.user.avatar} size={30} />
 
-                        <Text
-                            text={article?.user.username}
-                            className=""
-                            minWidth={true}
-                        />
+                        <Text text={article?.user.username} className="" minWidth={true} />
 
-                        <Text
-                            text={article?.dataCreate}
-                            className={cls.date}
-                            minWidth={true}
-                        />
+                        <Text text={article?.dataCreate} className={cls.date} minWidth={true} />
                     </div>
 
-                    <Text
-                        title={article?.title}
-                        minWidth={true}
-                        align={TextAlign.LEFT}
-                    />
+                    <Text title={article?.title} minWidth={true} align={TextAlign.LEFT} />
 
                     {types}
 
-                    <img src={article?.img} className={cls.img} />
+                    <AppImage
+                        src={article?.img}
+                        className={cls.img}
+                        fallback={<Skeleton borderRadius="6px" height={300} />}
+                        errorFallback={<Skeleton borderRadius="6px" height={300} />}
+                    />
 
-                    {textBlock && (
-                        <ArticleTextBlock block={textBlock} short={true} />
-                    )}
+                    {textBlock && <ArticleTextBlock block={textBlock} short={true} />}
 
                     <div>
-                        <AppLink
-                            to={routePath.article_details(article.id)}
-                            target={target}
-                        >
+                        <AppLink to={routePath.article_details(article.id)} target={target}>
                             <Button theme={ButtonTheme.OUTLINE}>
                                 {t('articles-list.Читать далее')}
                             </Button>
@@ -129,32 +105,25 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
     return (
         <AppLink to={routePath.article_details(article.id)} target={target}>
-            <div
-                className={classNames(cls[view], mods, [className])}
-                {...bindHover}
-                ref={ref}
-            >
-                <Card className={cls.card} padding={padding}>
+            <div className={classNames(cls[view], mods, [className])} {...bindHover} ref={ref}>
+                <Card className={cls.card} padding={padding} maxHeight={true}>
                     <div className={cls.imageWrapper}>
-                        <img src={article?.img} className={cls.img} />
+                        <AppImage
+                            fallback={<Skeleton minHeight={157} borderRadius="4px" />}
+                            errorFallback={<Skeleton minHeight={157} borderRadius="4px" />}
+                            src={article?.img}
+                            className={cls.img}
+                        />
                     </div>
 
-                    <Text
-                        text={article?.dataCreate}
-                        className={cls.date}
-                        minWidth={true}
-                    />
+                    <Text text={article?.dataCreate} className={cls.date} minWidth={true} />
 
                     <div className={cls.infoWrapper}>
                         {types}
                         {views}
                     </div>
 
-                    <Text
-                        text={article?.title}
-                        align={TextAlign.LEFT}
-                        className={cls.title}
-                    />
+                    <Text text={article?.title} align={TextAlign.LEFT} className={cls.title} />
                 </Card>
             </div>
         </AppLink>

@@ -25,23 +25,11 @@ export function RequireAuth(props: RequireAuthProps): JSX.Element {
     }, [roles, userRole])
 
     if (!auth) {
-        return (
-            <Navigate
-                to={routePath.main()}
-                state={{ from: location }}
-                replace
-            />
-        )
+        return <Navigate to={routePath.main()} state={{ from: location }} replace />
     }
 
     if (!hasRequireRole) {
-        return (
-            <Navigate
-                to={routePath.forbidden()}
-                state={{ from: location }}
-                replace
-            />
-        )
+        return <Navigate to={routePath.forbidden()} state={{ from: location }} replace />
     }
 
     return children

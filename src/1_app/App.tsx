@@ -41,6 +41,8 @@ export const App = (): JSX.Element => {
         setSecondaryColor,
     ])
 
+    console.log('start App')
+
     return (
         <div className={classNames('main', mods, [theme])} ref={mainRef}>
             <Suspense>

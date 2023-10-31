@@ -11,7 +11,7 @@ import cls from './ArticleViewSelector.module.scss'
 interface ArticleViewSelectorProps {
     className?: string
     view: ArticleView
-    onViewClick?: (view: ArticleView) => void
+    onViewClick?: (view: ArticleView) => () => void
 }
 
 interface ViewSelectors {
@@ -46,7 +46,7 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
         <div className={classNames(cls.container, mods, [className])} ref={ref}>
             {viewTypes.map((viewType, index) => (
                 <Button
-                    onClick={() => onViewClick?.(viewType.view)}
+                    onClick={onViewClick?.(viewType.view)}
                     key={index}
                     className={classNames(cls.noSelected, {
                         [cls.selected]: viewType.view === view,

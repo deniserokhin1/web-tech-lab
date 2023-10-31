@@ -9,6 +9,7 @@ import {
     DynamicModuleLoader,
     type ReducersList,
 } from '@/6_shared/lib/components/DynamicModuleLoader'
+import { AppImage } from '@/6_shared/ui/AppImage'
 import { Avatar } from '@/6_shared/ui/Avatar'
 import { Skeleton } from '@/6_shared/ui/Skeleton'
 import { HStack, VStack } from '@/6_shared/ui/Stack'
@@ -25,6 +26,8 @@ import { ArticleDataType, type ArticleData } from '../../model/types/article'
 import { ArticleCodeBlock } from '../ArticleCodeBlock/ArticleCodeBlock'
 import { ArticleImageBlock } from '../ArticleImageBlock/ArticleImageBlock'
 import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock'
+
+import cls from './ArticleDetails.module.scss'
 
 const reducers: ReducersList = {
     articleDetails: articleDetailsReducer,
@@ -71,28 +74,13 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     if (isLoading) {
         content = (
             <VStack gap="16" max={true}>
-                <Skeleton height={300} width="100%" borderRadius={'8px'} />
-                <Skeleton
-                    width={300}
-                    height={40}
-                    borderRadius="4px"
-                    type="short"
-                />
-                <Skeleton
-                    width={300}
-                    height={32}
-                    borderRadius="4px"
-                    type="short"
-                />
-                <Skeleton
-                    width={300}
-                    height={30}
-                    borderRadius="4px"
-                    type="short"
-                />
-                <Skeleton width="100%" height={200} borderRadius="4px" />
-                <Skeleton width="100%" height={200} borderRadius="4px" />
-                <Skeleton width="100%" height={200} borderRadius="4px" />
+                <Skeleton width="100%" height={300} borderRadius={4} />
+                <Skeleton width={300} height={40} borderRadius={4} type="short" />
+                <Skeleton width={300} height={32} borderRadius={4} type="short" />
+                <Skeleton width={300} height={30} borderRadius={4} type="short" />
+                <Skeleton width="100%" height={200} borderRadius={4} />
+                <Skeleton width="100%" height={200} borderRadius={4} />
+                <Skeleton width="100%" height={200} borderRadius={4} />
             </VStack>
         )
     } else if (error) {
@@ -100,22 +88,16 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     } else {
         content = (
             <VStack gap="16">
-                <Avatar
+                <AppImage
+                    fallback={<Skeleton width="100%" height={300} borderRadius={4} />}
+                    errorFallback={<Skeleton width="100%" height={300} borderRadius={4} />}
                     height={300}
                     width="100%"
+                    className={cls.img}
                     src={article?.img}
-                    borderRadius={'8px'}
                 />
-                <Text
-                    title={article?.title}
-                    align={TextAlign.LEFT}
-                    size={TextSize.L}
-                />
-                <Text
-                    text={article?.subtitle}
-                    align={TextAlign.LEFT}
-                    size={TextSize.L}
-                />
+                <Text title={article?.title} align={TextAlign.LEFT} size={TextSize.L} />
+                <Text text={article?.subtitle} align={TextAlign.LEFT} size={TextSize.L} />
 
                 <HStack gap="16">
                     <HStack gap="8">
@@ -125,10 +107,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
                     <HStack gap="8">
                         <IconComponent name="eye" pathFill={color} />
-                        <Text
-                            text={article?.views.toString()}
-                            minWidth={true}
-                        />
+                        <Text text={article?.views.toString()} minWidth={true} />
                     </HStack>
                 </HStack>
 

@@ -12,7 +12,7 @@ export default (env: IBuildEnv): webpack.Configuration => {
         html: path.resolve('public', 'index.html'),
         src: path.resolve('src'),
         locales: path.resolve('public', 'locales'),
-        images: path.resolve('public', 'images'),
+        images: path.resolve('src', '6_shared', 'assets', 'img'),
         buildImages: path.resolve('build', 'images'),
         buildLocales: path.resolve('build', 'locales'),
     }
@@ -32,4 +32,3 @@ export default (env: IBuildEnv): webpack.Configuration => {
     })
     return config
 }
-

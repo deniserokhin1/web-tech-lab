@@ -11,14 +11,14 @@
             "title": "Уведомление 2",
             "description": "Произошло какое-то событие",
             "userId": "1",
-            "href": "http://yocommon/admin"
+            "href": "http://yocommon.com/admin"
         },
         {
             "id": "3",
             "title": "Уведомление 3",
             "description": "Произошло какое-то событие",
             "userId": "1",
-            "href": "http://yocommon/admin"
+            "href": "http://yocommon.com/admin"
         },
         {
             "id": "4",
@@ -86,7 +86,7 @@
             "id": "1",
             "title": "Технологический прогресс",
             "subtitle": "Революция в индустрии",
-            "img": "http://yocommon.com/images/technical-progress-1.jpg",
+            "img": "http://yocommon.com/images/business.jpg",
             "views": "1500",
             "dataCreate": "2023-09-01",
             "userId": "1",
@@ -112,7 +112,7 @@
                 {
                     "id": "3",
                     "type": "IMAGE",
-                    "src": "https://2.downloader.disk.yandex.ru/preview/54b2f49514d37c2e621aab613aaf61a2106acb593d072457f1e28d6e193fe297/inf/AktTdPH7nahFOyz10H11_VMdhFTDRxEmQVtR_DC03sFmYsPw4-Cau66YJkmI4ttzX-3JBxamw9dwYOLi9-QcZw%3D%3D?uid=233854961&filename=success-2081168_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
+                    "src": "http://yocommon.com/images/success-2.jpg",
                     "title": "Иллюстрация 1 - Технологический прогресс"
                 },
                 {
@@ -137,7 +137,7 @@
             "id": "2",
             "title": "Искусственный интеллект",
             "subtitle": "Будущее здесь",
-            "img": "https://photos.google.com/photo/AF1QipMqz7kwmvnLX8gNcHTHR9XzXb3nW75Iq6OTgaKV",
+            "img": "http://yocommon.com/images/artificial-intelligence.jpg",
             "views": "2000",
             "dataCreate": "2023-08-28",
             "userId": "2",
@@ -160,7 +160,7 @@
                 {
                     "id": "3",
                     "type": "IMAGE",
-                    "src": "https://4.downloader.disk.yandex.ru/preview/53509038fc1eda1f0205b9284ad9ede1f444e006d76ce9b207d5309c049a469f/inf/LpfE46B9lgZNLxEX9LDHk7K5_-l_2-9AAI-xr-XlfgMQ8EoOoLVSQ6Cc-bg-K_TZaoXyZwGyK5QEcYtXjU9FYA%3D%3D?uid=233854961&filename=anatomy-1751201_1280.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
+                    "src": "http://yocommon.com/images/anatomy.png",
                     "title": "Иллюстрация 2 - Искусственный интеллект"
                 },
                 {
@@ -183,7 +183,7 @@
             "id": "3",
             "title": "Кибербезопасность",
             "subtitle": "Защитите свои данные",
-            "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
+            "img": "http://yocommon.com/images/cyber.jpg",
             "views": "2350",
             "dataCreate": "2023-07-15",
             "userId": "1",
@@ -202,271 +202,7 @@
                 {
                     "id": "2",
                     "type": "IMAGE",
-                    "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
-                    "title": "Рисунок 1 - Кибербезопасность"
-                },
-                {
-                    "id": "3",
-                    "type": "CODE",
-                    "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
-                }
-            ]
-        },
-        {
-            "id": "4",
-            "title": "Кибербезопасность",
-            "subtitle": "Защитите свои данные",
-            "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-            "views": "2350",
-            "dataCreate": "2023-07-15",
-            "userId": "1",
-            "type": ["IT"],
-            "data": [
-                {
-                    "id": "1",
-                    "type": "TEXT",
-                    "title": "Основы кибербезопасности",
-                    "paragraphs": [
-                        "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
-                        "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
-                        "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
-                    ]
-                },
-                {
-                    "id": "2",
-                    "type": "IMAGE",
-                    "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
-                    "title": "Рисунок 1 - Кибербезопасность"
-                },
-                {
-                    "id": "3",
-                    "type": "CODE",
-                    "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
-                }
-            ]
-        },
-        {
-            "id": "5",
-            "title": "Кибербезопасность",
-            "subtitle": "Защитите свои данные",
-            "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-            "views": "2350",
-            "dataCreate": "2023-07-15",
-            "userId": "1",
-            "type": ["IT"],
-            "data": [
-                {
-                    "id": "1",
-                    "type": "TEXT",
-                    "title": "Основы кибербезопасности",
-                    "paragraphs": [
-                        "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
-                        "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
-                        "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
-                    ]
-                },
-                {
-                    "id": "2",
-                    "type": "IMAGE",
-                    "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
-                    "title": "Рисунок 1 - Кибербезопасность"
-                },
-                {
-                    "id": "3",
-                    "type": "CODE",
-                    "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
-                }
-            ]
-        },
-        {
-            "id": "6",
-            "title": "Кибербезопасность",
-            "subtitle": "Защитите свои данные",
-            "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-            "views": "2350",
-            "dataCreate": "2023-07-15",
-            "userId": "1",
-            "type": ["IT"],
-            "data": [
-                {
-                    "id": "1",
-                    "type": "TEXT",
-                    "title": "Основы кибербезопасности",
-                    "paragraphs": [
-                        "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
-                        "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
-                        "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
-                    ]
-                },
-                {
-                    "id": "2",
-                    "type": "IMAGE",
-                    "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
-                    "title": "Рисунок 1 - Кибербезопасность"
-                },
-                {
-                    "id": "3",
-                    "type": "CODE",
-                    "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
-                }
-            ]
-        },
-        {
-            "id": "7",
-            "title": "Кибербезопасность",
-            "subtitle": "Защитите свои данные",
-            "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-            "views": "2350",
-            "dataCreate": "2023-07-15",
-            "userId": "1",
-            "type": ["IT"],
-            "data": [
-                {
-                    "id": "1",
-                    "type": "TEXT",
-                    "title": "Основы кибербезопасности",
-                    "paragraphs": [
-                        "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
-                        "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
-                        "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
-                    ]
-                },
-                {
-                    "id": "2",
-                    "type": "IMAGE",
-                    "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
-                    "title": "Рисунок 1 - Кибербезопасность"
-                },
-                {
-                    "id": "3",
-                    "type": "CODE",
-                    "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
-                }
-            ]
-        },
-        {
-            "id": "8",
-            "title": "Кибербезопасность",
-            "subtitle": "Защитите свои данные",
-            "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-            "views": "2350",
-            "dataCreate": "2023-07-15",
-            "userId": "1",
-            "type": ["IT"],
-            "data": [
-                {
-                    "id": "1",
-                    "type": "TEXT",
-                    "title": "Основы кибербезопасности",
-                    "paragraphs": [
-                        "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
-                        "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
-                        "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
-                    ]
-                },
-                {
-                    "id": "2",
-                    "type": "IMAGE",
-                    "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
-                    "title": "Рисунок 1 - Кибербезопасность"
-                },
-                {
-                    "id": "3",
-                    "type": "CODE",
-                    "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
-                }
-            ]
-        },
-        {
-            "id": "9",
-            "title": "Кибербезопасность",
-            "subtitle": "Защитите свои данные",
-            "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-            "views": "2350",
-            "dataCreate": "2023-07-15",
-            "userId": "1",
-            "type": ["IT"],
-            "data": [
-                {
-                    "id": "1",
-                    "type": "TEXT",
-                    "title": "Основы кибербезопасности",
-                    "paragraphs": [
-                        "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
-                        "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
-                        "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
-                    ]
-                },
-                {
-                    "id": "2",
-                    "type": "IMAGE",
-                    "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
-                    "title": "Рисунок 1 - Кибербезопасность"
-                },
-                {
-                    "id": "3",
-                    "type": "CODE",
-                    "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
-                }
-            ]
-        },
-        {
-            "id": "10",
-            "title": "Кибербезопасность",
-            "subtitle": "Защитите свои данные",
-            "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-            "views": "2350",
-            "dataCreate": "2023-07-15",
-            "userId": "1",
-            "type": ["IT"],
-            "data": [
-                {
-                    "id": "1",
-                    "type": "TEXT",
-                    "title": "Основы кибербезопасности",
-                    "paragraphs": [
-                        "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
-                        "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
-                        "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
-                    ]
-                },
-                {
-                    "id": "2",
-                    "type": "IMAGE",
-                    "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
-                    "title": "Рисунок 1 - Кибербезопасность"
-                },
-                {
-                    "id": "3",
-                    "type": "CODE",
-                    "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
-                }
-            ]
-        },
-        {
-            "id": "11",
-            "title": "Кибербезопасность",
-            "subtitle": "Защитите свои данные",
-            "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-            "views": "2350",
-            "dataCreate": "2023-07-15",
-            "userId": "1",
-            "type": ["IT"],
-            "data": [
-                {
-                    "id": "1",
-                    "type": "TEXT",
-                    "title": "Основы кибербезопасности",
-                    "paragraphs": [
-                        "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
-                        "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
-                        "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
-                    ]
-                },
-                {
-                    "id": "2",
-                    "type": "IMAGE",
-                    "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
+                    "src": "http://yocommon.com/images/hacking.png",
                     "title": "Рисунок 1 - Кибербезопасность"
                 },
                 {

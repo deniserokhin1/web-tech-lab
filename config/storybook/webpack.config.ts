@@ -4,12 +4,10 @@ import { type IBuildPaths } from '../build/types/config'
 import path from 'path'
 import type webpack from 'webpack'
 
-export default ({
-    config,
-}: {
-    config: webpack.Configuration
-}): webpack.Configuration => {
+export default ({ config }: { config: webpack.Configuration }): webpack.Configuration => {
     const paths: IBuildPaths = {
+        buildImages: '',
+        images: '',
         build: '',
         entry: '',
         html: '',
@@ -26,9 +24,7 @@ export default ({
     if (config?.module?.rules) {
         const rules = config.module.rules as RuleSetRule[]
         config.module.rules = rules.map((rule) =>
-            /svg/.test(rule.test as string)
-                ? { ...rule, exclude: /\.svg$/i }
-                : rule,
+            /svg/.test(rule.test as string) ? { ...rule, exclude: /\.svg$/i } : rule,
         )
 
         config.module.rules.push({

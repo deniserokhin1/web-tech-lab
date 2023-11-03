@@ -8,7 +8,9 @@ export interface IBuildPaths {
     html: string
     src: string
     locales: string
+    images: string
     buildLocales: string
+    buildImages: string
 }
 
 export interface IBuildEnv {

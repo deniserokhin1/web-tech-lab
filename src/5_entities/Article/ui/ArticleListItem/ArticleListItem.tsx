@@ -147,10 +147,10 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     <div className={cls.imageWrapper}>
                         <AppImage
                             fallback={
-                                <Skeleton minHeight={157} borderRadius="4px" />
+                                <Skeleton borderRadius="4px" />
                             }
                             errorFallback={
-                                <Skeleton minHeight={157} borderRadius="4px" />
+                                <Skeleton borderRadius="4px" />
                             }
                             src={article?.img}
                             className={cls.img}

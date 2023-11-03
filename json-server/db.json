@@ -1,695 +1,480 @@
 {
-  "notifications": [
-    {
-      "id": "1",
-      "title": "Уведомление 1",
-      "description": "Произошло какое-то событие",
-      "userId": "1"
-    },
-    {
-      "id": "2",
-      "title": "Уведомление 2",
-      "description": "Произошло какое-то событие",
-      "userId": "1",
-      "href": "http://localhost:3000/admin"
-    },
-    {
-      "id": "3",
-      "title": "Уведомление 3",
-      "description": "Произошло какое-то событие",
-      "userId": "1",
-      "href": "http://localhost:3000/admin"
-    },
-    {
-      "id": "4",
-      "title": "Уведомление 4",
-      "description": "Произошло какое-то событие",
-      "userId": "1"
-    },
-    {
-      "id": "5",
-      "title": "Уведомление 5",
-      "description": "Произошло какое-то событие",
-      "userId": "2"
-    }
-  ],
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": "1",
-      "text": "some comment",
-      "articleId": "1",
-      "userId": "1"
-    },
-    {
-      "id": "2",
-      "text": "some comment 2",
-      "articleId": "1",
-      "userId": "2"
-    },
-    {
-      "id": "3",
-      "text": "some comment 3",
-      "articleId": "1",
-      "userId": "1"
-    },
-    {
-      "id": "4",
-      "text": "some comment for other article",
-      "articleId": "2",
-      "userId": "1"
-    },
-    {
-      "id": "5",
-      "text": "some comment by dude",
-      "articleId": "1",
-      "userId": "3"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "Yo common",
-      "id": "iHxtqUJ"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "Common",
-      "id": "f0hGVxw"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "Камон эвери бади",
-      "id": "sgl4fzi"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "Йоу бэйба",
-      "id": "s9iI7vy"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "Чики-брики",
-      "id": "GuZehuI"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "В тулюсю тебя",
-      "id": "ofN2VP6"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "Йоу",
-      "id": "A-4G7gC"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "Камон",
-      "id": "SShwVxv"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "1",
-      "id": "PQIPlap"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "Привет, Мир!",
-      "id": "MaVehNP"
-    },
-    {
-      "articleId": "2",
-      "userId": "1",
-      "text": "Клева!",
-      "id": "_Gfvnd6"
-    },
-    {
-      "articleId": "2",
-      "userId": "1",
-      "text": "Yo!",
-      "id": "mYysLCt"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": " ",
-      "id": "mUwHw2U"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": " ",
-      "id": "kiJoDQl"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "1 2",
-      "id": "SNgQDed"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "Привет, Денчик!",
-      "id": "16HsrUR"
-    },
-    {
-      "articleId": "2",
-      "userId": "1",
-      "text": "Ку",
-      "id": "tQBKdrP"
-    }
-  ],
-  "profile": [
-    {
-      "id": "1",
-      "first": "Ден",
-      "lastname": "Ерохин",
-      "age": 32,
-      "currency": "USD",
-      "country": "Russia",
-      "city": "Москва",
-      "username": "Denis",
-      "avatar": "data:image/jpeg;base64,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"
-    },
-    {
-      "id": "2",
-      "first": "Вадло",
-      "lastname": "Захаров",
-      "age": 32,
-      "currency": "EUR",
-      "country": "USA",
-      "city": "Орел",
-      "username": "shashlyk",
-      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKU8McTotPo7tY9MsWbxBGTDYPklnWv66f1ygn-fp9Kg&s"
-    }
-  ],
-  "users": [
-    {
-      "id": "2",
-      "username": "Shashlyk",
-      "password": "123",
-      "roles": [
-        "USER"
-      ],
-      "avatar": "https://www.ourmigrationstory.org.uk/uploads/_CGSmartImage/img-a2beae8392617b8c02b85d8b9197fb96"
-    },
-    {
-      "id": "1",
-      "username": "Den",
-      "password": "123",
-      "roles": [
-        "ADMIN"
-      ],
-      "avatar": "https://img.freepik.com/free-vector/creative-hacker-logo-template_23-2149199402.jpg?w=2000"
-    },
-    {
-      "id": "3",
-      "username": "Dude",
-      "password": "123",
-      "roles": [
-        "USER"
-      ]
-    }
-  ],
-  "article-ratings": [
-    {
-      "userId": "1",
-      "articleId": "1",
-      "rate": 2,
-      "id": 1
-    },
-    {
-      "userId": "1",
-      "articleId": "2",
-      "rate": 3,
-      "id": 2
-    },
-    {
-      "userId": "1",
-      "articleId": "3",
-      "rate": 5,
-      "feedback": "Теперь точно все кул!",
-      "id": 3
-    },
-    {
-      "userId": "1",
-      "articleId": "4",
-      "rate": 4,
-      "id": 4
-    },
-    {
-      "userId": "1",
-      "articleId": "5",
-      "rate": 1,
-      "id": 5
-    },
-    {
-      "userId": "1",
-      "articleId": "8",
-      "rate": 5,
-      "feedback": "Классная статья!",
-      "id": 6
-    },
-    {
-      "userId": "1",
-      "articleId": "9",
-      "rate": 5,
-      "feedback": "Cool",
-      "id": 7
-    }
-  ],
-  "articles": [
-    {
-      "id": "1",
-      "title": "Технологический прогресс",
-      "subtitle": "Революция в индустрии",
-      "img": "https://3.downloader.disk.yandex.ru/preview/a59174e1005f68e2bbc6d43468e264c97531e00bdad96030ee0d6a52ca91052a/inf/fk-E4z_2u3z4uJ_-YcoEw-vT7v6BQRAiZuhlPSQtNFNvsxSnW3GZF0uxjB7DKC21rtlKBde_JXSJsLKr8IJyNw%3D%3D?uid=233854961&filename=business-4241792_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-      "views": "1500",
-      "dataCreate": "2023-09-01",
-      "userId": "1",
-      "type": [
-        "ECONOMICS"
-      ],
-      "data": [
+    "notifications": [
         {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Введение в технологический прогресс",
-          "paragraphs": [
-            "В наши дни технологический прогресс является неотъемлемой частью повседневной жизни. Это явление, характеризующееся неуклонным развитием науки и технологий, оказывает глубокое влияние на экономику, социокультурные аспекты, а также на природное окружение.",
-            "В начале, технологический прогресс проявлялся в простых формах, включая создание первых инструментов и машин. С развитием промышленной революции, технологическое развитие ускорилось, давая толчок для массового производства и урбанизации. В последние десятилетия, эра информационных технологий и интернета дала начало новой волне технологической инновации, изменяя способы коммуникации и доступ к информации.",
-            "Сегодня технологический прогресс характеризуется непрерывной эволюцией искусственного интеллекта, биотехнологий, космических исследований, а также зелёных технологий. Эти инновации способствуют решению множества глобальных проблем, включая изменение климата, болезни и доступ к образованию.",
-            "Технологический прогресс несёт в себе как позитивные, так и негативные последствия. С одной стороны, он предоставляет новые возможности для улучшения качества жизни и экономического роста. С другой стороны, он может способствовать увеличению социального неравенства, потере рабочих мест и экологическим кризисам.",
-            "Технологический прогресс это движущая сила, способствующая развитию человечества на различных уровнях. Несмотря на свои вызовы, он продолжает открывать новые горизонты и возможности для инноваций и улучшений в различных сферах жизни. Стремление к непрерывному усовершенствованию и адаптации к изменяющемуся миру остаётся центральной осью технологического прогресса, подталкивая нас к более процветающему и устойчивому будущему."
-          ]
+            "id": "1",
+            "title": "Уведомление 1",
+            "description": "Произошло какое-то событие",
+            "userId": "1"
         },
         {
-          "id": "2",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"progress\"></p>\n\n    <script>\n      document.getElementById(\"progress\").innerHTML = \"Welcome to the Tech Revolution\";\n    </script>\n  </body>\n</html>"
+            "id": "2",
+            "title": "Уведомление 2",
+            "description": "Произошло какое-то событие",
+            "userId": "1",
+            "href": "http://yocommon/admin"
         },
         {
-          "id": "3",
-          "type": "IMAGE",
-          "src": "https://2.downloader.disk.yandex.ru/preview/54b2f49514d37c2e621aab613aaf61a2106acb593d072457f1e28d6e193fe297/inf/AktTdPH7nahFOyz10H11_VMdhFTDRxEmQVtR_DC03sFmYsPw4-Cau66YJkmI4ttzX-3JBxamw9dwYOLi9-QcZw%3D%3D?uid=233854961&filename=success-2081168_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-          "title": "Иллюстрация 1 - Технологический прогресс"
+            "id": "3",
+            "title": "Уведомление 3",
+            "description": "Произошло какое-то событие",
+            "userId": "1",
+            "href": "http://yocommon/admin"
         },
         {
-          "id": "4",
-          "type": "TEXT",
-          "title": "Ключевые моменты развития",
-          "paragraphs": [
-            "Технологическое развитие это один из самых значимых факторов, влияющих на динамику прогресса современного общества. В ходе истории человечества мы сталкивались с рядом ключевых моментов, которые значительно трансформировали наш мир. Давайте рассмотрим некоторые из них.",
-            "С момента первой промышленной революции в XVIII веке, технологический прогресс демонстрировал свою способность кардинально изменять общество. Каждая последующая революция (вторая, третья и четвертая или цифровая) привносила новые технологии и методы производства, открывая новые горизонты возможностей.",
-            "В конце XX века мир озадачил появлением интернета, который радикально изменил способы общения, доступ к информации и бизнес-модели. Это привело к глобализации и созданию мировой сети, связывающей людей и организации как никогда раньше.",
-            "Сегодня мы стоим на пороге новой эры, где искусственный интеллект и машинное обучение начинают играть решающую роль в многих аспектах нашей жизни. Эти технологии обещают революционизировать всё от производства до медицины и транспорта."
-          ]
+            "id": "4",
+            "title": "Уведомление 4",
+            "description": "Произошло какое-то событие",
+            "userId": "1"
         },
         {
-          "id": "5",
-          "type": "CODE",
-          "code": "const techProgress = require('tech-progress');\n\nconst revolution = techProgress.create();\n\nrevolution.start();"
+            "id": "5",
+            "title": "Уведомление 5",
+            "description": "Произошло какое-то событие",
+            "userId": "2"
         }
-      ]
-    },
-    {
-      "id": "2",
-      "title": "Искусственный интеллект",
-      "subtitle": "Будущее здесь",
-      "img": "https://3.downloader.disk.yandex.ru/preview/94d79ec020411303b665ca75bbd314cfb6271fbeb7c929c4c758d6c87173b968/inf/YSOTl5msKvJDyDEraJigpbxlF23NslFFtMc8JsOtmCnNo5YGj_t2E7sr7D2GN5Wp98Ll9l1LmwwqO17PnpQEnA%3D%3D?uid=233854961&filename=artificial-intelligence-4736369_1280.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-      "views": "2000",
-      "dataCreate": "2023-08-28",
-      "userId": "2",
-      "type": [
-        "IT",
-        "SCIENCE"
-      ],
-      "data": [
+    ],
+    "comments": [],
+    "profile": [
         {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Эпоха инноваций",
-          "paragraphs": [
-            "Искусственный интеллект (ИИ) является одним из самых прорывных и обсуждаемых технологических достижений современности. Этот термин обозначает системы, способные имитировать человеческий интеллект, обучаться и адаптироваться к изменяющимся условиям без прямого человеческого вмешательства. Давайте вкратце рассмотрим основные аспекты этого феномена.",
-            "Искусственный интеллект включает в себя машинное обучение, глубокое обучение и нейронные сети. Цель ИИ создавать системы, которые могут автономно решать задачи, традиционно требующие человеческого интеллекта, такие как распознавание речи, визуальное восприятие и принятие решений."
-          ]
+            "id": "1",
+            "first": "Ден",
+            "lastname": "Ерохин",
+            "age": 32,
+            "currency": "USD",
+            "country": "Russia",
+            "city": "Москва",
+            "username": "Denis",
+            "avatar": "data:image/jpeg;base64,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"
         },
         {
-          "id": "2",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"ai\"></p>\n\n    <script>\n      document.getElementById(\"ai\").innerHTML = \"AI: The Future is Here\";\n    </script>\n  </body>\n</html>"
-        },
-        {
-          "id": "3",
-          "type": "IMAGE",
-          "src": "https://4.downloader.disk.yandex.ru/preview/53509038fc1eda1f0205b9284ad9ede1f444e006d76ce9b207d5309c049a469f/inf/LpfE46B9lgZNLxEX9LDHk7K5_-l_2-9AAI-xr-XlfgMQ8EoOoLVSQ6Cc-bg-K_TZaoXyZwGyK5QEcYtXjU9FYA%3D%3D?uid=233854961&filename=anatomy-1751201_1280.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
-          "title": "Иллюстрация 2 - Искусственный интеллект"
-        },
-        {
-          "id": "4",
-          "type": "TEXT",
-          "title": "Возможности ИИ",
-          "paragraphs": [
-            "Искусственный интеллект нашёл применение во множестве сфер, включая медицину (диагностика заболеваний, анализ медицинских изображений), автомобильную промышленность (автономные транспортные средства), финансовый сектор (алгоритмическая торговля) и многие другие. Он помогает автоматизировать рутинные задачи и обеспечивает более высокую точность и эффективность в многих процессах.",
-            "Вместе с технологическими преимуществами, искусственный интеллект вызывает ряд этических вопросов. Повышение уровня автоматизации может привести к потере рабочих мест, а вопросы приватности и безопасности данных становятся всё более актуальными. Более того, существует потенциальная опасность создания ИИ с высокой степенью автономии, который может действовать вне контроля человека."
-          ]
-        },
-        {
-          "id": "5",
-          "type": "CODE",
-          "code": "const ai = require('ai');\n\nconst future = ai.create();\n\nfuture.begin();"
+            "id": "2",
+            "first": "Вадим",
+            "lastname": "Захаров",
+            "age": 32,
+            "currency": "EUR",
+            "country": "USA",
+            "city": "Орел",
+            "username": "shashlyk",
+            "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKU8McTotPo7tY9MsWbxBGTDYPklnWv66f1ygn-fp9Kg&s"
         }
-      ]
-    },
-    {
-      "id": "3",
-      "title": "Кибербезопасность",
-      "subtitle": "Защитите свои данные",
-      "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-      "views": "2350",
-      "dataCreate": "2023-07-15",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "data": [
+    ],
+    "users": [
         {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Основы кибербезопасности",
-          "paragraphs": [
-            "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
-            "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
-            "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
-          ]
+            "id": "2",
+            "username": "Shashlyk",
+            "password": "123",
+            "roles": ["USER"],
+            "avatar": "https://www.ourmigrationstory.org.uk/uploads/_CGSmartImage/img-a2beae8392617b8c02b85d8b9197fb96"
         },
         {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
-          "title": "Рисунок 1 - Кибербезопасность"
+            "id": "1",
+            "username": "Den",
+            "password": "123",
+            "roles": ["ADMIN"],
+            "avatar": "https://img.freepik.com/free-vector/creative-hacker-logo-template_23-2149199402.jpg?w=2000"
         },
         {
-          "id": "3",
-          "type": "CODE",
-          "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
+            "id": "3",
+            "username": "Dude",
+            "password": "123",
+            "roles": ["USER"]
         }
-      ]
-    },
-    {
-      "id": "4",
-      "title": "Кибербезопасность",
-      "subtitle": "Защитите свои данные",
-      "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-      "views": "2350",
-      "dataCreate": "2023-07-15",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "data": [
+    ],
+    "article-ratings": [],
+    "articles": [
         {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Основы кибербезопасности",
-          "paragraphs": [
-            "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
-            "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
-            "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
-          ]
+            "id": "1",
+            "title": "Технологический прогресс",
+            "subtitle": "Революция в индустрии",
+            "img": "http://yocommom.com/images/technical-progress-1.jpg",
+            "views": "1500",
+            "dataCreate": "2023-09-01",
+            "userId": "1",
+            "type": ["ECONOMICS"],
+            "data": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Введение в технологический прогресс",
+                    "paragraphs": [
+                        "В наши дни технологический прогресс является неотъемлемой частью повседневной жизни. Это явление, характеризующееся неуклонным развитием науки и технологий, оказывает глубокое влияние на экономику, социокультурные аспекты, а также на природное окружение.",
+                        "В начале, технологический прогресс проявлялся в простых формах, включая создание первых инструментов и машин. С развитием промышленной революции, технологическое развитие ускорилось, давая толчок для массового производства и урбанизации. В последние десятилетия, эра информационных технологий и интернета дала начало новой волне технологической инновации, изменяя способы коммуникации и доступ к информации.",
+                        "Сегодня технологический прогресс характеризуется непрерывной эволюцией искусственного интеллекта, биотехнологий, космических исследований, а также зелёных технологий. Эти инновации способствуют решению множества глобальных проблем, включая изменение климата, болезни и доступ к образованию.",
+                        "Технологический прогресс несёт в себе как позитивные, так и негативные последствия. С одной стороны, он предоставляет новые возможности для улучшения качества жизни и экономического роста. С другой стороны, он может способствовать увеличению социального неравенства, потере рабочих мест и экологическим кризисам.",
+                        "Технологический прогресс это движущая сила, способствующая развитию человечества на различных уровнях. Несмотря на свои вызовы, он продолжает открывать новые горизонты и возможности для инноваций и улучшений в различных сферах жизни. Стремление к непрерывному усовершенствованию и адаптации к изменяющемуся миру остаётся центральной осью технологического прогресса, подталкивая нас к более процветающему и устойчивому будущему."
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"progress\"></p>\n\n    <script>\n      document.getElementById(\"progress\").innerHTML = \"Welcome to the Tech Revolution\";\n    </script>\n  </body>\n</html>"
+                },
+                {
+                    "id": "3",
+                    "type": "IMAGE",
+                    "src": "https://2.downloader.disk.yandex.ru/preview/54b2f49514d37c2e621aab613aaf61a2106acb593d072457f1e28d6e193fe297/inf/AktTdPH7nahFOyz10H11_VMdhFTDRxEmQVtR_DC03sFmYsPw4-Cau66YJkmI4ttzX-3JBxamw9dwYOLi9-QcZw%3D%3D?uid=233854961&filename=success-2081168_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
+                    "title": "Иллюстрация 1 - Технологический прогресс"
+                },
+                {
+                    "id": "4",
+                    "type": "TEXT",
+                    "title": "Ключевые моменты развития",
+                    "paragraphs": [
+                        "Технологическое развитие это один из самых значимых факторов, влияющих на динамику прогресса современного общества. В ходе истории человечества мы сталкивались с рядом ключевых моментов, которые значительно трансформировали наш мир. Давайте рассмотрим некоторые из них.",
+                        "С момента первой промышленной революции в XVIII веке, технологический прогресс демонстрировал свою способность кардинально изменять общество. Каждая последующая революция (вторая, третья и четвертая или цифровая) привносила новые технологии и методы производства, открывая новые горизонты возможностей.",
+                        "В конце XX века мир озадачил появлением интернета, который радикально изменил способы общения, доступ к информации и бизнес-модели. Это привело к глобализации и созданию мировой сети, связывающей людей и организации как никогда раньше.",
+                        "Сегодня мы стоим на пороге новой эры, где искусственный интеллект и машинное обучение начинают играть решающую роль в многих аспектах нашей жизни. Эти технологии обещают революционизировать всё от производства до медицины и транспорта."
+                    ]
+                },
+                {
+                    "id": "5",
+                    "type": "CODE",
+                    "code": "const techProgress = require('tech-progress');\n\nconst revolution = techProgress.create();\n\nrevolution.start();"
+                }
+            ]
         },
         {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
-          "title": "Рисунок 1 - Кибербезопасность"
+            "id": "2",
+            "title": "Искусственный интеллект",
+            "subtitle": "Будущее здесь",
+            "img": "https://photos.google.com/photo/AF1QipMqz7kwmvnLX8gNcHTHR9XzXb3nW75Iq6OTgaKV",
+            "views": "2000",
+            "dataCreate": "2023-08-28",
+            "userId": "2",
+            "type": ["IT", "SCIENCE"],
+            "data": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Эпоха инноваций",
+                    "paragraphs": [
+                        "Искусственный интеллект (ИИ) является одним из самых прорывных и обсуждаемых технологических достижений современности. Этот термин обозначает системы, способные имитировать человеческий интеллект, обучаться и адаптироваться к изменяющимся условиям без прямого человеческого вмешательства. Давайте вкратце рассмотрим основные аспекты этого феномена.",
+                        "Искусственный интеллект включает в себя машинное обучение, глубокое обучение и нейронные сети. Цель ИИ создавать системы, которые могут автономно решать задачи, традиционно требующие человеческого интеллекта, такие как распознавание речи, визуальное восприятие и принятие решений."
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"ai\"></p>\n\n    <script>\n      document.getElementById(\"ai\").innerHTML = \"AI: The Future is Here\";\n    </script>\n  </body>\n</html>"
+                },
+                {
+                    "id": "3",
+                    "type": "IMAGE",
+                    "src": "https://4.downloader.disk.yandex.ru/preview/53509038fc1eda1f0205b9284ad9ede1f444e006d76ce9b207d5309c049a469f/inf/LpfE46B9lgZNLxEX9LDHk7K5_-l_2-9AAI-xr-XlfgMQ8EoOoLVSQ6Cc-bg-K_TZaoXyZwGyK5QEcYtXjU9FYA%3D%3D?uid=233854961&filename=anatomy-1751201_1280.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
+                    "title": "Иллюстрация 2 - Искусственный интеллект"
+                },
+                {
+                    "id": "4",
+                    "type": "TEXT",
+                    "title": "Возможности ИИ",
+                    "paragraphs": [
+                        "Искусственный интеллект нашёл применение во множестве сфер, включая медицину (диагностика заболеваний, анализ медицинских изображений), автомобильную промышленность (автономные транспортные средства), финансовый сектор (алгоритмическая торговля) и многие другие. Он помогает автоматизировать рутинные задачи и обеспечивает более высокую точность и эффективность в многих процессах.",
+                        "Вместе с технологическими преимуществами, искусственный интеллект вызывает ряд этических вопросов. Повышение уровня автоматизации может привести к потере рабочих мест, а вопросы приватности и безопасности данных становятся всё более актуальными. Более того, существует потенциальная опасность создания ИИ с высокой степенью автономии, который может действовать вне контроля человека."
+                    ]
+                },
+                {
+                    "id": "5",
+                    "type": "CODE",
+                    "code": "const ai = require('ai');\n\nconst future = ai.create();\n\nfuture.begin();"
+                }
+            ]
         },
         {
-          "id": "3",
-          "type": "CODE",
-          "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
+            "id": "3",
+            "title": "Кибербезопасность",
+            "subtitle": "Защитите свои данные",
+            "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
+            "views": "2350",
+            "dataCreate": "2023-07-15",
+            "userId": "1",
+            "type": ["IT"],
+            "data": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Основы кибербезопасности",
+                    "paragraphs": [
+                        "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
+                        "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
+                        "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "IMAGE",
+                    "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
+                    "title": "Рисунок 1 - Кибербезопасность"
+                },
+                {
+                    "id": "3",
+                    "type": "CODE",
+                    "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "title": "Кибербезопасность",
+            "subtitle": "Защитите свои данные",
+            "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
+            "views": "2350",
+            "dataCreate": "2023-07-15",
+            "userId": "1",
+            "type": ["IT"],
+            "data": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Основы кибербезопасности",
+                    "paragraphs": [
+                        "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
+                        "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
+                        "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "IMAGE",
+                    "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
+                    "title": "Рисунок 1 - Кибербезопасность"
+                },
+                {
+                    "id": "3",
+                    "type": "CODE",
+                    "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "title": "Кибербезопасность",
+            "subtitle": "Защитите свои данные",
+            "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
+            "views": "2350",
+            "dataCreate": "2023-07-15",
+            "userId": "1",
+            "type": ["IT"],
+            "data": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Основы кибербезопасности",
+                    "paragraphs": [
+                        "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
+                        "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
+                        "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "IMAGE",
+                    "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
+                    "title": "Рисунок 1 - Кибербезопасность"
+                },
+                {
+                    "id": "3",
+                    "type": "CODE",
+                    "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
+                }
+            ]
+        },
+        {
+            "id": "6",
+            "title": "Кибербезопасность",
+            "subtitle": "Защитите свои данные",
+            "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
+            "views": "2350",
+            "dataCreate": "2023-07-15",
+            "userId": "1",
+            "type": ["IT"],
+            "data": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Основы кибербезопасности",
+                    "paragraphs": [
+                        "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
+                        "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
+                        "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "IMAGE",
+                    "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
+                    "title": "Рисунок 1 - Кибербезопасность"
+                },
+                {
+                    "id": "3",
+                    "type": "CODE",
+                    "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
+                }
+            ]
+        },
+        {
+            "id": "7",
+            "title": "Кибербезопасность",
+            "subtitle": "Защитите свои данные",
+            "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
+            "views": "2350",
+            "dataCreate": "2023-07-15",
+            "userId": "1",
+            "type": ["IT"],
+            "data": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Основы кибербезопасности",
+                    "paragraphs": [
+                        "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
+                        "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
+                        "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "IMAGE",
+                    "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
+                    "title": "Рисунок 1 - Кибербезопасность"
+                },
+                {
+                    "id": "3",
+                    "type": "CODE",
+                    "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
+                }
+            ]
+        },
+        {
+            "id": "8",
+            "title": "Кибербезопасность",
+            "subtitle": "Защитите свои данные",
+            "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
+            "views": "2350",
+            "dataCreate": "2023-07-15",
+            "userId": "1",
+            "type": ["IT"],
+            "data": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Основы кибербезопасности",
+                    "paragraphs": [
+                        "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
+                        "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
+                        "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "IMAGE",
+                    "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
+                    "title": "Рисунок 1 - Кибербезопасность"
+                },
+                {
+                    "id": "3",
+                    "type": "CODE",
+                    "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
+                }
+            ]
+        },
+        {
+            "id": "9",
+            "title": "Кибербезопасность",
+            "subtitle": "Защитите свои данные",
+            "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
+            "views": "2350",
+            "dataCreate": "2023-07-15",
+            "userId": "1",
+            "type": ["IT"],
+            "data": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Основы кибербезопасности",
+                    "paragraphs": [
+                        "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
+                        "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
+                        "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "IMAGE",
+                    "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
+                    "title": "Рисунок 1 - Кибербезопасность"
+                },
+                {
+                    "id": "3",
+                    "type": "CODE",
+                    "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
+                }
+            ]
+        },
+        {
+            "id": "10",
+            "title": "Кибербезопасность",
+            "subtitle": "Защитите свои данные",
+            "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
+            "views": "2350",
+            "dataCreate": "2023-07-15",
+            "userId": "1",
+            "type": ["IT"],
+            "data": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Основы кибербезопасности",
+                    "paragraphs": [
+                        "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
+                        "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
+                        "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "IMAGE",
+                    "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
+                    "title": "Рисунок 1 - Кибербезопасность"
+                },
+                {
+                    "id": "3",
+                    "type": "CODE",
+                    "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
+                }
+            ]
+        },
+        {
+            "id": "11",
+            "title": "Кибербезопасность",
+            "subtitle": "Защитите свои данные",
+            "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
+            "views": "2350",
+            "dataCreate": "2023-07-15",
+            "userId": "1",
+            "type": ["IT"],
+            "data": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Основы кибербезопасности",
+                    "paragraphs": [
+                        "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
+                        "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
+                        "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "IMAGE",
+                    "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
+                    "title": "Рисунок 1 - Кибербезопасность"
+                },
+                {
+                    "id": "3",
+                    "type": "CODE",
+                    "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "id": "5",
-      "title": "Кибербезопасность",
-      "subtitle": "Защитите свои данные",
-      "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-      "views": "2350",
-      "dataCreate": "2023-07-15",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "data": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Основы кибербезопасности",
-          "paragraphs": [
-            "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
-            "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
-            "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
-          ]
-        },
-        {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
-          "title": "Рисунок 1 - Кибербезопасность"
-        },
-        {
-          "id": "3",
-          "type": "CODE",
-          "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
-        }
-      ]
-    },
-    {
-      "id": "6",
-      "title": "Кибербезопасность",
-      "subtitle": "Защитите свои данные",
-      "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-      "views": "2350",
-      "dataCreate": "2023-07-15",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "data": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Основы кибербезопасности",
-          "paragraphs": [
-            "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
-            "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
-            "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
-          ]
-        },
-        {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
-          "title": "Рисунок 1 - Кибербезопасность"
-        },
-        {
-          "id": "3",
-          "type": "CODE",
-          "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
-        }
-      ]
-    },
-    {
-      "id": "7",
-      "title": "Кибербезопасность",
-      "subtitle": "Защитите свои данные",
-      "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-      "views": "2350",
-      "dataCreate": "2023-07-15",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "data": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Основы кибербезопасности",
-          "paragraphs": [
-            "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
-            "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
-            "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
-          ]
-        },
-        {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
-          "title": "Рисунок 1 - Кибербезопасность"
-        },
-        {
-          "id": "3",
-          "type": "CODE",
-          "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
-        }
-      ]
-    },
-    {
-      "id": "8",
-      "title": "Кибербезопасность",
-      "subtitle": "Защитите свои данные",
-      "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-      "views": "2350",
-      "dataCreate": "2023-07-15",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "data": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Основы кибербезопасности",
-          "paragraphs": [
-            "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
-            "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
-            "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
-          ]
-        },
-        {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
-          "title": "Рисунок 1 - Кибербезопасность"
-        },
-        {
-          "id": "3",
-          "type": "CODE",
-          "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
-        }
-      ]
-    },
-    {
-      "id": "9",
-      "title": "Кибербезопасность",
-      "subtitle": "Защитите свои данные",
-      "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-      "views": "2350",
-      "dataCreate": "2023-07-15",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "data": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Основы кибербезопасности",
-          "paragraphs": [
-            "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
-            "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
-            "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
-          ]
-        },
-        {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
-          "title": "Рисунок 1 - Кибербезопасность"
-        },
-        {
-          "id": "3",
-          "type": "CODE",
-          "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
-        }
-      ]
-    },
-    {
-      "id": "10",
-      "title": "Кибербезопасность",
-      "subtitle": "Защитите свои данные",
-      "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-      "views": "2350",
-      "dataCreate": "2023-07-15",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "data": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Основы кибербезопасности",
-          "paragraphs": [
-            "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
-            "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
-            "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
-          ]
-        },
-        {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
-          "title": "Рисунок 1 - Кибербезопасность"
-        },
-        {
-          "id": "3",
-          "type": "CODE",
-          "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
-        }
-      ]
-    },
-    {
-      "id": "11",
-      "title": "Кибербезопасность",
-      "subtitle": "Защитите свои данные",
-      "img": "https://1.downloader.disk.yandex.ru/preview/32023fe139c62f6cccd76f5952699a16d7e3c64c7f870cb9b21ee045cc810062/inf/9YxGTy2vqFHw2Kfge8lme-mGEyIvTXrpqhPYIP2Aq6_OBNnRsI3SdJ0mQPHYFNZ7gPD3_JmhhPo9sP1yBAb8hg%3D%3D?uid=233854961&filename=cyber-4610993_1920.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=233854961&tknv=v2&size=2880x1630",
-      "views": "2350",
-      "dataCreate": "2023-07-15",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "data": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Основы кибербезопасности",
-          "paragraphs": [
-            "В современном мире, где большая часть нашей жизни перенеслась в цифровое пространство, вопрос кибербезопасности стоит особенно остро. Это область, занимающаяся защитой компьютерных систем и сетей от цифровых атак, кражи информации и других видов киберпреступлений. Рассмотрим ключевые аспекты кибербезопасности.",
-            "Среди основных угроз в области кибербезопасности можно выделить фишинг, вредоносное ПО, атаки &laquo;человек посередине&raquo; и DDoS-атаки. Все они нацелены на похищение конфиденциальных данных или нарушение нормальной работы систем и сетей.",
-            "Кибербезопасность включает в себя ряд стратегий и практик, направленных на предотвращение несанкционированного доступа к данным и системам. К ним относятся шифрование данных, двухфакторная аутентификация, регулярное обновление ПО и обучение пользователей основам безопасности."
-          ]
-        },
-        {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://1.downloader.disk.yandex.ru/preview/1fdee9602a5016a2bb37815466f1d60dee433081800522d90277da02fe7c0f0b/inf/6gFP5IoxqLyEqBq_IYkpQrzBaKsuRKJzHyduxkdpVUxpm82uhTJJ29he_75fU8r5kJd2dWlOpcgm9JyebGLqFQ%3D%3D?uid=233854961&filename=hacking-3112539_1920.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=233854961&tknv=v2&size=2880x1630",
-          "title": "Рисунок 1 - Кибербезопасность"
-        },
-        {
-          "id": "3",
-          "type": "CODE",
-          "code": "const security = require('security');\n\nconst protection = security.create();\n\nprotection.activate();"
-        }
-      ]
-    }
-  ]
+    ]
 }

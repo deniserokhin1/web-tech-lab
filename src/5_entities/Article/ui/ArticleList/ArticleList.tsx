@@ -1,4 +1,4 @@
-import { memo, type HTMLAttributeAnchorTarget } from 'react'
+import { memo, type HTMLAttributeAnchorTarget, ReactNode } from 'react'
 
 import { useTranslation } from 'react-i18next'
 
@@ -10,6 +10,8 @@ import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
 
 import cls from './ArticleList.module.scss'
+
+const namespace = __IS_DEV__ ? 'translation' : 'articles-list'
 
 interface ArticleListProps {
     className?: string
@@ -23,7 +25,6 @@ interface ArticleListProps {
 export const ArticleList = memo((props: ArticleListProps) => {
     const { className, articles = [], isLoading, view = ArticleView.TILE, target, padding } = props
 
-    const namespace = __IS_DEV__ ? 'translation' : 'articles-list'
     const { t } = useTranslation(namespace)
 
     const skeletons = (view: ArticleView): JSX.Element[] => {
@@ -32,18 +33,18 @@ export const ArticleList = memo((props: ArticleListProps) => {
             .map((_, index) => <ArticleListItemSkeleton key={index} view={view} />)
     }
 
-    const renderArticle = (article: IArticle, view: ArticleView): JSX.Element => (
+    const renderArticle = (article: IArticle, view: ArticleView): ReactNode => (
         <ArticleListItem
             article={article}
             view={view}
             key={article.id}
             target={target}
             padding={padding}
-        />
+        />  
     )
 
     if (!isLoading && !articles.length) {
-        return <Text title={t('articles-list.Статьи не найдены')} />
+        return <Text title={t('Статьи не найдены')} />
     }
 
     return (

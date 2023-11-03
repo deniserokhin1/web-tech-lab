@@ -21,12 +21,6 @@ export function buildLoaders(options: IBuildOptions): webpack.RuleSetRule[] {
         use: ['@svgr/webpack'],
     }
 
-    // const typescriptLoaders = {
-    //     test: /\.tsx?$/,
-    //     use: 'ts-loader',
-    //     exclude: /node_modules/,
-    // }
-
     const cssLoaders = buildCSSLoaders(isDev)
 
     const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false })

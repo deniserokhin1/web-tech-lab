@@ -11,7 +11,7 @@ server.use(jsonServer.bodyParser)
 
 server.use(async (req, res, next) => {
     await new Promise((res) => {
-        setTimeout(res, 800)
+        setTimeout(res, 0)
     })
     next()
 })
@@ -19,15 +19,12 @@ server.use(async (req, res, next) => {
 server.post('/login', (req, res) => {
     try {
         const { username, password } = req.body
-        const db = JSON.parse(
-            fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'),
-        )
+        const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'))
         const { users = [] } = db
 
         const userFromBd = users.find(
             (user) => user.username === username && user.password === password,
         )
-
 
         if (userFromBd) {
             delete userFromBd.password

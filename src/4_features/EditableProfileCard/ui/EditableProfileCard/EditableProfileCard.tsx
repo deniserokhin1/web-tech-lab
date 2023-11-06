@@ -21,10 +21,7 @@ import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading'
 import { getProfileReadOnly } from '../../model/selectors/getProfileReadonly'
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors'
 import { fetchProfileData } from '../../model/services/fetchProfileData'
-import {
-    profileActions,
-    profileReducer,
-} from '../../model/slices/EditableProfileCardSlice'
+import { profileActions, profileReducer } from '../../model/slices/EditableProfileCardSlice'
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader'
 
 const namespace = __IS_DEV__ ? 'translation' : 'profile'
@@ -47,17 +44,13 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     const validateErrors = useAppSelector(getProfileValidateErrors)
     const { id } = useParams<{ id: string }>()
 
+    console.log('formData:', formData)
+
     const validateErrorTranslate = {
         [ValidateProfileErrors.SERVER_ERROR]: t('profile.Ошибка сервера'),
-        [ValidateProfileErrors.INCORRECT_AGE]: t(
-            'profile.Некорректный возраст',
-        ),
-        [ValidateProfileErrors.INCORRECT_COUNTRY]: t(
-            'profile.Некорректная страна',
-        ),
-        [ValidateProfileErrors.INCORRECT_USER_DATA]: t(
-            'profile.Некорректные данные',
-        ),
+        [ValidateProfileErrors.INCORRECT_AGE]: t('profile.Некорректный возраст'),
+        [ValidateProfileErrors.INCORRECT_COUNTRY]: t('profile.Некорректная страна'),
+        [ValidateProfileErrors.INCORRECT_USER_DATA]: t('profile.Некорректные данные'),
         [ValidateProfileErrors.NO_DATA]: t('profile.Нет данных'),
     }
 

@@ -1,13 +1,13 @@
-import { memo } from 'react'
+import { memo, useEffect } from 'react'
 
 import { useTranslation } from 'react-i18next'
-import { useParams } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 
-import { useAppSelector } from '@/1_app/providers/StoreProvider'
+import { useAppDispatch, useAppSelector } from '@/1_app/providers/StoreProvider'
 import { PageWrapper } from '@/3_widgets/PageWrapper'
 import { ArticleRating } from '@/4_features/ArticleRating'
 import { ArticleRecomendationList } from '@/4_features/ArticleRecomendationList'
-import { getUIMainColor } from '@/4_features/UI'
+import { getUIMainColor, uiActions } from '@/4_features/UI'
 import { ArticleDetails } from '@/5_entities/Article'
 import {
     DynamicModuleLoader,
@@ -36,11 +36,23 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
     const { id = '1' } = useParams<{ id: string }>()
     const { t } = useTranslation(namespace)
     const color = useAppSelector(getUIMainColor)
+    const { pathname } = useLocation()
+    const dispatch = useAppDispatch()
+    const { setScrollPosition } = uiActions
+
+    useEffect(() => {
+        return () => {
+            dispatch(
+                setScrollPosition({
+                    path: pathname,
+                    position: 0,
+                }),
+            )
+        }
+    }, [dispatch, pathname, setScrollPosition])
 
     if (!id) {
-        return (
-            <PageWrapper>{t('article-details.Статья не найдена')}</PageWrapper>
-        )
+        return <PageWrapper>{t('article-details.Статья не найдена')}</PageWrapper>
     }
 
     return (

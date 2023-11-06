@@ -42,6 +42,7 @@ export const StarRating = memo((props: StarRatingProps) => {
         <HStack className={classNames(cls.container, {}, [className])}>
             {stars.map((i) => (
                 <Icon
+                    viewBox="0 0 24 24"
                     Svg={StarIcon}
                     key={i}
                     width={size}

@@ -41,6 +41,7 @@ export const SidebarItem = memo((props: SidebarItemProps) => {
             className={classNames(cls.link, mods)}
             to={path}
             animation={true}
+            hovered={true}
         >
             <IconComponent name={icon} pathFill={color} />
             <p className={classNames(cls.text)}>{t(text)}</p>

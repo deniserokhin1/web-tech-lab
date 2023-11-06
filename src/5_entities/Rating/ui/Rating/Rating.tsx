@@ -27,14 +27,7 @@ interface RatingProps {
 const namespace = __IS_DEV__ ? 'translation' : ''
 
 export const Rating = memo((props: RatingProps) => {
-    const {
-        className,
-        feedBackTitle,
-        onAccept,
-        onCancel,
-        title,
-        rate = 0,
-    } = props
+    const { className, feedBackTitle, onAccept, onCancel, title, rate = 0 } = props
 
     const { t } = useTranslation(namespace)
     const [isModalOpen, setModalOpen] = useState(false)
@@ -69,9 +62,7 @@ export const Rating = memo((props: RatingProps) => {
         [cls.mobile]: isMobile,
     }
 
-    const themeButton = isMobile
-        ? ButtonTheme.BACKGROUND
-        : ButtonTheme.BACKGROUND_INVERT
+    const themeButton = isMobile ? ButtonTheme.BACKGROUND : ButtonTheme.BACKGROUND_INVERT
 
     const themeText = isMobile ? TextTheme.DEFAULT : TextTheme.DEFAULT_INVERT
 
@@ -110,10 +101,7 @@ export const Rating = memo((props: RatingProps) => {
         <Card className={classNames('', {}, [className])}>
             <VStack gap="16" align="center">
                 <Text title={theTitle} align={TextAlign.CENTER} />
-                <StarRating
-                    selectedStars={rate}
-                    onSelect={onSelectStars}
-                />
+                <StarRating selectedStars={rate} onSelect={onSelectStars} />
             </VStack>
 
             {isMobile ? (

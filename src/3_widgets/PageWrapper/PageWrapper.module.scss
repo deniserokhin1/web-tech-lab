@@ -14,6 +14,32 @@
     }
 }
 
+.upButton {
+    position: fixed;
+    right: var(--wrapper-padding);
+    bottom: var(--wrapper-padding);
+    display: flex;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transform: scale(0);
+}
+
+.show {
+    .upButton {
+        opacity: 1;
+        transform: scale(1);
+
+        &:active {
+            transform: scale(0.97);
+        }
+
+        &:hover {
+            filter: brightness(0.9);
+        }
+    }
+}
+
+
 .offsetTop {
     top: 200px;
 }

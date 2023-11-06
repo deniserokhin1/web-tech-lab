@@ -18,6 +18,9 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
     padding?: string | number
     borderRadius?: number
     maxHeight?: boolean
+    invert?: boolean
+    border?: boolean
+    fitContent?: boolean
 }
 
 export const Card = (props: CardProps): JSX.Element => {
@@ -30,12 +33,18 @@ export const Card = (props: CardProps): JSX.Element => {
         padding,
         borderRadius,
         maxHeight,
+        invert,
+        border,
+        fitContent,
         ...otherProps
     } = props
 
     const mods = {
         [cls.smallPadding]: smallPadding,
         [cls.max]: maxHeight,
+        [cls.invert]: invert,
+        [cls.border]: border,
+        [cls.fitContent]: fitContent,
         [cls.hover]: hover && theme !== CardTheme.OUTLINED,
     }
 

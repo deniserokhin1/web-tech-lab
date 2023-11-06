@@ -22,7 +22,7 @@ interface ArticleDetailsCommentsProps {
     id?: string
 }
 
-const namespace = __IS_DEV__ ? 'translation' : 'namespace'
+const namespace = __IS_DEV__ ? 'translation' : 'article-details'
 
 export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
     const { className, id } = props

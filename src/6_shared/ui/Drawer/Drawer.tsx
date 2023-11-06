@@ -3,10 +3,7 @@ import { useCallback, useEffect, type FC, type ReactNode } from 'react'
 import { useTheme } from '@/1_app/providers/ThemeProvider'
 import { useModal } from '@/6_shared/hooks/useModal'
 import { classNames, type Mods } from '@/6_shared/lib/classNames/classNames'
-import {
-    AnimationProvider,
-    useAnimationLibs,
-} from '@/6_shared/lib/components/AnimationProvider'
+import { AnimationProvider, useAnimationLibs } from '@/6_shared/lib/components/AnimationProvider'
 
 import { Portal } from '../Portal/Portal'
 
@@ -20,16 +17,20 @@ interface DrawerProps {
     onClose?: () => void
 }
 
-const height = window.innerHeight - 100
+const height = window.innerHeight - 300
 
 export const DrawerContent: FC<DrawerProps> = (props) => {
     const { className, children, onClose, isOpen = false, lazy } = props
     const { theme } = useTheme()
-    const { closeHandler, onContentClick, showModal, onTransitionEnd } =
-        useModal(isOpen, cls, onClose, true)
+    const { closeHandler, onContentClick, showModal, onTransitionEnd } = useModal(
+        isOpen,
+        cls,
+        onClose,
+        true,
+    )
 
     const { Gesture, Spring } = useAnimationLibs()
-    const [{ y }, api] = Spring.useSpring(() => ({ y: height }))
+    const [{ y }, api] = Spring.useSpring(() => ({y: height}))
 
     const open = useCallback(() => {
         api.start({
@@ -60,13 +61,7 @@ export const DrawerContent: FC<DrawerProps> = (props) => {
     }, [close, closeHandler])
 
     const bind = Gesture.useDrag(
-        ({
-            last,
-            velocity: [, vy],
-            direction: [, dy],
-            movement: [, my],
-            cancel,
-        }) => {
+        ({ last, velocity: [, vy], direction: [, dy], movement: [, my], cancel }) => {
             if (my < -70) cancel()
 
             if (last) {
@@ -102,10 +97,7 @@ export const DrawerContent: FC<DrawerProps> = (props) => {
                 className={classNames(cls.container, mods, [className, theme])}
                 onClick={downClickHandler}
             >
-                <div
-                    className={classNames(cls.overlay)}
-                    onTransitionEnd={onTransitionEnd}
-                />
+                <div className={classNames(cls.overlay)} onTransitionEnd={onTransitionEnd} />
                 <Spring.a.div
                     style={{
                         display,

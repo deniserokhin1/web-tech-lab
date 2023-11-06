@@ -18,28 +18,32 @@ interface AppLinkProps extends LinkProps {
     className?: string
     theme?: AppLinkTheme
     animation?: boolean
+    hovered?: boolean
 }
 
-export const AppLink = forwardRef(
-    (props: AppLinkProps, ref: ForwardedRef<HTMLAnchorElement>) => {
-        const {
-            className,
-            children,
-            to,
-            theme = AppLinkTheme.PRIMARY,
-            animation = false,
-            ...otherProps
-        } = props
-        const mods = { [cls.animation]: animation }
+export const AppLink = forwardRef((props: AppLinkProps, ref: ForwardedRef<HTMLAnchorElement>) => {
+    const {
+        className,
+        children,
+        to,
+        theme = AppLinkTheme.PRIMARY,
+        animation = false,
+        hovered,
+        ...otherProps
+    } = props
 
-        return (
-            <Link
-                to={to}
-                ref={ref}
-                className={classNames(cls.container, mods, [className, cls[theme]])}
-                children={children}
-                {...otherProps}
-            />
-        )
-    },
-)
+    const mods = {
+        [cls.animation]: animation,
+        [cls.hovered]: hovered,
+    }
+
+    return (
+        <Link
+            to={to}
+            ref={ref}
+            className={classNames(cls.container, mods, [className, cls[theme]])}
+            children={children}
+            {...otherProps}
+        />
+    )
+})

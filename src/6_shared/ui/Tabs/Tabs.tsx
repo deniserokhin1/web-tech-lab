@@ -21,9 +21,12 @@ interface TabsProps<T extends string> {
 export const Tabs = <T extends string>(props: TabsProps<T>): JSX.Element => {
     const { className, onTabClick, tabs, value } = props
 
-    const clickHandler = useCallback((tab: TabItem<T>) => () => {
-        onTabClick(tab.value)
-    }, [onTabClick])
+    const clickHandler = useCallback(
+        (tab: TabItem<T>) => () => {
+            onTabClick(tab.value)
+        },
+        [onTabClick],
+    )
 
     const mods = {}
 
@@ -36,6 +39,8 @@ export const Tabs = <T extends string>(props: TabsProps<T>): JSX.Element => {
                     theme={tab.value === value ? CardTheme.OUTLINED : CardTheme.DEFAULT}
                     onClick={clickHandler(tab)}
                     smallPadding={true}
+                    hover={true}
+                    border={true}
                 >
                     {tab.content}
                 </Card>

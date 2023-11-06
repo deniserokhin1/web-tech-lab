@@ -21,12 +21,6 @@
     border: none;
 }
 
-.container {
-    position: relative;
-    display: flex;
-    font-family: var(--font-family-main);
-}
-
 .animate {
     &:active {
         transform: scale(0.97);
@@ -82,4 +76,14 @@
 
 .maxWidth {
     width: 100%;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    font-family: var(--font-family-main);
+
+    &:hover {
+        filter: brightness(0.9);
+    }
 }

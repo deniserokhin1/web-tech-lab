@@ -86,7 +86,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         content = <Text title={t('article-details.Статья не найдена')} />
     } else {
         content = (
-            <VStack gap="16">
+            <VStack gap="16" max={true}>
                 <AppImage
                     fallback={<Skeleton width="100%" height={300} borderRadius={4} />}
                     errorFallback={<Skeleton width="100%" height={300} borderRadius={4} />}

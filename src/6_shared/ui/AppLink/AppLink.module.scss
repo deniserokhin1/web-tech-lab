@@ -2,12 +2,18 @@
     display: flex;
     transition: transform var(--theme-transition);
     transform-origin: center;
-
 }
 
 .animation {
     &:active {
         transform: translateY(2px);
+    }
+}
+
+.hovered {
+    &:hover {
+        background: var(--link-hover);
+        border-radius: 4px;
     }
 }
 

@@ -3,12 +3,7 @@ import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { useAppDispatch, useAppSelector } from '@/1_app/providers/StoreProvider'
-import {
-    getUserAuthData,
-    isUserAdmin,
-    isUserManager,
-    userActions,
-} from '@/5_entities/User'
+import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/5_entities/User'
 import { routePath } from '@/6_shared/const/router'
 import { Avatar } from '@/6_shared/ui/Avatar'
 import { Dropdown } from '@/6_shared/ui/Popups'
@@ -27,6 +22,8 @@ export const AvatarDropDown = memo((props: AvatarDropDownProps) => {
     const authData = useAppSelector(getUserAuthData)
     const isAdmin = useAppSelector(isUserAdmin)
     const isManager = useAppSelector(isUserManager)
+
+    console.log('authData:', authData)
 
     const isAdminPanelAvaliable = isAdmin || isManager
 

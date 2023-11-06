@@ -55,7 +55,9 @@
     "Рекомендуем": "We recommend",
     "Редактировать": "Edit",
     "Редактирование статьи": "Editing an article",
-    "Создание новой статьи": "Creating a new article"
+    "Создание новой статьи": "Creating a new article",
+    "Оцените статью": "Rate this article",
+    "Оставьте отзыв": "Leave a review. This helps improve quality."
   },
   "articles-list": {
     "Поиск по статьям": "Search by articles",
@@ -66,9 +68,16 @@
     "Наука": "Science",
     "Статьи не найдены": "Articles not found."
   },
-  "У вас нет доступа к этой странице": "You do not have access to this page.",
+  "У вас нет доступа к этой странице": {
+    "": "You do not have access to this page."
+  },
   "Админ панель": "Admin panel",
   "Закрыть": "Close",
   "Ок": "Ok",
-  "Отправить": "Send"
+  "Отправить": "Send",
+  "Логин": "Login",
+  "Админка": "Admin",
+  "admin": {
+    "Это защищённый маршрут": "This is a protected route. It is only available to users who have the administrator role."
+  }
 }

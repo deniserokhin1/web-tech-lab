@@ -13,7 +13,6 @@ import { useAppDispatch, useAppSelector } from './providers/StoreProvider/config
 
 export const App = (): JSX.Element => {
     const { theme } = useTheme()
-    const mods = {}
 
     const dispatch = useAppDispatch()
     const { setPrimaryColor, setSecondaryColor, setBgColor } = uiActions
@@ -41,10 +40,8 @@ export const App = (): JSX.Element => {
         setSecondaryColor,
     ])
 
-    console.log('start App')
-
     return (
-        <div className={classNames('main', mods, [theme])} ref={mainRef}>
+        <div className={classNames('main', {}, [theme])} ref={mainRef}>
             <Suspense>
                 <Navbar />
 

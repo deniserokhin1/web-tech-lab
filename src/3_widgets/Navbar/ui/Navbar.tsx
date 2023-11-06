@@ -46,10 +46,7 @@ export const Navbar: FC<NavbarProps> = memo((props) => {
     return (
         <header className={classNames(cls.container)}>
             <div className={cls.links}>
-                <Button
-                    theme={ButtonTheme.CLEAR_INVERT}
-                    onClick={onToggleModal}
-                >
+                <Button theme={ButtonTheme.CLEAR_INVERT} onClick={onToggleModal}>
                     {t('Войти')}
                 </Button>
 

@@ -12,7 +12,7 @@ import { useArticleRating, useRateArticle } from '../../api/articleRatingApi'
 
 import cls from './ArticleRating.module.scss'
 
-const namespace = __IS_DEV__ ? 'translation' : 'namespace'
+const namespace = __IS_DEV__ ? 'translation' : 'article-details'
 
 export interface ArticleRatingProps {
     className?: string
@@ -74,8 +74,8 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
     return (
         <Rating
             className={classNames(cls.container, {}, [className])}
-            title={t('Оцените статью')}
-            feedBackTitle={t('Оставьте отзыв. Это поможет улучшить качество.')}
+            title={t('article-details.Оцените статью')}
+            feedBackTitle={t('article-details.Оставьте отзыв')}
             rate={rating?.rate}
             onAccept={onAccept}
             onCancel={onCancel}

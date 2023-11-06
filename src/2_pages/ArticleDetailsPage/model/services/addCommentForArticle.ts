@@ -1,6 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
-import { type StateSchema, type ThunkConfig } from '@/1_app/providers/StoreProvider/config/StateSchema'
+import {
+    type StateSchema,
+    type ThunkConfig,
+} from '@/1_app/providers/StoreProvider/config/StateSchema'
+import { addNewCommentActions } from '@/4_features/AddNewComment'
 import { getArticleDetailsData } from '@/5_entities/Article'
 import { type IComment } from '@/5_entities/Comment'
 import { getUserAuthData } from '@/5_entities/User'
@@ -26,6 +30,8 @@ export const addCommentForArticle = createAsyncThunk<IComment, string, ThunkConf
             })
 
             if (!response.data) throw new Error()
+
+            dispatch(addNewCommentActions.setClick(true))
 
             return response.data
         } catch (error) {

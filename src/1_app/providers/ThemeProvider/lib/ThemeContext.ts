@@ -3,7 +3,11 @@ import { createContext } from 'react'
 export enum Theme {
     DARK = 'dark',
     LIGHT = 'light',
-    GREEN = 'green'
+    GREEN = 'green',
+    RED = 'red',
+    ORANGE = 'orange',
+    CIAN = 'cian',
+    BLACK = 'black',
 }
 
 export enum Sidebar {

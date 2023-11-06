@@ -2,12 +2,13 @@ import { Fragment, memo, useMemo, type ReactNode } from 'react'
 
 import { Listbox as HListbox } from '@headlessui/react'
 
-import { IconComponent, classNames } from '@/6_shared/lib'
+import Check from '@/6_shared/assets/check.svg'
+import { classNames } from '@/6_shared/lib'
 
 import { Button } from '../../../Button'
 import { ButtonTheme } from '../../../Button/Button'
+import { Icon } from '../../../Icon'
 import popUpCls from '../styles/popup.module.scss'
-
 
 import cls from './ListBox.module.scss'
 
@@ -28,7 +29,7 @@ export interface HListboxProps {
 }
 
 export const ListBox = memo((props: HListboxProps) => {
-    const { className, items, defaultValue, onChange, value, readonly, color } = props
+    const { className, items, defaultValue, onChange, value, readonly } = props
 
     const buttonTitle = useMemo(() => {
         return items?.find((i) => i.value === value)?.content
@@ -65,9 +66,7 @@ export const ListBox = memo((props: HListboxProps) => {
                                     [cls.disabled]: item.unavailable,
                                 })}
                             >
-                                {selected && (
-                                    <IconComponent name="check" pathFill={color} />
-                                )}
+                                <Icon Svg={Check} opacity={selected ? 1 : 0} />
 
                                 {item.content}
                             </li>

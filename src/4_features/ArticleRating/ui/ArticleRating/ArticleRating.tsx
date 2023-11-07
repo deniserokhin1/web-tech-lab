@@ -75,8 +75,8 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
     return (
         <Rating
             className={classNames(cls.container, {}, [className])}
-            title={t('article-details.Оцените статью')}
-            feedBackTitle={t('article-details.Оставьте отзыв')}
+            title={t('Оцените статью')}
+            feedBackTitle={t('Оставьте отзыв')}
             rate={rating?.rate}
             onAccept={onAccept}
             onCancel={onCancel}

@@ -27,11 +27,11 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
         () => [
             {
                 value: 'asc',
-                content: t('article-details.возрастанию'),
+                content: t('возрастанию'),
             },
             {
                 value: 'desc',
-                content: t('article-details.убыванию'),
+                content: t('убыванию'),
             },
         ],
         [t],
@@ -41,15 +41,15 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
         () => [
             {
                 value: ArticleSortFeild.CREATED,
-                content: t('article-details.дате создания'),
+                content: t('дате создания'),
             },
             {
                 value: ArticleSortFeild.TITLE,
-                content: t('article-details.названию'),
+                content: t('названию'),
             },
             {
                 value: ArticleSortFeild.VIEWS,
-                content: t('article-details.просмотрам'),
+                content: t('просмотрам'),
             },
         ],
         [t],
@@ -60,14 +60,14 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
     return (
         <HStack gap="16" className={classNames('', mods, [className])}>
             <Select<ArticleSortFeild>
-                label={t('article-details.Сортировать по')}
+                label={t('Сортировать по')}
                 options={sortFeildOptions}
                 labelFitContent={true}
                 value={sort}
                 onChange={onChangeSort}
             />
             <Select<SortOrder>
-                label={t('article-details.по')}
+                label={t('по')}
                 options={orderOptions}
                 labelFitContent={true}
                 value={order}

@@ -23,8 +23,8 @@ const ArticleEditPage = memo((props: ArticleEditPageProps) => {
     const { t } = useTranslation(namespace)
 
     const title = isEdit
-        ? t('article-details.Редактирование статьи') + ` –– id ${id}`
-        : t('article-details.Создание новой статьи')
+        ? t('Редактирование статьи') + ` –– id ${id}`
+        : t('Создание новой статьи')
 
     const mods = {}
 

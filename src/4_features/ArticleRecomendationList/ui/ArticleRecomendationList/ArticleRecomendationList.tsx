@@ -25,7 +25,7 @@ export const ArticleRecomendationList = memo((props: ArticleRecomendationListPro
 
     return (
         <VStack gap="16" max={true}>
-            <Text title={t('article-details.Рекомендуем')} align={TextAlign.LEFT} />
+            <Text title={t('Рекомендуем')} align={TextAlign.LEFT} />
 
             <ArticleList
                 articles={articles}

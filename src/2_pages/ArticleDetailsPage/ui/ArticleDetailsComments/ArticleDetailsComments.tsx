@@ -47,7 +47,7 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
 
     return (
         <VStack gap="16" className={classNames(cls.container, mods, [className])}>
-            <Text title={t('article-details.Комментарии')} align={TextAlign.LEFT} />
+            <Text title={t('Комментарии')} align={TextAlign.LEFT} />
             <CommentList comments={comments} isLoading={commentsIsLoading} />
             <Suspense>
                 <AddCommentForm onSendComment={onSendComment} />

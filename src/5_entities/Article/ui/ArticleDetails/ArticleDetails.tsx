@@ -83,7 +83,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
             </VStack>
         )
     } else if (error) {
-        content = <Text title={t('article-details.Статья не найдена')} />
+        content = <Text title={t('Статья не найдена')} />
     } else {
         content = (
             <VStack gap="16" max={true}>

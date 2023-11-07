@@ -121,7 +121,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFilterProps) => {
                 <ArticleViewSelector view={view} onViewClick={onChangeArticleView} />
             </div>
             <Input
-                placeholder={t('articles-list.Поиск по статьям')}
+                placeholder={t('Поиск по статьям')}
                 onChange={onChangeSearch}
                 value={search}
             />

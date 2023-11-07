@@ -54,11 +54,11 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
                 <Input
                     value={commentText}
                     onChange={onCommentTextChange}
-                    placeholder={t('article-details.Введите текст комментария')}
+                    placeholder={t('Введите текст комментария')}
                     className={cls.borderInput}
                 />
                 <Button
-                    children={t('article-details.Отправить')}
+                    children={t('Отправить')}
                     theme={ButtonTheme.BACKGROUND}
                     onClick={onSendHandler}
                     disabled={commentText === ''}

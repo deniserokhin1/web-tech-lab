@@ -27,7 +27,7 @@ export const CommentList = memo((props: CommentListProps) => {
                     <CommentCard comment={comment} key={index} isLoading={isLoading} />
                 ))
             ) : (
-                <Text text={t('article-details.Комментарии отсутствуют')} align={TextAlign.LEFT} />
+                <Text text={t('Комментарии отсутствуют')} align={TextAlign.LEFT} />
             )}
         </VStack>
     )

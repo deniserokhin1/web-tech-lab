@@ -38,7 +38,7 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
             className={classNames('')}
             value={value}
             onChange={onChangeHandler}
-            label={t('profile.Страна') as string}
+            label={t('Страна') as string}
             options={options}
             readonly={readonly}
         />

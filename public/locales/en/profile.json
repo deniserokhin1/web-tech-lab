@@ -1,0 +1,21 @@
+{
+    "Профиль": "Profile",
+    "Редактировать": " Edit",
+    "Ваше имя": "Name",
+    "Ваша фамилия": "Last name",
+    "Ошибка при загрузке профиля": "Error loading profile",
+    "Перезагрузите страницу": "Reload the page",
+    "Сохранить": "Save",
+    "Отменить": "Cancel",
+    "Возраст": "Age",
+    "Город": "City",
+    "Имя пользователя": "Username",
+    "Ссылка на аватар": "Link to your avatar",
+    "Валюта": "Currency",
+    "Страна": "Country",
+    "Ошибка сервера": "Server error",
+    "Некорректный возраст": "Incorrect age",
+    "Некорректная страна": "Incorrect country",
+    "Некорректные данные": "Incorrect data",
+    "Нет данных": "No data"
+}

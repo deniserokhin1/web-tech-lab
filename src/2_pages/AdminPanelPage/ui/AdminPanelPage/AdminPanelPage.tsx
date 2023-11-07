@@ -24,7 +24,7 @@ const AdminPanelPage = memo((props: AdminPanelPageProps) => {
             <Text title={t('Админ панель')} align={TextAlign.LEFT} />
 
             <Card className={cls.marginCard} fitContent>
-                <Text text={t('admin.Это защищённый маршрут')} align={TextAlign.LEFT} />
+                <Text text={t('Это защищённый маршрут')} align={TextAlign.LEFT} />
             </Card>
         </PageWrapper>
     )

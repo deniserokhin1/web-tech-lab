@@ -8,7 +8,7 @@ import { Text, TextAlign } from '@/6_shared/ui/Text'
 
 import cls from './ForbiddenPage.module.scss'
 
-const namespace = __IS_DEV__ ? 'translation' : ''
+const namespace = __IS_DEV__ ? 'translation' : 'admin'
 
 interface ForbiddenPageProps {
     className?: string
@@ -20,7 +20,7 @@ const ForbiddenPage = memo((props: ForbiddenPageProps) => {
 
     return (
         <PageWrapper className={classNames(cls.container, {}, [className])}>
-            <Text title={t('У вас нет доступа к этой странице.')} align={TextAlign.LEFT} />
+            <Text title={t('У вас нет доступа к этой странице')} align={TextAlign.LEFT} />
         </PageWrapper>
     )
 })

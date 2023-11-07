@@ -30,6 +30,8 @@ interface ProfileCardProps {
     onChangeCountry?: (value: Country) => void
 }
 
+const namespace = __IS_DEV__ ? 'translation' : 'profile'
+
 export const ProfileCard: FC<ProfileCardProps> = (props) => {
     const {
         data,
@@ -46,7 +48,6 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         onChangeCountry,
     } = props
 
-    const namespace = __IS_DEV__ ? 'translation' : 'profile'
     const { t } = useTranslation(namespace)
 
     if (isLoading) {
@@ -57,8 +58,8 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         return (
             <Text
                 theme={TextTheme.ERROR}
-                title={t('profile.Ошибка при загрузке профиля')}
-                text={t('profile.Перезагрузите страницу')}
+                title={t('Ошибка при загрузке профиля')}
+                text={t('Перезагрузите страницу')}
             />
         )
     }
@@ -72,7 +73,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
             )}
 
             <HStack gap="16" max={true}>
-                <Text text={t('profile.Ваше имя')} align={TextAlign.LEFT} />
+                <Text text={t('Ваше имя')} align={TextAlign.LEFT} />
                 <Input
                     value={data?.first}
                     onChange={onChangeFirstName}
@@ -82,7 +83,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
             </HStack>
 
             <HStack gap="16" max={true}>
-                <Text text={t('profile.Ваша фамилия')} align={TextAlign.LEFT} />
+                <Text text={t('Ваша фамилия')} align={TextAlign.LEFT} />
                 <Input
                     value={data?.lastname}
                     onChange={onChangeLasttName}
@@ -92,45 +93,23 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
             </HStack>
 
             <HStack gap="16" max={true}>
-                <Text text={t('profile.Возраст')} align={TextAlign.LEFT} />
-                <Input
-                    value={data?.age}
-                    onChange={onChangeAge}
-                    readOnly={readonly}
-                />
+                <Text text={t('Возраст')} align={TextAlign.LEFT} />
+                <Input value={data?.age} onChange={onChangeAge} readOnly={readonly} />
             </HStack>
 
             <HStack gap="16" max={true}>
-                <Text text={t('profile.Город')} align={TextAlign.LEFT} />
-                <Input
-                    value={data?.city}
-                    onChange={onChangeCity}
-                    readOnly={readonly}
-                />
+                <Text text={t('Город')} align={TextAlign.LEFT} />
+                <Input value={data?.city} onChange={onChangeCity} readOnly={readonly} />
             </HStack>
 
             <HStack gap="16" max={true}>
-                <Text
-                    text={t('profile.Имя пользователя')}
-                    align={TextAlign.LEFT}
-                />
-                <Input
-                    value={data?.username}
-                    onChange={onChangeUsername}
-                    readOnly={readonly}
-                />
+                <Text text={t('Имя пользователя')} align={TextAlign.LEFT} />
+                <Input value={data?.username} onChange={onChangeUsername} readOnly={readonly} />
             </HStack>
 
             <HStack gap="16" max={true}>
-                <Text
-                    text={t('profile.Ссылка на аватар')}
-                    align={TextAlign.LEFT}
-                />
-                <Input
-                    value={data?.avatar}
-                    onChange={onChangeAvatar}
-                    readOnly={readonly}
-                />
+                <Text text={t('Ссылка на аватар')} align={TextAlign.LEFT} />
+                <Input value={data?.avatar} onChange={onChangeAvatar} readOnly={readonly} />
             </HStack>
 
             <CurrencySelect
@@ -139,11 +118,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                 readonly={readonly}
             />
 
-            <CountrySelect
-                value={data?.country}
-                onChange={onChangeCountry}
-                readonly={readonly}
-            />
+            <CountrySelect value={data?.country} onChange={onChangeCountry} readonly={readonly} />
         </VStack>
     )
 }

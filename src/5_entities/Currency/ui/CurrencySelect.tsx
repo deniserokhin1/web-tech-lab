@@ -39,7 +39,7 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
             className={classNames('')}
             value={value}
             onChange={onChangeHandler}
-            label={t('profile.Валюта')}
+            label={t('Валюта')}
             options={options}
             readonly={readonly}
             labelFitContent={widthFitContent}

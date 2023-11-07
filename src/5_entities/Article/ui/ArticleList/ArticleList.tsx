@@ -2,9 +2,7 @@ import { memo, type HTMLAttributeAnchorTarget, ReactNode } from 'react'
 
 import { useTranslation } from 'react-i18next'
 
-import { PageLoader } from '@/3_widgets/PageLoader'
 import { classNames } from '@/6_shared/lib'
-import { SpinerDots } from '@/6_shared/ui/SpinerDots'
 import { Text } from '@/6_shared/ui/Text'
 
 import { ArticleView, type IArticle } from '../../model/types/article'
@@ -52,8 +50,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     return (
         <div className={classNames(cls[view], {}, [className])}>
             {articles?.map((i) => renderArticle(i, view))}
-
-            {/* {isLoading && skeletons(view)} */}
+            {isLoading && skeletons(view)}
         </div>
     )
 })

@@ -21,6 +21,7 @@ export const fetchArticleRecommendations = createAsyncThunk<IArticle[], void, Th
 
             return response.data
         } catch (error) {
+            // eslint-disable-next-line no-console
             console.log(error)
             return rejectWithValue('Error while fetching articles.')
         }

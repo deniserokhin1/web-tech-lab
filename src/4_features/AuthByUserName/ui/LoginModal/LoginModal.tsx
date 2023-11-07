@@ -4,7 +4,6 @@ import { PageLoader } from '@/3_widgets/PageLoader'
 import { Modal } from '@/6_shared/ui/Modal'
 import { SpinerDotsTheme } from '@/6_shared/ui/SpinerDots'
 
-import LoginForm from '../LoginForm/LoginForm'
 import { LoginFormAsync } from '../LoginForm/LoginForm.async'
 
 interface LoginModalProps {

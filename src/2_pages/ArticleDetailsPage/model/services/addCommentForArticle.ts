@@ -35,6 +35,7 @@ export const addCommentForArticle = createAsyncThunk<IComment, string, ThunkConf
 
             return response.data
         } catch (error) {
+            // eslint-disable-next-line no-console
             console.log(error)
             return rejectWithValue('Error while posting comment.')
         } finally {

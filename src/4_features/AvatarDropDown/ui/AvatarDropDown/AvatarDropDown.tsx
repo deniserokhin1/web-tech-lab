@@ -23,8 +23,6 @@ export const AvatarDropDown = memo((props: AvatarDropDownProps) => {
     const isAdmin = useAppSelector(isUserAdmin)
     const isManager = useAppSelector(isUserManager)
 
-    console.log('authData:', authData)
-
     const isAdminPanelAvaliable = isAdmin || isManager
 
     const onLogout = useCallback(() => {

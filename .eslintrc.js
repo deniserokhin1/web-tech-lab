@@ -26,15 +26,9 @@ module.exports = {
         sourceType: 'module',
         project: './tsconfig.json',
     },
-    plugins: [
-        'react',
-        'i18next',
-        'react-hooks',
-        'yo-common',
-        'unused-imports',
-        'import',
-    ],
+    plugins: ['react', 'i18next', 'react-hooks', 'yo-common', 'unused-imports', 'import'],
     rules: {
+        'no-console': 'error',
         '@typescript-eslint/prefer-nullish-coalescing': 0,
         '@typescript-eslint/strict-boolean-expressions': 0,
         'react/react-in-jsx-scope': 0,
@@ -67,11 +61,7 @@ module.exports = {
             'error',
             {
                 alias: '@',
-                testFilesPatterns: [
-                    '**/*.test.*',
-                    '**/*.stories.*',
-                    '**/StoreDecorator.tsx',
-                ],
+                testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
             },
         ],
         'react/jsx-max-props-per-line': ['error', { maximum: 4 }],

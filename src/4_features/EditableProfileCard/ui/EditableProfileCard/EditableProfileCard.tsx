@@ -44,8 +44,6 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     const validateErrors = useAppSelector(getProfileValidateErrors)
     const { id } = useParams<{ id: string }>()
 
-    console.log('formData:', formData)
-
     const validateErrorTranslate = {
         [ValidateProfileErrors.SERVER_ERROR]: t('profile.Ошибка сервера'),
         [ValidateProfileErrors.INCORRECT_AGE]: t('profile.Некорректный возраст'),

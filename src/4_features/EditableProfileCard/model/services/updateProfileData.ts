@@ -27,15 +27,7 @@ export const updateProfileData = createAsyncThunk<
     }
 
     try {
-        const response = await extra.api.put<IProfile>(
-            `/profile/${formData?.id}`,
-            formData,
-            // {
-            //     headers: {
-            //         authorization: localStorage.getItem(USER_LOCALSTORAGE_KEY) || '',
-            //     },
-            // }
-        )
+        const response = await extra.api.put<IProfile>(`/profile/${formData?.id}`, formData)
 
         if (!response.data) {
             throw new Error()
@@ -43,6 +35,7 @@ export const updateProfileData = createAsyncThunk<
 
         return response.data
     } catch (error) {
+        // eslint-disable-next-line no-console
         console.log(error)
         return rejectWithValue([ValidateProfileErrors.SERVER_ERROR])
     }

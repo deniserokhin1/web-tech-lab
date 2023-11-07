@@ -41,6 +41,7 @@ export const updateUserData = createAsyncThunk<IUser, void, ThunkConfig<Validate
 
             return response.data
         } catch (error) {
+            // eslint-disable-next-line no-console
             console.log(error)
             return rejectWithValue([ValidateProfileErrors.SERVER_ERROR])
         }

@@ -45,11 +45,11 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     const { id } = useParams<{ id: string }>()
 
     const validateErrorTranslate = {
-        [ValidateProfileErrors.SERVER_ERROR]: t('profile.Ошибка сервера'),
-        [ValidateProfileErrors.INCORRECT_AGE]: t('profile.Некорректный возраст'),
-        [ValidateProfileErrors.INCORRECT_COUNTRY]: t('profile.Некорректная страна'),
-        [ValidateProfileErrors.INCORRECT_USER_DATA]: t('profile.Некорректные данные'),
-        [ValidateProfileErrors.NO_DATA]: t('profile.Нет данных'),
+        [ValidateProfileErrors.SERVER_ERROR]: t('Ошибка сервера'),
+        [ValidateProfileErrors.INCORRECT_AGE]: t('Некорректный возраст'),
+        [ValidateProfileErrors.INCORRECT_COUNTRY]: t('Некорректная страна'),
+        [ValidateProfileErrors.INCORRECT_USER_DATA]: t('Некорректные данные'),
+        [ValidateProfileErrors.NO_DATA]: t('Нет данных'),
     }
 
     useInitialEffect(() => {

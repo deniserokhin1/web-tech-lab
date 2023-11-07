@@ -8,15 +8,13 @@ import { routePath } from '@/6_shared/const/router'
 import { Avatar } from '@/6_shared/ui/Avatar'
 import { Dropdown } from '@/6_shared/ui/Popups'
 
-const namespace = __IS_DEV__ ? 'translation' : 'namespace'
-
 interface AvatarDropDownProps {
     className?: string
 }
 
 export const AvatarDropDown = memo((props: AvatarDropDownProps) => {
     const { className } = props
-    const { t } = useTranslation(namespace)
+    const { t } = useTranslation()
     const dispatch = useAppDispatch()
 
     const authData = useAppSelector(getUserAuthData)

@@ -1,4 +1,5 @@
 {
     "У вас нет доступа к этой странице": "You do not have access to this page.",
-    "Это защищённый маршрут": "This is a protected route. It is only available to users who have the administrator role."
+    "Это защищённый маршрут": "This is a protected route. It is only available to users who have the administrator role.",
+    "Админ панель": "Admin panel"
 }

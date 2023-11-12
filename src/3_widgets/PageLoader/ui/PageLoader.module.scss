@@ -4,8 +4,8 @@
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: opacity 0.3s;
-    transition-delay: 0.3s;
+    transition: opacity 0.1s;
+    transition-delay: 0.1s;
 
     &.big {
         width: calc(100vw - var(--sidebar-width-closed));

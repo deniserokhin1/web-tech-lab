@@ -17,9 +17,16 @@ export const SpinerDots: FC<SpinerDotsProps> = (props): JSX.Element => {
     const { theme = SpinerDotsTheme.DEFAULT } = props
     return (
         <div className={styles.div_spiner}>
-            <svg className="svg" width={50} height={50} viewBox={'0 0 23 24'}>
+            <svg 
+                className="svg" 
+                width={50} 
+                height={50} 
+                viewBox={'0 0 23 24'}
+            >
                 <circle
-                    className={classNames(styles.spinner_qM83, {}, [styles[theme]])}
+                    className={classNames(styles.spinner_qM83, {}, [
+                        styles[theme],
+                    ])}
                     cx="4"
                     cy="12"
                     r="3"

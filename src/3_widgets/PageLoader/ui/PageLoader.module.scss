@@ -3,7 +3,9 @@
     flex-grow: 1;
     align-items: center;
     justify-content: center;
-    transition: all var(--animation-transition);
+    opacity: 0;
+    transition: opacity 0.3s;
+    transition-delay: 0.3s;
 
     &.big {
         width: calc(100vw - var(--sidebar-width-closed));
@@ -14,4 +16,8 @@
         width: calc(100vw - var(--sidebar-width));
         margin-left: var(--sidebar-width);
     }
+}
+
+.show {
+    opacity: 1;
 }

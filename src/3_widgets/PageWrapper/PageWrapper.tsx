@@ -1,9 +1,22 @@
-import { useRef, type MutableRefObject, type ReactNode, type UIEvent, useEffect } from 'react'
+import {
+    useRef,
+    type MutableRefObject,
+    type ReactNode,
+    type UIEvent,
+    useEffect,
+} from 'react'
 
 import { useLocation } from 'react-router-dom'
 
-import { useAppDispatch, useAppSelector, type StateSchema } from '@/1_app/providers/StoreProvider'
-import { addNewCommentActions, getAddCommentClick } from '@/4_features/AddNewComment'
+import {
+    useAppDispatch,
+    useAppSelector,
+    type StateSchema,
+} from '@/1_app/providers/StoreProvider'
+import {
+    addNewCommentActions,
+    getAddCommentClick,
+} from '@/4_features/AddNewComment'
 import { getUIScrollByPath, uiActions, getIsScrolling } from '@/4_features/UI'
 import Up from '@/6_shared/assets/up.svg'
 import { useDebouce } from '@/6_shared/hooks/useDebounce'
@@ -47,17 +60,20 @@ export const PageWrapper = (props: PageWrapperProps): JSX.Element => {
         wrapperRef.current.scrollTop = scrollPosition
     })
 
-    const scrollHandlerPosition = useDebouce((e: UIEvent<HTMLDivElement>): void => {
-        // if (pathname.match(/\/articles\/\d+/g)?.length) return
+    const scrollHandlerPosition = useDebouce(
+        (e: UIEvent<HTMLDivElement>): void => {
+            // if (pathname.match(/\/articles\/\d+/g)?.length) return
 
-        const target = e.target as HTMLElement
-        dispatch(
-            setScrollPosition({
-                path: pathname,
-                position: target.scrollTop,
-            }),
-        )
-    }, 100)
+            const target = e.target as HTMLElement
+            dispatch(
+                setScrollPosition({
+                    path: pathname,
+                    position: target.scrollTop,
+                }),
+            )
+        },
+        100,
+    )
 
     const scrollEndHandler = useDebouce((): void => {
         dispatch(setScrolling(false))
@@ -103,7 +119,12 @@ export const PageWrapper = (props: PageWrapperProps): JSX.Element => {
         >
             {children}
 
-            <Card className={cls.upButton} fitContent padding={2} borderRadius={50}>
+            <Card
+                className={cls.upButton}
+                fitContent
+                padding={2}
+                borderRadius={50}
+            >
                 <Icon Svg={Up} onClick={upHandler} />
             </Card>
 

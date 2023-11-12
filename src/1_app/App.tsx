@@ -11,7 +11,10 @@ import { useDetectDevice } from '@/6_shared/hooks/useDetectDevice'
 import { useGetMainColor } from '@/6_shared/hooks/useGetMainColor'
 import { classNames } from '@/6_shared/lib'
 
-import { useAppDispatch, useAppSelector } from './providers/StoreProvider/config/store'
+import {
+    useAppDispatch,
+    useAppSelector,
+} from './providers/StoreProvider/config/store'
 
 export const App = (): JSX.Element => {
     const { theme } = useTheme()
@@ -49,14 +52,14 @@ export const App = (): JSX.Element => {
             {isMobile ? (
                 <MobilePage />
             ) : (
-                <Suspense>
+                <>
                     <Navbar />
 
                     <div className="content">
                         <Sidebar color={bgColor} />
                         {inited && <AppRouter />}
                     </div>
-                </Suspense>
+                </>
             )}
         </div>
     )

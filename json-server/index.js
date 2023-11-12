@@ -3,20 +3,20 @@ const jsonServer = require('json-server')
 const path = require('path')
 const https = require('https')
 
-const options = {
-    key: fs.readFileSync(
-        path.resolve(
-            __dirname,
-            '/etc/letsencrypt/live/yocommon.com/privkey.pem',
-        ),
-    ),
-    cert: fs.readFileSync(
-        path.resolve(
-            __dirname,
-            '/etc/letsencrypt/live/yocommon.com/fullchain.pem',
-        ),
-    ),
-}
+// const options = {
+//     key: fs.readFileSync(
+//         path.resolve(
+//             __dirname,
+//             '/etc/letsencrypt/live/yocommon.com/privkey.pem',
+//         ),
+//     ),
+//     cert: fs.readFileSync(
+//         path.resolve(
+//             __dirname,
+//             '/etc/letsencrypt/live/yocommon.com/fullchain.pem',
+//         ),
+//     ),
+// }
 
 const server = jsonServer.create()
 
@@ -83,8 +83,8 @@ server.use((req, res, next) => {
 
 server.use(router)
 
-const httpsServer = https.createServer(options, server)
+// const httpsServer = https.createServer(options, server)
 
-httpsServer.listen(8443, () => {
+server.listen(8443, () => {
     console.log('server is running on 8443 port')
 })

@@ -26,7 +26,14 @@ module.exports = {
         sourceType: 'module',
         project: './tsconfig.json',
     },
-    plugins: ['react', 'i18next', 'react-hooks', 'yo-common', 'unused-imports', 'import'],
+    plugins: [
+        'react',
+        'i18next',
+        'react-hooks',
+        'yo-common',
+        'unused-imports',
+        'import',
+    ],
     rules: {
         'no-console': 1,
         '@typescript-eslint/prefer-nullish-coalescing': 0,
@@ -39,7 +46,10 @@ module.exports = {
         '@typescript-eslint/naming-convention': 0,
         'linebreak-style': ['error', 'unix'],
         'react/display-name': 0,
-        'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid'] }],
+        'i18next/no-literal-string': [
+            'error',
+            { markupOnly: true, ignoreAttribute: ['data-testid'] },
+        ],
         'no-duplicate-case': 0,
         indent: 0,
         'react-hooks/rules-of-hooks': 'error',
@@ -58,10 +68,14 @@ module.exports = {
             'error',
             {
                 alias: '@',
-                testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
+                testFilesPatterns: [
+                    '**/*.test.*',
+                    '**/*.stories.*',
+                    '**/StoreDecorator.tsx',
+                ],
             },
         ],
-        'react/jsx-max-props-per-line': ['error', { maximum: 3 }],
+        'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
         '@typescript-eslint/consistent-type-imports': 0,
         'import/order': [
             'error',

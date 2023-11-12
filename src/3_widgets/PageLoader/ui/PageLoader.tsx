@@ -1,4 +1,4 @@
-import { useEffect, type FC, useState } from 'react'
+import { type FC } from 'react'
 
 import { classNames } from '@/6_shared/lib'
 import { SpinerDots, type SpinerDotsTheme } from '@/6_shared/ui/SpinerDots'
@@ -14,16 +14,11 @@ interface PageLoaderProps {
 
 export const PageLoader: FC<PageLoaderProps> = (props) => {
     const { className, theme, stateSideBar, big = true } = props
-    const [show, setShow] = useState(false)
 
-    useEffect(() => {
-        setShow(true)
-    }, [])
 
     const mods = {
         [cls.big]: big,
         [cls.open]: stateSideBar,
-        [cls.show]: show,
     }
 
     return (

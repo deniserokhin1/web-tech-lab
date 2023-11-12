@@ -35,7 +35,7 @@ export const AppRouter = memo((): JSX.Element => {
     const mods = { open: stateSidebar }
 
     return (
-        <Suspense>
+        <Suspense fallback={<PageLoader stateSideBar={!!stateSidebar} />}>
             {
                 <div className={classNames('pageWrapper', mods)}>
                     <Routes>

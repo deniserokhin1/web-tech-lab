@@ -13,4 +13,8 @@
 
 .editButton {
     top: 130px;
+
+    @media (aspect-ratio <=4/3) and (width <=1000px) {
+        top: 110px;
+    }
 }

@@ -24,12 +24,10 @@ export const ArticleImageBlock = memo((props: ArticleImageBlockProps) => {
     return (
         <VStack gap="16" max={true} className={className}>
             <AppImage
-                fallback={<Skeleton height={300} borderRadius={4} />}
-                errorFallback={<Skeleton height={300} borderRadius={4} />}
+                fallback={<Skeleton className={cls.img} />}
+                errorFallback={<Skeleton className={cls.img} />}
                 className={cls.img}
                 src={src}
-                height={300}
-                width="100%"
             />
             <Text text={title} maxWidth={true} />
         </VStack>

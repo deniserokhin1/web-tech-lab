@@ -1,3 +1,3 @@
-import { lazy } from 'react'
+import { lazyWithPreload } from 'react-lazy-with-preload'
 
-export const AboutAsync = lazy(() => import('./About'))
+export const AboutAsync = lazyWithPreload(() => import('./About'))

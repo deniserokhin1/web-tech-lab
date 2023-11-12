@@ -1,4 +1,4 @@
-import { useRef, type MutableRefObject, type ReactNode, type UIEvent, useLayoutEffect } from 'react'
+import { useRef, type MutableRefObject, type ReactNode, type UIEvent, useEffect } from 'react'
 
 import { useLocation } from 'react-router-dom'
 
@@ -83,7 +83,7 @@ export const PageWrapper = (props: PageWrapperProps): JSX.Element => {
         [cls.show]: scrollPosition > 100,
     }
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         if (!isClickCommentForm) return
 
         const divScroll = wrapperRef.current
@@ -91,7 +91,7 @@ export const PageWrapper = (props: PageWrapperProps): JSX.Element => {
             top: divScroll.scrollHeight,
             behavior: 'smooth',
         })
-        
+
         dispatch(setClick(false))
     }, [dispatch, isClickCommentForm, setClick])
 
@@ -103,7 +103,7 @@ export const PageWrapper = (props: PageWrapperProps): JSX.Element => {
         >
             {children}
 
-            <Card className={cls.upButton} fitContent padding={5} borderRadius={50}>
+            <Card className={cls.upButton} fitContent padding={2} borderRadius={50}>
                 <Icon Svg={Up} onClick={upHandler} />
             </Card>
 

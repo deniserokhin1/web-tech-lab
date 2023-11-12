@@ -1,5 +1,7 @@
-import { type FC, lazy } from 'react'
+import { type FC } from 'react'
+
+import { lazyWithPreload } from 'react-lazy-with-preload'
 
 import { type LoginFrormProps } from './LoginForm'
 
-export const LoginFormAsync = lazy<FC<LoginFrormProps>>(() => import('./LoginForm'))
+export const LoginFormAsync = lazyWithPreload<FC<LoginFrormProps>>(() => import('./LoginForm'))

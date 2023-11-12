@@ -22,6 +22,11 @@
     opacity: 0;
     transition: all 0.3s ease-in-out;
     transform: scale(0);
+
+    svg {
+        width: clamp(20px, 5vw, 50px);
+        height: clamp(20px, 5vw, 50px);
+    }
 }
 
 .show {

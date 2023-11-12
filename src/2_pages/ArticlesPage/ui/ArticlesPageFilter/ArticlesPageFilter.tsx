@@ -18,6 +18,7 @@ import { IconComponent, classNames } from '@/6_shared/lib'
 import { type SortOrder } from '@/6_shared/types'
 import { AppLink } from '@/6_shared/ui/AppLink'
 import { Input } from '@/6_shared/ui/Input'
+import { HStack } from '@/6_shared/ui/Stack'
 
 import {
     getArticlesPageFilter,
@@ -56,13 +57,15 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFilterProps) => {
 
     const debouncedFetchData = useDebouce(fetchData, 500)
 
-    const onChangeArticleView = useCallback((view: ArticleView) => () => {
+    const onChangeArticleView = useCallback(
+        (view: ArticleView) => () => {
             dispatch(setView(view))
         },
         [dispatch, setView],
     )
 
-    const onChangeSort = useCallback((order: SortOrder): void => {
+    const onChangeSort = useCallback(
+        (order: SortOrder): void => {
             dispatch(setSort(order))
             dispatch(setPage(1))
             fetchData()
@@ -102,13 +105,15 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFilterProps) => {
 
     return (
         <div className={classNames(cls.container, mods, [className])}>
-            <div className={cls.wrapper}>
+            <HStack className={cls.wrapper}>
                 <div className={cls.leftSide}>
-                    <AppLink to={routePath.article_create()}>
-                        <IconComponent name="add" pathFill={primaryColor} />
-                    </AppLink>
+                    <HStack gap="16">
+                        <AppLink to={routePath.article_create()} style={{ display: 'none' }}>
+                            <IconComponent name="add" pathFill={primaryColor} />
+                        </AppLink>
 
-                    <ArticleTypeTabs onChangeType={onChangeType} value={type} />
+                        <ArticleTypeTabs onChangeType={onChangeType} value={type} />
+                    </HStack>
 
                     <ArticleSortSelector
                         order={order}
@@ -119,12 +124,9 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFilterProps) => {
                 </div>
 
                 <ArticleViewSelector view={view} onViewClick={onChangeArticleView} />
-            </div>
-            <Input
-                placeholder={t('Поиск по статьям')}
-                onChange={onChangeSearch}
-                value={search}
-            />
+            </HStack>
+
+            <Input placeholder={t('Поиск по статьям')} onChange={onChangeSearch} value={search} />
         </div>
     )
 })

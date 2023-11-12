@@ -1,0 +1,35 @@
+.container {
+    height: 100svh;
+    padding: clamp(20px, 2vw, 100px);
+
+    .svg {
+        position: relative;
+        width: clamp(100px, 15vw, 150px);
+        height: clamp(100px, 15vw, 150px);
+        animation: move 2s ease-in-out infinite;
+    }
+}
+
+.text {
+    hyphens: auto;
+}
+
+.bottom {
+    padding: 10px 0;
+    background: var(--i-bg-color);
+    border-radius: 4px;
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(-10px);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}

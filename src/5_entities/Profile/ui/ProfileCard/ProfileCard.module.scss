@@ -1,7 +1,7 @@
 .content {
-    padding: 25px;
+    padding: clamp(15px, 2vw, 25px);
     border: 1px solid var(--secondary-color);
-    border-radius: 2px;
+    border-radius: 4px;
 }
 
 .container {

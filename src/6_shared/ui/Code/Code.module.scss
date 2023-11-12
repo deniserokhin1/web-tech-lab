@@ -4,17 +4,22 @@
 }
 
 .code {
-    padding: 20px;
+    padding: clamp(10px, 1vw, 20px);
     overflow: auto;
     color: var(--secondary-color);
     background: var(--code-bg);
     border: 1px solid var(--primary-color);
     border-radius: 6px;
     transition: all var(--theme-transition);
+
+    svg {
+        width: clamp(10px, 3vw, 30px);
+        height: clamp(10px, 3vw, 30px);
+    }
 }
 
 .copyButton {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: clamp(5px, 1vw, 20px);
+    right: clamp(5px, 1vw, 20px);
 }

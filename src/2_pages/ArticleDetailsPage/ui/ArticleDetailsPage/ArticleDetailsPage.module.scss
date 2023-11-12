@@ -1,28 +1,4 @@
 .content {
-    width: 1000px;
+    width: clamp(470px, 60vw, 1500px);
     margin: 0 auto;
-
-    // @media screen and (width<=1280px) {
-    //     width: 800px;
-    // }
-
-    @media screen and (width<=1150px) {
-        width: 670px;
-    }
-
-    @media screen and (width<=1000px) {
-        width: 620px;
-    }
-
-    @media screen and (width<=910px) {
-        width: 570px;
-    }
-
-    @media screen and (width<=850px) {
-        width: 500px;
-    }
-
-    @media screen and (width<=780px) {
-        width: 470px;
-    }
 }

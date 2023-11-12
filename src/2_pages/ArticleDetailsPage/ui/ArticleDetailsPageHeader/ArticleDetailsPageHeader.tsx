@@ -17,45 +17,39 @@ interface ArticleDetailsPageHeaderProps {
     className?: string
 }
 
-export const ArticleDetailsPageHeader = memo(
-    (props: ArticleDetailsPageHeaderProps) => {
-        const { className } = props
-        const canArticleEdit = useAppSelector(getCanArticleEdit)
-        const article = useAppSelector(getArticleDetailsData)
-        const primaryColor = useAppSelector(getUIMainColor)
+export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderProps) => {
+    const { className } = props
+    const canArticleEdit = useAppSelector(getCanArticleEdit)
+    const article = useAppSelector(getArticleDetailsData)
+    const primaryColor = useAppSelector(getUIMainColor)
 
-        const navigate = useNavigate()
+    const navigate = useNavigate()
 
-        const onBackToList = useCallback(() => {
-            navigate(routePath.articles())
-        }, [navigate])
+    const onBackToList = useCallback(() => {
+        navigate(routePath.articles())
+    }, [navigate])
 
-        const onEditArticle = useCallback(() => {
-            if (article) navigate(routePath.article_edit(article.id))
-        }, [article, navigate])
+    const onEditArticle = useCallback(() => {
+        if (article) navigate(routePath.article_edit(article.id))
+    }, [article, navigate])
 
-        const mods = {}
+    const mods = {}
 
-        return (
-            <div className={classNames(cls.container, mods, [className])}>
+    return (
+        <div className={classNames(cls.container, mods, [className])}>
+            <Button onClick={onBackToList} className={classNames(cls.systemButton)}>
+                <IconComponent name="back" pathFill={primaryColor} />
+            </Button>
+
+            {canArticleEdit && (
                 <Button
-                    onClick={onBackToList}
-                    className={classNames(cls.systemButton)}
+                    style={{ display: 'none' }}
+                    onClick={onEditArticle}
+                    className={classNames(cls.systemButton, {}, [cls.editButton])}
                 >
-                    <IconComponent name="back" pathFill={primaryColor} />
+                    <IconComponent name="edit" pathFill={primaryColor} />
                 </Button>
-
-                {canArticleEdit && (
-                    <Button
-                        onClick={onEditArticle}
-                        className={classNames(cls.systemButton, {}, [
-                            cls.editButton,
-                        ])}
-                    >
-                        <IconComponent name="edit" pathFill={primaryColor} />
-                    </Button>
-                )}
-            </div>
-        )
-    },
-)
+            )}
+        </div>
+    )
+})

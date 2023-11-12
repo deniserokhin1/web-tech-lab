@@ -1,30 +1,46 @@
+@import '../zoom';
+
 :root {
     // Шрифт
     --font-family-main: arial, helvetica, sans-serif;
-    --font-size-s: 14px;
-    --font-line-s: 20px;
+
+    // S
+    --font-size-s: clamp(14px, 1vw, 18px);
+    --font-line-s: clamp(20px, 1vw, 28px);
     --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
-    --font-size-m: 16px;
-    --font-line-m: 24px;
+
+    // M
+    --font-size-m: clamp(14px, 1.15vw, 22px);
+    --font-line-m: clamp(22px, 1.75vw, 30px);
     --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
-    --font-size-l: 24px;
-    --font-line-l: 32px;
+
+    // ML
+    --font-size-ml: clamp(14px, 5.15vw, 22px);
+    --font-line-ml: clamp(22px, 7vw, 35px);
+    --font-ml: var(--font-size-ml) / var(--font-line-ml) var(--font-family-main);
+
+    // L
+    --font-size-l: clamp(24px, 2vw, 32px);
+    --font-line-l: clamp(32px, 2.5vw, 40px);
     --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
-    --font-size-xl: 32px;
-    --font-line-xl: 40px;
+
+    // XL
+    --font-size-xl: clamp(32px, 3vw, 40px);
+    --font-line-xl: clamp(40px, 3.5vw, 48px);
     --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
 
     // Размеры
     --navbar-height: 50px;
-    --sidebar-width: 250px;
-    --sidebar-width-closed: 80px;
-    --wrapper-padding: 25px;
+    --sidebar-width: clamp(170px, 17vw, 400px);
+    --sidebar-width-closed: clamp(50px, 4vw, 100px);
+    --wrapper-padding: clamp(15px, 2vw, 25px);
+    --min-width: clamp(150px, 10vw, 300px);
 
     // Переходы
     --theme-transition: 0.1s;
     --animation-transition: 0.5s;
 
-    // z-индексы
+    // z-индек
     --modal-z-index: 100;
 
     // Цвета
@@ -36,9 +52,4 @@
     --notification-color: #fff;
     --notification-bg: #00000075;
     --rating: #dfb703;
-
-
-    @media screen and (width<=1000px) {
-        --sidebar-width: 200px;
-    }
 }

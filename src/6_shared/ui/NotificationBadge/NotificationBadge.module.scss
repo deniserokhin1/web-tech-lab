@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 25px;
+    min-width: clamp(25px, 1.5vw, 30px);
     height: max-content;
     aspect-ratio: 1 / 1;
     padding: 0 2px;

@@ -3,9 +3,21 @@
     flex-direction: column;
     row-gap: 15px;
     align-items: center;
-    width: 350px;
+    width: clamp(250px, 25vw, 600px);
 }
 
 .border {
     border: 1px solid var(--i-secondary-color) !important;
+}
+
+.errorContainer {
+    height: clamp(30px, 5vw, 60px);
+    overflow: hidden;
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+.noerror {
+    height: 0;
+    opacity: 0;
 }

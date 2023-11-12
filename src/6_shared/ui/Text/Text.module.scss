@@ -14,7 +14,7 @@
 }
 
 .text {
-    min-width: 150px;
+    min-width: var(--min-width);
 }
 
 .size_s {
@@ -34,6 +34,12 @@
 
     .text {
         font: var(--font-m);
+    }
+}
+
+.size_ml {
+    .text {
+        font: var(--font-ml);
     }
 }
 
@@ -71,6 +77,12 @@
 
     .text {
         color: var(--i-secondary-color)
+    }
+}
+
+.default_invert_primary {
+    .text {
+        color: var(--i-primary-color);
     }
 }
 

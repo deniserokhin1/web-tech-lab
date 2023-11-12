@@ -1,5 +1,9 @@
 import { ImgHTMLAttributes, ReactNode, memo, useLayoutEffect, useState } from 'react'
 
+import { classNames } from '@/6_shared/lib'
+
+import cls from './AppImage.module.scss'
+
 interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
     className?: string
     fallback?: ReactNode
@@ -26,5 +30,12 @@ export const AppImage = memo((props: AppImageProps) => {
 
     if (hasError && errorFallback) return errorFallback
 
-    return <img className={className} src={src} alt={alt} {...otherProps} />
+    return (
+        <img
+            className={classNames(cls.container, {}, [className])}
+            src={src}
+            alt={alt}
+            {...otherProps}
+        />
+    )
 })

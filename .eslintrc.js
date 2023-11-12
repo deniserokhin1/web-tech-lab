@@ -28,7 +28,7 @@ module.exports = {
     },
     plugins: ['react', 'i18next', 'react-hooks', 'yo-common', 'unused-imports', 'import'],
     rules: {
-        'no-console': 'error',
+        'no-console': 1,
         '@typescript-eslint/prefer-nullish-coalescing': 0,
         '@typescript-eslint/strict-boolean-expressions': 0,
         'react/react-in-jsx-scope': 0,
@@ -39,10 +39,7 @@ module.exports = {
         '@typescript-eslint/naming-convention': 0,
         'linebreak-style': ['error', 'unix'],
         'react/display-name': 0,
-        'i18next/no-literal-string': [
-            'error',
-            { markupOnly: true, ignoreAttribute: ['data-testid'] },
-        ],
+        'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid'] }],
         'no-duplicate-case': 0,
         indent: 0,
         'react-hooks/rules-of-hooks': 'error',
@@ -64,7 +61,7 @@ module.exports = {
                 testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
             },
         ],
-        'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
+        'react/jsx-max-props-per-line': ['error', { maximum: 3 }],
         '@typescript-eslint/consistent-type-imports': 0,
         'import/order': [
             'error',

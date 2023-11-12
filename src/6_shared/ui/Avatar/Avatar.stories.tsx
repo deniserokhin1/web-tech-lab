@@ -13,8 +13,6 @@ const meta = {
         layout: 'fullscreen',
     },
     args: {
-        height: 100,
-        width: 100,
         src: 'https://img.freepik.com/free-vector/creative-hacker-logo-template_23-2149199402.jpg?w=2000',
     },
 } satisfies Meta<typeof Avatar>

@@ -71,7 +71,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             <div className={classNames(cls[view], mods, [className])} {...bindHover} ref={ref}>
                 <Card className={cls.card}>
                     <div className={cls.header}>
-                        <Avatar src={article?.user.avatar} size={30} />
+                        <Avatar src={article?.user.avatar} small />
 
                         <Text text={article?.user.username} className="" minWidth={true} />
 
@@ -85,8 +85,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     <AppImage
                         src={article?.img}
                         className={cls.img}
-                        fallback={<Skeleton borderRadius="6px" height={300} />}
-                        errorFallback={<Skeleton borderRadius="6px" height={300} />}
+                        fallback={<Skeleton borderRadius="6px" className={cls.img} />}
+                        errorFallback={<Skeleton borderRadius="6px" className={cls.img} />}
                     />
 
                     {textBlock && <ArticleTextBlock block={textBlock} short={true} />}
@@ -107,8 +107,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                 <Card className={cls.card} padding={padding} maxHeight={true}>
                     <div className={cls.imageWrapper}>
                         <AppImage
-                            fallback={<Skeleton borderRadius="4px" />}
-                            errorFallback={<Skeleton borderRadius="4px" />}
+                            fallback={<Skeleton borderRadius="4px" className={cls.img} />}
+                            errorFallback={<Skeleton borderRadius="4px" className={cls.img} />}
                             src={article?.img}
                             className={cls.img}
                         />

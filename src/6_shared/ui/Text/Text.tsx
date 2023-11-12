@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { ReactNode, memo } from 'react'
 
 import { classNames } from '@/6_shared/lib'
 
@@ -7,6 +7,7 @@ import cls from './Text.module.scss'
 export enum TextTheme {
     DEFAULT = 'default',
     DEFAULT_INVERT = 'default_invert',
+    DEFAULT_INVERT_PRIMARY = 'default_invert_primary',
     ERROR = 'error',
 }
 
@@ -19,6 +20,7 @@ export enum TextAlign {
 export enum TextSize {
     S = 'size_s',
     M = 'size_m',
+    ML = 'size_ml',
     L = 'size_l',
 }
 
@@ -31,6 +33,7 @@ interface TextProps {
     minWidth?: boolean
     maxWidth?: boolean
     size?: TextSize
+    children?: ReactNode
     'data-testid'?: string
 }
 
@@ -44,6 +47,7 @@ export const Text = memo((props: TextProps) => {
         align = TextAlign.CENTER,
         minWidth = false,
         maxWidth = false,
+        children,
         'data-testid': dataTestId = 'Text',
     } = props
 
@@ -71,6 +75,7 @@ export const Text = memo((props: TextProps) => {
                     data-testid={`${dataTestId}.text`}
                 >
                     {text}
+                    {children}
                 </p>
             )}
         </div>

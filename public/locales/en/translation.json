@@ -21,5 +21,12 @@
     "Ок": "Ok",
     "Отправить": "Send",
     "Логин": "Login",
-    "Админка": "Admin"
+    "Админка": "Admin",
+    "mobile": {
+        "Мобильная версия": "Sorry, the mobile version of the application is still under development, and some features might be unavailable on mobile devices. For the best experience, we recommend using a personal computer."
+    },
+    "Главная страница": "Main page",
+    "Добро пожаловать": "Hello! Welcome to my project. Its goal is the study and practical application of more than 40 technologies. I explore the unique capabilities of each technology, solve interesting problems and create amazing functionality. A partial list of technologies used is available ",
+    "здесь": "here.",
+    "403": "Invalid authorization data. Check out the «About page»."
 }

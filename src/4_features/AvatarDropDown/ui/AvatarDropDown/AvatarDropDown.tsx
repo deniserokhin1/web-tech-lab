@@ -50,7 +50,7 @@ export const AvatarDropDown = memo((props: AvatarDropDownProps) => {
                     onClick: onLogout,
                 },
             ]}
-            trigger={<Avatar size={35} src={authData.avatar} border={true} />}
+            trigger={<Avatar small src={authData.avatar} border={true} />}
             className={className}
         />
     )

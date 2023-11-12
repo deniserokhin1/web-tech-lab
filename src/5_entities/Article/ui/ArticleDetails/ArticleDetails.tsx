@@ -73,7 +73,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     if (isLoading) {
         content = (
             <VStack gap="16" max={true}>
-                <Skeleton width="100%" height={300} borderRadius={4} />
+                <Skeleton className={cls.img} />
                 <Skeleton width={300} height={40} borderRadius={4} type="short" />
                 <Skeleton width={300} height={32} borderRadius={4} type="short" />
                 <Skeleton width={300} height={30} borderRadius={4} type="short" />
@@ -88,10 +88,8 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         content = (
             <VStack gap="16" max={true}>
                 <AppImage
-                    fallback={<Skeleton width="100%" height={300} borderRadius={4} />}
-                    errorFallback={<Skeleton width="100%" height={300} borderRadius={4} />}
-                    height={300}
-                    width="100%"
+                    fallback={<Skeleton width="100%" className={cls.img} />}
+                    errorFallback={<Skeleton width="100%" className={cls.img} />}
                     className={cls.img}
                     src={article?.img}
                 />

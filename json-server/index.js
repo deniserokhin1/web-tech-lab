@@ -4,9 +4,17 @@ const path = require('path')
 const https = require('https')
 
 const options = {
-    key: fs.readFileSync(path.resolve(__dirname, '/etc/letsencrypt/live/yocommon.com/privkey.pem')),
+    key: fs.readFileSync(
+        path.resolve(
+            __dirname,
+            '/etc/letsencrypt/live/yocommon.com/privkey.pem',
+        ),
+    ),
     cert: fs.readFileSync(
-        path.resolve(__dirname, '/etc/letsencrypt/live/yocommon.com/fullchain.pem'),
+        path.resolve(
+            __dirname,
+            '/etc/letsencrypt/live/yocommon.com/fullchain.pem',
+        ),
     ),
 }
 
@@ -17,17 +25,19 @@ const router = jsonServer.router(path.resolve(__dirname, 'db.json'))
 server.use(jsonServer.defaults({}))
 server.use(jsonServer.bodyParser)
 
-server.use(async (req, res, next) => {
-    await new Promise((res) => {
-        setTimeout(res, 300)
-    })
-    next()
-})
+// server.use(async (req, res, next) => {
+//     await new Promise((res) => {
+//         setTimeout(res, 300)
+//     })
+//     next()
+// })
 
 server.post('/login', (req, res) => {
     try {
         const { username, password } = req.body
-        const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'))
+        const db = JSON.parse(
+            fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'),
+        )
         const { users = [] } = db
 
         const userFromBd = users.find(
@@ -40,6 +50,22 @@ server.post('/login', (req, res) => {
         }
 
         return res.status(403).json({ message: 'User not found' })
+    } catch (e) {
+        console.log(e)
+        return res.status(500).json({ message: e.message })
+    }
+})
+
+server.get('/technologies', (req, res) => {
+    try {
+        const db = JSON.parse(
+            fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'),
+        )
+        const { technologies = [] } = db
+
+        if (technologies.length) {
+            return res.json(technologies)
+        }
     } catch (e) {
         console.log(e)
         return res.status(500).json({ message: e.message })

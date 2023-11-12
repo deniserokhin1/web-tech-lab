@@ -3,7 +3,7 @@ import { memo, useCallback, useEffect, useState, type FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { useAppSelector } from '@/1_app/providers/StoreProvider/config/store'
-import { LoginModal } from '@/4_features/AuthByUserName'
+import { LoginModal, LoginFormAsync } from '@/4_features/AuthByUserName'
 import { AvatarDropDown } from '@/4_features/AvatarDropDown'
 import { NotificationButton } from '@/4_features/NotificationButton'
 import { getUserAuthData } from '@/5_entities/User'
@@ -31,6 +31,10 @@ export const Navbar: FC<NavbarProps> = memo((props) => {
         if (authData) setIsAuthModal(false)
     }, [authData])
 
+    const onHover = useCallback(() => {
+        LoginFormAsync.preload()
+    }, [])
+
     if (authData) {
         return (
             <header className={classNames(cls.container)}>
@@ -38,7 +42,6 @@ export const Navbar: FC<NavbarProps> = memo((props) => {
                     <NotificationButton />
                     <AvatarDropDown />
                 </HStack>
-                <LoginModal isOpen={isAuthModal} onClose={onToggleModal} />
             </header>
         )
     }
@@ -46,7 +49,7 @@ export const Navbar: FC<NavbarProps> = memo((props) => {
     return (
         <header className={classNames(cls.container)}>
             <div className={cls.links}>
-                <Button theme={ButtonTheme.CLEAR_INVERT} onClick={onToggleModal}>
+                <Button theme={ButtonTheme.CLEAR_INVERT} onClick={onToggleModal} onMouseEnter={onHover}>
                     {t('Войти')}
                 </Button>
 

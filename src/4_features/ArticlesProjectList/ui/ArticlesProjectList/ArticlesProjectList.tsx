@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from '@/1_app/providers/StoreProvider'
 import { ArticleProjectDetails } from '@/5_entities/Article'
 import { useInitialEffect } from '@/6_shared/hooks/useInitialEffect'
 import { DynamicModuleLoader, ReducersList } from '@/6_shared/lib/components/DynamicModuleLoader'
+import { Skeleton } from '@/6_shared/ui/Skeleton'
 import { VStack } from '@/6_shared/ui/Stack'
 
 import {
@@ -12,6 +13,8 @@ import {
 } from '../../model/selectors/getArticlesProject'
 import { fetchArticlesProjectList } from '../../model/services/fetchArticlesProjectList'
 import { articlesProjectListReducer } from '../../model/slices/articlesProjectListSlice'
+
+import cls from './ArticlesProjectList.module.scss'
 
 interface ArticlesProjectListProps {
     className?: string
@@ -31,6 +34,22 @@ export const ArticlesProjectList = memo((props: ArticlesProjectListProps) => {
         dispatch(fetchArticlesProjectList())
     })
 
+    let skeleton = null
+
+    if (isLoading) {
+        skeleton = (
+            <VStack gap="8" max={true}>
+                <Skeleton width={300} height={40} borderRadius={4} type="short" />
+                <Skeleton width="100%" height={64} borderRadius={4} type="short" />
+                <Skeleton className={cls.img} />
+                <Skeleton width={300} height={30} borderRadius={4} type="short" />
+                <Skeleton width="100%" height={200} borderRadius={4} />
+                <Skeleton width="100%" height={200} borderRadius={4} />
+                <Skeleton width="100%" height={200} borderRadius={4} />
+            </VStack>
+        )
+    }
+
     return (
         <DynamicModuleLoader reducers={reducers}>
             <VStack gap="16">
@@ -38,9 +57,9 @@ export const ArticlesProjectList = memo((props: ArticlesProjectListProps) => {
                     <ArticleProjectDetails
                         article={article}
                         key={article.id}
-                        isLoading={isLoading}
                     />
                 ))}
+                {isLoading && skeleton}
             </VStack>
         </DynamicModuleLoader>
     )

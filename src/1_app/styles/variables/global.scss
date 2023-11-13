@@ -24,6 +24,11 @@
     --font-line-l: clamp(32px, 2.5vw, 40px);
     --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
 
+    // LS
+    --font-size-ls: clamp(16px, 6vw, 24px);
+    --font-line-ls: clamp(20px, 6vw, 32px);
+    --font-ls: var(--font-size-ls) / var(--font-line-ls) var(--font-family-main);
+
     // XL
     --font-size-xl: clamp(32px, 3vw, 40px);
     --font-line-xl: clamp(40px, 3.5vw, 48px);

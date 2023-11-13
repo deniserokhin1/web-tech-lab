@@ -22,6 +22,7 @@ export enum TextSize {
     M = 'size_m',
     ML = 'size_ml',
     L = 'size_l',
+    LS = 'size_ls',
 }
 
 interface TextProps {

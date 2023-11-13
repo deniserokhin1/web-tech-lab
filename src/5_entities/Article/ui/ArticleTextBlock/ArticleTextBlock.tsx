@@ -23,7 +23,7 @@ export const ArticleTextBlock = memo((props: ArticleTextBlockProps) => {
 
     return (
         <div className={classNames(cls.container, mods, [className])}>
-            {title && <Text title={title} align={TextAlign.LEFT} />}
+            {title && <Text title={title} align={TextAlign.LEFT} size={TextSize.LS} />}
 
             {short ? (
                 <Text text={paragraphs[0]} align={TextAlign.LEFT} />

@@ -1,3 +1,10 @@
 .container {
     width: 100%;
 }
+
+.img {
+    width: 100%;
+    height: clamp(150px, 20vw, 500px);
+    border-radius: px(4);
+    object-fit: cover;
+}

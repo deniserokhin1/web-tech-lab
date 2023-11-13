@@ -13,30 +13,15 @@ import cls from './ArticleProjectDetails.module.scss'
 
 interface ArticleProjectDetailsProps {
     article: IArticleProject
-    isLoading?: boolean
 }
 
 export const ArticleProjectDetails = memo((props: ArticleProjectDetailsProps) => {
-    const { article, isLoading } = props
+    const { article } = props
 
     const { data, img, title } = article
 
-    let content = null
-
-    if (isLoading) {
-        content = (
-            <VStack gap="16" max={true}>
-                <Skeleton width={300} height={40} borderRadius={4} type="short" />
-                <Skeleton width="100%" height={64} borderRadius={4} type="short" />
-                <Skeleton className={cls.img} />
-                <Skeleton width={300} height={30} borderRadius={4} type="short" />
-                <Skeleton width="100%" height={200} borderRadius={4} />
-                <Skeleton width="100%" height={200} borderRadius={4} />
-                <Skeleton width="100%" height={200} borderRadius={4} />
-            </VStack>
-        )
-    } else {
-        content = (
+    return (
+        <Card>
             <VStack gap="8" max={true}>
                 <Text title={title} align={TextAlign.LEFT} />
                 {!!article?.subtitle && <Text text={article?.subtitle} align={TextAlign.LEFT} />}
@@ -50,8 +35,6 @@ export const ArticleProjectDetails = memo((props: ArticleProjectDetailsProps) =>
 
                 {data.map(renderArticleBlock)}
             </VStack>
-        )
-    }
-
-    return <Card>{content}</Card>
+        </Card>
+    )
 })

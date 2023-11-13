@@ -33,15 +33,17 @@ export const ArticleList = memo((props: ArticleListProps) => {
             .map((_, index) => <ArticleListItemSkeleton key={index} view={view} />)
     }
 
-    const renderArticle = (article: IArticle, view: ArticleView): ReactNode => (
-        <ArticleListItem
-            article={article}
-            view={view}
-            key={article.id}
-            target={target}
-            padding={padding}
-        />
-    )
+    const renderArticle =
+        (view: ArticleView) =>
+        (article: IArticle): ReactNode => (
+            <ArticleListItem
+                article={article}
+                view={view}
+                key={article.id}
+                target={target}
+                padding={padding}
+            />
+        )
 
     if (!isLoading && !articles.length) {
         return <Text title={t('Статьи не найдены')} />
@@ -49,7 +51,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
     return (
         <div className={classNames(cls[view], {}, [className])}>
-            {articles?.map((i) => renderArticle(i, view))}
+            {articles?.map(renderArticle(view))}
             {isLoading && skeletons(view)}
         </div>
     )

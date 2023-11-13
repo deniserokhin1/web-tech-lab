@@ -3,20 +3,20 @@ const jsonServer = require('json-server')
 const path = require('path')
 const https = require('https')
 
-const options = {
-    key: fs.readFileSync(
-        path.resolve(
-            __dirname,
-            '/etc/letsencrypt/live/yocommon.com/privkey.pem',
-        ),
-    ),
-    cert: fs.readFileSync(
-        path.resolve(
-            __dirname,
-            '/etc/letsencrypt/live/yocommon.com/fullchain.pem',
-        ),
-    ),
-}
+// const options = {
+//     key: fs.readFileSync(
+//         path.resolve(
+//             __dirname,
+//             '/etc/letsencrypt/live/yocommon.com/privkey.pem',
+//         ),
+//     ),
+//     cert: fs.readFileSync(
+//         path.resolve(
+//             __dirname,
+//             '/etc/letsencrypt/live/yocommon.com/fullchain.pem',
+//         ),
+//     ),
+// }
 
 const server = jsonServer.create()
 
@@ -35,9 +35,7 @@ server.use(jsonServer.bodyParser)
 server.post('/login', (req, res) => {
     try {
         const { username, password } = req.body
-        const db = JSON.parse(
-            fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'),
-        )
+        const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'))
         const { users = [] } = db
 
         const userFromBd = users.find(
@@ -58,9 +56,7 @@ server.post('/login', (req, res) => {
 
 server.get('/technologies', (req, res) => {
     try {
-        const db = JSON.parse(
-            fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'),
-        )
+        const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'))
         const { technologies = [] } = db
 
         if (technologies.length) {
@@ -83,8 +79,8 @@ server.use((req, res, next) => {
 
 server.use(router)
 
-const httpsServer = https.createServer(options, server)
+// const httpsServer = https.createServer(options, server)
 
-httpsServer.listen(8443, () => {
+server.listen(8443, () => {
     console.log('server is running on 8443 port')
 })

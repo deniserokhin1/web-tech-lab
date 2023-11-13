@@ -14,19 +14,11 @@ export const LangSwitcher = memo((props: LangSwitcherProps) => {
     const { t, i18n } = useTranslation()
 
     const toggle = (): void => {
-        if (i18n.language === 'ru-RU') {
-            i18n.changeLanguage('en')
-            return
-        }
         i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
     }
 
     return (
-        <Button
-            className={classNames('', {}, [className])}
-            theme={ButtonTheme.CLEAR_INVERT}
-            onClick={toggle}
-        >
+        <Button className={classNames('', {}, [className])} theme={ButtonTheme.CLEAR_INVERT} onClick={toggle}>
             {t('Язык')}
         </Button>
     )

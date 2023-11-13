@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 import { useTheme } from '@/1_app/providers/ThemeProvider'
 import { MobilePage } from '@/2_pages/MobilePage'

@@ -349,6 +349,7 @@
             "subtitle": "Новый уровень иммерсии",
             "img": "https://yocommon.com/images/vr.png",
             "views": "4760",
+            "userId": "2",
             "dataCreate": "2023-04-18",
             "type": ["IT", "ECONOMICS"],
             "data": [
@@ -381,6 +382,7 @@
             "subtitle": "Революция ИИ",
             "img": "https://yocommon.com/images/ml.png",
             "views": "1890",
+            "userId": "1",
             "dataCreate": "2023-02-14",
             "type": ["IT", "SCIENCE"],
             "data": [
@@ -413,6 +415,7 @@
             "subtitle": "Будущее вычислений",
             "img": "https://yocommon.com/images/cvant.png",
             "views": "2103",
+            "userId": "1",
             "dataCreate": "2023-01-03",
             "type": ["IT", "SCIENCE"],
             "data": [
@@ -445,6 +448,7 @@
             "subtitle": "Анализ и обработка",
             "img": "https://yocommon.com/images/bigdata_2.jpg",
             "views": "3444",
+            "userId": "2",
             "dataCreate": "2022-12-01",
             "type": ["IT", "ECONOMICS"],
             "data": [
@@ -477,6 +481,7 @@
             "subtitle": "Основы сетевой инфраструктуры",
             "img": "https://yocommon.com/images/net.jpg",
             "views": "2622",
+            "userId": "1",
             "dataCreate": "2022-10-05",
             "type": ["IT"],
             "data": [
@@ -509,6 +514,7 @@
             "subtitle": "Влияние на рабочие места и экономику",
             "img": "https://yocommon.com/images/production.jpg",
             "views": "5318",
+            "userId": "2",
             "dataCreate": "2022-07-02",
             "type": ["IT", "ECONOMICS"],
             "data": [
@@ -539,6 +545,7 @@
             "id": "12",
             "title": "Развитие киберспорта: технологии, тренды и влияние на молодежь",
             "subtitle": "От игрока к профессионалу",
+            "userId": "1",
             "img": "https://yocommon.com/images/cybersport.jpg",
             "views": "5318",
             "dataCreate": "2023-11-11",

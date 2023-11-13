@@ -1,3 +1,8 @@
 .cardWidth {
     width: 43vw;
 }
+
+.content {
+    width: clamp(470px, 60vw, 1500px);
+    margin: 0 auto;
+}

@@ -1,10 +1,17 @@
-import { type Reducer, type AnyAction, type CombinedState, type EnhancedStore, type ReducersMapObject } from '@reduxjs/toolkit'
+import {
+    type Reducer,
+    type AnyAction,
+    type CombinedState,
+    type EnhancedStore,
+    type ReducersMapObject,
+} from '@reduxjs/toolkit'
 import { type AxiosInstance } from 'axios'
 import { type NavigateOptions, type To } from 'react-router-dom'
 
 import { type ArticleDetailsPageSchema } from '@/2_pages/ArticleDetailsPage'
 import { type ArticlesPageSchema } from '@/2_pages/ArticlesPage'
 import { type AddCommentFormSchema } from '@/4_features/AddNewComment'
+import { ArticlesProjectListSchema } from '@/4_features/ArticlesProjectList'
 import { type LoginSchema } from '@/4_features/AuthByUserName'
 import { type EditableProfileCardSchema } from '@/4_features/EditableProfileCard'
 import { TechnologiesListSchema } from '@/4_features/TechnologiesList'
@@ -24,6 +31,7 @@ export interface StateSchema {
     articlesPage?: ArticlesPageSchema
     articleDeatailsPage?: ArticleDetailsPageSchema
     technologiesList?: TechnologiesListSchema
+    articlesProjectList?: ArticlesProjectListSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

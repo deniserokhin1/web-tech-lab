@@ -60,6 +60,20 @@ server.get('/technologies', (req, res) => {
     }
 })
 
+server.get('/about', (req, res) => {
+    try {
+        const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'))
+        const { about = [] } = db
+
+        if (about.length) {
+            return res.json(about)
+        }
+    } catch (e) {
+        console.log(e)
+        return res.status(500).json({ message: e.message })
+    }
+})
+
 server.use((req, res, next) => {
     console.log('req:', req)
     if (!req.headers.authorization) {

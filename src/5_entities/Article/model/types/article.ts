@@ -59,3 +59,11 @@ export interface IArticle {
     type: ArticleType[]
     data: ArticleData[]
 }
+
+export interface IArticleProject {
+    id: string
+    title: string
+    subtitle?: string
+    img: string
+    data: ArticleData[]
+}

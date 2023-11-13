@@ -3,7 +3,12 @@ import { MouseEvent, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { useAppDispatch } from '@/1_app/providers/StoreProvider'
-import { TechnologiesListModal, TechnologiesList, fetchTechnologiesList, technologiesListReducer } from '@/4_features/TechnologiesList'
+import {
+    TechnologiesListModal,
+    TechnologiesList,
+    fetchTechnologiesList,
+    technologiesListReducer,
+} from '@/4_features/TechnologiesList'
 import { useInitialEffect } from '@/6_shared/hooks/useInitialEffect'
 import { DynamicModuleLoader, ReducersList } from '@/6_shared/lib/components/DynamicModuleLoader'
 import { Card } from '@/6_shared/ui/Card'

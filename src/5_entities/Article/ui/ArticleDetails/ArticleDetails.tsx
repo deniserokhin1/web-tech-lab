@@ -20,11 +20,8 @@ import {
     getArticleDetailsIsLoading,
 } from '../../model/selectors/getArticleDetails'
 import { fetchArticleById } from '../../model/services/fetchArticleById'
+import { renderArticleBlock } from '../../model/services/renderBlock'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
-import { ArticleDataType, type ArticleData } from '../../model/types/article'
-import { ArticleCodeBlock } from '../ArticleCodeBlock/ArticleCodeBlock'
-import { ArticleImageBlock } from '../ArticleImageBlock/ArticleImageBlock'
-import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock'
 
 import cls from './ArticleDetails.module.scss'
 
@@ -36,21 +33,6 @@ interface ArticleDetailsProps {
     className?: string
     id: string
     color?: string
-}
-
-const renderBlock = (block: ArticleData): JSX.Element | null => {
-    const { type, id } = block
-
-    switch (type) {
-        case ArticleDataType.CODE:
-            return <ArticleCodeBlock block={block} key={id} />
-        case ArticleDataType.IMAGE:
-            return <ArticleImageBlock block={block} key={id} />
-        case ArticleDataType.TEXT:
-            return <ArticleTextBlock block={block} key={id} />
-        default:
-            return null
-    }
 }
 
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
@@ -108,7 +90,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     </HStack>
                 </HStack>
 
-                {article?.data?.map(renderBlock)}
+                {article?.data?.map(renderArticleBlock)}
             </VStack>
         )
     }

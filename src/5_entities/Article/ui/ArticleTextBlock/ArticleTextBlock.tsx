@@ -1,7 +1,7 @@
 import { memo } from 'react'
 
 import { classNames } from '@/6_shared/lib'
-import { Text, TextAlign } from '@/6_shared/ui/Text'
+import { Text, TextAlign, TextSize } from '@/6_shared/ui/Text'
 
 import { type ArticleText } from '../../model/types/article'
 
@@ -28,9 +28,7 @@ export const ArticleTextBlock = memo((props: ArticleTextBlockProps) => {
             {short ? (
                 <Text text={paragraphs[0]} align={TextAlign.LEFT} />
             ) : (
-                paragraphs?.map((i, index) => (
-                    <Text text={i} key={index} align={TextAlign.LEFT} />
-                ))
+                paragraphs?.map((i, index) => <Text text={i} key={index} align={TextAlign.LEFT} />)
             )}
         </div>
     )

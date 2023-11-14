@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from '@/1_app/providers/StoreProvider'
 import { ArticleProjectDetails } from '@/5_entities/Article'
 import { useInitialEffect } from '@/6_shared/hooks/useInitialEffect'
 import { DynamicModuleLoader, ReducersList } from '@/6_shared/lib/components/DynamicModuleLoader'
+import { Card } from '@/6_shared/ui/Card'
 import { Skeleton } from '@/6_shared/ui/Skeleton'
 import { VStack } from '@/6_shared/ui/Stack'
 
@@ -38,15 +39,17 @@ export const ArticlesProjectList = memo((props: ArticlesProjectListProps) => {
 
     if (isLoading) {
         skeleton = (
-            <VStack gap="8" max={true}>
-                <Skeleton width={300} height={40} borderRadius={4} type="short" />
-                <Skeleton width="100%" height={64} borderRadius={4} type="short" />
-                <Skeleton className={cls.img} />
-                <Skeleton width={300} height={30} borderRadius={4} type="short" />
-                <Skeleton width="100%" height={200} borderRadius={4} />
-                <Skeleton width="100%" height={200} borderRadius={4} />
-                <Skeleton width="100%" height={200} borderRadius={4} />
-            </VStack>
+            <Card>
+                <VStack gap="8" max={true}>
+                    <Skeleton width={300} height={40} borderRadius={4} type="short" />
+                    <Skeleton width="100%" height={64} borderRadius={4} type="short" />
+                    <Skeleton className={cls.img} />
+                    <Skeleton width={300} height={30} borderRadius={4} type="short" />
+                    <Skeleton width="100%" height={200} borderRadius={4} />
+                    <Skeleton width="100%" height={200} borderRadius={4} />
+                    <Skeleton width="100%" height={200} borderRadius={4} />
+                </VStack>
+            </Card>
         )
     }
 
@@ -54,10 +57,7 @@ export const ArticlesProjectList = memo((props: ArticlesProjectListProps) => {
         <DynamicModuleLoader reducers={reducers}>
             <VStack gap="16">
                 {data.map((article) => (
-                    <ArticleProjectDetails
-                        article={article}
-                        key={article.id}
-                    />
+                    <ArticleProjectDetails article={article} key={article.id} />
                 ))}
                 {isLoading && skeleton}
             </VStack>

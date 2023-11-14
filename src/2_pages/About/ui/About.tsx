@@ -8,13 +8,15 @@ import cls from './About.module.scss'
 
 const About = memo((): JSX.Element => {
     return (
-        <PageWrapper>
-            <VStack gap="16">
-                <div className={cls.content}>
-                    <ArticlesProjectList />
-                </div>
-            </VStack>
-        </PageWrapper>
+        <>
+            <PageWrapper>
+                <VStack gap="16">
+                    <div className={cls.content}>
+                        <ArticlesProjectList />
+                    </div>
+                </VStack>
+            </PageWrapper>
+        </>
     )
 })
 

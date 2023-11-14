@@ -4,7 +4,7 @@ import { AppImage } from '@/6_shared/ui/AppImage'
 import { Card } from '@/6_shared/ui/Card'
 import { Skeleton } from '@/6_shared/ui/Skeleton'
 import { VStack } from '@/6_shared/ui/Stack'
-import { Text, TextAlign } from '@/6_shared/ui/Text'
+import { Text, TextAlign, TextSize } from '@/6_shared/ui/Text'
 
 import { renderArticleBlock } from '../../model/services/renderBlock'
 import { IArticleProject } from '../../model/types/article'
@@ -23,15 +23,14 @@ export const ArticleProjectDetails = memo((props: ArticleProjectDetailsProps) =>
     return (
         <Card>
             <VStack gap="8" max={true}>
-                <Text title={title} align={TextAlign.LEFT} />
-                {!!article?.subtitle && <Text text={article?.subtitle} align={TextAlign.LEFT} />}
-
                 <AppImage
                     fallback={<Skeleton width="100%" className={cls.img} />}
                     errorFallback={<Skeleton width="100%" className={cls.img} />}
                     className={cls.img}
                     src={img}
                 />
+                <Text title={title} align={TextAlign.LEFT} size={TextSize.L} />
+                {!!article?.subtitle && <Text text={article?.subtitle} align={TextAlign.LEFT} />}
 
                 {data.map(renderArticleBlock)}
             </VStack>

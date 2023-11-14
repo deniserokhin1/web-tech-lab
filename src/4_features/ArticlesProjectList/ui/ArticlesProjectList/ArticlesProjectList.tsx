@@ -41,10 +41,9 @@ export const ArticlesProjectList = memo((props: ArticlesProjectListProps) => {
         skeleton = (
             <Card>
                 <VStack gap="8" max={true}>
+                    <Skeleton className={cls.img} />
                     <Skeleton width={300} height={40} borderRadius={4} type="short" />
                     <Skeleton width="100%" height={64} borderRadius={4} type="short" />
-                    <Skeleton className={cls.img} />
-                    <Skeleton width={300} height={30} borderRadius={4} type="short" />
                     <Skeleton width="100%" height={200} borderRadius={4} />
                     <Skeleton width="100%" height={200} borderRadius={4} />
                     <Skeleton width="100%" height={200} borderRadius={4} />

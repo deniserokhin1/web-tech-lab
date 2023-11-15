@@ -4,12 +4,12 @@ const path = require('path')
 const https = require('https')
 const http = require('http')
 
-const options = {
-    key: fs.readFileSync(path.resolve(__dirname, '/etc/letsencrypt/live/yocommon.com/privkey.pem')),
-    cert: fs.readFileSync(
-        path.resolve(__dirname, '/etc/letsencrypt/live/yocommon.com/fullchain.pem'),
-    ),
-}
+// const options = {
+//     key: fs.readFileSync(path.resolve(__dirname, '/etc/letsencrypt/live/yocommon.com/privkey.pem')),
+//     cert: fs.readFileSync(
+//         path.resolve(__dirname, '/etc/letsencrypt/live/yocommon.com/fullchain.pem'),
+//     ),
+// }
 
 const server = jsonServer.create()
 
@@ -82,13 +82,13 @@ server.use(router)
 const PORT = 8443
 const HTTP_PORT = 8000
 
-// const httpServer = http.createServer(server)
-const httpsServer = https.createServer(options, server)
+const httpServer = http.createServer(server)
+// const httpsServer = https.createServer(options, server)
 
-// httpServer.listen(HTTP_PORT, () => {
-//     console.log(`server is running on ${HTTP_PORT} port`)
-// })
-
-httpsServer.listen(PORT, () => {
-    console.log(`server is running on ${PORT} port`)
+httpServer.listen(HTTP_PORT, () => {
+    console.log(`server is running on ${HTTP_PORT} port`)
 })
+
+// httpsServer.listen(PORT, () => {
+//     console.log(`server is running on ${PORT} port`)
+// })

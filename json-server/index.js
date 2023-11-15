@@ -2,6 +2,7 @@ const fs = require('fs')
 const jsonServer = require('json-server')
 const path = require('path')
 const https = require('https')
+const http = require('http')
 
 const options = {
     key: fs.readFileSync(path.resolve(__dirname, '/etc/letsencrypt/live/yocommon.com/privkey.pem')),
@@ -16,13 +17,6 @@ const router = jsonServer.router(path.resolve(__dirname, 'db.json'))
 
 server.use(jsonServer.defaults({}))
 server.use(jsonServer.bodyParser)
-
-// server.use(async (req, res, next) => {
-//     await new Promise((res) => {
-//         setTimeout(res, 300)
-//     })
-//     next()
-// })
 
 server.post('/login', (req, res) => {
     try {
@@ -85,8 +79,16 @@ server.use((req, res, next) => {
 
 server.use(router)
 
+const PORT = 8443
+const HTTP_PORT = 8000
+
+// const httpServer = http.createServer(server)
 const httpsServer = https.createServer(options, server)
 
-httpsServer.listen(8443, () => {
-    console.log('server is running on 8443 port')
+// httpServer.listen(HTTP_PORT, () => {
+//     console.log(`server is running on ${HTTP_PORT} port`)
+// })
+
+httpsServer.listen(PORT, () => {
+    console.log(`server is running on ${PORT} port`)
 })

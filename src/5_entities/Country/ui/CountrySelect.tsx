@@ -23,7 +23,7 @@ const options = [
 export const CountrySelect = memo((props: CountrySelectProps) => {
     const { value, readonly, onChange } = props
 
-    const namespace = __IS_DEV__ ? 'translation' : 'namespace'
+    const namespace = __IS_DEV__ ? 'translation' : 'profile'
     const { t } = useTranslation(namespace)
 
     const onChangeHandler = useCallback(
